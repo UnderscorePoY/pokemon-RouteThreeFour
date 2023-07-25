@@ -12,7 +12,7 @@ It is derived from a custom RouteThree, itself derived fro Dabomstew & entrpntr'
 **`[2023/XX/XX]`- v0.4.0**  
 ○ Added Diamond/Pearl/Platinum/HeartGold/Soulsilver support.  
 ► Changed syntax for a variety of commands, refer to the detailled documentation below.  
-► Changed syntax for a variety of trainer aliases.
+► Changed syntax for a variety of trainer aliases.  
 
 <br>
 **`[2022/01/17]` - v0.3.1**  
