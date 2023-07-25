@@ -283,7 +283,7 @@ Water  |`"MYSTIC_WATER"`<br/> `"SEA_INCENSE"`, `"WAVE_INCENSE"`, `"SPLASH_PLATE"
 ###### EV-boosting items
 All these items stack with Pokérus and halve the speed.
 Item name | Effects
-- | -
+-- | --
 `"MACHO_BRACE"` | Doubles received EVs
 `"POWER_WEIGHT"` | Adds 4 HP EVs to base EV yields *(Gen 4)*
 `"POWER_BRACER"` | Adds 4 Attack EVs to base EV yields *(Gen 4)*
@@ -368,7 +368,7 @@ This is useful when you route Pokémon you don't acquire/catch straight away.
 - `"-scenarioName <NAME>"` : Gives name `NAME` to the current fight. Useful when performing the same battle multiple times with different battle options.  
 *aliases* : `"-scenario"`, `"-name"`
 
-- `"-IVvariation"` : Displays damage ranges for all possible IV values and natures.  
+- `"-IVvariation"` : Displays damage ranges for all possible IV values and natures. (Also displays crit damage ranges with verbose levels `MOST` or `EVERYTHING`).
 
 ###### 5.4.3.2. Stat boosts
 In all options where the notation `<stat>` appears, it denotes `atk`, `def`, `spa` (Special Attack), `spd` (Special Defense) or `spe` (Speed).
