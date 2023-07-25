@@ -61,10 +61,14 @@ If an error is encountered during the execution of the tool, it is displayed bot
 ### 4. SETUP FILES
 The setup files gather both the master file (unique) and the config files (multiple).  
 They are each separated into sections, which name is provided between square brackets.  
-> Example : `[mySection]` represents a section name called `mySection`.
+> Example :
+>
+> `[mySection]` represents a section name called `mySection`.
   
 Each section contains a certain number of key-value pairs in the following format : `key = value`.  
-> Example : `species = MUDKIP` assigns the value `MUDKIP` to the key `species`.
+> Example :
+>
+> `species = MUDKIP` assigns the value `MUDKIP` to the key `species`.
 
 When values are filenames, they are case sensitive. Otherwise, they are case insensitive. Which key-value pairs represent a filename or not are described below.  
 > Examples :
