@@ -1,4 +1,5 @@
 
+
 # RouteThreeFour
 RouteThreeFour is a routing tool for Generation 3 & 4 Pokémon games speedrunning (Ruby/Sapphire/Emerald/FireRed/LeafGreen & Diamond/Pearl/Platinum/HeartGold/SoulSilver).  
 It is derived from a custom RouteThree, itself derived from Dabomstew & entrpntr's RouteTwo, itself derived from HRoll's RouteOne.
@@ -434,7 +435,7 @@ If you want to enforce specific stat stages, use the commands below :
 > LORELEI -weathers HAIL/0/SUN/SUN/SUN // Hail on first Pokémon, no weather on second, Sunny Day on third onwards
 > ``` 
 
-###### 5.4.3.5. Status
+###### 5.4.3.5. Specific battle modifiers
 ###### Primary status
 - `"-xstatus <STATUS>"` : Sets the status `STATUS` for the entire duration of the fight.  
 -- `STATUS` must be `NONE`, `SLEEP`, `POISON`, `BURN`, `FREEZE`, `PARALYSIS` or `TOXIC` (`NONE` can be replaced by `0`).  
@@ -488,6 +489,16 @@ Here is the exhautive list of implemented modifiers :
 `"SPIKES"` | Manually triggers spikes damage (should be automatic)
 `"LEECH_SEED"` | Manually triggers Leech Seed damage (should be automatic)
 	
+###### Current HP
+- `"-xcurrHP <VALUE>"` : Sets `VALUE` as the current HP (Health Point) value.  
+-- `VALUE` must be `FULL`, `HALF`, `THIRD` or a valid integer value.  
+> Example :  
+> ```
+> BRUNO -xcurrHP 2 // Flail strats !
+> LOGAN -xcurrHP THIRD // Going for Blaze
+> OSCAR -ycurrHP HALF // Let's test Wring Out if the enemy is at half 
+> ``` 
+
 ###### 5.4.3.6. Double battle
 - `"-doubleBattle"` : Forces the battle to be considered as a double battle with 2 player Pokémon.
 - `"-singleBattle"` : Forces the battle to be considered as a single battle.
