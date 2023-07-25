@@ -14,7 +14,7 @@ It is derived from a custom RouteThree, itself derived fro Dabomstew & entrpntr'
 ► Changed syntax for a variety of commands, refer to the detailled documentation below.  
 ► Changed syntax for a variety of trainer aliases.  
 
----
+<details><summary> Show previous updates </summary>  
 
 **`[2022/01/17]` - v0.3.1**  
 ○ Added `-noDoubleBattle`/`-nodouble` command to force single battles.  
@@ -37,6 +37,9 @@ It is derived from a custom RouteThree, itself derived fro Dabomstew & entrpntr'
 
 **`[2022/01/02]` - v0.1**  
 ○ Initial beta release.
+
+</details>
+
 -- -- 
 ### 2. INSTALLATION
 The tool is primarily an executable `.jar` file. In that regard, no proper installation is needed other than copying this file in a folder and have the necessary files for it to work with (see sections below).  
