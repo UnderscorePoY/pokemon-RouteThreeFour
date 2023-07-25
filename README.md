@@ -181,7 +181,7 @@ The `resources` folder contains most of the data used by the tool. You can look 
 ###### Moves
 - `"learnMove <MOVE>"` : Learns move `MOVE`. `MOVE` only considers alphanumerical characters in a case-incensitive way.
   *alias*: `"lm"`          
-> Examples : 
+> Examples :
 > `learnMove HIDDENPOWER // "Any Pokémon is runnable with a proper Hidden Power" - Nobody, ever`  
 > `lm FURYSWIPES // This matches Fury Swipes`
   
