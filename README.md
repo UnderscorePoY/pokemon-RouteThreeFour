@@ -116,13 +116,13 @@ A configuration file (generally with the `.ini` extension) gathers the primary i
    Tag | Expected value | Usage
   --------------- | -------------- | --------------
   `"routeFile"`   | A filename. | The name of the route file the tool will read from.
-  `"outputFile"`   | A filename. | The name of the output file the tool will write to. <br/> (Defaults to `outputs/out_<nameOfRouteFile>` if missing.)
+  `"outputFile"`   | A filename. | The name of the output file the tool will write to. <br/> **(Defaults to `outputs/out_<nameOfRouteFile>` if missing.)**
 
 ##### Section : `[util]`
    Tag | Expected value | Usage
   --------------- | -------------- | --------------
-  `"overallChanceKO"`   | `true` or `false`. | Whether the tool displays overall chance of KOing the opponent or not. <br/>(Defaults to `false` if missing.)
-  `"showGuarantees"`   | `true` or `false`. | Whether the information that n-shots are guaranteed is displayed or not. <br/>(Defaults to `false` if missing.)
+  `"overallChanceKO"`   | `true` or `false`. | Whether the tool displays overall chance of KOing the opponent or not. <br/>**(Defaults to `false` if missing.)**
+  `"showGuarantees"`   | `true` or `false`. | Whether the information that n-shots are guaranteed is displayed or not. <br/>**(Defaults to `false` if missing.)**
   
 -- -- 
 
@@ -223,7 +223,7 @@ The `resources` folder contains most of the data used by the tool. You can look 
 > equip SOFTSAND // Mud Slap go brrrr
 > ```
 
-- `"unequipItem"` : Unequips the held item.
+- `"unequipItem"` : Unequips the held item.  
   *alias* : `"unequip"`
   
   Here is an exhaustive list of items which effects are implemented :
