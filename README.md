@@ -1,7 +1,7 @@
 
 # RouteThreeFour
 RouteThreeFour is a routing tool for Generation 3 & 4 Pokémon games speedrunning (Ruby/Sapphire/Emerald/FireRed/LeafGreen & Diamond/Pearl/Platinum/HeartGold/SoulSilver).  
-It is derived from a custom RouteThree, itself derived fro Dabomstew & entrpntr's RouteTwo, itself derived from HRoll's RouteOne.
+It is derived from a custom RouteThree, itself derived from Dabomstew & entrpntr's RouteTwo, itself derived from HRoll's RouteOne.
 
 ### 1. LATEST CHANGES
 *Syntax :*    
