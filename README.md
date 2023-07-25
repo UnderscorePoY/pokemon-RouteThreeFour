@@ -62,11 +62,11 @@ If an error is encountered during the execution of the tool, it is displayed bot
 The setup files gather both the master file (unique) and the config files (multiple).  
 They are each separated into sections, which name is provided between square brackets.  
 > Example :
-> `[mySection]` represents a section name called `mySection`.
+> - `[mySection]` represents a section name called `mySection`.
   
 Each section contains a certain number of key-value pairs in the following format : `key = value`.  
 > Example :
-> `species = MUDKIP` assigns the value `MUDKIP` to the key `species`.
+> - `species = MUDKIP` assigns the value `MUDKIP` to the key `species`.
 
 When values are filenames, they are case sensitive. Otherwise, they are case insensitive. Which key-value pairs represent a filename or not are described below.  
 > Examples :
@@ -173,22 +173,22 @@ The `resources` folder contains most of the data used by the tool. You can look 
 - `"evolve <SPECIES>"` : Changes your Pokemon to `SPECIES`. `SPECIES` only considers alphanumerical characters in a case-incensitive way.
   *aliases*: `"e"`, `"changeForm"`.
 > Examples :
-> `evolve COMBUSKEN // I'm Ryziken`  
-> `e MRMIME // This matches Mr. Mime`  
-> `e Mr_Mime // This also matches Mr. Mime`  
-> `changeForm WORMADAM_TRASH // We just battled in a building`
+> - `evolve COMBUSKEN // I'm Ryziken`  
+> - `e MRMIME // This matches Mr. Mime`  
+> - `e Mr_Mime // This also matches Mr. Mime`  
+> - `changeForm WORMADAM_TRASH // We just battled in a building`
   
 ###### Moves
 - `"learnMove <MOVE>"` : Learns move `MOVE`. `MOVE` only considers alphanumerical characters in a case-incensitive way.
   *alias*: `"lm"`          
 > Examples :
-> `learnMove HIDDENPOWER // "Any Pokémon is runnable with a proper Hidden Power" - Nobody, ever`  
-> `lm FURYSWIPES // This matches Fury Swipes`
+> - `learnMove HIDDENPOWER // "Any Pokémon is runnable with a proper Hidden Power" - Nobody, ever`  
+> - `lm FURYSWIPES // This matches Fury Swipes`
   
  - `"unlearnMove <MOVE>"` : Unlearns move `MOVE`. `MOVE` only considers alphanumerical characters in a case-incensitive way.
   *alias*: `"um"`            
 > Example : 
-> `unlearnmove GROWL // Useless move`  
+> - `unlearnmove GROWL // Useless move`  
   
 ###### Vitamins
 - `"rareCandy [QUANTITY]"` : Uses a Rare Candy on your Pokemon, `QUANTITY` times.  If specified, `QUANTITY` must be an integer bigger or equal to 1. If omitted, it defaults to `1`. 
@@ -213,7 +213,7 @@ The `resources` folder contains most of the data used by the tool. You can look 
 - `"equipItem <ITEM>"` : Equips the item `ITEM`. If an item was already held, it is replaced by the specified one. `ITEM` only considers alphanumerical characters in a case-incensitive way.
  *alias* : `"equip"`
 > Example : 
-> `equip SOFTSAND // Mud Slap go brrrr`
+> - `equip SOFTSAND // Mud Slap go brrrr`
 
 - `"unequip"` : Unequips the held item.
   
@@ -268,7 +268,7 @@ Water  |`"MYSTIC_WATER"`<br/> `"SEA_INCENSE"`, `"WAVE_INCENSE"`, `"SPLASH_PLATE"
   These commands only affect money, since there is no inventory management.  
   - `"buy [QUANTITY] <ITEM>"`  : Buys `ITEM` `QUANTITY` times. If `QUANTITY` is specified, it must be an integer bigger or equal to 1. If omitted, it defaults to `1`.  
   - `"sell [QUANTITY] <ITEM>"` : Sells `ITEM` `QUANTITY` times.  
-> Examples : 
+> Example : 
 > ```
 > buy 46 XATTACK // Zigzagoon, go !
 > sell HPUP // Sells 1 HPUP
@@ -276,7 +276,7 @@ Water  |`"MYSTIC_WATER"`<br/> `"SEA_INCENSE"`, `"WAVE_INCENSE"`, `"SPLASH_PLATE"
   
 -  `"addMoney <NUM>"` : Adds `NUM` to player's money.  `NUM` must be a positive integer.
 -  `"spendMoney <NUM>"` : Spends `NUM` money.  
-> Examples : 
+> Example : 
 > ```
 > addmoney 5000 // Long live the casino !  
 > spendmoney 50 // Museum entrance fee ...
@@ -317,9 +317,9 @@ This is useful when you route Pokémon you don't acquire/catch straight away.
 --- `"-trainer"` : Sets the wild encounter as a trainer Pokemon. Mainly gives access to the x1.5 experience multiplier.  
   *alias*: `"-t"`  
 > Examples : 
-> `L45 KYOGRE HASTY DRIZZLE G 27 31 7 25 18 26 // Fast Boi` 
-> `L17 CLEFAIRY // Level 17 Clefairy, neutral nature, Cute Charm (ability 1), Female, perfect IVs`
-> `L31 MILOTIC GENTLE -trainer // I don't remember this trainer name`
+> - `L45 KYOGRE HASTY DRIZZLE G 27 31 7 25 18 26 // Fast Boi` 
+> - `L17 CLEFAIRY // Level 17 Clefairy, neutral nature, Cute Charm (ability 1), Female, perfect IVs`
+> - `L31 MILOTIC GENTLE -trainer // I don't remember this trainer name`
 
       
 ##### 5.4.3. Battle options
@@ -344,14 +344,14 @@ In all options where the notation `<stat>` appears, it denotes `atk`, `def`, `sp
 - `"x<stat>Use <NUM>"` : Boosts the `stat` `NUM` times for the entire duration of the fight (the syntax `x<stat>` is inspired from X Items).
 -- `NUM` should be an integer between `-12` and `+12`. Positive numbers can omit the `+` sign.  
 > Example : 
-> `LANCE -xspdUse 1 -xspaUse 2 // Uses 1 X Speed & 2 X Special Attacks for the entire fight`  
+> - `LANCE -xspdUse 1 -xspaUse 2 // Uses 1 X Speed & 2 X Special Attacks for the entire fight`  
   
 - `"x<stat>sUse <FIRST/SECOND/...>"` : Boosts the `stat` `FIRST` times on the first Pokémon, `SECOND` times on the second Pokémon, etc. 
 -- `FIRST`, `SECOND` ... should be integers between `-12` and `+12`. Positive numbers can omit the `+` sign.  
 *(Notice the `"s"` after the `"<stat>"` which denotes the plural form.)*
 > Examples : 
-> `GLACIA -xspasUse 0/0/2/0/0 // Sets up 2 X Specials on her third Pokemon`  
-> `WHITNEY -xatksUse -2/0 // Clefairy used Metronome Charm ?!`  
+> - `GLACIA -xspasUse 0/0/2/0/0 // Sets up 2 X Specials on her third Pokemon`  
+> - `WHITNEY -xatksUse -2/0 // Clefairy used Metronome Charm ?!`  
 
 **>>Note** : These two previous options don't override any automated stat drop/boost, such as Intimidate or Speed Boost. In consequence, if you use `-xatkUse 1` in a fight where a Gyarados with Intimidate enters, your Attack stage will be `1` for all Pokémon prior to Gyarados, and will be `0` from Gyarados onwards (unless your Pokémon has an Ability that prevents such a drop).
 If you want to enforce specific stat stages, use the commands below :
@@ -359,58 +359,58 @@ If you want to enforce specific stat stages, use the commands below :
 - `"x<stat>Set <NUM>"` : Sets `stat` to the stage `NUM` for the entire duration of the fight.
 -- `NUM` should be an integer between `-6` and `+6`. Positive numbers can omit the `+` sign.
 > Example : 
-> `MIKEY -xatkSet 6 // Sets Attack stage to +6 ... but is this reasonable ?`  
+> - `MIKEY -xatkSet 6 // Sets Attack stage to +6 ... but is this reasonable ?`  
 
 - `"x<stat>sSet <FIRST/SECOND/...>"` : Sets `stat` to the stage `FIRST` for the first Pokémon, the stage `SECOND` for the second Pokémon, etc. 
 -- `FIRST`, `SECOND` ... should be integers between `-6` and `+6`. Positive numbers can omit the `+` sign.  
 *(Notice the `"s"` after the `"<stat>"` which denotes the plural form.)*
 > Example : 
-> `LUCIAN -xspasSet 0/1/1/2/2 // Enforces the Special Attack to be at stage 0 on the first Pokémon, at 1 on the second and third Pokémon, at 2 on the fourth and fifth Pokémon`  
+> - `LUCIAN -xspasSet 0/1/1/2/2 // Enforces the Special Attack to be at stage 0 on the first Pokémon, at 1 on the second and third Pokémon, at 2 on the fourth and fifth Pokémon`  
 
 ###### 5.4.3.3. Experience
 -  `"-sxp <NUM>"` : Shares earned experience, effectively dividing it by `NUM`. `NUM` must be a positive integer between `1` and `6`.
 > Example : 
-> `GARDENIA -sxp 2 // Divides all received EXP by 2, for example EXP. SHARE`
+> - `GARDENIA -sxp 2 // Divides all received EXP by 2, for example EXP. SHARE`
 
 -  `"-sxps <FIRST>/<SECOND>..."` : Divides first enemy Pokemon experience by `FIRST`, the second by `SECOND`, etc.  `FIRST`, `SECOND` ... must be positive integers between `0` and `6`. A value of `0` denotes that the Pokémon doesn't battle the corresponding enemy, thus doesn't earn EXP nor EVs from it.
 > Example : 
-> `RED -sxps 2/1/1/1/1/1 // Shares EXP on first Pokémon by 2, then fight remaining enemies normally. Could it be Shuckie strats ?`
+> - `RED -sxps 2/1/1/1/1/1 // Shares EXP on first Pokémon by 2, then fight remaining enemies normally. Could it be Shuckie strats ?`
 
 ###### 5.4.3.4. Weather
 -  `"-weather <WEATHER>"` : Sets the weather `WEATHER` for the entire battle.
 -- `WEATHER` must be `NONE`, `RAIN`, `SUN`, `SANDSTORM` or`HAIL` (`NONE` can be replaced by `0`).  
 *alias* : `"-w"`
 > Example : 
-> `DALTON -weather HAIL // Damn harsh weather !` 
+> - `DALTON -weather HAIL // Damn harsh weather !` 
 
 -  `"-weathers <FIRST>/<SECOND>/...` Sets the weather `FIRST` for the first enemy Pokémon, weather `SECOND` for the second one, etc.
 *alias*: `-ws`
  
 > Example : 
-> `LORELEI -weathers HAIL/0/SUN/SUN/SUN // Hail on first Pokémon, no weather on second, Sunny Day on third onwards` 
+> - `LORELEI -weathers HAIL/0/SUN/SUN/SUN // Hail on first Pokémon, no weather on second, Sunny Day on third onwards` 
 
 ###### 5.4.3.5. Status
 ###### Primary status
 - `"-xstatus <STATUS>"` : Sets the status `STATUS` for the entire duration of the fight. 
 -- `STATUS` must be `NONE`, `SLEEP`, `POISON`, `BURN`, `FREEZE`, `PARALYSIS` or `TOXIC` (`NONE` can be replaced by `0`).
 > Example : 
-> `BRAWLY -xstatus BURN // Guts all the way !`
+> - `BRAWLY -xstatus BURN // Guts all the way !`
 
 - `"-xstatuses <FIRST>/<SECOND>/..."` : Sets the status `FIRST` for the first Pokémon, `SECOND` for the second Pokémon, etc. 
 > Example : 
-> `MARS -xstatuses PSN/NONE // Poisoned on first Pokémon, healing on second`
+> - `MARS -xstatuses PSN/NONE // Poisoned on first Pokémon, healing on second`
 
 ###### Secondary status and field
 
 - `"-xstatus2 <MOD1>[+MOD2+...]"` : Sets a list of battle modifiers for the entire duration of the fight.
 -- This reads as a single modifier `MOD1` or a list of `+`-separated such modifiers.
 > Example : 
-> `TATEANDLIZA -ystatus2 REFLECT+LIGHTSCREEN // The enemy side sets up both screens for the whole fight`
+> - `TATEANDLIZA -ystatus2 REFLECT+LIGHTSCREEN // The enemy side sets up both screens for the whole fight`
 
 - `"-xstatuses2 <FIRST>/<SECOND>/..."` : Sets a list of battle modifiers for each Pokémon : `FIRST` for the first, `SECOND` for the second, etc.
 -- For example, `<FIRST>` is either a single modifier `MOD1` or a list of `+`-separated such modifiers.
 > Example : 
-> `LUCIAN -ystatuses2 REFLECT+LIGHTSCREEN/0/0/0/0 // Screens only up against the first Pokémon`
+> - `LUCIAN -ystatuses2 REFLECT+LIGHTSCREEN/0/0/0/0 // Screens only up against the first Pokémon`
 
 Here is the exhautive list of implemented modifiers :
  Modifier | Effect
@@ -461,7 +461,7 @@ Here is the exhautive list of implemented modifiers :
 - `"-order <FIRST>[/SECOND...]"` : Switches the enemy team order.
   -- For example, if `FIRST` represents a single enemy, then it is an integer representing the index of the enemy Pokémon in the original party order. This index must be between `1` and the maximum number of Pokémon in the enemy party. If `FIRST` represents two enemies attacked simultaneously, then it must be two indices separated with a `+`.
   
-> Example : (single battle)
+> Example : (single battle)  
 > In Diamond/Pearl, the original party order of Cynthia is the following :
 > #1 Spiritomb, #2 Roserade, #3 Gastrodon, #4 Lucario, #5 Milotic, #6 Garchomp
 > However, when leading an Infernape, Cynthia sends her party in this new order :
@@ -469,13 +469,13 @@ Here is the exhautive list of implemented modifiers :
 > Consequently, the correct command for this fight is :
 > `CYNTHIA -order 1/3/5/6/2/4`  
 
-> Example : (double battle)
+> Example : (double battle)  
 > In Emerald, the original party order of Tate & Liza is the following :
 > #1 Claydol, #2 Xatu, #3 Lunatone, #4 Solrock
 > When fighting with Swampert, the perfect fight scenario involves sacking all the player Pokémon other than Swampert, then take Claydol and Xatu down simultaneously, then take Solrock and Lunatone down simultaneously. This can be achieved with the following options :
 > `TATE&LIZA -order 1+2/3+4 -sxp 1`  
 
-> Example : (true battle)
+> Example : (true battle)  
 > In Platinum, the player and Barry both face Mars and Jupiter in a true double battle. The original enemy party orders are the following :
 > Mars : #1 Bronzor (M), #2 Golbat (M), #3 Purugly
 > Jupiter : #1 Bronzor (J), #2 Golbat (J), #3 Skuntank
