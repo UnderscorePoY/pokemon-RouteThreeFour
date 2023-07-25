@@ -366,7 +366,9 @@ This is useful when you route Pokémon you don't acquire/catch straight away.
 -  `"-levelUpRanges"`  : Outputs player Pokemon ranges when a level up occurs during a battle.  
 *alias* : `"-lvRanges"`
 - `"-scenarioName <NAME>"` : Gives name `NAME` to the current fight. Useful when performing the same battle multiple times with different battle options.  
-*aliases* : `"-scenario"`, `"-name"`  
+*aliases* : `"-scenario"`, `"-name"`
+
+- `"-IVvariation"` : Displays damage ranges for all possible IV values and natures.  
 
 ###### 5.4.3.2. Stat boosts
 In all options where the notation `<stat>` appears, it denotes `atk`, `def`, `spa` (Special Attack), `spd` (Special Defense) or `spe` (Speed).
