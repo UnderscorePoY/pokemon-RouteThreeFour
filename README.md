@@ -323,7 +323,7 @@ This is useful when you route Pokémon you don't acquire/catch straight away.
 -- if `GENDER` is ommited, it defaults to the species' most predominent gender. Genders are either `"MALE"`, `"FEMALE"` or `"GENDERLESS"` (or their corresponding one-letter initial).  
 -- if IVs are ommited, defaults to `31` IV in each stat.  
   *Wild encounters options :*  
---- `"-trainer"` : Sets the wild encounter as a trainer Pokemon. Mainly gives access to the x1.5 experience multiplier.  
+-- `"-trainer"` : Sets the wild encounter as a trainer Pokemon. Mainly gives access to the x1.5 experience multiplier.  
   *alias*: `"-t"`  
 > Examples : 
 > ```L45 KYOGRE HASTY DRIZZLE G 27 31 7 25 18 26 // Fast Boi
@@ -370,7 +370,7 @@ In all options where the notation `<stat>` appears, it denotes `atk`, `def`, `sp
 **>>Note** : These two previous options don't override any automated stat drop/boost, such as Intimidate or Speed Boost. In consequence, if you use `-xatkUse 1` in a fight where a Gyarados with Intimidate enters, your Attack stage will be `1` for all Pokémon prior to Gyarados, and will be `0` from Gyarados onwards (unless your Pokémon has an Ability that prevents such a drop).
 If you want to enforce specific stat stages, use the commands below :
 
-- `"x<stat>Set <NUM>"` : Sets `stat` to the stage `NUM` for the entire duration of the fight.
+- `"x<stat>Set <NUM>"` : Sets `stat` to the stage `NUM` for the entire duration of the fight.  
 -- `NUM` should be an integer between `-6` and `+6`. Positive numbers can omit the `+` sign.
 > Example : 
 > ```
@@ -387,12 +387,12 @@ If you want to enforce specific stat stages, use the commands below :
 
 ###### 5.4.3.3. Experience
 -  `"-sxp <NUM>"` : Shares earned experience, effectively dividing it by `NUM`. `NUM` must be a positive integer between `1` and `6`.  
-> Example : 
+> Example :  
 > ```
 > GARDENIA -sxp 2 // Divides all received EXP by 2, for example EXP. SHARE
 > ```
 
--  `"-sxps <FIRST>/<SECOND>..."` : Divides first enemy Pokemon experience by `FIRST`, the second by `SECOND`, etc.
+-  `"-sxps <FIRST>/<SECOND>..."` : Divides first enemy Pokemon experience by `FIRST`, the second by `SECOND`, etc.  
 --  `FIRST`, `SECOND` ... must be positive integers between `0` and `6`. A value of `0` denotes that the Pokémon doesn't battle the corresponding enemy, thus doesn't earn EXP nor EVs from it.  
 > Example : 
 > ```
