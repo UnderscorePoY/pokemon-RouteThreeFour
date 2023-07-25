@@ -1,3 +1,4 @@
+
 # RouteThreeFour
 RouteThreeFour is a routing tool for Generation 3 & 4 Pokémon games speedrunning (Ruby/Sapphire/Emerald/FireRed/LeafGreen & Diamond/Pearl/Platinum/HeartGold/SoulSilver).  
 It is derived from a custom RouteThree, itself derived fro Dabomstew & entrpntr's RouteTwo, itself derived from HRoll's RouteOne.
@@ -274,6 +275,18 @@ Psychic  |`"TWISTED_SPOON"`<br/> `"ODD_INCENSE"`, `"MIND_PLATE"` *(Gen 4)* |
 Rock  |`"HARD_STONE"`<br/> `"ROCK_INCENSE"`, `"STONE_PLATE"` *(Gen 4)*    | 
 Steel  |`"METAL_COAT"`<br/> `"IRON_PLATE"` *(Gen 4)*    | 
 Water  |`"MYSTIC_WATER"`<br/> `"SEA_INCENSE"`, `"WAVE_INCENSE"`, `"SPLASH_PLATE"` *(Gen 4)*  | 
+
+###### EV-boosting items
+All these items stack with Pokérus and halve the speed.
+Item name | Effects
+- | -
+`"MACHO_BRACE"` | Doubles received EVs
+`"POWER_WEIGHT"` | Adds 4 HP EVs to base EV yields *(Gen 4)*
+`"POWER_BRACER"` | Adds 4 Attack EVs to base EV yields *(Gen 4)*
+`"POWER_BELT"` | Adds 4 Defense EVs to base EV yields *(Gen 4)*
+`"POWER_LENS"` | Adds 4 Special Attack EVs to base EV yields *(Gen 4)*
+`"POWER_BAND"` | Adds 4 Special Defense EVs to base EV yields *(Gen 4)*
+`"POWER_ANKLET"` | Adds 4 Speed EVs to base EV yields *(Gen 4)*
 
 ##### 5.3.3. Player money
   These commands only affect money, since there is no inventory management.  
