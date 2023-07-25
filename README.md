@@ -170,7 +170,8 @@ The `resources` folder contains most of the data used by the tool. You can look 
 ###### Species
 - `"evolve <SPECIES>"` : Changes your Pokemon to `SPECIES`. `SPECIES` only considers alphanumerical characters in a case-incensitive way.
   *aliases*: `"e"`, `"changeForm"`.
-> Examples :  
+> Examples :
+> 
 > `evolve COMBUSKEN // I'm Ryziken`  
 > `e MRMIME // This matches Mr. Mime`  
 > `e Mr_Mime // This also matches Mr. Mime`  
