@@ -170,7 +170,7 @@ The `resources` folder contains most of the data used by the tool. You can look 
 ##### 5.3.1. Player Pokemon
 
 ###### Species
-- `"evolve <SPECIES>"` : Changes your Pokemon to `SPECIES`. `SPECIES` only considers alphanumerical characters in a case-incensitive way.
+- `"evolve <SPECIES>"` : Changes your Pokemon to `SPECIES`. `SPECIES` only considers alphanumerical characters in a case-incensitive way.  
   *aliases*: `"e"`, `"changeForm"`.
 > Example :
 > ```
@@ -181,7 +181,7 @@ The `resources` folder contains most of the data used by the tool. You can look 
 > ```
   
 ###### Moves
-- `"learnMove <MOVE>"` : Learns move `MOVE`. `MOVE` only considers alphanumerical characters in a case-incensitive way.
+- `"learnMove <MOVE>"` : Learns move `MOVE`. `MOVE` only considers alphanumerical characters in a case-incensitive way.  
   *alias*: `"lm"`          
 > Examples :
 > ```
@@ -189,7 +189,7 @@ The `resources` folder contains most of the data used by the tool. You can look 
 > lm FURYSWIPES // This matches Fury Swipes
 > ```
   
- - `"unlearnMove <MOVE>"` : Unlearns move `MOVE`. `MOVE` only considers alphanumerical characters in a case-incensitive way.
+ - `"unlearnMove <MOVE>"` : Unlearns move `MOVE`. `MOVE` only considers alphanumerical characters in a case-incensitive way.  
   *alias*: `"um"`            
 > Example : 
 > ```
@@ -197,7 +197,7 @@ The `resources` folder contains most of the data used by the tool. You can look 
 > ```
   
 ###### Vitamins
-- `"rareCandy [QUANTITY]"` : Uses a Rare Candy on your Pokemon, `QUANTITY` times.  If specified, `QUANTITY` must be an integer bigger or equal to 1. If omitted, it defaults to `1`. 
+- `"rareCandy [QUANTITY]"` : Uses a Rare Candy on your Pokemon, `QUANTITY` times.  If specified, `QUANTITY` must be an integer bigger or equal to 1. If omitted, it defaults to `1`.  
   *alias*: `"rc"`  
 - `"hpup [QUANTITY]"`  : Uses an HP Up on your Pokemon, `QUANTITY` times.
  - `"protein [QUANTITY]"` : Uses a Protein on your Pokemon, `QUANTITY` times.
@@ -216,14 +216,15 @@ The `resources` folder contains most of the data used by the tool. You can look 
 - `"unsetPokerus"` : Deactivates Pokérus.
 
 ##### 5.3.2. Items
-- `"equipItem <ITEM>"` : Equips the item `ITEM`. If an item was already held, it is replaced by the specified one. `ITEM` only considers alphanumerical characters in a case-incensitive way.
+- `"equipItem <ITEM>"` : Equips the item `ITEM`. If an item was already held, it is replaced by the specified one. `ITEM` only considers alphanumerical characters in a case-incensitive way.  
  *alias* : `"equip"`
 > Example : 
 > ```
 > equip SOFTSAND // Mud Slap go brrrr
 > ```
 
-- `"unequip"` : Unequips the held item.
+- `"unequipItem"` : Unequips the held item.
+  *alias* : `"unequip"`
   
   Here is an exhaustive list of items which effects are implemented :
 ###### Money
@@ -316,11 +317,11 @@ This is useful when you route Pokémon you don't acquire/catch straight away.
 -  `"<NAME>"`  : Triggers a trainer battle against the trainer with name `NAME`.  
   
 ##### 5.4.2. Wild encounters
--  `"L<NUM> <SPECIES> [NATURE] [ABILITY] [GENDER] [<HP> <ATK> <DEF> <SPA> <SPD> <SPE>]"` : Triggers a wild battle against a level `NUM` `SPECIES` with desired `NATURE` `ABILITY`, `GENDER` and IVs.
--- if `NATURE` is ommited, it defaults to a neutral nature.
--- if `ABILITY` is ommited, it defaults to the first species' ability.
--- if `GENDER` is ommited, it defaults to the species' most predominent gender. Genders are either `"MALE"`, `"FEMALE"` or `"GENDERLESS"` (or their corresponding one-letter initial).
--- if IVs are ommited, defaults to `31` IV in each stat.
+-  `"L<NUM> <SPECIES> [NATURE] [ABILITY] [GENDER] [<HP> <ATK> <DEF> <SPA> <SPD> <SPE>]"` : Triggers a wild battle against a level `NUM` `SPECIES` with desired `NATURE` `ABILITY`, `GENDER` and IVs.  
+-- if `NATURE` is ommited, it defaults to a neutral nature.  
+-- if `ABILITY` is ommited, it defaults to the first species' ability.  
+-- if `GENDER` is ommited, it defaults to the species' most predominent gender. Genders are either `"MALE"`, `"FEMALE"` or `"GENDERLESS"` (or their corresponding one-letter initial).  
+-- if IVs are ommited, defaults to `31` IV in each stat.  
   *Wild encounters options :*  
 --- `"-trainer"` : Sets the wild encounter as a trainer Pokemon. Mainly gives access to the x1.5 experience multiplier.  
   *alias*: `"-t"`  
@@ -337,27 +338,27 @@ This is useful when you route Pokémon you don't acquire/catch straight away.
 
 ###### 5.4.3.1. Output
 -  `"-verbose <LEVEL>"` : Activates output with the detailled level `LEVEL`for the desired battle.  
--- `LEVEL` must be `NONE`, `SOME`, `MOST` or `EVERYTHING` (or their corresponding integer values `0`,`1`, `2` or `3`).
--- By default, if the `"-verbose"` option is not specified, then the battle is **still perfomed** but **not displayed** in the output file. 
-*alias* : `"-v"`
+-- `LEVEL` must be `NONE`, `SOME`, `MOST` or `EVERYTHING` (or their corresponding integer values `0`,`1`, `2` or `3`).  
+-- By default, if the `"-verbose"` option is not specified, then the battle is **still perfomed** but **not displayed** in the output file.  
+*alias* : `"-v"`  
 
 -  `"-levelUpStats"` : Outputs player Pokemon stats when a level up occurs during a battle.  
 *alias* : `"-lvStats"`
 -  `"-levelUpRanges"`  : Outputs player Pokemon ranges when a level up occurs during a battle.  
 *alias* : `"-lvRanges"`
-- `"-scenarioName <NAME>"` : Gives name `NAME` to the current fight. Useful when performing the same battle multiple times with different battle options.
+- `"-scenarioName <NAME>"` : Gives name `NAME` to the current fight. Useful when performing the same battle multiple times with different battle options.  
 *aliases* : `"-scenario"`, `"-name"`  
 
 ###### 5.4.3.2. Stat boosts
 In all options where the notation `<stat>` appears, it denotes `atk`, `def`, `spa` (Special Attack), `spd` (Special Defense) or `spe` (Speed).
-- `"x<stat>Use <NUM>"` : Boosts the `stat` `NUM` times for the entire duration of the fight (the syntax `x<stat>` is inspired from X Items).
+- `"x<stat>Use <NUM>"` : Boosts the `stat` `NUM` times for the entire duration of the fight (the syntax `x<stat>` is inspired from X Items).  
 -- `NUM` should be an integer between `-12` and `+12`. Positive numbers can omit the `+` sign.  
 > Example : 
 > ```
 > LANCE -xspdUse 1 -xspaUse 2 // Uses 1 X Speed & 2 X Special Attacks for the entire fight
 > ```  
   
-- `"x<stat>sUse <FIRST/SECOND/...>"` : Boosts the `stat` `FIRST` times on the first Pokémon, `SECOND` times on the second Pokémon, etc. 
+- `"x<stat>sUse <FIRST/SECOND/...>"` : Boosts the `stat` `FIRST` times on the first Pokémon, `SECOND` times on the second Pokémon, etc.  
 -- `FIRST`, `SECOND` ... should be integers between `-12` and `+12`. Positive numbers can omit the `+` sign.  
 *(Notice the `"s"` after the `"<stat>"` which denotes the plural form.)*
 > Example : 
@@ -376,38 +377,39 @@ If you want to enforce specific stat stages, use the commands below :
 > MIKEY -xatkSet 6 // Sets Attack stage to +6 ... but is this reasonable ?
 > ```
 
-- `"x<stat>sSet <FIRST/SECOND/...>"` : Sets `stat` to the stage `FIRST` for the first Pokémon, the stage `SECOND` for the second Pokémon, etc. 
+- `"x<stat>sSet <FIRST/SECOND/...>"` : Sets `stat` to the stage `FIRST` for the first Pokémon, the stage `SECOND` for the second Pokémon, etc.  
 -- `FIRST`, `SECOND` ... should be integers between `-6` and `+6`. Positive numbers can omit the `+` sign.  
-*(Notice the `"s"` after the `"<stat>"` which denotes the plural form.)*
+*(Notice the `"s"` after the `"<stat>"` which denotes the plural form.)*  
 > Example : 
 > ```
 > LUCIAN -xspasSet 0/1/1/2/2 // Enforces the Special Attack to be at stage 0 on the first Pokémon, at 1 on the second and third Pokémon, at 2 on the fourth and fifth Pokémon
 > ```  
 
 ###### 5.4.3.3. Experience
--  `"-sxp <NUM>"` : Shares earned experience, effectively dividing it by `NUM`. `NUM` must be a positive integer between `1` and `6`.
+-  `"-sxp <NUM>"` : Shares earned experience, effectively dividing it by `NUM`. `NUM` must be a positive integer between `1` and `6`.  
 > Example : 
 > ```
 > GARDENIA -sxp 2 // Divides all received EXP by 2, for example EXP. SHARE
 > ```
 
--  `"-sxps <FIRST>/<SECOND>..."` : Divides first enemy Pokemon experience by `FIRST`, the second by `SECOND`, etc.  `FIRST`, `SECOND` ... must be positive integers between `0` and `6`. A value of `0` denotes that the Pokémon doesn't battle the corresponding enemy, thus doesn't earn EXP nor EVs from it.
+-  `"-sxps <FIRST>/<SECOND>..."` : Divides first enemy Pokemon experience by `FIRST`, the second by `SECOND`, etc.
+--  `FIRST`, `SECOND` ... must be positive integers between `0` and `6`. A value of `0` denotes that the Pokémon doesn't battle the corresponding enemy, thus doesn't earn EXP nor EVs from it.  
 > Example : 
 > ```
 > RED -sxps 2/1/1/1/1/1 // Shares EXP on first Pokémon by 2, then fight remaining enemies normally. Could it be Shuckie strats ?
 > ```
 
 ###### 5.4.3.4. Weather
--  `"-weather <WEATHER>"` : Sets the weather `WEATHER` for the entire battle.
+-  `"-weather <WEATHER>"` : Sets the weather `WEATHER` for the entire battle.  
 -- `WEATHER` must be `NONE`, `RAIN`, `SUN`, `SANDSTORM` or`HAIL` (`NONE` can be replaced by `0`).  
-*alias* : `"-w"`
+*alias* : `"-w"`  
 > Example : 
 > ```
 > DALTON -weather HAIL // Damn harsh weather !
 > ``` 
 
--  `"-weathers <FIRST>/<SECOND>/...` Sets the weather `FIRST` for the first enemy Pokémon, weather `SECOND` for the second one, etc.
-*alias*: `-ws`
+-  `"-weathers <FIRST>/<SECOND>/...` Sets the weather `FIRST` for the first enemy Pokémon, weather `SECOND` for the second one, etc.  
+*alias*: `-ws`  
  
 > Example : 
 > ```
@@ -416,14 +418,14 @@ If you want to enforce specific stat stages, use the commands below :
 
 ###### 5.4.3.5. Status
 ###### Primary status
-- `"-xstatus <STATUS>"` : Sets the status `STATUS` for the entire duration of the fight. 
--- `STATUS` must be `NONE`, `SLEEP`, `POISON`, `BURN`, `FREEZE`, `PARALYSIS` or `TOXIC` (`NONE` can be replaced by `0`).
+- `"-xstatus <STATUS>"` : Sets the status `STATUS` for the entire duration of the fight.  
+-- `STATUS` must be `NONE`, `SLEEP`, `POISON`, `BURN`, `FREEZE`, `PARALYSIS` or `TOXIC` (`NONE` can be replaced by `0`).  
 > Example : 
 > ```
 > BRAWLY -xstatus BURN // Guts all the way !
 > ```
 
-- `"-xstatuses <FIRST>/<SECOND>/..."` : Sets the status `FIRST` for the first Pokémon, `SECOND` for the second Pokémon, etc. 
+- `"-xstatuses <FIRST>/<SECOND>/..."` : Sets the status `FIRST` for the first Pokémon, `SECOND` for the second Pokémon, etc.  
 > Example : 
 > ```
 > MARS -xstatuses PSN/NONE // Poisoned on first Pokémon, healing on second
@@ -431,15 +433,15 @@ If you want to enforce specific stat stages, use the commands below :
 
 ###### Secondary status and field
 
-- `"-xstatus2 <MOD1>[+MOD2+...]"` : Sets a list of battle modifiers for the entire duration of the fight.
--- This reads as a single modifier `MOD1` or a list of `+`-separated such modifiers.
+- `"-xstatus2 <MOD1>[+MOD2+...]"` : Sets a list of battle modifiers for the entire duration of the fight.  
+-- This reads as a single modifier `MOD1` or a list of `+`-separated such modifiers.  
 > Example : 
 > ```
 > TATEANDLIZA -ystatus2 REFLECT+LIGHTSCREEN // The enemy side sets up both screens for the whole fight
 > ```
 
-- `"-xstatuses2 <FIRST>/<SECOND>/..."` : Sets a list of battle modifiers for each Pokémon : `FIRST` for the first, `SECOND` for the second, etc.
--- For example, `<FIRST>` is either a single modifier `MOD1` or a list of `+`-separated such modifiers.
+- `"-xstatuses2 <FIRST>/<SECOND>/..."` : Sets a list of battle modifiers for each Pokémon : `FIRST` for the first, `SECOND` for the second, etc.  
+-- For example, `<FIRST>` is either a single modifier `MOD1` or a list of `+`-separated such modifiers.  
 > Example : 
 > ```
 > LUCIAN -ystatuses2 REFLECT+LIGHTSCREEN/0/0/0/0 // Screens only up against the first Pokémon
@@ -486,50 +488,52 @@ Here is the exhautive list of implemented modifiers :
     2. Use the `"-singleTargetDamage"` option ;
     3. Use the `"-order"` as will be described in the next section.
 
-- Furthermore, some double battles are actually not doubles by default from the game data perspective. This is the case for simultaneous opponent fights (Galaxy double in Lake Verity in Gen 4) or "true" double battles (Player+Steven vs. Maxie+Tabitha in Mossdeep Space Center in Emerald, or Player+Barry vs. Mars+Jupiter in Spear Pillar in DPPt). This is where the options `"-xpartner"` and `"-ypartner"` must be used to ensure the proper behaviour. These two commands have different effects depending on if they are used separately or altogether :
--- If `"-xpartner"` is used, then the experience is not shared and the damage are calculated with multi target policy by default.
--- Otherwise, if only `"-ypartner"` is used, then the tool assumes the fight is of the kind of the one described at the first bullet point of this section.
+- Furthermore, some double battles are actually not doubles by default from the game data perspective. This is the case for simultaneous opponent fights (Galaxy double in Lake Verity in Gen 4) or "true" double battles (Player+Steven vs. Maxie+Tabitha in Mossdeep Space Center in Emerald, or Player+Barry vs. Mars+Jupiter in Spear Pillar in DPPt). This is where the options `"-xpartner"` and `"-ypartner"` must be used to ensure the proper behaviour. These two commands have different effects depending on if they are used separately or altogether :  
+-- If `"-xpartner"` is used, then the experience is not shared and the damage are calculated with multi target policy by default.  
+-- Otherwise, if only `"-ypartner"` is used, then the tool assumes the fight is of the kind of the one described at the first bullet point of this section.  
   
 ###### 5.4.3.7. Order
-- `"-order <FIRST>[/SECOND...]"` : Switches the enemy team order.
-  -- For example, if `FIRST` represents a single enemy, then it is an integer representing the index of the enemy Pokémon in the original party order. This index must be between `1` and the maximum number of Pokémon in the enemy party. If `FIRST` represents two enemies attacked simultaneously, then it must be two indices separated with a `+`.
+- `"-order <FIRST>[/SECOND...]"` : Switches the enemy team order.  
+  -- For example, if `FIRST` represents a single enemy, then it is an integer representing the index of the enemy Pokémon in the original party order. This index must be between `1` and the maximum number of Pokémon in the enemy party. If `FIRST` represents two enemies attacked simultaneously, then it must be two indices separated with a `+`.  
   
 > Example : (single battle)  
-> In Diamond/Pearl, the original party order of Cynthia is the following :
-> #1 Spiritomb, #2 Roserade, #3 Gastrodon, #4 Lucario, #5 Milotic, #6 Garchomp
-> However, when leading an Infernape, Cynthia sends her party in this new order :
-> #1 Spiritomb, #3 Gastrodon, #5 Milotic, #6 Garchomp, #2 Roserade, #4 Lucario
-> Consequently, the correct command for this fight is :
+> In Diamond/Pearl, the original party order of Cynthia is the following :  
+> #1 Spiritomb, #2 Roserade, #3 Gastrodon, #4 Lucario, #5 Milotic, #6 Garchomp  
+> However, when leading an Infernape, Cynthia sends her party in this new order :  
+> #1 Spiritomb, #3 Gastrodon, #5 Milotic, #6 Garchomp, #2 Roserade, #4 Lucario  
+> Consequently, the correct command for this fight is :  
 > ```
 > CYNTHIA -order 1/3/5/6/2/4
 > ```  
 
 > Example : (double battle)  
-> In Emerald, the original party order of Tate & Liza is the following :
-> #1 Claydol, #2 Xatu, #3 Lunatone, #4 Solrock
-> When fighting with Swampert, the perfect fight scenario involves sacking all the player Pokémon other than Swampert, then take Claydol and Xatu down simultaneously, then take Solrock and Lunatone down simultaneously. This can be achieved with the following options :
+> In Emerald, the original party order of Tate & Liza is the following :  
+> #1 Claydol, #2 Xatu, #3 Lunatone, #4 Solrock  
+> When fighting with Swampert, the perfect fight scenario involves sacking all the player Pokémon other than Swampert, then take Claydol and Xatu down simultaneously, then take Solrock and Lunatone down simultaneously. This can be achieved with the following options :  
 > ```
 > TATE&LIZA -order 1+2/3+4 -sxp 1
 > ```  
 
 > Example : (true battle)  
-> In Platinum, the player and Barry both face Mars and Jupiter in a true double battle. The original enemy party orders are the following :
-> Mars : #1 Bronzor (M), #2 Golbat (M), #3 Purugly
-> Jupiter : #1 Bronzor (J), #2 Golbat (J), #3 Skuntank
-> Let's associate the two with the `"-ypartner"` command :
-> `MARS -ypartner JUPITER -xpartner BARRY`
-> The new enemy party is referenced by appending Jupiter's party to Mars' :
-> #1 Bronzor (M), #2 Golbat (M), #3 Purugly, #4 Bronzor (J), #5 Golbat (J), #6 Skuntank
-> However, they lead with both Bronzor. Additionally, leading with an Empoleon, they are taken down simultaneously, then Skuntank and Purugly, then both Golbats. We end up with the following command :
+> In Platinum, the player and Barry both face Mars and Jupiter in a true double battle. The original enemy party orders are the following :  
+> Mars : #1 Bronzor (M), #2 Golbat (M), #3 Purugly  
+> Jupiter : #1 Bronzor (J), #2 Golbat (J), #3 Skuntank  
+> Let's associate the two with the `"-ypartner"` command :  
+> ```
+> MARS -ypartner JUPITER -xpartner BARRY
+> ```
+> The new enemy party is referenced by appending Jupiter's party to Mars' :  
+> #1 Bronzor (M), #2 Golbat (M), #3 Purugly, #4 Bronzor (J), #5 Golbat (J), #6 Skuntank  
+> However, they lead with both Bronzor. Additionally, leading with an Empoleon, they are taken down simultaneously, then Skuntank and Purugly, then both Golbats. We end up with the following command :  
 > ```
 > MARS -ypartner JUPITER -xpartner BARRY -order 1+4/3+6/2+5
 > ```  
 
 ###### 5.4.3.8. Multiple scenarii fights
-One might want to perform the same fight with multiple options. The next option provides a way to do so without performing multiple compilations :
-- `"-backtrack"` : After the current battle is performed, backtracks to the player state prior to said battle. 
+One might want to perform the same fight with multiple options. The next option provides a way to do so without performing multiple compilations :  
+- `"-backtrack"` : After the current battle is performed, backtracks to the player state prior to said battle.  
 > Example :
-> Let's say we want damage ranges on Cyrus with 1 X Special, then with 2 X Specials. This can be done with :
+> Let's say we want damage ranges on Cyrus with 1 X Special, then with 2 X Specials. This can be done with :  
 > ```
 > CYRUS -xspause 1 -v 1 -scenario CYRUS_1_X_SPA -backtrack
 > CYRUS -xspause 2 -v 1 -scenario CYRUS_2_X_SPA
