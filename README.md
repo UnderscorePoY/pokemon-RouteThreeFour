@@ -62,11 +62,11 @@ If an error is encountered during the execution of the tool, it is displayed bot
 The setup files gather both the master file (unique) and the config files (multiple).  
 They are each separated into sections, which name is provided between square brackets.  
 > Example :
-> - `[mySection]` represents a section name called `mySection`.
+> `[mySection]` represents a section name called `mySection`.
   
 Each section contains a certain number of key-value pairs in the following format : `key = value`.  
 > Example :
-> - `species = MUDKIP` assigns the value `MUDKIP` to the key `species`.
+> `species = MUDKIP` assigns the value `MUDKIP` to the key `species`.
 
 When values are filenames, they are case sensitive. Otherwise, they are case insensitive. Which key-value pairs represent a filename or not are described below.  
 > Examples :
@@ -172,11 +172,13 @@ The `resources` folder contains most of the data used by the tool. You can look 
 ###### Species
 - `"evolve <SPECIES>"` : Changes your Pokemon to `SPECIES`. `SPECIES` only considers alphanumerical characters in a case-incensitive way.
   *aliases*: `"e"`, `"changeForm"`.
-> Examples :
-> - `evolve COMBUSKEN // I'm Ryziken`  
-> - `e MRMIME // This matches Mr. Mime`  
-> - `e Mr_Mime // This also matches Mr. Mime`  
-> - `changeForm WORMADAM_TRASH // We just battled in a building`
+> Example :
+> ```
+> evolve COMBUSKEN // I'm Ryziken
+> e MRMIME // This matches Mr. Mime 
+> e Mr_Mime // This also matches Mr. Mime` 
+> changeForm WORMADAM_TRASH // We just battled in a building
+> ```
   
 ###### Moves
 - `"learnMove <MOVE>"` : Learns move `MOVE`. `MOVE` only considers alphanumerical characters in a case-incensitive way.
