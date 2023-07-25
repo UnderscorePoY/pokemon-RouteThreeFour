@@ -14,7 +14,7 @@ It is derived from a custom RouteThree, itself derived from Dabomstew & entrpntr
 ► Changed syntax for a variety of commands, refer to the detailled documentation below.  
 ► Changed syntax for a variety of trainer aliases.  
 
-<details><summary> Show previous updates </summary>  
+<details><summary> **Show/hide previous updates** </summary>  
 
 **`[2022/01/17]` - v0.3.1**  
 ○ Added `-noDoubleBattle`/`-nodouble` command to force single battles.  
