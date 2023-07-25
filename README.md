@@ -14,7 +14,7 @@ It is derived from a custom RouteThree, itself derived from Dabomstew & entrpntr
 ○ Added Diamond/Pearl/Platinum/HeartGold/SoulSilver support.  
 ► Changed syntax for a variety of commands, refer to the detailled documentation below.  
 ► Changed syntax for a variety of trainer aliases.  
-  (Users of former version are advised to install this update in another folder if they don't want to update their old route files.)
+  (Users of former versions are advised to install this update in another folder if they don't want to update their old route files.)
 
 <details><summary> Show/hide previous updates </summary>  
 
