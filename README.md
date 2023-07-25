@@ -2,42 +2,6 @@
 RouteThreeFour is a routing tool for Generation 3 & 4 Pokémon games speedrunning (Ruby/Sapphire/Emerald/FireRed/LeafGreen & Diamond/Pearl/Platinum/HeartGold/SoulSilver).  
 It is derived from a custom RouteThree, itself derived fro Dabomstew & entrpntr's RouteTwo, itself derived from HRoll's RouteOne.
 
-### TABLE OF CONTENTS
-1. [LATEST CHANGES](#1-latest-changes)
-2. [INSTALLATION](#2-installation)
-3. [CONFIGURATION FILES](#3-CONFIGURATION-FILES)
-	1. [Master file](#31-Master-file)
-	2. [Configuration files](#32-Configuration-files)
-4. [PRELIMINARY NOTES FOR ROUTE FILES](#4-PRELIMINARY-NOTES-FOR-ROUTE-FILES)
-5. [MAKING A ROUTE FILE](#5-making-a-route-file)
-   1. [Comments](#51-comments)
-   2. [Generic output](#52-generic-output)
-      1. [Money](#521-money)
-	  2. [Stats](#522-stats)
-   3. [Player Pokemon utility](#53-player-pokemon-utility)
-      1. [Player Pokemon](#531-player-pokemon)
-	  2. [Items](#532-items)
-	  3. [Player money](#533-player-money)
-	  4. [Badges](#534-badges)
-   4. [Battles](#54-battles)
-      1. [Trainers](#541-trainers)
-	  2. [Wild encounters](#542-wild-encounters)
-	  3. [Battle options](#543-battle-options)
-		 1. [Stat boosts](#5431-stat-boosts)
-		 2. [Experience](#5432-experience)
-		 3. [Weather](#5433-weather)
-		 4. [Status](#5434-status)
-		 5. [Various modifiers](#5435-Various-modifiers)
-		 6. [Order](#5436-order)
-		 7. [Double battle](#5437-double-battle)
-		 8. [Output](#5438-output)
-6. [KNOWN ISSUES](#6-known-issues)
-7. [TODOS](#7-todos)
-8. [CONTACT INFO AND ACKNOWLEDGEMENTS](#8-contact-info-and-acknowledgements)
-   1. [Communities](#81-communities)
-   2. [Coders](#82-coders)
-
-
 ### 1. LATEST CHANGES
 *Syntax :*    
 **`[YYYY/MM/DD]` - version**  
