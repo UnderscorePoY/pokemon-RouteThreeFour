@@ -1,0 +1,776 @@
+[
+    {
+        "trainerClass": "PKMN_TRAINER_ETHAN",
+        "id": 0,
+        "money": 0,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "PKMN_TRAINER_LYRA",
+        "id": 1,
+        "money": 0,
+        "genderOrCount": 1
+    },
+    {
+        "trainerClass": "YOUNGSTER",
+        "id": 2,
+        "money": 4,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "LASS",
+        "id": 3,
+        "money": 4,
+        "genderOrCount": 1
+    },
+    {
+        "trainerClass": "CAMPER",
+        "id": 4,
+        "money": 4,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "PICNICKER",
+        "id": 5,
+        "money": 4,
+        "genderOrCount": 1
+    },
+    {
+        "trainerClass": "BUG_CATCHER",
+        "id": 6,
+        "money": 4,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "AROMA_LADY",
+        "id": 7,
+        "money": 8,
+        "genderOrCount": 1
+    },
+    {
+        "trainerClass": "TWINS",
+        "id": 8,
+        "money": 4,
+        "genderOrCount": 1
+    },
+    {
+        "trainerClass": "HIKER",
+        "id": 9,
+        "money": 8,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "BATTLE_GIRL",
+        "id": 10,
+        "money": 4,
+        "genderOrCount": 1
+    },
+    {
+        "trainerClass": "FISHERMAN",
+        "id": 11,
+        "money": 8,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "CYCLIST_M",
+        "id": 12,
+        "money": 8,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "CYCLIST_F",
+        "id": 13,
+        "money": 8,
+        "genderOrCount": 1
+    },
+    {
+        "trainerClass": "BLACK_BELT",
+        "id": 14,
+        "money": 6,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "ARTIST",
+        "id": 15,
+        "money": 12,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "PKMN_BREEDER_M",
+        "id": 16,
+        "money": 12,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "PKMN_BREEDER_F",
+        "id": 17,
+        "money": 12,
+        "genderOrCount": 1
+    },
+    {
+        "trainerClass": "COWGIRL",
+        "id": 18,
+        "money": 4,
+        "genderOrCount": 1
+    },
+    {
+        "trainerClass": "JOGGER",
+        "id": 19,
+        "money": 8,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "POKEFAN_M",
+        "id": 20,
+        "money": 16,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "POKEFAN",
+        "id": 21,
+        "money": 16,
+        "genderOrCount": 1
+    },
+    {
+        "trainerClass": "POKE_KID",
+        "id": 22,
+        "money": 2,
+        "genderOrCount": 1
+    },
+    {
+        "trainerClass": "RIVAL",
+        "id": 23,
+        "money": 16,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "ACE_TRAINER_M",
+        "id": 24,
+        "money": 15,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "ACE_TRAINER_F",
+        "id": 25,
+        "money": 15,
+        "genderOrCount": 1
+    },
+    {
+        "trainerClass": "WAITRESS",
+        "id": 26,
+        "money": 8,
+        "genderOrCount": 1
+    },
+    {
+        "trainerClass": "VETERAN",
+        "id": 27,
+        "money": 20,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "NINJA_BOY",
+        "id": 28,
+        "money": 2,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "DRAGON_TAMER",
+        "id": 29,
+        "money": 8,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "BIRD_KEEPER",
+        "id": 30,
+        "money": 8,
+        "genderOrCount": 1
+    },
+    {
+        "trainerClass": "JUGGLER",
+        "id": 31,
+        "money": 8,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "RICH_BOY",
+        "id": 32,
+        "money": 40,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "LADY",
+        "id": 33,
+        "money": 40,
+        "genderOrCount": 1
+    },
+    {
+        "trainerClass": "GENTLEMAN",
+        "id": 34,
+        "money": 50,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "SOCIALITE",
+        "id": 35,
+        "money": 50,
+        "genderOrCount": 1
+    },
+    {
+        "trainerClass": "BEAUTY",
+        "id": 36,
+        "money": 14,
+        "genderOrCount": 1
+    },
+    {
+        "trainerClass": "COLLECTOR",
+        "id": 37,
+        "money": 16,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "POLICEMAN",
+        "id": 38,
+        "money": 10,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "PKMN_RANGER_M",
+        "id": 39,
+        "money": 15,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "PKMN_RANGER_F",
+        "id": 40,
+        "money": 15,
+        "genderOrCount": 1
+    },
+    {
+        "trainerClass": "SCIENTIST",
+        "id": 41,
+        "money": 12,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "SWIMMER_M",
+        "id": 42,
+        "money": 4,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "SWIMMER_F",
+        "id": 43,
+        "money": 4,
+        "genderOrCount": 1
+    },
+    {
+        "trainerClass": "TUBER_M",
+        "id": 44,
+        "money": 1,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "TUBER_F",
+        "id": 45,
+        "money": 1,
+        "genderOrCount": 1
+    },
+    {
+        "trainerClass": "SAILOR",
+        "id": 46,
+        "money": 8,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "KIMONO_GIRL",
+        "id": 47,
+        "money": 30,
+        "genderOrCount": 1
+    },
+    {
+        "trainerClass": "RUIN_MANIAC",
+        "id": 48,
+        "money": 12,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "PSYCHIC_M",
+        "id": 49,
+        "money": 8,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "PSYCHIC_F",
+        "id": 50,
+        "money": 8,
+        "genderOrCount": 1
+    },
+    {
+        "trainerClass": "PI",
+        "id": 51,
+        "money": 30,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "GUITARIST",
+        "id": 52,
+        "money": 6,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "ACE_TRAINER_M_GS",
+        "id": 53,
+        "money": 15,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "ACE_TRAINER_F_GS",
+        "id": 54,
+        "money": 15,
+        "genderOrCount": 1
+    },
+    {
+        "trainerClass": "TEAM_ROCKET",
+        "id": 55,
+        "money": 10,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "SKIER",
+        "id": 56,
+        "money": 8,
+        "genderOrCount": 1
+    },
+    {
+        "trainerClass": "ROUGHNECK",
+        "id": 57,
+        "money": 6,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "CLOWN",
+        "id": 58,
+        "money": 6,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "WORKER",
+        "id": 59,
+        "money": 10,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "SCHOOL_KID_M",
+        "id": 60,
+        "money": 5,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "SCHOOL_KID_F",
+        "id": 61,
+        "money": 5,
+        "genderOrCount": 1
+    },
+    {
+        "trainerClass": "TEAM_ROCKET_F",
+        "id": 62,
+        "money": 10,
+        "genderOrCount": 1
+    },
+    {
+        "trainerClass": "BURGLAR",
+        "id": 63,
+        "money": 4,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "FIREBREATHER",
+        "id": 64,
+        "money": 8,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "BIKER",
+        "id": 65,
+        "money": 4,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "LEADER_FALKNER",
+        "id": 66,
+        "money": 30,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "LEADER_BUGSY",
+        "id": 67,
+        "money": 30,
+        "genderOrCount": 1
+    },
+    {
+        "trainerClass": "POKE_MANIAC",
+        "id": 68,
+        "money": 16,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "BIRD_KEEPER_GS",
+        "id": 69,
+        "money": 8,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "LEADER_WHITNEY",
+        "id": 70,
+        "money": 30,
+        "genderOrCount": 1
+    },
+    {
+        "trainerClass": "RANCHER",
+        "id": 71,
+        "money": 10,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "LEADER_MORTY",
+        "id": 72,
+        "money": 30,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "LEADER_PRYCE",
+        "id": 73,
+        "money": 30,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "LEADER_JASMINE",
+        "id": 74,
+        "money": 30,
+        "genderOrCount": 1
+    },
+    {
+        "trainerClass": "LEADER_CHUCK",
+        "id": 75,
+        "money": 30,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "LEADER_CLAIR",
+        "id": 76,
+        "money": 30,
+        "genderOrCount": 1
+    },
+    {
+        "trainerClass": "TEACHER",
+        "id": 77,
+        "money": 12,
+        "genderOrCount": 1
+    },
+    {
+        "trainerClass": "SUPER_NERD",
+        "id": 78,
+        "money": 12,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "SAGE",
+        "id": 79,
+        "money": 12,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "PARASOL_LADY",
+        "id": 80,
+        "money": 8,
+        "genderOrCount": 1
+    },
+    {
+        "trainerClass": "WAITER",
+        "id": 81,
+        "money": 8,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "MEDIUM",
+        "id": 82,
+        "money": 12,
+        "genderOrCount": 1
+    },
+    {
+        "trainerClass": "CAMERAMAN",
+        "id": 83,
+        "money": 8,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "REPORTER",
+        "id": 84,
+        "money": 10,
+        "genderOrCount": 1
+    },
+    {
+        "trainerClass": "IDOL",
+        "id": 85,
+        "money": 18,
+        "genderOrCount": 1
+    },
+    {
+        "trainerClass": "CHAMPION",
+        "id": 86,
+        "money": 50,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "ELITE_FOUR_WILL",
+        "id": 87,
+        "money": 30,
+        "genderOrCount": 1
+    },
+    {
+        "trainerClass": "ELITE_FOUR_KAREN",
+        "id": 88,
+        "money": 30,
+        "genderOrCount": 1
+    },
+    {
+        "trainerClass": "ELITE_FOUR_KOGA",
+        "id": 89,
+        "money": 30,
+        "genderOrCount": 2
+    },
+    {
+        "trainerClass": "PKMN_TRAINER_CHERYL",
+        "id": 90,
+        "money": 30,
+        "genderOrCount": 1
+    },
+    {
+        "trainerClass": "PKMN_TRAINER_RILEY",
+        "id": 91,
+        "money": 30,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "PKMN_TRAINER_BUCK",
+        "id": 92,
+        "money": 30,
+        "genderOrCount": 1
+    },
+    {
+        "trainerClass": "PKMN_TRAINER_MIRA",
+        "id": 93,
+        "money": 30,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "PKMN_TRAINER_MARLEY",
+        "id": 94,
+        "money": 30,
+        "genderOrCount": 1
+    },
+    {
+        "trainerClass": "PKMN_TRAINER_FTR_LUCAS",
+        "id": 95,
+        "money": 25,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "PKMN_TRAINER_FTR_DAWN",
+        "id": 96,
+        "money": 25,
+        "genderOrCount": 1
+    },
+    {
+        "trainerClass": "TOWER_TYCOON",
+        "id": 97,
+        "money": 0,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "LEADER_BROCK",
+        "id": 98,
+        "money": 30,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "HALL_MATRON",
+        "id": 99,
+        "money": 0,
+        "genderOrCount": 1
+    },
+    {
+        "trainerClass": "FACTORY_HEAD",
+        "id": 100,
+        "money": 0,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "ARCADE_STAR",
+        "id": 101,
+        "money": 0,
+        "genderOrCount": 1
+    },
+    {
+        "trainerClass": "CASTLE_VALET",
+        "id": 102,
+        "money": 0,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "LEADER_MISTY",
+        "id": 103,
+        "money": 30,
+        "genderOrCount": 1
+    },
+    {
+        "trainerClass": "LEADER_LT_SURGE",
+        "id": 104,
+        "money": 30,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "LEADER_ERIKA",
+        "id": 105,
+        "money": 30,
+        "genderOrCount": 1
+    },
+    {
+        "trainerClass": "LEADER_JANINE",
+        "id": 106,
+        "money": 30,
+        "genderOrCount": 1
+    },
+    {
+        "trainerClass": "LEADER_SABRINA",
+        "id": 107,
+        "money": 30,
+        "genderOrCount": 1
+    },
+    {
+        "trainerClass": "LEADER_BLAINE",
+        "id": 108,
+        "money": 30,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "PKMN_TRAINER_RED",
+        "id": 109,
+        "money": 50,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "LEADER_BLUE",
+        "id": 110,
+        "money": 40,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "ELDER",
+        "id": 111,
+        "money": 30,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "ELITE_FOUR_BRUNO",
+        "id": 112,
+        "money": 30,
+        "genderOrCount": 2
+    },
+    {
+        "trainerClass": "SCIENTIST_GS",
+        "id": 113,
+        "money": 8,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "EXECUTIVE_ARIANA",
+        "id": 114,
+        "money": 20,
+        "genderOrCount": 1
+    },
+    {
+        "trainerClass": "BOARDER",
+        "id": 115,
+        "money": 8,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "EXECUTIVE_ARCHER",
+        "id": 116,
+        "money": 20,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "EXECUTIVE_PROTON",
+        "id": 117,
+        "money": 10,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "EXECUTIVE_PETREL",
+        "id": 118,
+        "money": 10,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "PASSERBY",
+        "id": 119,
+        "money": 25,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "MYSTERY_MAN",
+        "id": 120,
+        "money": 30,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "DOUBLE_TEAM",
+        "id": 121,
+        "money": 30,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "YOUNG_COUPLE",
+        "id": 122,
+        "money": 16,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "PKMN_TRAINER_LANCE",
+        "id": 123,
+        "money": 0,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "ROCKET_BOSS",
+        "id": 124,
+        "money": 45,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "PKMN_TRAINER_LUCAS_DP",
+        "id": 125,
+        "money": 0,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "PKMN_TRAINER_DAWN_DP",
+        "id": 126,
+        "money": 0,
+        "genderOrCount": 1
+    },
+    {
+        "trainerClass": "PKMN_TRAINER_LUCAS_PT",
+        "id": 127,
+        "money": 0,
+        "genderOrCount": 0
+    },
+    {
+        "trainerClass": "PKMN_TRAINER_DAWN_PT",
+        "id": 128,
+        "money": 0,
+        "genderOrCount": 1
+    }
+]

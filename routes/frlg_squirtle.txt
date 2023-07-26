@@ -1,0 +1,199 @@
+// ***** Squirtle Route (High Exp) ***** //
+// Link : https://frlg-speedruns.netlify.app/routes/any-squirtle/
+
+stats
+ranges
+
+// OAK'S LAB - ROUTE 1/2 //
+RIVAL_OAKS_LAB_BULBASAUR -v 2 -lvstats
+
+L2 RATTATA HARDY -v 1 -lvstats
+
+// VIRIDIAN FOREST //
+BUG_CATCHER_SAMMY -ydef -1 -v 2 -lvstats
+lm BUBBLE
+
+// PEWTER CITY //
+CAMPER_LIAM -xtorrent -v 2 -lvstats
+LEADER_BROCK -xtorrent -v 2 -lvstats
+lm WATERGUN
+um TAILWHIP
+
+buy 8 POTION
+buy 3 ANTIDOTE
+buy 3 AWAKENING
+buy 3 REPEL
+money
+
+// ROUTE 3 //
+BUG_CATCHER_COLTON -xtorrent -v 2 -lvstats
+BUG_CATCHER_GREG -xtorrent -v 2 -lvstats
+BUG_CATCHER_JAMES -xtorrent -v 2 -lvstats
+
+// MT MOON //
+BUG_CATCHER_ROBBY -xtorrent -v 2 -lvstats // if Torrent for L16
+//YOUNGSTER_JOSH -xtorrent -v 2 -lvstats // if Torrent at L15 and want to keep torrent
+//TEAM_ROCKET_GRUNT_4 -xtorrent -v 2 -lvstats // if you can take a hit from Hyper Fang
+//HIKER_MARCOS -xtorrent -v 2 -lvstats // no Torrent and can not tank Hyper Fang
+
+evolve WARTORTLE
+TEAM_ROCKET_GRUNT -xtorrent -v 2 -lvstats
+SUPER_NERD_MIGUEL -xtorrent -v 2 -lvstats
+
+// ROUTE 4 //
+lm MEGAKICK
+
+// CERULEAN CITY //
+rarecandy
+rarecandy
+lm BITE
+um BUBBLE
+LEADER_MISTY -v 2 -lvstats
+lm WATERPULSE
+um TACKLE
+
+// NUGGET BRIDGE //
+RIVAL_CERULEAN_BULBASAUR -order 1/4/2/3 -v 2 -lvstats
+BUG_CATCHER_CALE -v 2 -lvstats
+LASS_ALI -v 2 -lvstats
+YOUNGSTER_TIMMY -v 2 -lvstats
+LASS_RELI -v 2 -lvstats
+CAMPER_ETHAN -v 2 -lvstats
+TEAM_ROCKET_GRUNT_6 -v 2 -lvstats
+
+// ROUTE 25 //
+HIKER_WAYNE -v 2 -lvstats
+PICNICKER_KELSEY -v 2 -lvstats
+CAMPER_FLINT -v 2 -lvstats // Flint or Nob
+//HIKER_NOB -v 2 -lvstats // if Torrent for L27 and 28+ SPE IV
+LASS_HALEY -v 2 -lvstats
+
+// CERULEAN CITY //
+TEAM_ROCKET_GRUNT_5 -v 2 -lvstats
+
+// ROUTE 6 //
+CAMPER_JEFF -v 2 -lvstats 
+
+// VERMILLION CITY //
+buy 5 SUPERPOTION
+buy 3 PARLYZHEAL
+buy 3 REPEL
+money
+
+// SS ANNE //
+rarecandy
+RIVAL_SS_ANNE_BULBASAUR -order 1/4/2/3 -xtorrent -v 2 -lvstats
+
+// VERMILLION CITY //
+GENTLEMAN_TUCKER -v 2 -lvstats 
+LEADER_LT_SURGE -v 2 -lvstats 
+
+// ROUTE 9-10 //
+PICNICKER_ALICIA -v 2 -lvstats 
+BUG_CATCHER_CONNER -v 2 -lvstats 
+
+// ROCK TUNNEL //
+POKEMANIAC_ASHTON -v 2 -lvstats
+POKEMANIAC_WINSTON -v 2 -lvstats
+PICNICKER_MARTHA -v 2 -lvstats
+HIKER_ERIC -v 1 -lvstats
+HIKER_OLIVER -v 1 -lvstats
+PICNICKER_SOFIA -v 1 -lvstats
+HIKER_DUDLEY -v 1 -lvstats
+PICNICKER_DANA -v 1 -lvstats
+
+// LAVENDER TOWN //
+buy 4 ESCAPEROPE
+buy 7 SUPERREPEL
+money
+
+// ROUTE 8 //
+GAMER_RICH -v 1 -lvstats
+
+// CELADON CITY //
+TEAM_ROCKET_GRUNT_7 -v 2 -lvstats
+rarecandy
+rarecandy
+TEAM_ROCKET_GRUNT_18 -v 2 -lvstats
+TEAM_ROCKET_GRUNT_16 -order 1/3/2 -v 2 -lvstats
+TEAM_ROCKET_GRUNT_17 -xtorrent -v 2 -lvstats
+evolve BLASTOISE
+BOSS_GIOVANNI -xtorrent -v 2 -lvstats
+
+// CELADON CITY //
+// if Low on Mega Kick or high HP after Giovanni
+//buy 5 XSPEED
+//buy 21 XSPECIAL
+//buy 4 XACCURACY
+//buy 2 GUARDSPEC
+
+// if 2-3 PP of Mega Kick left
+buy 1 XATTACK
+buy 5 XSPEED
+buy 18 XSPECIAL
+buy 5 XACCURACY
+buy 3 GUARDSPEC
+
+equip BLACKGLASSES
+
+// LAVENDER TOWER //
+//RIVAL_POKENON_TOWER_BULBASAUR -order 1/5/2/3/4 -xacc 1 -xatk 1 -yovergrow -v 2 -lvstats// X Attack strategy
+RIVAL_POKENON_TOWER_BULBASAUR -order 1/5/2/3/4 -xtorrent -xspa 2 -xacc 1 -v 2 -lvstats // X Special strategy
+
+CHANNELER_TAMMY -v 1 -lvstats
+CHANNELER_JENNIFER -v 1 -lvstats
+CHANNELER_EMILIA -v 1 -lvstats
+L30 MAROWAK SERIOUS -v 2 -lvstats // all 31 IVs by default
+
+TEAM_ROCKET_GRUNT_19 -v 1 -lvstats
+TEAM_ROCKET_GRUNT_20 -v 1 -lvstats
+TEAM_ROCKET_GRUNT_21 -order 1/4/2/3 -v 2 -lvstats
+
+// SAFARI ZONE //
+rarecandy
+rarecandy
+
+// FUCHSIA GYM //
+lm SURF
+um WATERGUN
+JUGGLER_KIRK -v 2 -lvstats
+LEADER_KOGA -xtorrent -xspas 0/1/1/1 -v 2 -lvstats
+
+// CINNABAR ISLAND //
+lm BLIZZARD
+um MEGAKICK
+// carbos // if the chart tells you to
+
+LEADER_BLAINE -xtorrent -xspe 1 -v 2 -lvstats
+
+// CELADON GYM //
+BEAUTY_TAMIA -v 1 -lvstats
+BEAUTY_LORI -v 1 -lvstats
+LEADER_ERIKA -v 2 -lvstats
+
+// SILPH CO //
+RIVAL_SILPH_BULBASAUR -order 1/5/2/3/4 -xspa 2 -xacc 1 -v 2 -lvstats // 1 or 2 X Specials, check notes
+
+TEAM_ROCKET_GRUNT_41 -order 1/3/2 -v 1 -lvstats
+BOSS_GIOVANNI_2 -order 1/4/2/3 -xtorrent -v 2 -lvstats
+
+// SAFFRON GYM //
+LEADER_SABRINA -xtorrent -xspes 0/0/1/1 -v 2 -lvstats
+
+// VIRIDIAN GYM //
+BLACK_BELT_TAKASHI -v 1 -lvstats
+COOLTRAINER_WARREN -v 1 -lvstats
+LEADER_GIOVANNI -order 1/2/4/3/5 -v 2 -lvstats
+
+// ROUTE 22 //
+RIVAL_ROUTE22_LATE_BULBASAUR -order 1/6/2/3/4/5 -xspa 2 -xacc 1 -xspes 0/0/0/0/1/1 -weathers 0/0/0/RAIN/RAIN/RAIN -v 2 -lvstats
+
+// ELITE FOUR //
+ELITE_FOUR_LORELEI -xspa 4 -weather HAIL -v 2 -lvstats
+ELITE_FOUR_BRUNO -order 1/2/3/5/4 -xspa 2 -xspe 1 -v 2 -lvstats // see notes for strategies
+ELITE_FOUR_AGATHA -order 1/2/4/5/3 -xtorrent -xspe 1 -xspa 1 -v 2 -lvstats // see notes for strategies
+ELITE_FOUR_LANCE -order 1/2/3/5/4 -xspa 1 -v 2 -lvstats
+CHAMPION_FIRST_BULBASAUR -order 1/6/2/3/4/5 -xspe 1 -xspa 3 -v 2 -lvstats // see notes for strategies
+
+// end of route //
+// ************ //

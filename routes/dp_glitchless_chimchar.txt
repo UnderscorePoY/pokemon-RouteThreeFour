@@ -1,0 +1,279 @@
+// Route layout by GarfieldTheLightning (2019) : https://docs.google.com/document/d/1XdaLcJ-dlyCr8hey-3k1_KpuC9eEjUJIkXbkYKq7Nzw/edit
+// Adapted with 2021 crafted run : https://www.speedrun.com/pkmndp/run/ylogrwny
+
+stats
+ranges
+
+L2 STARLY HARDY KEENEYE MALE 31 31 31 31 31 31 -v 1 // Nature and stats are most certainly wrong
+
+buy 5 POTION
+
+## Route 202
+YOUNGSTER_Tristan_1 -v 1
+lm EMBER // after 1st Bidoof
+LASS_Natalie -ydefsuse -1/0 -v 1
+YOUNGSTER_Logan -v 1
+
+## Jubilife City
+SCHOOL_KID_F_Christine -v 1
+SCHOOL_KID_M_Harrison -v 1
+lm HIDDENPOWER
+
+## Route 203
+RIVAL_BARRY_ROUTE_203_PIPLUP -v 1
+
+## Oreburgh Mine
+L7 GEODUDE HARDY ROCKHEAD MALE 31 31 31 31 31 31 -v 1 // Nature, ability and stats are most certainly wrong
+
+## Oreburgh City
+//YOUNGSTER_Jonathon -v 1 // without Geodude encounter
+LEADER_ROARK -v 1
+// evolve MONFERNO // with Jonathon
+// lm MACHPUNCH // with Jonathon
+// um SCRATCH // with Jonathon
+
+buy 1 NETBALL
+buy 10 REPEL
+
+## Jubilife City
+money
+GALACTIC_Grunt_10 -ypartner GALACTIC_Grunt_9 -xpartner PKMN_TRAINER_LUCAS_TURTWIG -v 1
+money
+evolve MONFERNO // with Jonathon
+lm MACHPUNCH // with Jonathon
+um SCRATCH // with Jonathon
+
+## Route 204
+//LASS_Sarah -v 1 // spinner
+//AROMA_LADY_Taylor -v 1 // spinner
+
+## Floaroma Meadow
+GALACTIC_Grunt_1 -v 1 // L9 Zubat, L9 Silcoon
+GALACTIC_Grunt_2 -v 1 // L11 Zubat
+
+## Valley Windworks
+GALACTIC_Grunt_35 -v 1 // L11 Glameow
+//GALACTIC_Grunt_3 -v 1 // spinner - L11 Cascoon
+COMMANDER_MARS_1 -v 1
+
+## Route 205
+//HIKER_Daniel -order 1/3/2/4 -v 1 // spinner
+
+## Eterna Forest
+BUG_CATCHER_Jack -ypartner LASS_Briana -xpartner PKMN_TRAINER_CHERYL_Cheryl -order 1/3/2/4 -v 1 // not in Blaze
+//BUG_CATCHER_Jack -ypartner LASS_Briana -xpartner PKMN_TRAINER_CHERYL_Cheryl -order 4/1/3/2 -v 1 // in Blaze
+PSYCHIC_F_Lindsey -ypartner PSYCHIC_M_Elijah -xpartner PKMN_TRAINER_CHERYL_Cheryl -v 1
+lm FLAMEWHEEL
+um EMBER
+
+## Eterna City
+LASS_Caroline -v 1
+AROMA_LADY_Jenna -v 1
+AROMA_LADY_Angela -v 1
+BEAUTY_Lindsay -v 1
+LEADER_GARDENIA -v 1
+
+buy 6 HEALPOWDER
+buy 3 ENERGYPOWDER
+buy 3 ENERGYROOT
+
+## Eterna City Galactic building
+GALACTIC_F_Grunt_1 -v 1 // L14 Zubat, L14 Glameow
+GALACTIC_Grunt_5 -v 1 // L13 Wurmple, L13 Cascoon
+GALACTIC_F_Grunt_3 -v 1 // L12 Wurmple, L12 Silcoon, L12 Zubat
+SCIENTIST_Travon -v 1
+COMMANDER_JUPITER_1 -v 1
+
+## Route 207
+//HIKER_Kevin -v 1 // spinner
+//HIKER_Justin -v 1 // spinner
+
+## Route 208
+//HIKER_Robert -v 1 // spinner
+//HIKER_Jonathan -v 1 // spinner
+
+## Hearthome City
+stats
+pcupdate
+RIVAL_BARRY_HEARTHOME_PRINPLUP -order 1/4/3/2 -v 1
+
+## Route 209
+//ROUGHNECK_Kirby -v 1 // spinner
+lm GRASSKNOT
+um LEER
+equip LUCKYEGG
+
+## Route 215
+RUIN_MANIAC_Calvin -weather RAIN -v 1
+//BLACK_BELT_Derek -weather RAIN -v 1 // spinner
+stats 
+ACE_TRAINER_F_Maya_1 -weather RAIN -v 1
+ACE_TRAINER_M_Dennis_1 -weather RAIN -v 1
+
+## Veilstone City
+buy TM38 // Fire Blast
+buy 8 XATTACK
+buy 5 XSPECIAL
+buy 3 SUPERREPEL
+
+lm FIREBLAST
+um MACHPUNCH
+//rarecandy // at L29
+BLACK_BELT_Rafael -v 1
+rarecandy // at L29
+//BLACK_BELT_Darren -xatk 0 -v 1 // spinner
+//BLACK_BELT_Colby -xatk 0 -xspa 0 -v 1 //spinner
+LEADER_MAYLENE -order 1/3/2 -xatkuse 0 -v 1
+
+GALACTIC_Grunt_37 -ypartner GALACTIC_Grunt_38 -xpartner PKMN_TRAINER_LUCAS_GROTLE -v 1
+
+## Route 214
+PSYCHIC_F_Abigail_1 -order 1/3/2 -v 1
+
+## Route 213
+//BEAUTY_Cyndy_1 -v 1 // spinner
+
+## Pastoria City
+SAILOR_Damian -v 1
+TUBER_M_Jacky -v 1
+TUBER_F_Caitlyn -v 1
+SAILOR_Samson -v 1
+
+//rarecandy // "Crafted candy"
+//evolve INFERNAPE
+//lm CLOSECOMBAT
+//um HIDDENPOWER
+//stats
+
+LEADER_WAKE -xspause 1 -v 1
+
+evolve INFERNAPE
+lm CLOSECOMBAT
+um HIDDENPOWER
+stats
+
+RIVAL_BARRY_PASTORIA_PRINPLUP -order 1/4/3/2 -v 1
+
+## Route 213
+//BEAUTY_Cyndy_1 -v 1 // spinner
+
+## Valor Lakefront
+GALACTIC_Grunt_36 -v 1 // L25 Glameow
+
+## Route 210
+ACE_TRAINER_F_Alyssa -xatkuse 0 -ydefuse 0 -v 1
+//ACE_TRAINER_M_Ernest -v 1 // spinner
+BLACK_BELT_Adam -v 1
+BIRD_KEEPER_Brianna_1 -v 1
+//VETERAN_Brian_1 -v 1 //spinner
+
+## Celestic Town
+GALACTIC_Grunt_11 -v 1// L25 Beautifly, L27 Croagunk
+
+## Hearthome City
+LEADER_FANTINA -order 1/3/2 -v 1
+
+## Canalave City
+RIVAL_BARRY_CANALAVE_PRINPLUP -order 1/5/3/4/2 -v 1
+
+BLACK_BELT_Ricky -v 1
+ACE_TRAINER_M_Cesar -v 1
+WORKER_Gerardo -v 1
+BLACK_BELT_David -v 1
+ACE_TRAINER_F_Breanna -v 1
+LEADER_BYRON -order 1/3/2 -v 1
+
+## Route 213
+//BEAUTY_Cyndy_1 -v 1 // spinner
+
+## Lake Valor
+//GALACTIC_Grunt_12 -v 1 // spinner
+COMMANDER_SATURN_1 -order 1/3/2 -v 1
+
+## Lake Verity
+GALACTIC_Grunt_14 -ypartner GALACTIC_F_Grunt_6 -sxp 2 -v 1
+COMMANDER_MARS_2 -v 1
+
+## Celestic Town
+buy 11 POTION
+buy 11 HYPERPOTION
+buy 11 REVIVE
+buy 1 ESCAPEROPE
+buy 11 MAXREPEL
+
+## Route 216
+//ACE_TRAINER_SNOW_F_Maria -weather HAIL -v 1 // spinner
+
+## Route 217
+ACE_TRAINER_SNOW_M_Dalton_1 -weather HAIL -v 1
+ACE_TRAINER_SNOW_F_Olivia_1 -weather HAIL -v 1
+
+## Snowpoint City
+//ACE_TRAINER_SNOW_F_Brenna -v 1 // spinner
+LEADER_CANDICE -order 1/4/2/3 -v 1
+
+## Veilstone City
+// GALACTIC_Grunt_16 -v 1 // spinner - L37 Golbat
+GALACTIC_Grunt_17 -v 1 // L35 Dustox, L35 Bronzor
+//GALACTIC_F_Grunt_8 -v 1 // spinner - L37 Glameow
+
+GALACTIC_Grunt_22 -v 1 // L36 Golbat x2
+GALACTIC_F_Grunt_11 -v 1 // L35 Croagunk, L35 Stunky, L35 Glameow
+GALACTIC_Grunt_23 -v 1 // L36 Stunky, L36 Croagunk
+GALACTIC_BOSS_Cyrus_1 -v 1
+COMMANDER_SATURN_2 -v 1
+
+## Mt. Coronet
+//HIKER_Justin -v 1 // spinner
+
+//GALACTIC_F_Grunt_12 -v 1 // spinner - L40 Beautifly
+//GALACTIC_Grunt_26 -v 1 // spinner - L38 Stunky, L38 Golbat
+GALACTIC_F_Grunt_14 -v 1 // L38 Bronzor, L38 Glameow
+GALACTIC_Grunt_29 -v 1 // L37 Bronzor, L37 Golbat
+GALACTIC_F_Grunt_15 -order 1/3/2 -v 1 // L37 Golbat, L37 Glameow, L37 Bronzor
+
+GALACTIC_Grunt_30 -ypartner GALACTIC_F_Grunt_16 -v 1
+COMMANDER_MARS_3 -ypartner COMMANDER_JUPITER_2 -xpartner RIVAL_BARRY_SPEAR_PILLAR_EMPOLEON -v 1
+
+GALACTIC_BOSS_Cyrus_2 -order 1/3/2/4 -xspause 1 -v 1 -scenario CYRUS_1_X_SPA -backtrack
+GALACTIC_BOSS_Cyrus_2 -order 1/3/2/4 -xspause 2 -v 1 -scenario CYRUS_2_X_SPA
+
+lm FLAREBLITZ // at L57
+um FIREBLAST // at L57
+
+## Route 222
+SAILOR_Luther -order 1/3/2 -v 1
+
+## Sunyshore City
+SCHOOL_KID_F_Tiera -v 1
+SCHOOL_KID_M_Forrest -v 1
+GUITARIST_Jerry -v 1
+//POKE_KID_Meghan -v 1 // spinner
+//GUITARIST_Lonnie -v 1 // spinner
+ACE_TRAINER_F_Destiny -v 1
+GUITARIST_Preston -v 1
+ACE_TRAINER_M_Zachery -v 1
+LEADER_VOLKNER -order 1/3/2/4 -xatkuse 0 -sxps 1/1/1/0 -v 1 // usually dies of Recoil on Luxray (#4)
+
+## Route 223
+SWIMMER_M_Oscar -sxps 1/1/1 -v 1 // can die of Recoil on Mantine (#3)
+SWIMMER_F_Gabrielle -v 1
+
+## Victory Road
+ACE_TRAINER_F_Mariah -v 1
+ACE_TRAINER_M_Omar -order 1/3/2 -v 1
+ACE_TRAINER_F_Sydney -v 1
+BLACK_BELT_Miles -v 1
+PSYCHIC_F_Valencia -v 1
+DRAGON_TAMER_Ondrej -v 1
+VETERAN_Edgar -v 1
+DRAGON_TAMER_Clinton -sxps 1/1/1 -v 1 // can die of Recoil on Gible (#3)
+
+## Pokemon League
+RIVAL_BARRY_LEAGUE_EMPOLEON -order 1/6/5/3/4/2 -xatkuse 1 -v 1
+pcupdate
+ELITE_FOUR_AARON -order 1/2/5/4/3 -v 1
+ELITE_FOUR_BERTHA -order 1/4/5/3/2 -xspause 1 -v 1
+ELITE_FOUR_FLINT -order 1/4/5/2/3 -xatkuse 1 -sxps 1/1/1/1/0 -v 1 // can die of Recoil on Drifblim (#5)
+ELITE_FOUR_LUCIAN -order 1/4/2/5/3 -v 1
+CHAMPION_Cynthia -order 1/3/5/6/2/4 -xatkuse 2 -v 2

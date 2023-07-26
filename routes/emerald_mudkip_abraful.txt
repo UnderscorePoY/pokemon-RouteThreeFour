@@ -1,0 +1,213 @@
+// ***** 2020 route - Mudkip section ***** //
+// Link : https://docs.google.com/document/d/1STgZW8-jF1AsgVR9hI62fdiJEMTXRxUY-IM9XMC6was/edit
+
+// config [poke] section : 
+// [poke]
+// # Mudkip 1026
+// species = mudkip 
+// level = 5
+// nature = naughty
+// ability = torrent
+// # IVs are from 0-31. defaults to 31s if not entered
+// hpIV = 21
+// atkIV = 23
+// defIV = 28
+// spaIV = 30
+// spdIV = 29
+// speIV = 29
+// boostedExp = false
+// pokerus = false
+
+stats
+ranges
+
+// LITTLEROOT //
+L2 ZIGZAGOON HARDY -v 2 -lvstats // Zigzagoon IVs and Nature are wrong
+BRENDAN_ROUTE_103_MUDKIP -v 2 -lvstats
+lm MUDSLAP
+
+// ROUTE 102 - PETALBURG //
+CALVIN_1 -v 2 -lvstats
+
+buy 6 POTION
+buy 4 REPEL
+money
+
+// ROUTE 103 - PETALBURG FOREST //
+GRUNT_PETALBURG_WOODS -v 2 -lvstats
+
+// RUSTBORO CITY GYM //
+JOSH -v 2 -lvstats
+lm WATERGUN
+TOMMY -v 1 -lvstats
+MARC -v 1 -lvstats
+ROXANNE_1 -yatk -1 -v 2 -lvstats
+
+// ABRA MANIP - SAVING PEEKO //
+DEVAN -v 2 -lvstats
+GRUNT_RUSTURF_TUNNEL -v 2 -lvstats
+
+buy 2 REPEL
+buy 2 XSPEED
+buy 3 XATTACK
+money
+
+// SLATEPORT CITY //
+equip SOFTSAND
+spendmoney 50
+GRUNT_MUSEUM_1 -v 2 -lvstats
+evolve MARSHTOMP
+lm MUDSHOT
+um GROWL
+GRUNT_MUSEUM_2 -v 2 -lvstats
+
+ISABEL_1 -v 2 -lvstats // can't force double battles (yet ?)
+KALEB -v 2 -lvstats // can't force double battles (yet ?)
+
+// RIVAL 2 //
+BRENDAN_ROUTE_110_MUDKIP -order 1/3/2 -xspe 1 -xatk 2 -yspes 0/-1/0 -v 2 -lvstats
+
+ALYSSA -xtorrent -v 2 -lvstats
+EDWARD -v 2 -lvstats
+
+lm ROCKSMASH
+um TACKLE
+DEANDRE -xtorrent -v 2 -lvstats
+WALLY_MAUVILLE -v 2 -lvstats
+
+// MAUVILLE CITY GYM //
+BEN -xatks 0/-1 -v 2 -lvstats
+WATTSON_1 -xspe 1 -xatks 0/1/1/1 -v 2 -lvstats
+
+// FALLARBOR SHOPPING //
+sell NUGGET
+sell TM47
+sell TM39
+buy SUPERPOTION
+buy 2 ESCAPEROPE
+buy 11 SUPERREPEL
+buy 4 XSPECIAL
+buy 5 XSPEED
+buy 10 XATTACK
+buy 2 GUARDSPEC
+money
+
+// METEOR FALLS - RUSTURF TUNNEL //
+//protein // optional, increases some ranges
+LUCAS_1 -v 1 -lvstats
+lm STRENGTH
+um MUDSLAP
+ROSE_1 -v 1 -lvstats
+
+// MT CHIMNEY - JAGGED PASS //
+GRUNT_MT_CHIMNEY_1 -v 1 -lvstats
+GRUNT_MT_CHIMNEY_2 -v 1 -lvstats
+TABITHA_MT_CHIMNEY -order 1/2/4/3 -v 1 -lvstats
+stats
+stats -b 
+MAXIE_MT_CHIMNEY -xatk 1 -v 2 -lvstats
+
+// LAVARIDGE CITY //
+FLANNERY_1 -xatks 0/1/1/1 -weathers NONE/SUN/SUN/SUN -v 2 -lvstats
+
+buy 7 ENERGYPOWDER
+buy 3 ENERGYROOT
+buy 4 HEALPOWDER
+money
+
+// DEWFORD GYM //
+BRAWLY_1 -v 2 -lvstats
+rarecandy
+
+// PETALBURG CITY GYM //
+RANDALL -v 2 -lvstats
+PARKER -v 2 -lvstats
+JODY -v 2 -lvstats
+NORMAN_1 -xspe 1 -xatk 3 -v 2 -lvstats
+
+lm SURF
+um WATERGUN
+
+// WEATHER INSTITUTE //
+GRUNT_WEATHER_INST_4 -v 2 -lvstats
+GRUNT_WEATHER_INST_1 -v 2 -lvstats
+GRUNT_WEATHER_INST_2 -xtorrent -v 2 -lvstats
+SHELLY_WEATHER_INSTITUTE -xtorrent -v 2 -lvstats
+
+// RIVAL 3 - DEVON SCOPE //
+BRENDAN_ROUTE_119_MUDKIP -order 1/3/2 -xspe 1 -xatk 1 -v 2 -lvstats
+equip MYSTICWATER
+
+// ROUTE 120 - MT PYRE //
+rarecandy
+rarecandy
+evolve SWAMPERT
+stats
+
+GRUNT_MT_PYRE_2 -v 2 -lvstats
+GRUNT_MT_PYRE_1 -v 2 -lvstats
+GRUNT_MT_PYRE_3 -sxp 2 -double -v 2 -lvstats // can't force double battles (yet ?)
+GRUNT_MT_PYRE_4 -sxp 2 -double -v 2 -lvstats // can't force double battles (yet ?)
+
+// FORTREE CITY GYM //
+FLINT -sxp 2 -double -v 2 -lvstats // can't force double battles (yet ?)
+EDWARDO -sxp 2 -double -v 2 -lvstats // can't force double battles (yet ?)
+DARIUS -sxp 0 -v 2
+rarecandy
+WINONA_1 -xtorrent -xatks 1/1/4/4/3 -v 2 -lvstats
+
+// MAGMA HIDEOUT //
+GRUNT_MAGMA_HIDEOUT_2 -v 1 -lvstats // L29 Poochyena
+GRUNT_MAGMA_HIDEOUT_3 -v 1 -lvstats // L29 Numel
+GRUNT_MAGMA_HIDEOUT_1 -v 1 -lvstats // L29 Zubat
+GRUNT_MAGMA_HIDEOUT_16 -v 1 -lvstats // L28 Baltoy
+GRUNT_MAGMA_HIDEOUT_7 -v 1 -lvstats // L28 Baltoy
+GRUNT_MAGMA_HIDEOUT_12 -v 1 -lvstats // can't force double battles (yet ?)
+GRUNT_MAGMA_HIDEOUT_13 -v 1 -lvstats // can't force double battles (yet ?)
+TABITHA_MAGMA_HIDEOUT -v 1 -lvstats
+MAXIE_MAGMA_HIDEOUT -xtorrent -v 2 -lvstats
+
+// AQUA HIDEOUT //
+GRUNT_AQUA_HIDEOUT_7 -sxp 2 -double -v 1 -lvstats // L31 Poochyena, L31 Zubat, can't force double battles (yet ?)
+GRUNT_AQUA_HIDEOUT_2 -sxp 2 -double -v 1 -lvstats // L31 Zubat, L31 Carvanha, can't force double battles (yet ?)
+
+GRUNT_AQUA_HIDEOUT_3 -sxp 2 -double -v 1 -lvstats // L32 Zubat, can't force double battles (yet ?)
+GRUNT_AQUA_HIDEOUT_4 -sxp 2 -double -v 1 -lvstats // L32 Carvanha, can't force double battles (yet ?)
+
+MATT -xtorrent -v 1 -lvstats
+
+DECLAN -v 2 -lvstats
+
+// MOSDEEP CITY //
+buy 2 HYPERPOTION
+buy 2 REVIVE
+buy 2 FULLHEAL
+buy 11 XATTACK
+buy 11 MAXREPEL
+
+PRESTON -sxp 2 -double -v 1 -lvstats // can't force double battles (yet ?)
+MAURA -sxp 2 -double -v 1 -lvstats // can't force double battles (yet ?)
+MACEY -v 1 -lvstats
+SYLVIA -v 1 -lvstats
+HANNAH -v 1 -lvstats
+TATE_AND_LIZA_1 -xtorrent -xspe 1 -xspa 1 -v 2 -lvstats // use -sxps and -order to hack the correct battle scenario
+
+// TRUE DOUBLE //
+GRUNT_SPACE_CENTER_4
+GRUNT_SPACE_CENTER_2
+
+GRUNT_SPACE_CENTER_5
+GRUNT_SPACE_CENTER_6
+GRUNT_SPACE_CENTER_7
+
+MAXIE_MOSSDEEP -xtorrent -double -sxp 2 -v 2 -lvstats // use -sxps and -order to hack the correct battle scenario, can't force double battles (yet ?)
+TABITHA_MOSSDEEP -xtorrent -double -sxp 2 -v 2 -lvstats // use -sxps and -order to hack the correct battle scenario, can't force double battles (yet ?)
+
+// SEAFLOOR CAVERN //
+lm DIVE
+um MUDSHOT
+ARCHIE -xtorrent -xspes 0/1/1 -xspas 0/1/1 -v 2 -lvstats
+
+
+// end of Swampert section //
+// *********************** //

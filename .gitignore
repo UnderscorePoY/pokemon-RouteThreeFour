@@ -1,0 +1,10 @@
+.settings/
+bin/
+outputs/
+xml/
+.classpath
+.project
+doc.txt
+Makefile
+NOTICE.txt
+README.md

@@ -1,0 +1,5458 @@
+[
+    {
+        "name": "-",
+        "move_effect": "HIT",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 0,
+        "pp": 0,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": []
+    },
+    {
+        "name": "POUND",
+        "move_effect": "HIT",
+        "base_power": 40,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 35,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "KARATE CHOP",
+        "move_effect": "HIGH_CRITICAL",
+        "base_power": 50,
+        "type": "FIGHTING",
+        "accuracy": 100,
+        "pp": 25,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "DOUBLE SLAP",
+        "move_effect": "MULTI_HIT",
+        "base_power": 15,
+        "type": "NORMAL",
+        "accuracy": 85,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "COMET PUNCH",
+        "move_effect": "MULTI_HIT",
+        "base_power": 18,
+        "type": "NORMAL",
+        "accuracy": 85,
+        "pp": 15,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "MEGA PUNCH",
+        "move_effect": "HIT",
+        "base_power": 80,
+        "type": "NORMAL",
+        "accuracy": 85,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "PAY DAY",
+        "move_effect": "PAY_DAY",
+        "base_power": 40,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 20,
+        "secondary_effect_chance": 100,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "FIRE PUNCH",
+        "move_effect": "BURN_HIT",
+        "base_power": 75,
+        "type": "FIRE",
+        "accuracy": 100,
+        "pp": 15,
+        "secondary_effect_chance": 10,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "ICE PUNCH",
+        "move_effect": "FREEZE_HIT",
+        "base_power": 75,
+        "type": "ICE",
+        "accuracy": 100,
+        "pp": 15,
+        "secondary_effect_chance": 10,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "THUNDER PUNCH",
+        "move_effect": "PARALYZE_HIT",
+        "base_power": 75,
+        "type": "ELECTRIC",
+        "accuracy": 100,
+        "pp": 15,
+        "secondary_effect_chance": 10,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "SCRATCH",
+        "move_effect": "HIT",
+        "base_power": 40,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 35,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "VICE GRIP",
+        "move_effect": "HIT",
+        "base_power": 55,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 30,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "GUILLOTINE",
+        "move_effect": "OHKO",
+        "base_power": 1,
+        "type": "NORMAL",
+        "accuracy": 30,
+        "pp": 5,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "RAZOR WIND",
+        "move_effect": "RAZOR_WIND",
+        "base_power": 80,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "BOTH_ENEMIES",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "SWORDS DANCE",
+        "move_effect": "ATTACK_UP_2",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 0,
+        "pp": 30,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_SNATCH"
+        ]
+    },
+    {
+        "name": "CUT",
+        "move_effect": "HIT",
+        "base_power": 50,
+        "type": "NORMAL",
+        "accuracy": 95,
+        "pp": 30,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "GUST",
+        "move_effect": "GUST",
+        "base_power": 40,
+        "type": "FLYING",
+        "accuracy": 100,
+        "pp": 35,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "WING ATTACK",
+        "move_effect": "HIT",
+        "base_power": 60,
+        "type": "FLYING",
+        "accuracy": 100,
+        "pp": 35,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "WHIRLWIND",
+        "move_effect": "ROAR",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": -6,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "FLY",
+        "move_effect": "FLY",
+        "base_power": 70,
+        "type": "FLYING",
+        "accuracy": 95,
+        "pp": 15,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "BIND",
+        "move_effect": "TRAP",
+        "base_power": 15,
+        "type": "NORMAL",
+        "accuracy": 75,
+        "pp": 20,
+        "secondary_effect_chance": 100,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "SLAM",
+        "move_effect": "HIT",
+        "base_power": 80,
+        "type": "NORMAL",
+        "accuracy": 75,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "VINE WHIP",
+        "move_effect": "HIT",
+        "base_power": 35,
+        "type": "GRASS",
+        "accuracy": 100,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "STOMP",
+        "move_effect": "FLINCH_HIT_2",
+        "base_power": 65,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 20,
+        "secondary_effect_chance": 30,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "DOUBLE KICK",
+        "move_effect": "DOUBLE_HIT",
+        "base_power": 30,
+        "type": "FIGHTING",
+        "accuracy": 100,
+        "pp": 30,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "MEGA KICK",
+        "move_effect": "HIT",
+        "base_power": 120,
+        "type": "NORMAL",
+        "accuracy": 75,
+        "pp": 5,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "JUMP KICK",
+        "move_effect": "RECOIL_IF_MISS",
+        "base_power": 70,
+        "type": "FIGHTING",
+        "accuracy": 95,
+        "pp": 25,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "ROLLING KICK",
+        "move_effect": "FLINCH_HIT",
+        "base_power": 60,
+        "type": "FIGHTING",
+        "accuracy": 85,
+        "pp": 15,
+        "secondary_effect_chance": 30,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "SAND ATTACK",
+        "move_effect": "ACCURACY_DOWN",
+        "base_power": 0,
+        "type": "GROUND",
+        "accuracy": 100,
+        "pp": 15,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_MAGIC_COAT",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "HEADBUTT",
+        "move_effect": "FLINCH_HIT",
+        "base_power": 70,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 15,
+        "secondary_effect_chance": 30,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "HORN ATTACK",
+        "move_effect": "HIT",
+        "base_power": 65,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 25,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "FURY ATTACK",
+        "move_effect": "MULTI_HIT",
+        "base_power": 15,
+        "type": "NORMAL",
+        "accuracy": 85,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "HORN DRILL",
+        "move_effect": "OHKO",
+        "base_power": 1,
+        "type": "NORMAL",
+        "accuracy": 30,
+        "pp": 5,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "TACKLE",
+        "move_effect": "HIT",
+        "base_power": 35,
+        "type": "NORMAL",
+        "accuracy": 95,
+        "pp": 35,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "BODY SLAM",
+        "move_effect": "PARALYZE_HIT",
+        "base_power": 85,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 15,
+        "secondary_effect_chance": 30,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "WRAP",
+        "move_effect": "TRAP",
+        "base_power": 15,
+        "type": "NORMAL",
+        "accuracy": 85,
+        "pp": 20,
+        "secondary_effect_chance": 100,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "TAKE DOWN",
+        "move_effect": "RECOIL",
+        "base_power": 90,
+        "type": "NORMAL",
+        "accuracy": 85,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "THRASH",
+        "move_effect": "RAMPAGE",
+        "base_power": 90,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 20,
+        "secondary_effect_chance": 100,
+        "target": "RANDOM",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "DOUBLE EDGE",
+        "move_effect": "DOUBLE_EDGE",
+        "base_power": 120,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 15,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "TAIL WHIP",
+        "move_effect": "DEFENSE_DOWN",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 30,
+        "secondary_effect_chance": 0,
+        "target": "BOTH_ENEMIES",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_MAGIC_COAT",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "POISON STING",
+        "move_effect": "POISON_HIT",
+        "base_power": 15,
+        "type": "POISON",
+        "accuracy": 100,
+        "pp": 35,
+        "secondary_effect_chance": 30,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "TWINEEDLE",
+        "move_effect": "TWINEEDLE",
+        "base_power": 25,
+        "type": "BUG",
+        "accuracy": 100,
+        "pp": 20,
+        "secondary_effect_chance": 20,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "PIN MISSILE",
+        "move_effect": "MULTI_HIT",
+        "base_power": 14,
+        "type": "BUG",
+        "accuracy": 85,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "LEER",
+        "move_effect": "DEFENSE_DOWN",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 30,
+        "secondary_effect_chance": 0,
+        "target": "BOTH_ENEMIES",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_MAGIC_COAT",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "BITE",
+        "move_effect": "FLINCH_HIT",
+        "base_power": 60,
+        "type": "DARK",
+        "accuracy": 100,
+        "pp": 25,
+        "secondary_effect_chance": 30,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "GROWL",
+        "move_effect": "ATTACK_DOWN",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 40,
+        "secondary_effect_chance": 0,
+        "target": "BOTH_ENEMIES",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_MAGIC_COAT",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "ROAR",
+        "move_effect": "ROAR",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": -6,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "SING",
+        "move_effect": "SLEEP",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 55,
+        "pp": 15,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_MAGIC_COAT",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "SUPERSONIC",
+        "move_effect": "CONFUSE",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 55,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_MAGIC_COAT",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "SONIC BOOM",
+        "move_effect": "SONICBOOM",
+        "base_power": 1,
+        "type": "NORMAL",
+        "accuracy": 90,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "DISABLE",
+        "move_effect": "DISABLE",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 55,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "ACID",
+        "move_effect": "DEFENSE_DOWN_HIT",
+        "base_power": 40,
+        "type": "POISON",
+        "accuracy": 100,
+        "pp": 30,
+        "secondary_effect_chance": 10,
+        "target": "BOTH_ENEMIES",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "EMBER",
+        "move_effect": "BURN_HIT",
+        "base_power": 40,
+        "type": "FIRE",
+        "accuracy": 100,
+        "pp": 25,
+        "secondary_effect_chance": 10,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "FLAMETHROWER",
+        "move_effect": "BURN_HIT",
+        "base_power": 95,
+        "type": "FIRE",
+        "accuracy": 100,
+        "pp": 15,
+        "secondary_effect_chance": 10,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "MIST",
+        "move_effect": "MIST",
+        "base_power": 0,
+        "type": "ICE",
+        "accuracy": 0,
+        "pp": 30,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_SNATCH"
+        ]
+    },
+    {
+        "name": "WATER GUN",
+        "move_effect": "HIT",
+        "base_power": 40,
+        "type": "WATER",
+        "accuracy": 100,
+        "pp": 25,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "HYDRO PUMP",
+        "move_effect": "HIT",
+        "base_power": 120,
+        "type": "WATER",
+        "accuracy": 80,
+        "pp": 5,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "SURF",
+        "move_effect": "HIT",
+        "base_power": 95,
+        "type": "WATER",
+        "accuracy": 100,
+        "pp": 15,
+        "secondary_effect_chance": 0,
+        "target": "BOTH_ENEMIES",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "ICE BEAM",
+        "move_effect": "FREEZE_HIT",
+        "base_power": 95,
+        "type": "ICE",
+        "accuracy": 100,
+        "pp": 10,
+        "secondary_effect_chance": 10,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "BLIZZARD",
+        "move_effect": "FREEZE_HIT",
+        "base_power": 120,
+        "type": "ICE",
+        "accuracy": 70,
+        "pp": 5,
+        "secondary_effect_chance": 10,
+        "target": "BOTH_ENEMIES",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "PSYBEAM",
+        "move_effect": "CONFUSE_HIT",
+        "base_power": 65,
+        "type": "PSYCHIC",
+        "accuracy": 100,
+        "pp": 20,
+        "secondary_effect_chance": 10,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "BUBBLE BEAM",
+        "move_effect": "SPEED_DOWN_HIT",
+        "base_power": 65,
+        "type": "WATER",
+        "accuracy": 100,
+        "pp": 20,
+        "secondary_effect_chance": 10,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "AURORA BEAM",
+        "move_effect": "ATTACK_DOWN_HIT",
+        "base_power": 65,
+        "type": "ICE",
+        "accuracy": 100,
+        "pp": 20,
+        "secondary_effect_chance": 10,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "HYPER BEAM",
+        "move_effect": "RECHARGE",
+        "base_power": 150,
+        "type": "NORMAL",
+        "accuracy": 90,
+        "pp": 5,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "PECK",
+        "move_effect": "HIT",
+        "base_power": 35,
+        "type": "FLYING",
+        "accuracy": 100,
+        "pp": 35,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "DRILL PECK",
+        "move_effect": "HIT",
+        "base_power": 80,
+        "type": "FLYING",
+        "accuracy": 100,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "SUBMISSION",
+        "move_effect": "RECOIL",
+        "base_power": 80,
+        "type": "FIGHTING",
+        "accuracy": 80,
+        "pp": 25,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "LOW KICK",
+        "move_effect": "LOW_KICK",
+        "base_power": 1,
+        "type": "FIGHTING",
+        "accuracy": 100,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "COUNTER",
+        "move_effect": "COUNTER",
+        "base_power": 1,
+        "type": "FIGHTING",
+        "accuracy": 100,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "SPECIAL",
+        "priority": -5,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "SEISMIC TOSS",
+        "move_effect": "LEVEL_DAMAGE",
+        "base_power": 1,
+        "type": "FIGHTING",
+        "accuracy": 100,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "STRENGTH",
+        "move_effect": "HIT",
+        "base_power": 80,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 15,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "ABSORB",
+        "move_effect": "ABSORB",
+        "base_power": 20,
+        "type": "GRASS",
+        "accuracy": 100,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "MEGA DRAIN",
+        "move_effect": "ABSORB",
+        "base_power": 40,
+        "type": "GRASS",
+        "accuracy": 100,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "LEECH SEED",
+        "move_effect": "LEECH_SEED",
+        "base_power": 0,
+        "type": "GRASS",
+        "accuracy": 90,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_MAGIC_COAT",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "GROWTH",
+        "move_effect": "SPECIAL_ATTACK_UP",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 0,
+        "pp": 40,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_SNATCH"
+        ]
+    },
+    {
+        "name": "RAZOR LEAF",
+        "move_effect": "HIGH_CRITICAL",
+        "base_power": 55,
+        "type": "GRASS",
+        "accuracy": 95,
+        "pp": 25,
+        "secondary_effect_chance": 0,
+        "target": "BOTH_ENEMIES",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "SOLAR BEAM",
+        "move_effect": "SOLARBEAM",
+        "base_power": 120,
+        "type": "GRASS",
+        "accuracy": 100,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "POISON POWDER",
+        "move_effect": "POISON",
+        "base_power": 0,
+        "type": "POISON",
+        "accuracy": 75,
+        "pp": 35,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_MAGIC_COAT",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "STUN SPORE",
+        "move_effect": "PARALYZE",
+        "base_power": 0,
+        "type": "GRASS",
+        "accuracy": 75,
+        "pp": 30,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_MAGIC_COAT",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "SLEEP POWDER",
+        "move_effect": "SLEEP",
+        "base_power": 0,
+        "type": "GRASS",
+        "accuracy": 75,
+        "pp": 15,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_MAGIC_COAT",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "PETAL DANCE",
+        "move_effect": "RAMPAGE",
+        "base_power": 70,
+        "type": "GRASS",
+        "accuracy": 100,
+        "pp": 20,
+        "secondary_effect_chance": 100,
+        "target": "RANDOM",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "STRING SHOT",
+        "move_effect": "SPEED_DOWN",
+        "base_power": 0,
+        "type": "BUG",
+        "accuracy": 95,
+        "pp": 40,
+        "secondary_effect_chance": 0,
+        "target": "BOTH_ENEMIES",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_MAGIC_COAT",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "DRAGON RAGE",
+        "move_effect": "DRAGON_RAGE",
+        "base_power": 1,
+        "type": "DRAGON",
+        "accuracy": 100,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "FIRE SPIN",
+        "move_effect": "TRAP",
+        "base_power": 15,
+        "type": "FIRE",
+        "accuracy": 70,
+        "pp": 15,
+        "secondary_effect_chance": 100,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "THUNDER SHOCK",
+        "move_effect": "PARALYZE_HIT",
+        "base_power": 40,
+        "type": "ELECTRIC",
+        "accuracy": 100,
+        "pp": 30,
+        "secondary_effect_chance": 10,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "THUNDERBOLT",
+        "move_effect": "PARALYZE_HIT",
+        "base_power": 95,
+        "type": "ELECTRIC",
+        "accuracy": 100,
+        "pp": 15,
+        "secondary_effect_chance": 10,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "THUNDER WAVE",
+        "move_effect": "PARALYZE",
+        "base_power": 0,
+        "type": "ELECTRIC",
+        "accuracy": 100,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_MAGIC_COAT",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "THUNDER",
+        "move_effect": "THUNDER",
+        "base_power": 120,
+        "type": "ELECTRIC",
+        "accuracy": 70,
+        "pp": 10,
+        "secondary_effect_chance": 30,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "ROCK THROW",
+        "move_effect": "HIT",
+        "base_power": 50,
+        "type": "ROCK",
+        "accuracy": 90,
+        "pp": 15,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "EARTHQUAKE",
+        "move_effect": "EARTHQUAKE",
+        "base_power": 100,
+        "type": "GROUND",
+        "accuracy": 100,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "ALL_EXCEPT_USER",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "FISSURE",
+        "move_effect": "OHKO",
+        "base_power": 1,
+        "type": "GROUND",
+        "accuracy": 30,
+        "pp": 5,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "DIG",
+        "move_effect": "FLY",
+        "base_power": 60,
+        "type": "GROUND",
+        "accuracy": 100,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "TOXIC",
+        "move_effect": "TOXIC",
+        "base_power": 0,
+        "type": "POISON",
+        "accuracy": 85,
+        "pp": 10,
+        "secondary_effect_chance": 100,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_MAGIC_COAT",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "CONFUSION",
+        "move_effect": "CONFUSE_HIT",
+        "base_power": 50,
+        "type": "PSYCHIC",
+        "accuracy": 100,
+        "pp": 25,
+        "secondary_effect_chance": 10,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "PSYCHIC",
+        "move_effect": "SPECIAL_DEFENSE_DOWN_HIT",
+        "base_power": 90,
+        "type": "PSYCHIC",
+        "accuracy": 100,
+        "pp": 10,
+        "secondary_effect_chance": 10,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "HYPNOSIS",
+        "move_effect": "SLEEP",
+        "base_power": 0,
+        "type": "PSYCHIC",
+        "accuracy": 60,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_MAGIC_COAT",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "MEDITATE",
+        "move_effect": "ATTACK_UP",
+        "base_power": 0,
+        "type": "PSYCHIC",
+        "accuracy": 0,
+        "pp": 40,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_SNATCH"
+        ]
+    },
+    {
+        "name": "AGILITY",
+        "move_effect": "SPEED_UP_2",
+        "base_power": 0,
+        "type": "PSYCHIC",
+        "accuracy": 0,
+        "pp": 30,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_SNATCH"
+        ]
+    },
+    {
+        "name": "QUICK ATTACK",
+        "move_effect": "QUICK_ATTACK",
+        "base_power": 40,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 30,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 1,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "RAGE",
+        "move_effect": "RAGE",
+        "base_power": 20,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "TELEPORT",
+        "move_effect": "TELEPORT",
+        "base_power": 0,
+        "type": "PSYCHIC",
+        "accuracy": 0,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": []
+    },
+    {
+        "name": "NIGHT SHADE",
+        "move_effect": "LEVEL_DAMAGE",
+        "base_power": 1,
+        "type": "GHOST",
+        "accuracy": 100,
+        "pp": 15,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "MIMIC",
+        "move_effect": "MIMIC",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "SCREECH",
+        "move_effect": "DEFENSE_DOWN_2",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 85,
+        "pp": 40,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_MAGIC_COAT",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "DOUBLE TEAM",
+        "move_effect": "EVASION_UP",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 0,
+        "pp": 15,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_SNATCH"
+        ]
+    },
+    {
+        "name": "RECOVER",
+        "move_effect": "RESTORE_HP",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 0,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_SNATCH"
+        ]
+    },
+    {
+        "name": "HARDEN",
+        "move_effect": "DEFENSE_UP",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 0,
+        "pp": 30,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_SNATCH"
+        ]
+    },
+    {
+        "name": "MINIMIZE",
+        "move_effect": "MINIMIZE",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 0,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_SNATCH"
+        ]
+    },
+    {
+        "name": "SMOKESCREEN",
+        "move_effect": "ACCURACY_DOWN",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_MAGIC_COAT",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "CONFUSE RAY",
+        "move_effect": "CONFUSE",
+        "base_power": 0,
+        "type": "GHOST",
+        "accuracy": 100,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_MAGIC_COAT",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "WITHDRAW",
+        "move_effect": "DEFENSE_UP",
+        "base_power": 0,
+        "type": "WATER",
+        "accuracy": 0,
+        "pp": 40,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_SNATCH"
+        ]
+    },
+    {
+        "name": "DEFENSE CURL",
+        "move_effect": "DEFENSE_CURL",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 0,
+        "pp": 40,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_SNATCH"
+        ]
+    },
+    {
+        "name": "BARRIER",
+        "move_effect": "DEFENSE_UP_2",
+        "base_power": 0,
+        "type": "PSYCHIC",
+        "accuracy": 0,
+        "pp": 30,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_SNATCH"
+        ]
+    },
+    {
+        "name": "LIGHT SCREEN",
+        "move_effect": "LIGHT_SCREEN",
+        "base_power": 0,
+        "type": "PSYCHIC",
+        "accuracy": 0,
+        "pp": 30,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_SNATCH"
+        ]
+    },
+    {
+        "name": "HAZE",
+        "move_effect": "HAZE",
+        "base_power": 0,
+        "type": "ICE",
+        "accuracy": 0,
+        "pp": 30,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "REFLECT",
+        "move_effect": "REFLECT",
+        "base_power": 0,
+        "type": "PSYCHIC",
+        "accuracy": 0,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_SNATCH"
+        ]
+    },
+    {
+        "name": "FOCUS ENERGY",
+        "move_effect": "FOCUS_ENERGY",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 0,
+        "pp": 30,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_SNATCH"
+        ]
+    },
+    {
+        "name": "BIDE",
+        "move_effect": "BIDE",
+        "base_power": 1,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "METRONOME",
+        "move_effect": "METRONOME",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 0,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "SPECIAL",
+        "priority": 0,
+        "flags": []
+    },
+    {
+        "name": "MIRROR MOVE",
+        "move_effect": "MIRROR_MOVE",
+        "base_power": 0,
+        "type": "FLYING",
+        "accuracy": 0,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "SPECIAL",
+        "priority": 0,
+        "flags": []
+    },
+    {
+        "name": "SELF DESTRUCT",
+        "move_effect": "EXPLOSION",
+        "base_power": 200,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 5,
+        "secondary_effect_chance": 0,
+        "target": "ALL_EXCEPT_USER",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "EGG BOMB",
+        "move_effect": "HIT",
+        "base_power": 100,
+        "type": "NORMAL",
+        "accuracy": 75,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "LICK",
+        "move_effect": "PARALYZE_HIT",
+        "base_power": 20,
+        "type": "GHOST",
+        "accuracy": 100,
+        "pp": 30,
+        "secondary_effect_chance": 30,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "SMOG",
+        "move_effect": "POISON_HIT",
+        "base_power": 20,
+        "type": "POISON",
+        "accuracy": 70,
+        "pp": 20,
+        "secondary_effect_chance": 40,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "SLUDGE",
+        "move_effect": "POISON_HIT",
+        "base_power": 65,
+        "type": "POISON",
+        "accuracy": 100,
+        "pp": 20,
+        "secondary_effect_chance": 30,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "BONE CLUB",
+        "move_effect": "FLINCH_HIT",
+        "base_power": 65,
+        "type": "GROUND",
+        "accuracy": 85,
+        "pp": 20,
+        "secondary_effect_chance": 10,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "FIRE BLAST",
+        "move_effect": "BURN_HIT",
+        "base_power": 120,
+        "type": "FIRE",
+        "accuracy": 85,
+        "pp": 5,
+        "secondary_effect_chance": 10,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "WATERFALL",
+        "move_effect": "HIT",
+        "base_power": 80,
+        "type": "WATER",
+        "accuracy": 100,
+        "pp": 15,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "CLAMP",
+        "move_effect": "TRAP",
+        "base_power": 35,
+        "type": "WATER",
+        "accuracy": 75,
+        "pp": 10,
+        "secondary_effect_chance": 100,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "SWIFT",
+        "move_effect": "ALWAYS_HIT",
+        "base_power": 60,
+        "type": "NORMAL",
+        "accuracy": 0,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "BOTH_ENEMIES",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "SKULL BASH",
+        "move_effect": "SKULL_BASH",
+        "base_power": 100,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 15,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "SPIKE CANNON",
+        "move_effect": "MULTI_HIT",
+        "base_power": 20,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 15,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "CONSTRICT",
+        "move_effect": "SPEED_DOWN_HIT",
+        "base_power": 10,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 35,
+        "secondary_effect_chance": 10,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "AMNESIA",
+        "move_effect": "SPECIAL_DEFENSE_UP_2",
+        "base_power": 0,
+        "type": "PSYCHIC",
+        "accuracy": 0,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_SNATCH"
+        ]
+    },
+    {
+        "name": "KINESIS",
+        "move_effect": "ACCURACY_DOWN",
+        "base_power": 0,
+        "type": "PSYCHIC",
+        "accuracy": 80,
+        "pp": 15,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "SOFT BOILED",
+        "move_effect": "SOFTBOILED",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_SNATCH"
+        ]
+    },
+    {
+        "name": "HI JUMP KICK",
+        "move_effect": "RECOIL_IF_MISS",
+        "base_power": 85,
+        "type": "FIGHTING",
+        "accuracy": 90,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "GLARE",
+        "move_effect": "PARALYZE",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 75,
+        "pp": 30,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_MAGIC_COAT",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "DREAM EATER",
+        "move_effect": "DREAM_EATER",
+        "base_power": 100,
+        "type": "PSYCHIC",
+        "accuracy": 100,
+        "pp": 15,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "POISON GAS",
+        "move_effect": "POISON",
+        "base_power": 0,
+        "type": "POISON",
+        "accuracy": 55,
+        "pp": 40,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_MAGIC_COAT",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "BARRAGE",
+        "move_effect": "MULTI_HIT",
+        "base_power": 15,
+        "type": "NORMAL",
+        "accuracy": 85,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "LEECH LIFE",
+        "move_effect": "ABSORB",
+        "base_power": 20,
+        "type": "BUG",
+        "accuracy": 100,
+        "pp": 15,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "LOVELY KISS",
+        "move_effect": "SLEEP",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 75,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_MAGIC_COAT",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "SKY ATTACK",
+        "move_effect": "SKY_ATTACK",
+        "base_power": 140,
+        "type": "FLYING",
+        "accuracy": 90,
+        "pp": 5,
+        "secondary_effect_chance": 30,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "TRANSFORM",
+        "move_effect": "TRANSFORM",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 0,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": []
+    },
+    {
+        "name": "BUBBLE",
+        "move_effect": "SPEED_DOWN_HIT",
+        "base_power": 20,
+        "type": "WATER",
+        "accuracy": 100,
+        "pp": 30,
+        "secondary_effect_chance": 10,
+        "target": "BOTH_ENEMIES",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "DIZZY PUNCH",
+        "move_effect": "CONFUSE_HIT",
+        "base_power": 70,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 10,
+        "secondary_effect_chance": 20,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "SPORE",
+        "move_effect": "SLEEP",
+        "base_power": 0,
+        "type": "GRASS",
+        "accuracy": 100,
+        "pp": 15,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_MAGIC_COAT",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "FLASH",
+        "move_effect": "ACCURACY_DOWN",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 70,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_MAGIC_COAT",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "PSYWAVE",
+        "move_effect": "PSYWAVE",
+        "base_power": 1,
+        "type": "PSYCHIC",
+        "accuracy": 80,
+        "pp": 15,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "SPLASH",
+        "move_effect": "SPLASH",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 0,
+        "pp": 40,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": []
+    },
+    {
+        "name": "ACID ARMOR",
+        "move_effect": "DEFENSE_UP_2",
+        "base_power": 0,
+        "type": "POISON",
+        "accuracy": 0,
+        "pp": 40,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_SNATCH"
+        ]
+    },
+    {
+        "name": "CRABHAMMER",
+        "move_effect": "HIGH_CRITICAL",
+        "base_power": 90,
+        "type": "WATER",
+        "accuracy": 85,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "EXPLOSION",
+        "move_effect": "EXPLOSION",
+        "base_power": 250,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 5,
+        "secondary_effect_chance": 0,
+        "target": "ALL_EXCEPT_USER",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "FURY SWIPES",
+        "move_effect": "MULTI_HIT",
+        "base_power": 18,
+        "type": "NORMAL",
+        "accuracy": 80,
+        "pp": 15,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "BONEMERANG",
+        "move_effect": "DOUBLE_HIT",
+        "base_power": 50,
+        "type": "GROUND",
+        "accuracy": 90,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "REST",
+        "move_effect": "REST",
+        "base_power": 0,
+        "type": "PSYCHIC",
+        "accuracy": 0,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_SNATCH"
+        ]
+    },
+    {
+        "name": "ROCK SLIDE",
+        "move_effect": "FLINCH_HIT",
+        "base_power": 75,
+        "type": "ROCK",
+        "accuracy": 90,
+        "pp": 10,
+        "secondary_effect_chance": 30,
+        "target": "BOTH_ENEMIES",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "HYPER FANG",
+        "move_effect": "FLINCH_HIT",
+        "base_power": 80,
+        "type": "NORMAL",
+        "accuracy": 90,
+        "pp": 15,
+        "secondary_effect_chance": 10,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "SHARPEN",
+        "move_effect": "ATTACK_UP",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 0,
+        "pp": 30,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_SNATCH"
+        ]
+    },
+    {
+        "name": "CONVERSION",
+        "move_effect": "CONVERSION",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 0,
+        "pp": 30,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": []
+    },
+    {
+        "name": "TRI ATTACK",
+        "move_effect": "TRI_ATTACK",
+        "base_power": 80,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 10,
+        "secondary_effect_chance": 20,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "SUPER FANG",
+        "move_effect": "SUPER_FANG",
+        "base_power": 1,
+        "type": "NORMAL",
+        "accuracy": 90,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "SLASH",
+        "move_effect": "HIGH_CRITICAL",
+        "base_power": 70,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "SUBSTITUTE",
+        "move_effect": "SUBSTITUTE",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 0,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_SNATCH"
+        ]
+    },
+    {
+        "name": "STRUGGLE",
+        "move_effect": "RECOIL",
+        "base_power": 50,
+        "type": "NONE",
+        "accuracy": 100,
+        "pp": 1,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "SKETCH",
+        "move_effect": "SKETCH",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 0,
+        "pp": 1,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": []
+    },
+    {
+        "name": "TRIPLE KICK",
+        "move_effect": "TRIPLE_KICK",
+        "base_power": 10,
+        "type": "FIGHTING",
+        "accuracy": 90,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "THIEF",
+        "move_effect": "THIEF",
+        "base_power": 40,
+        "type": "DARK",
+        "accuracy": 100,
+        "pp": 10,
+        "secondary_effect_chance": 100,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "SPIDER WEB",
+        "move_effect": "MEAN_LOOK",
+        "base_power": 0,
+        "type": "BUG",
+        "accuracy": 100,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_MAGIC_COAT",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "MIND READER",
+        "move_effect": "LOCK_ON",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 5,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "NIGHTMARE",
+        "move_effect": "NIGHTMARE",
+        "base_power": 0,
+        "type": "GHOST",
+        "accuracy": 100,
+        "pp": 15,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "FLAME WHEEL",
+        "move_effect": "THAW_HIT",
+        "base_power": 60,
+        "type": "FIRE",
+        "accuracy": 100,
+        "pp": 25,
+        "secondary_effect_chance": 10,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "SNORE",
+        "move_effect": "SNORE",
+        "base_power": 40,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 15,
+        "secondary_effect_chance": 30,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "CURSE",
+        "move_effect": "CURSE",
+        "base_power": 0,
+        "type": "MYSTERY",
+        "accuracy": 0,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": []
+    },
+    {
+        "name": "FLAIL",
+        "move_effect": "FLAIL",
+        "base_power": 1,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 15,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "CONVERSION 2",
+        "move_effect": "CONVERSION_2",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 30,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": []
+    },
+    {
+        "name": "AEROBLAST",
+        "move_effect": "HIGH_CRITICAL",
+        "base_power": 100,
+        "type": "FLYING",
+        "accuracy": 95,
+        "pp": 5,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "COTTON SPORE",
+        "move_effect": "SPEED_DOWN_2",
+        "base_power": 0,
+        "type": "GRASS",
+        "accuracy": 85,
+        "pp": 40,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_MAGIC_COAT",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "REVERSAL",
+        "move_effect": "FLAIL",
+        "base_power": 1,
+        "type": "FIGHTING",
+        "accuracy": 100,
+        "pp": 15,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "SPITE",
+        "move_effect": "SPITE",
+        "base_power": 0,
+        "type": "GHOST",
+        "accuracy": 100,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "POWDER SNOW",
+        "move_effect": "FREEZE_HIT",
+        "base_power": 40,
+        "type": "ICE",
+        "accuracy": 100,
+        "pp": 25,
+        "secondary_effect_chance": 10,
+        "target": "BOTH_ENEMIES",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "PROTECT",
+        "move_effect": "PROTECT",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 0,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 3,
+        "flags": []
+    },
+    {
+        "name": "MACH PUNCH",
+        "move_effect": "QUICK_ATTACK",
+        "base_power": 40,
+        "type": "FIGHTING",
+        "accuracy": 100,
+        "pp": 30,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 1,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "SCARY FACE",
+        "move_effect": "SPEED_DOWN_2",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 90,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_MAGIC_COAT",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "FAINT ATTACK",
+        "move_effect": "ALWAYS_HIT",
+        "base_power": 60,
+        "type": "DARK",
+        "accuracy": 0,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "SWEET KISS",
+        "move_effect": "CONFUSE",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 75,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_MAGIC_COAT",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "BELLY DRUM",
+        "move_effect": "BELLY_DRUM",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 0,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_SNATCH"
+        ]
+    },
+    {
+        "name": "SLUDGE BOMB",
+        "move_effect": "POISON_HIT",
+        "base_power": 90,
+        "type": "POISON",
+        "accuracy": 100,
+        "pp": 10,
+        "secondary_effect_chance": 30,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "MUD SLAP",
+        "move_effect": "ACCURACY_DOWN_HIT",
+        "base_power": 20,
+        "type": "GROUND",
+        "accuracy": 100,
+        "pp": 10,
+        "secondary_effect_chance": 100,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "OCTAZOOKA",
+        "move_effect": "ACCURACY_DOWN_HIT",
+        "base_power": 65,
+        "type": "WATER",
+        "accuracy": 85,
+        "pp": 10,
+        "secondary_effect_chance": 50,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "SPIKES",
+        "move_effect": "SPIKES",
+        "base_power": 0,
+        "type": "GROUND",
+        "accuracy": 0,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "ENEMY_SIDE",
+        "priority": 0,
+        "flags": []
+    },
+    {
+        "name": "ZAP CANNON",
+        "move_effect": "PARALYZE_HIT",
+        "base_power": 100,
+        "type": "ELECTRIC",
+        "accuracy": 50,
+        "pp": 5,
+        "secondary_effect_chance": 100,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "FORESIGHT",
+        "move_effect": "FORESIGHT",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 40,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "DESTINY BOND",
+        "move_effect": "DESTINY_BOND",
+        "base_power": 0,
+        "type": "GHOST",
+        "accuracy": 0,
+        "pp": 5,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": []
+    },
+    {
+        "name": "PERISH SONG",
+        "move_effect": "PERISH_SONG",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 0,
+        "pp": 5,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": []
+    },
+    {
+        "name": "ICY WIND",
+        "move_effect": "SPEED_DOWN_HIT",
+        "base_power": 55,
+        "type": "ICE",
+        "accuracy": 95,
+        "pp": 15,
+        "secondary_effect_chance": 100,
+        "target": "BOTH_ENEMIES",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "DETECT",
+        "move_effect": "PROTECT",
+        "base_power": 0,
+        "type": "FIGHTING",
+        "accuracy": 0,
+        "pp": 5,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 3,
+        "flags": []
+    },
+    {
+        "name": "BONE RUSH",
+        "move_effect": "MULTI_HIT",
+        "base_power": 25,
+        "type": "GROUND",
+        "accuracy": 80,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "LOCK ON",
+        "move_effect": "LOCK_ON",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 5,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "OUTRAGE",
+        "move_effect": "RAMPAGE",
+        "base_power": 90,
+        "type": "DRAGON",
+        "accuracy": 100,
+        "pp": 15,
+        "secondary_effect_chance": 100,
+        "target": "RANDOM",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "SANDSTORM",
+        "move_effect": "SANDSTORM",
+        "base_power": 0,
+        "type": "ROCK",
+        "accuracy": 0,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": []
+    },
+    {
+        "name": "GIGA DRAIN",
+        "move_effect": "ABSORB",
+        "base_power": 60,
+        "type": "GRASS",
+        "accuracy": 100,
+        "pp": 5,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "ENDURE",
+        "move_effect": "ENDURE",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 0,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 3,
+        "flags": []
+    },
+    {
+        "name": "CHARM",
+        "move_effect": "ATTACK_DOWN_2",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_MAGIC_COAT",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "ROLLOUT",
+        "move_effect": "ROLLOUT",
+        "base_power": 30,
+        "type": "ROCK",
+        "accuracy": 90,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "FALSE SWIPE",
+        "move_effect": "FALSE_SWIPE",
+        "base_power": 40,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 40,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "SWAGGER",
+        "move_effect": "SWAGGER",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 90,
+        "pp": 15,
+        "secondary_effect_chance": 100,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_MAGIC_COAT",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "MILK DRINK",
+        "move_effect": "SOFTBOILED",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 0,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_SNATCH",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "SPARK",
+        "move_effect": "PARALYZE_HIT",
+        "base_power": 65,
+        "type": "ELECTRIC",
+        "accuracy": 100,
+        "pp": 20,
+        "secondary_effect_chance": 30,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "FURY CUTTER",
+        "move_effect": "FURY_CUTTER",
+        "base_power": 10,
+        "type": "BUG",
+        "accuracy": 95,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "STEEL WING",
+        "move_effect": "DEFENSE_UP_HIT",
+        "base_power": 70,
+        "type": "STEEL",
+        "accuracy": 90,
+        "pp": 25,
+        "secondary_effect_chance": 10,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "MEAN LOOK",
+        "move_effect": "MEAN_LOOK",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 5,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_MAGIC_COAT",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "ATTRACT",
+        "move_effect": "ATTRACT",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 15,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_MAGIC_COAT",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "SLEEP TALK",
+        "move_effect": "SLEEP_TALK",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 0,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "SPECIAL",
+        "priority": 0,
+        "flags": []
+    },
+    {
+        "name": "HEAL BELL",
+        "move_effect": "HEAL_BELL",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 0,
+        "pp": 5,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_SNATCH"
+        ]
+    },
+    {
+        "name": "RETURN",
+        "move_effect": "RETURN",
+        "base_power": 1,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "PRESENT",
+        "move_effect": "PRESENT",
+        "base_power": 1,
+        "type": "NORMAL",
+        "accuracy": 90,
+        "pp": 15,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "FRUSTRATION",
+        "move_effect": "FRUSTRATION",
+        "base_power": 1,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "SAFEGUARD",
+        "move_effect": "SAFEGUARD",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 0,
+        "pp": 25,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_SNATCH"
+        ]
+    },
+    {
+        "name": "PAIN SPLIT",
+        "move_effect": "PAIN_SPLIT",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "SACRED FIRE",
+        "move_effect": "THAW_HIT",
+        "base_power": 100,
+        "type": "FIRE",
+        "accuracy": 95,
+        "pp": 5,
+        "secondary_effect_chance": 50,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "MAGNITUDE",
+        "move_effect": "MAGNITUDE",
+        "base_power": 1,
+        "type": "GROUND",
+        "accuracy": 100,
+        "pp": 30,
+        "secondary_effect_chance": 0,
+        "target": "ALL_EXCEPT_USER",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "DYNAMIC PUNCH",
+        "move_effect": "CONFUSE_HIT",
+        "base_power": 100,
+        "type": "FIGHTING",
+        "accuracy": 50,
+        "pp": 5,
+        "secondary_effect_chance": 100,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "MEGAHORN",
+        "move_effect": "HIT",
+        "base_power": 120,
+        "type": "BUG",
+        "accuracy": 85,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "DRAGON BREATH",
+        "move_effect": "PARALYZE_HIT",
+        "base_power": 60,
+        "type": "DRAGON",
+        "accuracy": 100,
+        "pp": 20,
+        "secondary_effect_chance": 30,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "BATON PASS",
+        "move_effect": "BATON_PASS",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 0,
+        "pp": 40,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": []
+    },
+    {
+        "name": "ENCORE",
+        "move_effect": "ENCORE",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 5,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "PURSUIT",
+        "move_effect": "PURSUIT",
+        "base_power": 40,
+        "type": "DARK",
+        "accuracy": 100,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "RAPID SPIN",
+        "move_effect": "RAPID_SPIN",
+        "base_power": 20,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 40,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "SWEET SCENT",
+        "move_effect": "EVASION_DOWN",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "BOTH_ENEMIES",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_MAGIC_COAT",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "IRON TAIL",
+        "move_effect": "DEFENSE_DOWN_HIT",
+        "base_power": 100,
+        "type": "STEEL",
+        "accuracy": 75,
+        "pp": 15,
+        "secondary_effect_chance": 30,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "METAL CLAW",
+        "move_effect": "ATTACK_UP_HIT",
+        "base_power": 50,
+        "type": "STEEL",
+        "accuracy": 95,
+        "pp": 35,
+        "secondary_effect_chance": 10,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "VITAL THROW",
+        "move_effect": "VITAL_THROW",
+        "base_power": 70,
+        "type": "FIGHTING",
+        "accuracy": 100,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": -1,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "MORNING SUN",
+        "move_effect": "MORNING_SUN",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 0,
+        "pp": 5,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_SNATCH"
+        ]
+    },
+    {
+        "name": "SYNTHESIS",
+        "move_effect": "SYNTHESIS",
+        "base_power": 0,
+        "type": "GRASS",
+        "accuracy": 0,
+        "pp": 5,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_SNATCH"
+        ]
+    },
+    {
+        "name": "MOONLIGHT",
+        "move_effect": "MOONLIGHT",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 0,
+        "pp": 5,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_SNATCH"
+        ]
+    },
+    {
+        "name": "HIDDEN POWER",
+        "move_effect": "HIDDEN_POWER",
+        "base_power": 1,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 15,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "CROSS CHOP",
+        "move_effect": "HIGH_CRITICAL",
+        "base_power": 100,
+        "type": "FIGHTING",
+        "accuracy": 80,
+        "pp": 5,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "TWISTER",
+        "move_effect": "TWISTER",
+        "base_power": 40,
+        "type": "DRAGON",
+        "accuracy": 100,
+        "pp": 20,
+        "secondary_effect_chance": 20,
+        "target": "BOTH_ENEMIES",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "RAIN DANCE",
+        "move_effect": "RAIN_DANCE",
+        "base_power": 0,
+        "type": "WATER",
+        "accuracy": 0,
+        "pp": 5,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": []
+    },
+    {
+        "name": "SUNNY DAY",
+        "move_effect": "SUNNY_DAY",
+        "base_power": 0,
+        "type": "FIRE",
+        "accuracy": 0,
+        "pp": 5,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": []
+    },
+    {
+        "name": "CRUNCH",
+        "move_effect": "SPECIAL_DEFENSE_DOWN_HIT",
+        "base_power": 80,
+        "type": "DARK",
+        "accuracy": 100,
+        "pp": 15,
+        "secondary_effect_chance": 20,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "MIRROR COAT",
+        "move_effect": "MIRROR_COAT",
+        "base_power": 1,
+        "type": "PSYCHIC",
+        "accuracy": 100,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "SPECIAL",
+        "priority": -5,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE"
+        ]
+    },
+    {
+        "name": "PSYCH UP",
+        "move_effect": "PSYCH_UP",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 0,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_SNATCH"
+        ]
+    },
+    {
+        "name": "EXTREME SPEED",
+        "move_effect": "QUICK_ATTACK",
+        "base_power": 80,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 5,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 1,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "ANCIENT POWER",
+        "move_effect": "ALL_STATS_UP_HIT",
+        "base_power": 60,
+        "type": "ROCK",
+        "accuracy": 100,
+        "pp": 5,
+        "secondary_effect_chance": 10,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "SHADOW BALL",
+        "move_effect": "SPECIAL_DEFENSE_DOWN_HIT",
+        "base_power": 80,
+        "type": "GHOST",
+        "accuracy": 100,
+        "pp": 15,
+        "secondary_effect_chance": 20,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "FUTURE SIGHT",
+        "move_effect": "FUTURE_SIGHT",
+        "base_power": 80,
+        "type": "PSYCHIC",
+        "accuracy": 90,
+        "pp": 15,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": []
+    },
+    {
+        "name": "ROCK SMASH",
+        "move_effect": "DEFENSE_DOWN_HIT",
+        "base_power": 20,
+        "type": "FIGHTING",
+        "accuracy": 100,
+        "pp": 15,
+        "secondary_effect_chance": 50,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "WHIRLPOOL",
+        "move_effect": "TRAP",
+        "base_power": 15,
+        "type": "WATER",
+        "accuracy": 70,
+        "pp": 15,
+        "secondary_effect_chance": 100,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "BEAT UP",
+        "move_effect": "BEAT_UP",
+        "base_power": 10,
+        "type": "DARK",
+        "accuracy": 100,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "FAKE OUT",
+        "move_effect": "FAKE_OUT",
+        "base_power": 40,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 1,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "UPROAR",
+        "move_effect": "UPROAR",
+        "base_power": 50,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 10,
+        "secondary_effect_chance": 100,
+        "target": "RANDOM",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "STOCKPILE",
+        "move_effect": "STOCKPILE",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 0,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_SNATCH"
+        ]
+    },
+    {
+        "name": "SPIT UP",
+        "move_effect": "SPIT_UP",
+        "base_power": 100,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "SWALLOW",
+        "move_effect": "SWALLOW",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 0,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_SNATCH"
+        ]
+    },
+    {
+        "name": "HEAT WAVE",
+        "move_effect": "BURN_HIT",
+        "base_power": 100,
+        "type": "FIRE",
+        "accuracy": 90,
+        "pp": 10,
+        "secondary_effect_chance": 10,
+        "target": "BOTH_ENEMIES",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "HAIL",
+        "move_effect": "HAIL",
+        "base_power": 0,
+        "type": "ICE",
+        "accuracy": 0,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "TORMENT",
+        "move_effect": "TORMENT",
+        "base_power": 0,
+        "type": "DARK",
+        "accuracy": 100,
+        "pp": 15,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "FLATTER",
+        "move_effect": "FLATTER",
+        "base_power": 0,
+        "type": "DARK",
+        "accuracy": 100,
+        "pp": 15,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_MAGIC_COAT",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "WILL O WISP",
+        "move_effect": "WILL_O_WISP",
+        "base_power": 0,
+        "type": "FIRE",
+        "accuracy": 75,
+        "pp": 15,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_MAGIC_COAT",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "MEMENTO",
+        "move_effect": "MEMENTO",
+        "base_power": 0,
+        "type": "DARK",
+        "accuracy": 100,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "FACADE",
+        "move_effect": "FACADE",
+        "base_power": 70,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "FOCUS PUNCH",
+        "move_effect": "FOCUS_PUNCH",
+        "base_power": 150,
+        "type": "FIGHTING",
+        "accuracy": 100,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": -3,
+        "flags": [
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "SMELLING SALT",
+        "move_effect": "SMELLINGSALT",
+        "base_power": 60,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "FOLLOW ME",
+        "move_effect": "FOLLOW_ME",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 3,
+        "flags": []
+    },
+    {
+        "name": "NATURE POWER",
+        "move_effect": "NATURE_POWER",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 95,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "SPECIAL",
+        "priority": 0,
+        "flags": []
+    },
+    {
+        "name": "CHARGE",
+        "move_effect": "CHARGE",
+        "base_power": 0,
+        "type": "ELECTRIC",
+        "accuracy": 100,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_SNATCH"
+        ]
+    },
+    {
+        "name": "TAUNT",
+        "move_effect": "TAUNT",
+        "base_power": 0,
+        "type": "DARK",
+        "accuracy": 100,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "HELPING HAND",
+        "move_effect": "HELPING_HAND",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 5,
+        "flags": []
+    },
+    {
+        "name": "TRICK",
+        "move_effect": "TRICK",
+        "base_power": 0,
+        "type": "PSYCHIC",
+        "accuracy": 100,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "ROLE PLAY",
+        "move_effect": "ROLE_PLAY",
+        "base_power": 0,
+        "type": "PSYCHIC",
+        "accuracy": 100,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": []
+    },
+    {
+        "name": "WISH",
+        "move_effect": "WISH",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "ASSIST",
+        "move_effect": "ASSIST",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "SPECIAL",
+        "priority": 0,
+        "flags": []
+    },
+    {
+        "name": "INGRAIN",
+        "move_effect": "INGRAIN",
+        "base_power": 0,
+        "type": "GRASS",
+        "accuracy": 100,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_SNATCH"
+        ]
+    },
+    {
+        "name": "SUPERPOWER",
+        "move_effect": "SUPERPOWER",
+        "base_power": 120,
+        "type": "FIGHTING",
+        "accuracy": 100,
+        "pp": 5,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "MAGIC COAT",
+        "move_effect": "MAGIC_COAT",
+        "base_power": 0,
+        "type": "PSYCHIC",
+        "accuracy": 100,
+        "pp": 15,
+        "secondary_effect_chance": 0,
+        "target": "SPECIAL",
+        "priority": 4,
+        "flags": []
+    },
+    {
+        "name": "RECYCLE",
+        "move_effect": "RECYCLE",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": []
+    },
+    {
+        "name": "REVENGE",
+        "move_effect": "REVENGE",
+        "base_power": 60,
+        "type": "FIGHTING",
+        "accuracy": 100,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": -4,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "BRICK BREAK",
+        "move_effect": "BRICK_BREAK",
+        "base_power": 75,
+        "type": "FIGHTING",
+        "accuracy": 100,
+        "pp": 15,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "YAWN",
+        "move_effect": "YAWN",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_MAGIC_COAT",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "KNOCK OFF",
+        "move_effect": "KNOCK_OFF",
+        "base_power": 20,
+        "type": "DARK",
+        "accuracy": 100,
+        "pp": 20,
+        "secondary_effect_chance": 100,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "ENDEAVOR",
+        "move_effect": "ENDEAVOR",
+        "base_power": 1,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 5,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "ERUPTION",
+        "move_effect": "ERUPTION",
+        "base_power": 150,
+        "type": "FIRE",
+        "accuracy": 100,
+        "pp": 5,
+        "secondary_effect_chance": 0,
+        "target": "BOTH_ENEMIES",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "SKILL SWAP",
+        "move_effect": "SKILL_SWAP",
+        "base_power": 0,
+        "type": "PSYCHIC",
+        "accuracy": 100,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "IMPRISON",
+        "move_effect": "IMPRISON",
+        "base_power": 0,
+        "type": "PSYCHIC",
+        "accuracy": 100,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "REFRESH",
+        "move_effect": "REFRESH",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_SNATCH"
+        ]
+    },
+    {
+        "name": "GRUDGE",
+        "move_effect": "GRUDGE",
+        "base_power": 0,
+        "type": "GHOST",
+        "accuracy": 100,
+        "pp": 5,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "SNATCH",
+        "move_effect": "SNATCH",
+        "base_power": 0,
+        "type": "DARK",
+        "accuracy": 100,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "SPECIAL",
+        "priority": 4,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE"
+        ]
+    },
+    {
+        "name": "SECRET POWER",
+        "move_effect": "SECRET_POWER",
+        "base_power": 70,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 20,
+        "secondary_effect_chance": 30,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "DIVE",
+        "move_effect": "FLY",
+        "base_power": 60,
+        "type": "WATER",
+        "accuracy": 100,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "ARM THRUST",
+        "move_effect": "MULTI_HIT",
+        "base_power": 15,
+        "type": "FIGHTING",
+        "accuracy": 100,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "CAMOUFLAGE",
+        "move_effect": "CAMOUFLAGE",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_SNATCH"
+        ]
+    },
+    {
+        "name": "TAIL GLOW",
+        "move_effect": "SPECIAL_ATTACK_UP_2",
+        "base_power": 0,
+        "type": "BUG",
+        "accuracy": 100,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_SNATCH"
+        ]
+    },
+    {
+        "name": "LUSTER PURGE",
+        "move_effect": "SPECIAL_DEFENSE_DOWN_HIT",
+        "base_power": 70,
+        "type": "PSYCHIC",
+        "accuracy": 100,
+        "pp": 5,
+        "secondary_effect_chance": 50,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "MIST BALL",
+        "move_effect": "SPECIAL_ATTACK_DOWN_HIT",
+        "base_power": 70,
+        "type": "PSYCHIC",
+        "accuracy": 100,
+        "pp": 5,
+        "secondary_effect_chance": 50,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "FEATHER DANCE",
+        "move_effect": "ATTACK_DOWN_2",
+        "base_power": 0,
+        "type": "FLYING",
+        "accuracy": 100,
+        "pp": 15,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_MAGIC_COAT",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "TEETER DANCE",
+        "move_effect": "TEETER_DANCE",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "ALL_EXCEPT_USER",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "BLAZE KICK",
+        "move_effect": "BLAZE_KICK",
+        "base_power": 85,
+        "type": "FIRE",
+        "accuracy": 90,
+        "pp": 10,
+        "secondary_effect_chance": 10,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "MUD SPORT",
+        "move_effect": "MUD_SPORT",
+        "base_power": 0,
+        "type": "GROUND",
+        "accuracy": 100,
+        "pp": 15,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": []
+    },
+    {
+        "name": "ICE BALL",
+        "move_effect": "ROLLOUT",
+        "base_power": 30,
+        "type": "ICE",
+        "accuracy": 90,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "NEEDLE ARM",
+        "move_effect": "FLINCH_HIT_2",
+        "base_power": 60,
+        "type": "GRASS",
+        "accuracy": 100,
+        "pp": 15,
+        "secondary_effect_chance": 30,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "SLACK OFF",
+        "move_effect": "RESTORE_HP",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_SNATCH"
+        ]
+    },
+    {
+        "name": "HYPER VOICE",
+        "move_effect": "HIT",
+        "base_power": 90,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "BOTH_ENEMIES",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "POISON FANG",
+        "move_effect": "POISON_FANG",
+        "base_power": 50,
+        "type": "POISON",
+        "accuracy": 100,
+        "pp": 15,
+        "secondary_effect_chance": 30,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "CRUSH CLAW",
+        "move_effect": "DEFENSE_DOWN_HIT",
+        "base_power": 75,
+        "type": "NORMAL",
+        "accuracy": 95,
+        "pp": 10,
+        "secondary_effect_chance": 50,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "BLAST BURN",
+        "move_effect": "RECHARGE",
+        "base_power": 150,
+        "type": "FIRE",
+        "accuracy": 90,
+        "pp": 5,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "HYDRO CANNON",
+        "move_effect": "RECHARGE",
+        "base_power": 150,
+        "type": "WATER",
+        "accuracy": 90,
+        "pp": 5,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "METEOR MASH",
+        "move_effect": "ATTACK_UP_HIT",
+        "base_power": 100,
+        "type": "STEEL",
+        "accuracy": 85,
+        "pp": 10,
+        "secondary_effect_chance": 20,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "ASTONISH",
+        "move_effect": "FLINCH_HIT_2",
+        "base_power": 30,
+        "type": "GHOST",
+        "accuracy": 100,
+        "pp": 15,
+        "secondary_effect_chance": 30,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "WEATHER BALL",
+        "move_effect": "WEATHER_BALL",
+        "base_power": 50,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "AROMATHERAPY",
+        "move_effect": "HEAL_BELL",
+        "base_power": 0,
+        "type": "GRASS",
+        "accuracy": 0,
+        "pp": 5,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_SNATCH"
+        ]
+    },
+    {
+        "name": "FAKE TEARS",
+        "move_effect": "SPECIAL_DEFENSE_DOWN_2",
+        "base_power": 0,
+        "type": "DARK",
+        "accuracy": 100,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_MAGIC_COAT",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "AIR CUTTER",
+        "move_effect": "HIGH_CRITICAL",
+        "base_power": 55,
+        "type": "FLYING",
+        "accuracy": 95,
+        "pp": 25,
+        "secondary_effect_chance": 0,
+        "target": "BOTH_ENEMIES",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "OVERHEAT",
+        "move_effect": "OVERHEAT",
+        "base_power": 140,
+        "type": "FIRE",
+        "accuracy": 90,
+        "pp": 5,
+        "secondary_effect_chance": 100,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "ODOR SLEUTH",
+        "move_effect": "FORESIGHT",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 40,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "ROCK TOMB",
+        "move_effect": "SPEED_DOWN_HIT",
+        "base_power": 50,
+        "type": "ROCK",
+        "accuracy": 80,
+        "pp": 10,
+        "secondary_effect_chance": 100,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "SILVER WIND",
+        "move_effect": "ALL_STATS_UP_HIT",
+        "base_power": 60,
+        "type": "BUG",
+        "accuracy": 100,
+        "pp": 5,
+        "secondary_effect_chance": 10,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "METAL SOUND",
+        "move_effect": "SPECIAL_DEFENSE_DOWN_2",
+        "base_power": 0,
+        "type": "STEEL",
+        "accuracy": 85,
+        "pp": 40,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_MAGIC_COAT",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "GRASS WHISTLE",
+        "move_effect": "SLEEP",
+        "base_power": 0,
+        "type": "GRASS",
+        "accuracy": 55,
+        "pp": 15,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_MAGIC_COAT",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "TICKLE",
+        "move_effect": "TICKLE",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_MAGIC_COAT",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "COSMIC POWER",
+        "move_effect": "COSMIC_POWER",
+        "base_power": 0,
+        "type": "PSYCHIC",
+        "accuracy": 0,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_SNATCH"
+        ]
+    },
+    {
+        "name": "WATER SPOUT",
+        "move_effect": "ERUPTION",
+        "base_power": 150,
+        "type": "WATER",
+        "accuracy": 100,
+        "pp": 5,
+        "secondary_effect_chance": 0,
+        "target": "BOTH_ENEMIES",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "SIGNAL BEAM",
+        "move_effect": "CONFUSE_HIT",
+        "base_power": 75,
+        "type": "BUG",
+        "accuracy": 100,
+        "pp": 15,
+        "secondary_effect_chance": 10,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "SHADOW PUNCH",
+        "move_effect": "ALWAYS_HIT",
+        "base_power": 60,
+        "type": "GHOST",
+        "accuracy": 0,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "EXTRASENSORY",
+        "move_effect": "FLINCH_HIT_2",
+        "base_power": 80,
+        "type": "PSYCHIC",
+        "accuracy": 100,
+        "pp": 30,
+        "secondary_effect_chance": 10,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "SKY UPPERCUT",
+        "move_effect": "SKY_UPPERCUT",
+        "base_power": 85,
+        "type": "FIGHTING",
+        "accuracy": 90,
+        "pp": 15,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "SAND TOMB",
+        "move_effect": "TRAP",
+        "base_power": 15,
+        "type": "GROUND",
+        "accuracy": 70,
+        "pp": 15,
+        "secondary_effect_chance": 100,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "SHEER COLD",
+        "move_effect": "OHKO",
+        "base_power": 1,
+        "type": "ICE",
+        "accuracy": 30,
+        "pp": 5,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "MUDDY WATER",
+        "move_effect": "ACCURACY_DOWN_HIT",
+        "base_power": 95,
+        "type": "WATER",
+        "accuracy": 85,
+        "pp": 10,
+        "secondary_effect_chance": 30,
+        "target": "BOTH_ENEMIES",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "BULLET SEED",
+        "move_effect": "MULTI_HIT",
+        "base_power": 10,
+        "type": "GRASS",
+        "accuracy": 100,
+        "pp": 30,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "AERIAL ACE",
+        "move_effect": "ALWAYS_HIT",
+        "base_power": 60,
+        "type": "FLYING",
+        "accuracy": 0,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "ICICLE SPEAR",
+        "move_effect": "MULTI_HIT",
+        "base_power": 10,
+        "type": "ICE",
+        "accuracy": 100,
+        "pp": 30,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "IRON DEFENSE",
+        "move_effect": "DEFENSE_UP_2",
+        "base_power": 0,
+        "type": "STEEL",
+        "accuracy": 0,
+        "pp": 15,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_SNATCH"
+        ]
+    },
+    {
+        "name": "BLOCK",
+        "move_effect": "MEAN_LOOK",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 5,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_MAGIC_COAT",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "HOWL",
+        "move_effect": "ATTACK_UP",
+        "base_power": 0,
+        "type": "NORMAL",
+        "accuracy": 0,
+        "pp": 40,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_SNATCH"
+        ]
+    },
+    {
+        "name": "DRAGON CLAW",
+        "move_effect": "HIT",
+        "base_power": 80,
+        "type": "DRAGON",
+        "accuracy": 100,
+        "pp": 15,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "FRENZY PLANT",
+        "move_effect": "RECHARGE",
+        "base_power": 150,
+        "type": "GRASS",
+        "accuracy": 90,
+        "pp": 5,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "BULK UP",
+        "move_effect": "BULK_UP",
+        "base_power": 0,
+        "type": "FIGHTING",
+        "accuracy": 0,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_SNATCH"
+        ]
+    },
+    {
+        "name": "BOUNCE",
+        "move_effect": "FLY",
+        "base_power": 85,
+        "type": "FLYING",
+        "accuracy": 85,
+        "pp": 5,
+        "secondary_effect_chance": 30,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "MUD SHOT",
+        "move_effect": "SPEED_DOWN_HIT",
+        "base_power": 55,
+        "type": "GROUND",
+        "accuracy": 95,
+        "pp": 15,
+        "secondary_effect_chance": 100,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "POISON TAIL",
+        "move_effect": "POISON_TAIL",
+        "base_power": 50,
+        "type": "POISON",
+        "accuracy": 100,
+        "pp": 25,
+        "secondary_effect_chance": 10,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "COVET",
+        "move_effect": "THIEF",
+        "base_power": 40,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 40,
+        "secondary_effect_chance": 100,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "VOLT TACKLE",
+        "move_effect": "DOUBLE_EDGE",
+        "base_power": 120,
+        "type": "ELECTRIC",
+        "accuracy": 100,
+        "pp": 15,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "MAGICAL LEAF",
+        "move_effect": "ALWAYS_HIT",
+        "base_power": 60,
+        "type": "GRASS",
+        "accuracy": 0,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "WATER SPORT",
+        "move_effect": "WATER_SPORT",
+        "base_power": 0,
+        "type": "WATER",
+        "accuracy": 100,
+        "pp": 15,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": []
+    },
+    {
+        "name": "CALM MIND",
+        "move_effect": "CALM_MIND",
+        "base_power": 0,
+        "type": "PSYCHIC",
+        "accuracy": 0,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_SNATCH"
+        ]
+    },
+    {
+        "name": "LEAF BLADE",
+        "move_effect": "HIGH_CRITICAL",
+        "base_power": 70,
+        "type": "GRASS",
+        "accuracy": 100,
+        "pp": 15,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT",
+            "MAKES_CONTACT"
+        ]
+    },
+    {
+        "name": "DRAGON DANCE",
+        "move_effect": "DRAGON_DANCE",
+        "base_power": 0,
+        "type": "DRAGON",
+        "accuracy": 0,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "USER",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_SNATCH"
+        ]
+    },
+    {
+        "name": "ROCK BLAST",
+        "move_effect": "MULTI_HIT",
+        "base_power": 25,
+        "type": "ROCK",
+        "accuracy": 80,
+        "pp": 10,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "SHOCK WAVE",
+        "move_effect": "ALWAYS_HIT",
+        "base_power": 60,
+        "type": "ELECTRIC",
+        "accuracy": 0,
+        "pp": 20,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "WATER PULSE",
+        "move_effect": "CONFUSE_HIT",
+        "base_power": 60,
+        "type": "WATER",
+        "accuracy": 100,
+        "pp": 20,
+        "secondary_effect_chance": 20,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    },
+    {
+        "name": "DOOM DESIRE",
+        "move_effect": "FUTURE_SIGHT",
+        "base_power": 120,
+        "type": "STEEL",
+        "accuracy": 85,
+        "pp": 5,
+        "secondary_effect_chance": 0,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": []
+    },
+    {
+        "name": "PSYCHO BOOST",
+        "move_effect": "OVERHEAT",
+        "base_power": 140,
+        "type": "PSYCHIC",
+        "accuracy": 90,
+        "pp": 5,
+        "secondary_effect_chance": 100,
+        "target": "SELECTED_POKEMON",
+        "priority": 0,
+        "flags": [
+            "AFFECTED_BY_KINGS_ROCK",
+            "MIRROR_MOVE_COMPATIBLE",
+            "AFFECTED_BY_PROTECT"
+        ]
+    }
+]

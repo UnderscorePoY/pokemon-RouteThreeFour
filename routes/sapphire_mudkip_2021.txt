@@ -1,0 +1,167 @@
+// ***** 2021 route ***** //
+// Link : https://docs.google.com/document/d/1nKGAP84s5CjtWGEcBZXgBoctb0avNikdB9aiyRZul6U/edit
+
+// config [poke] section : 
+// [poke]
+// # Mudkip 148
+// species = mudkip 
+// level = 5
+// nature = naughty
+// ability = Torrent
+// # IVs are from 0-31. defaults to 31s if not entered
+// hpIV = 24
+// atkIV = 27
+// defIV = 10
+// spaIV = 31
+// spdIV = 31
+// speIV = 30
+// boostedExp = false
+// pokerus = false
+
+
+stats
+ranges
+
+
+// LITTLEROOT //
+L2 POOCHYENA HARDY -v 2 // Poochyena IVs and Nature are wrong
+
+BRENDAN_1 -v 2 -lvstats -xdef -2 // Brendan Treecko
+lm MUDSLAP
+
+CALVIN_1 -v 2 -lvstats
+
+
+// PETALBURG //
+buy 3 POTION
+buy 7 REPEL
+money
+
+GRUNT_9 -v 2 -lvstats // L9 Poochyena Aqua Grunt
+
+lm WATERGUN // After first Josh Geodude
+JOSH -v 2 -lvstats
+TOMMY -v 2 -lvstats
+ROXANNE -v 3 -lvstats
+
+// ROUTE 116 //
+L6 NINCADA HARDY -v 1 -lvstats // Any encounter
+CLARK -v 1 -lvstats
+GRUNT_15 -v 2 -lvstats // L11 Poochyena Aqua Grunt
+JOEY -xtorrent -v 2 -lvstats // If 5HP, or no exp + Torrent
+// JOSE -v 2 -lvstats // If any other case
+
+evolve MARSHTOMP
+lm MUDSHOT
+um GROWL
+
+sell 4 POKEBALL
+sell TM39
+buy 2 SUPERPOTION
+buy 3 XSPEED
+buy 4 XATTACK
+money
+
+// DEWFORD //
+LAURA -v 1 -lvstats
+BRAWLY -v 1 -xatk 1 -lvstats
+
+// SLATEPORT //
+spendmoney 50 // Museum fee
+GRUNT_19 -v 2 -lvstats // L15 Carvanha Aqua Grunt
+GRUNT_20 -v 2 -lvstats // L14 Zubat, L14 Carvanha Aqua Grunt
+
+// ROUTE 110 //
+equip SOFTSAND
+BRENDAN_2 -order 1/3/2 -xatk 2 -xspe 1 -yspes 0/-1/0 -v 2 -lvstats // Brendan Grovyle 
+
+// MAUVILLE //
+lm ROCKSMASH
+um MUDSLAP
+WALLY_2 -v 2 -lvstats // L16 Ralts Wally
+VIVIAN -v 2 -lvstats
+SHAWN -xspe 1 -v 2 -lvstats
+WATTSON -xspe 1 -v 2 -lvstats
+
+lm STRENGTH
+um TACKLE
+BROOKE_1 -order 1/3/2 -xatk 1 -v 2 -lvstats
+
+// FALLARBOR //
+sell HPUP
+sell NUGGET
+sell TM47
+sell TM08
+buy 3 SUPERPOTION
+buy 1 ESCAPEROPE
+buy 15 SUPERREPEL
+buy 8 XSPECIAL
+buy 6 XSPEED
+buy 10 XATTACK
+buy XDEFEND
+buy 2 GUARDSPEC
+money
+
+// MT. CHIMNEY //
+GRUNT_13 -v 2 -lvstats // L20 Zubat, L20 POOCHYENA
+MATT_2 -v 2 -lvstats
+ARCHIE_3 -xatks 1/2/2 -xspe 1 -v 2 -lvstats
+
+// LAVARIDGE //
+FLANNERY -xatks 0/1/1 -ystatus2 LIGHTSCREEN -weather SUN -v 2 -lvstats
+sell CARBOS
+buy 6 ENERGYPOWDER
+buy 6 ENERGYROOT
+buy 6 HEALPOWDER
+money
+
+
+// PETALBURG //
+MARY -v 2 -lvstats // Delcatty
+LORI -v 2 -lvstats // Linoone
+BERKE -v 2 -lvstats // Zangoose
+NORMAN -xdef 1 -xatk 2 -v 2 -lvstats
+
+lm SURF
+um WATERGUN
+
+// MAUVILLE - ROUTE 119 //
+GRUNT_25 -v 2 -lvstats // L28 Carvanha Aqua Grunt
+GRUNT_17 -v 2 -lvstats // L27 Poochyena, L27 Carvanha Aqua Grunt
+SHELLY_1 -v 2 -lvstats
+
+BRENDAN_3 -order 1/3/2 -xspe 1 -xatk 2 -v 2 -lvstats // L31 Grovyle Brendan
+
+// MT. PYRE //
+GRUNT_22 -v 2 -lvstats // L30 Zubat x3 Aqua Grunt
+GRUNT_23 -v 2 -lvstats // L31 Poochyena, L31 Carvanha Aqua Grunt
+GRUNT_24 -v 2 -lvstats // L31 Carvanha x2 Aqua Grunt
+
+rarecandy
+rarecandy
+rarecandy
+evolve SWAMPERT
+equip MYSTICWATER
+
+stats
+
+// FORTREE //
+JARED -v 2 -lvstats
+KYLEE -v 2 -lvstats
+WINONA -xspe 1 -xatks 0/3/3/3 -yatks 0/0/0/1 -yspes 0/0/0/1 -v 2 -lvstats
+
+// LILYCOVE - AQUA HIDEOUT //
+MATT_1 -v 2 -lvstats
+
+// MOSSDEEP //
+lm DIVE
+um MUDSHOT
+SAMANTHA -xtorrent -v 2 -lvstats
+TATEANDLIZA -xspe 1 -v 2 -lvstats
+
+// ROUTE 127 - SEAFLOOR CAVERN //
+SHELLY_2 -v 2 -lvstats
+ARCHIE_2 -xtorrent -xspa 2 -xspe 1 -v 2 -lvstats
+
+// (route ends with Kyogre) //
+// ######################## //
