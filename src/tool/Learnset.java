@@ -16,7 +16,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import tool.exc.ToolInternalException;
+import tool.exception.ToolInternalException;
 
 /**
  * A representation of a sequence of moves and levels which a species learns moves at.

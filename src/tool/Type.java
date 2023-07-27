@@ -1,7 +1,7 @@
 package tool;
 import java.util.EnumMap;
 
-import tool.exc.ToolInternalException;
+import tool.exception.ToolInternalException;
 
 public enum Type {
 	//TODO : handle effectiveness and Type.MYSTERY properly

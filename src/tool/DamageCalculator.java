@@ -5,7 +5,7 @@ import java.util.SortedMap;
 import java.util.TreeMap;
 
 import tool.StatsContainer.ContainerType;
-import tool.exc.ToolInternalException;
+import tool.exception.ToolInternalException;
 
 /* This code tries to merge Gen 3 and Gen 4 logic. Documentation might be missing or entangled. */
 
@@ -77,7 +77,7 @@ public class DamageCalculator {
 		}
 		
 		private void calculate() throws UnsupportedOperationException, ToolInternalException {
-			Move modifiedMove = null; // used to store a copy of the move, which is modified by the damage functions as side-effects
+			Move modifiedMove = new Move(attackMove); // used to store a copy of the move, which is modified by the damage functions as side-effects
 			
 			if(Settings.game.isGen3()) {
 				switch(attackMove.getEffect()) {
@@ -85,7 +85,7 @@ public class DamageCalculator {
 				case RANDOM_DAMAGE:
 					this.setCrit(false);
 					for (int roll = MIN_PSYWAVE_ROLL; roll <= MAX_PSYWAVE_ROLL; roll += PSYWAVE_ROLL_STEP) {
-						modifiedMove = new Move(attackMove);
+						//modifiedMove = new Move(attackMove);
 						int dmg = damageGen3(modifiedMove, attacker, defender, atkMod, defMod, roll, false, extra_multiplier, isBattleTower, isDoubleBattle);
 						this.addNormalDamage(dmg);
 					}
@@ -94,7 +94,7 @@ public class DamageCalculator {
 				case FUTURE_SIGHT:
 				case HIT_LATER:
 					this.setCrit(false);
-					modifiedMove = new Move(attackMove);
+					//modifiedMove = new Move(attackMove);
 					int dmg = calculateBaseDamageGen3(modifiedMove, attacker, defender, atkMod, defMod, false, extra_multiplier, isBattleTower, isDoubleBattle);
 					this.addNormalDamage(dmg);
 					break;
@@ -103,14 +103,14 @@ public class DamageCalculator {
 				case DRAGON_RAGE:
 				case SONICBOOM:
 					this.setCrit(false);
-					modifiedMove = new Move(attackMove);
+					//modifiedMove = new Move(attackMove);
 					dmg = calculateBaseDamageGen3(modifiedMove, attacker, defender, atkMod, defMod, false, extra_multiplier, isBattleTower, isDoubleBattle);
 					this.addNormalDamage(dmg);
 					break;
 					
 				default:
 					for (int roll = MIN_ROLL; roll <= MAX_ROLL; roll++) {
-						modifiedMove = new Move(attackMove);
+						//modifiedMove = new Move(attackMove);
 						dmg = damageGen3(modifiedMove, attacker, defender, atkMod, defMod, roll, false, extra_multiplier, isBattleTower, isDoubleBattle);
 						this.addNormalDamage(dmg);
 
@@ -125,7 +125,7 @@ public class DamageCalculator {
 				case RANDOM_DAMAGE: // Psywave
 					this.setCrit(false);
 					for (int roll = MIN_PSYWAVE_ROLL; roll <= MAX_PSYWAVE_ROLL; roll += PSYWAVE_ROLL_STEP) {
-						modifiedMove = new Move(attackMove);
+						//modifiedMove = new Move(attackMove);
 						int dmg = damageGen4(modifiedMove, attacker, defender, atkMod, defMod, roll, false, extra_multiplier, isBattleTower, isDoubleBattle);
 						this.addNormalDamage(dmg);
 					}
@@ -134,7 +134,7 @@ public class DamageCalculator {
 
 				case HIT_LATER: // Future Sight, Doom Desire
 					this.setCrit(false);
-					modifiedMove = new Move(attackMove);
+					//modifiedMove = new Move(attackMove);
 					int dmg = damageGen4(modifiedMove, attacker, defender, atkMod, defMod, MAX_ROLL, false, extra_multiplier, isBattleTower, isDoubleBattle);
 					this.addNormalDamage(dmg);
 					break;
@@ -143,14 +143,14 @@ public class DamageCalculator {
 				case FIXED_20: // Sonicboom
 				case FIXED_40: // Dragon Rage
 					this.setCrit(false);
-					modifiedMove = new Move(attackMove);
+					//modifiedMove = new Move(attackMove);
 					dmg = damageGen4(modifiedMove, attacker, defender, atkMod, defMod, MAX_ROLL, false, extra_multiplier, isBattleTower, isDoubleBattle);
 					this.addNormalDamage(dmg);
 					break;
 					
 				default:
 					for (int roll = MIN_ROLL; roll <= MAX_ROLL; roll++) {
-						modifiedMove = new Move(attackMove);
+						//modifiedMove = new Move(attackMove);
 						dmg = damageGen4(modifiedMove, attacker, defender, atkMod, defMod, roll, false, extra_multiplier, isBattleTower, isDoubleBattle);
 						this.addNormalDamage(dmg);
 
@@ -235,6 +235,12 @@ public class DamageCalculator {
 			else
 				return normalHitsGreaterOrEqualThanEnemyHP;
 		}
+	    
+	    public void capDamagesWithHP(int hp) {
+	    	normalDamageRolls = capMapWithHP(normalDamageRolls, hp);
+	    	if(hasCrit)
+	    		critDamageRolls = capMapWithHP(critDamageRolls, hp);
+	    }
 	    
 	    
 	    
@@ -579,11 +585,11 @@ public class DamageCalculator {
 		        }
 		    }
 		    
-		    public void appendAllMoveInfo(StringBuilder sb) {
+		    public void appendAllMoveInfo(StringBuilder sb) throws UnsupportedOperationException, ToolInternalException {
 				String endl = Constants.endl;
 				Move m = this.attackMove;
 				//int _extra_multiplier = this.extra_multiplier;
-				//Pokemon p1 = attacker;
+				Pokemon p1 = attacker;
 				Pokemon p2 = defender;
 				//StatModifier mod1 = atkMod;
 				//StatModifier mod2 = defMod;
@@ -603,6 +609,7 @@ public class DamageCalculator {
 					appendOneShotProbIfNotGuaranteed(sb);
 					appendRecoilDamagesIfApplicable(sb, normalDamageRolls);
 					appendAftermathIfApplicable(sb);
+					printDamageWithIVvariationIfApplicable(sb, m, p1, p2, atkMod, defMod, 1, isBattleTower, isDoubleBattle, false);
 					
 					// crit rolls
 					if(hasCrit() && lowestDamage() < p2.getStatValue(Stat.HP)) {
@@ -610,6 +617,8 @@ public class DamageCalculator {
 						appendCritDamages(sb);
 						appendNShots(sb);
 						appendRecoilDamagesIfApplicable(sb, critDamageRolls);
+						appendAftermathIfApplicable(sb);
+						printDamageWithIVvariationIfApplicable(sb, m, p1, p2, atkMod, defMod, 1, isBattleTower, isDoubleBattle, true);
 					}
 					
 					
@@ -625,11 +634,11 @@ public class DamageCalculator {
 				sb.append(endl);
 			}
 		    
-		    public void appendBasicMoveInfo(StringBuilder sb) {
+		    public void appendBasicMoveInfo(StringBuilder sb) throws UnsupportedOperationException, ToolInternalException {
 				String endl = Constants.endl;
 				Move m = this.attackMove;
 				//int _extra_multiplier = this.extra_multiplier;
-				//Pokemon p1 = attacker;
+				Pokemon p1 = attacker;
 				Pokemon p2 = defender;
 				//StatModifier mod1 = atkMod;
 				//StatModifier mod2 = defMod;
@@ -649,6 +658,7 @@ public class DamageCalculator {
 					appendOneShotProbIfNotGuaranteed(sb);
 					appendRecoilDamagesIfApplicable(sb, normalDamageRolls);
 					appendAftermathIfApplicable(sb);
+					printDamageWithIVvariationIfApplicable(sb, m, p1, p2, atkMod, defMod, 1, isBattleTower, isDoubleBattle, false);
 					
 					// crit rolls
 					if(hasCrit() && lowestDamage() < p2.getStatValue(Stat.HP)) { // Only display when normal rolls aren't guaranteed
@@ -686,7 +696,7 @@ public class DamageCalculator {
 		    	
 		    	Damages d = (Damages)o;
 		    	return d.highestCritDamage() == this.highestCritDamage() && d.lowestCritDamage() == this.lowestCritDamage()
-		    			&& d.highestDamage() == this.highestDamage() && d.lowestDamage() == this.lowestDamage();
+		    		 && d.highestDamage() == this.highestDamage() && d.lowestDamage() == this.lowestDamage();
 		    }
 
 		
@@ -951,10 +961,10 @@ public class DamageCalculator {
 	 * @throws ToolInternalException 
 	 * @throws UnsupportedOperationException 
 	 */
-    private static int damageGen3(Move attackMove, Pokemon attacker, Pokemon defender,
+    private static int damageGen3(Move modifiedAttackMove, Pokemon attacker, Pokemon defender,
                               StatModifier atkMod, StatModifier defMod, int roll,
                               boolean isCrit, int extra_multiplier, boolean isBattleTower, boolean isDoubleBattle) throws UnsupportedOperationException, ToolInternalException {
-        Move modifiedAttackMove = new Move(attackMove); // Copy
+        //Move modifiedAttackMove = new Move(attackMove); // Copy
         
         boolean ghostRevealed = defMod.hasStatus2_3(Status.FORESIGHT);
         
@@ -2842,18 +2852,18 @@ public class DamageCalculator {
         	
         	switch (moveCopy.getEffect()) {
         	case FURY_CUTTER:
-        		for (int _extra_multiplier : new Integer[] {1, 2, 3, 4, 5}) { //TODO: hardcoded
+        		for (int _extra_multiplier : new Integer[] {0, 1, 2, 3, 4}) { //TODO: hardcoded
         			moveCopy.setName(move.getBoostedName(_extra_multiplier));
-        			moveCopy.setPower(initialMovePower * _extra_multiplier);
+        			moveCopy.setPower(initialMovePower * (1 << _extra_multiplier));
         			maxDamage = calculateDamageAndPrintBasedOnVerboseLevel(sb, moveCopy, p1, p2, mod1, mod2, 1, isBattleTower, isDoubleBattle, verboseLevel);
                 }
         		break;
         		
         	case ROLLOUT: // Gen 3 Rollout, Ice Ball
         	case INCREASING_HIT: // Gen 4 Rollout, Ice Ball
-        		for (int _extra_multiplier : new Integer[] {1, 2, 3, 4, 5, 6}) { //TODO: hardcoded
+        		for (int _extra_multiplier : new Integer[] {0, 1, 2, 3, 4, 5}) { //TODO: hardcoded
         			moveCopy.setName(move.getBoostedName(_extra_multiplier));
-        			moveCopy.setPower(initialMovePower * _extra_multiplier);
+        			moveCopy.setPower(initialMovePower * (1 << _extra_multiplier));
         			maxDamage = calculateDamageAndPrintBasedOnVerboseLevel(sb, moveCopy, p1, p2, mod1, mod2, 1, isBattleTower, isDoubleBattle, verboseLevel);
                 }
         		break;
@@ -2866,7 +2876,7 @@ public class DamageCalculator {
         			              power ==  70 ? 30 :
         		                  power ==  90 ? 20 : 
         			              power == 110 ? 10 : 5;
-        			moveCopy.setName(String.format("%s (%d%)", move.getBoostedName(power), percent));
+        			moveCopy.setName(String.format("%s (%d%%)", move.getBoostedName(power), percent));
                     moveCopy.setPower(power);
                     maxDamage = calculateDamageAndPrintBasedOnVerboseLevel(sb, moveCopy, p1, p2, mod1, mod2, 1, isBattleTower, isDoubleBattle, verboseLevel);
                 }
@@ -3017,12 +3027,14 @@ public class DamageCalculator {
         	Type trueMoveType = moveCopy.getType();
         	boolean isDealingDamage = maxDamage > 0;
         	
+        	/*
         	// Round 1 of IV variation
         	if(isDealingDamage && (mod1.isIVvariation() || mod2.isIVvariation())) {
         		printDamageWithIVvariation(sb, moveCopy, p1, p2, mod1, mod2, 1, isBattleTower, isDoubleBattle, verboseLevel, false);
         		if(verboseLevel == VerboseLevel.MOST || verboseLevel == VerboseLevel.EVERYTHING)
             		printDamageWithIVvariation(sb, moveCopy, p1, p2, mod1, mod2, 1, isBattleTower, isDoubleBattle, verboseLevel, true);
         	}
+        	*/
         	
         	Move moveCopy2 = new Move(move); // copy
 
@@ -3076,6 +3088,7 @@ public class DamageCalculator {
             	break;
         	} // end ability
         	
+        	/*
         	// Round 2 of IV variation
         	if(isDealingDamage && (mod1.isIVvariation() || mod2.isIVvariation())) {
 	        	Ability a = p1.getAbility();
@@ -3091,6 +3104,7 @@ public class DamageCalculator {
 	        		mod1.setCurrHP(oldHP);
 	        	}
         	}
+        	*/
         	
         } // end for
         
@@ -3280,9 +3294,10 @@ public class DamageCalculator {
     	}
     }
     
-    public static void printDamageWithIVvariation(StringBuilder sb, Move move, Pokemon p1, Pokemon p2, StatModifier mod1, StatModifier mod2, int extra_modifier, boolean isBattleTower, boolean isDoubleBattle, VerboseLevel verboseLevel, boolean isCrit) throws UnsupportedOperationException, ToolInternalException {
+    public static void printDamageWithIVvariationIfApplicable(StringBuilder sb, Move move, Pokemon p1, Pokemon p2, StatModifier mod1, StatModifier mod2, int extra_modifier, boolean isBattleTower, boolean isDoubleBattle, boolean isCrit) throws UnsupportedOperationException, ToolInternalException {
     	Pokemon p1_in_use, p2_in_use, modifiedPoke;
     	boolean isAttackerVariation;
+    	// Check who has IV variation (i.e. where the player is)
     	if(mod1.isIVvariation()) {
     		p1_in_use = new Pokemon(p1);
     		p2_in_use = p2;
@@ -3294,7 +3309,8 @@ public class DamageCalculator {
     		isAttackerVariation = false;
     		modifiedPoke = p2_in_use;
 		} else {
-			throw new ToolInternalException(null, "nobody has iv variation", "printDamageWithIVvariation");
+			// No one has IV variation
+			return;
 		}
     	
     	Stat stat;
@@ -3318,6 +3334,52 @@ public class DamageCalculator {
     		sb.append(Constants.endl);
     		
     		Nature nature = natures[k];
+    		
+    		int last_low_iv = 0;
+    		// boolean isDifferentDamages = false;
+    		Damages previousDamages = null;
+    		int iv = 0;
+    		int hp = p2.getStatValue(Stat.HP);
+    		for(iv = ContainerType.IV.getMinPerStat(); iv <= ContainerType.IV.getMaxPerStat() + 1; iv++) {
+	    		boolean isFirstIV = iv == ContainerType.IV.getMinPerStat();
+	    		boolean isLastIV = iv > ContainerType.IV.getMaxPerStat();
+    			
+	    		Damages damages = previousDamages;
+	    		if(!isLastIV) {
+	    			modifiedPoke.getIVs().put(stat, iv);
+	    			modifiedPoke.setNature(nature);
+	    			damages = new Damages(move, p1_in_use, p2_in_use, mod1, mod2, extra_modifier, isBattleTower, isDoubleBattle);
+	    			damages.capDamagesWithHP(hp);
+	    		}
+
+	    		boolean isDifferentDamages = !damages.equals(previousDamages) || isLastIV;
+	    		
+	    		// Print previous IV range
+	    		if(!isFirstIV && isDifferentDamages) {
+	    			boolean isSingleIV = last_low_iv == iv - 1;
+	    			String rangeStr = isSingleIV ? String.format("%5d", last_low_iv) : String.format("%2d-%2d", last_low_iv, iv - 1);
+	    			sb.append(String.format("\t%s : ", rangeStr));
+	    			if(isCrit)
+	    				previousDamages.appendCritDamages(sb);
+	    			else
+	    				previousDamages.appendNormalDamages(sb);
+	    			
+	    			last_low_iv = iv;
+	    		}
+	    		
+	    		previousDamages = damages;
+	    		
+	    		if(isLastIV)
+	    			break;
+	    		
+	    		boolean isGuaranteedKO = damages.lowestDamage() >= p2.getStatValue(Stat.HP) || isCrit && damages.lowestCritDamage() >= p2.getStatValue(Stat.HP);
+	    		if(isGuaranteedKO)
+	    			iv = ContainerType.IV.getMaxPerStat();
+    		}
+    		sb.append(Constants.endl);
+    		
+    		
+    		/*
     		int last_low_iv = 0;
     		Damages previousDamages = null;
     		int iv;
@@ -3362,6 +3424,7 @@ public class DamageCalculator {
 	    		previousDamages = damages;
 	    	}
     		sb.append(Constants.endl);
+    		*/
     	}
     	
     	

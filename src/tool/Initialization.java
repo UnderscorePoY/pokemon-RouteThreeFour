@@ -5,7 +5,7 @@ import java.io.IOException;
 
 import org.json.simple.parser.ParseException;
 
-import tool.exc.ToolInternalException;
+import tool.exception.ToolInternalException;
 
 public class Initialization {
     public static void init(Game game) throws FileNotFoundException, IOException, ParseException, ToolInternalException {
@@ -15,14 +15,5 @@ public class Initialization {
 		Learnset.initLearnsets(game);
 		Species.initSpecies(game);
 		Trainer.initTrainers(game);
-    }
-    
-    public static void main(String[] args) {
-    	try {
-	    	for (Game game : Game.values())
-	    		init(game);
-    	} catch(Exception e) {
-    		e.printStackTrace();
-    	}
     }
 }

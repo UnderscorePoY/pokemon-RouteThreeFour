@@ -1,4 +1,4 @@
-package tool.exc;
+package tool.exception;
 
 import java.util.Queue;
 

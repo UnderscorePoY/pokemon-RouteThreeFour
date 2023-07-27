@@ -4,7 +4,7 @@ import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-import tool.exc.ToolInternalException;
+import tool.exception.ToolInternalException;
 
 /**
  * A container keeping track of certain stat-related values (for example IVs, EVs, stat values, stat stages, etc.).

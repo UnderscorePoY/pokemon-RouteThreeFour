@@ -1,7 +1,7 @@
 package tool;
 import java.util.Locale;
 
-import tool.exc.ToolInternalException;
+import tool.exception.ToolInternalException;
 
 public abstract class GameAction {
 	abstract void performAction(Pokemon p) throws UnsupportedOperationException, ToolInternalException;

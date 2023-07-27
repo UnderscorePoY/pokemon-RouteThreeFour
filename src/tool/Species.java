@@ -14,7 +14,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import tool.exc.ToolInternalException;
+import tool.exception.ToolInternalException;
 
 public class Species {
 	private static HashMap<IgnoreCaseString, Species> speciesByName;

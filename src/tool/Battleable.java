@@ -1,6 +1,6 @@
 package tool;
 
-import tool.exc.ToolInternalException;
+import tool.exception.ToolInternalException;
 
 public interface Battleable {
     //makes pokemon p get exp from this object

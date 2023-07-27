@@ -16,11 +16,11 @@ import java.util.Queue;
 import org.ini4j.jdk14.edu.emory.mathcs.backport.java.util.Arrays;
 
 import tool.StatsContainer.ContainerType;
-import tool.exc.BattleFlagNoParamException;
-import tool.exc.BattleFlagParamException;
-import tool.exc.RouteParserException;
-import tool.exc.RouteParserInternalException;
-import tool.exc.ToolInternalException;
+import tool.exception.BattleFlagNoParamException;
+import tool.exception.BattleFlagParamException;
+import tool.exception.RouteParserException;
+import tool.exception.RouteParserInternalException;
+import tool.exception.ToolInternalException;
 
 public class RouteParser {
     public static int lineNum = 0;
@@ -46,10 +46,16 @@ public class RouteParser {
                 String[] lines = wholeLine.split(COMMENT_STARTER_REGEX); // remove comments
                 lines = lines[0].split(COMMENT_STARTER2_REGEX); // remove more comments
                 String line = lines[0];
-                GameAction a = parseLine(line);
                 
-                if(a != null) // Line can be full of spaces or tabulations, and those would return null from the parsing ... maybe ?
-                	actions.add(a);
+                GameAction action = null;
+                try {
+                	action = parseLine(line);
+                } catch (Exception e) {
+                	Main.parsingExceptions.add(e);
+                }
+                
+                if(action != null) // Line can be full of spaces or tabulations, and those would return null from the parsing ... maybe ?
+                	actions.add(action);
             }
         } catch (Exception e) {
             throw e;
@@ -172,7 +178,7 @@ public class RouteParser {
         int nbNonOptionalParams = tokensForWild.length;
         
         // Return if line is empty
-        if (nbTokens == 0)
+        if (nbTokens == 0 || tokens[0].length() == 0)
             return null;
 
         String cmdToken = tokens[0];

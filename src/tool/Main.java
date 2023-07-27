@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.PrintStream;
 import java.util.List;
+import java.util.ArrayList;
 
 import org.ini4j.Wini;
 
@@ -12,6 +13,7 @@ import tool.StatsContainer.ContainerType;
 public class Main {
 	public static Pokemon mainPoke = null; // TODO : Really bad, but it works for scenario handling for now
     private static StringBuilder output = new StringBuilder();
+    public static List<Exception> parsingExceptions = new ArrayList<>();
     
     public static void append(String s) {
         output.append(s);
@@ -207,13 +209,17 @@ public class Main {
             /* ************* */
             
             List<GameAction> actions = RouteParser.parseFile(routeFile);
+            
+            if(!parsingExceptions.isEmpty())
+            	throw new Exception();
 
             /* *************** */
             /* ROUTE EXECUTION */
             /* *************** */
             
-            for(GameAction a : actions)
+            for(GameAction a : actions) {
         		a.performAction(mainPoke); // TODO: what if we want to switch main ?
+            }
             
             // TODO : implement tracking of X Items + Consumables + etc. via additional options (see leftover code below)
             
@@ -227,9 +233,15 @@ public class Main {
             outputWriter.write(output.toString());
             
         } catch (Exception exc) {
-            exc.printStackTrace();
-            exc.printStackTrace(debugStream);
-            try { outputWriter.write(exc.getMessage()); } catch(Exception e) {}
+        	if(parsingExceptions.isEmpty())
+        		parsingExceptions.add(exc);
+
+        	for(Exception e : parsingExceptions) {
+    			e.printStackTrace();
+ 	            e.printStackTrace(debugStream);
+ 	            try { outputWriter.write(e.getMessage()+Constants.endl); } catch(Exception e2) {}
+    		}
+        	
     		exitCode = -1;
         } finally {
     		try { debugStream.close(); } catch(Exception e) {}

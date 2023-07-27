@@ -6,7 +6,7 @@ import java.util.Set;
 
 import tool.Happiness.HappinessEvent;
 import tool.StatsContainer.ContainerType;
-import tool.exc.ToolInternalException;
+import tool.exception.ToolInternalException;
 
 //represents a battle, with planned statmods
 public class Battle extends GameAction {
@@ -250,6 +250,7 @@ public class Battle extends GameAction {
                     	
                     	// Give speed information based on IVs and nature
                     	Pokemon pSpeedCopy = new Pokemon(p);
+                    	int currentSpeed = options.getStatModifier(Side.PLAYER).getFinalSpeed(p);
                     	int oppSpeed = options.getStatModifier(Side.ENEMY).getFinalSpeed(opps);
                     	
                     	Main.appendln(String.format("SPEED INFO (vs. %s %s SPE)", opps.getDisplayName(), oppSpeed));
@@ -270,6 +271,16 @@ public class Battle extends GameAction {
                     		Main.appendln(">> Player is always slower than enemy.");
                             Main.appendln("");
                     	} else {  // There exist speed thresholds
+                    		// Current speed comparison
+                    		if(currentSpeed > oppSpeed) {
+                        		Main.appendln("~~ Player is currently faster than enemy.");
+                    		} else if (currentSpeed < oppSpeed) {
+                        		Main.appendln("~~ Player is currently slower than enemy.");
+                    		} else {
+                        		Main.appendln("~~ Player is currently speedtied with enemy.");
+                    		}
+                    		
+                    		// Speed IV and nature variation
                     		String[] names = new String[] {"-", "", "+"}; // TODO : hardcoded
                         	Nature[] natures = new Nature[] {Nature.BRAVE, Nature.HARDY, Nature.TIMID}; // Spe : minus, neutral, bonus
                         	for(int k = 0; k < natures.length; k++) { 
@@ -393,6 +404,10 @@ public class Battle extends GameAction {
     // does not actually do the battle, just prints summary
     public void printBattle(Pokemon us, Pokemon them) throws UnsupportedOperationException, ToolInternalException {
         Main.appendln(DamageCalculator.battleSummary(us, them, options));
+    }
+    
+    public Battleable getBattleable() {
+    	return opponent;
     }
 
     // does not actually do the battle, just prints short summary

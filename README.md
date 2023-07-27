@@ -1,5 +1,6 @@
 
 
+
 # RouteThreeFour
 RouteThreeFour is a routing tool for Generation 3 & 4 Pokémon games speedruns (Ruby/Sapphire/Emerald/FireRed/LeafGreen & Diamond/Pearl/Platinum/HeartGold/SoulSilver).  
 It is derived from a custom RouteThree, itself derived from Dabomstew & entrpntr's RouteTwo, itself derived from HRoll's RouteOne.
@@ -9,8 +10,19 @@ It is derived from a custom RouteThree, itself derived from Dabomstew & entrpntr
 **`[YYYY/MM/DD]` - version**  
 ► Compatibility-breaking update.  
 ○ Usual update.
+‼ Bug fixes
 
-**`[2023/XX/XX]`- v0.4.0**  
+**`[2023/07/27]` - v0.4.1**  
+‼ Abilities are now properly updated when evolving.  
+‼ Fury Cutter/Rollout now have the correct damage progression.  
+‼ Option `-ivvariation` now displays correct damage for every battle modifier.  
+‼ [*Gen 3*] : The tool now stops displaying an obscure error message upon loading.  
+‼ [*Gen 3*] : Move modifiers are now properly displayed in battles.  
+‼ [*HeartGold/SoulSilver*] Routes are now parsed by the tool without randomly crashing.  
+‼ [*HeartGold/SoulSilver*] Trainer natures are now correct.  
+○ Added a `Contributors` section at the end of the readme.  
+
+**`[2023/07/26]` - v0.4.0**  
 ○ Added Diamond/Pearl/Platinum/HeartGold/SoulSilver support.  
 ► Changed syntax for a variety of commands, refer to the detailled documentation below.  
 ► Changed syntax for a variety of trainer aliases.  
@@ -20,14 +32,14 @@ It is derived from a custom RouteThree, itself derived from Dabomstew & entrpntr
 
 **`[2022/01/17]` - v0.3.1**  
 ○ Added `-noDoubleBattle`/`-nodouble` command to force single battles.  
-○ Fixed a bug involving the `-double` battle modifier.  
+‼ Fixed a bug involving the `-double` battle modifier.  
 
 **`[2022/01/16]` - v0.3**  
 ○ Added FireRed/LeafGreen support, and Fire Red Squirtle High Exp route file.  
 ○ Added Emerald abraful route file.  
 ○ Added battle option `-doublebattle` to force a double battle. Updated the .xml file accordingly.  
 ○ Added most residual damages : poisoned, badly poisoned, burned, trapped, confused, seeded, nightmared and cursed.  
-○ Fixed a bug involving Special Defense of opponents not being modified properly.  
+‼ Fixed a bug involving Special Defense of opponents not being modified properly.  
 
 **`[2022/01/13]` - v0.2.1**  
 ○ Refactoring of the damage calculation and printing.  
@@ -605,16 +617,22 @@ Some options can have incompatible behaviour : they would either cancel each oth
 [`SpeedRunsLive`](http://speedrunslive.com) - for inspiration/awesome races  
 
 #### 8.2. PROGRAMMERS
-[`HRoll`](https://github.com/HRoll) [(2)](http://twitch.tv/hroll) - for making the original RouteOne which contributes a solid core to this tool
+Big aknowledgements to these people, who either initiated this tool or helped improve and/or maintain it at a technical level.  
+- [`HRoll`](https://github.com/HRoll) [(2)](http://twitch.tv/hroll) - for making the original RouteOne which contributes a solid core to this tool
  
-[`Mountebank`](http://twitch.tv/mountebank) - for contributing to the development of the original RouteOne  
+- [`Mountebank`](http://twitch.tv/mountebank) - for contributing to the development of the original RouteOne  
 
-[`Dabomstew`](https://github.com/Dabomstew) - for porting RouteOne to fit Gen 2  
+- [`Dabomstew`](https://github.com/Dabomstew) - for porting RouteOne to fit Gen 2  
 
-[`entrpntr`](https://github.com/entrpntr) - for the attention to details and various ideas  
+- [`entrpntr`](https://github.com/entrpntr) - for the attention to details and various ideas  
 
-[`MKDasher`](https://twitter.com/MK_Dasher) - for providing many technical tools, mostly for DS research
+- [`MKDasher`](https://twitter.com/MK_Dasher) - for providing many technical tools, mostly for DS research
 
-[`Grogir`](https://www.twitch.tv/grogir) - for the attention to details and various ideas 
+- [`Grogir`](https://www.twitch.tv/grogir) - for the attention to details and various ideas 
+
+#### 8.3. CONTRIBUTORS
+People who reported errors and/or provided feedback, which made the tool better. Thanks to them !  
+[`BillBonzai`](https://www.twitch.tv/billbonzai), `Gabraltar`, [`Graizi`](https://www.twitch.tv/graizi), [`Grogir`](https://www.twitch.tv/grogir), [`Plot`](https://www.twitch.tv/plotwyx)
+
 -- -- 
 

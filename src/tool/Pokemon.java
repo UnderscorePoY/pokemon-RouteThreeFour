@@ -8,7 +8,7 @@ import java.util.Set;
 
 import tool.Happiness.HappinessEvent;
 import tool.StatsContainer.ContainerType;
-import tool.exc.ToolInternalException;
+import tool.exception.ToolInternalException;
 
 public class Pokemon implements Battleable {
 	public static final int MAX_LEVEL = 100;
@@ -60,7 +60,7 @@ public class Pokemon implements Battleable {
      * Creates a Pokemon. Constructor compatible with all trainers (aside from Battle Tower, etc.).
      */
     public Pokemon(Species species, Gender gender, int level, Nature nature, Ability ability, int fixedIV, Moveset moves, Item heldItem) {
-    	this(species, gender, level, nature, ability, new StatsContainer(ContainerType.IV, fixedIV), false, false);
+    	this(species, gender, level, nature, ability, new StatsContainer(ContainerType.IV, fixedIV), moves, heldItem);
     }
     
     /**
@@ -141,6 +141,7 @@ public class Pokemon implements Battleable {
         this.hasPokerus = p.hasPokerus;
         this.hasBoostedExp = p.hasBoostedExp;
         this.badges = new HashSet<Stat>(p.badges);
+        this.happiness = p.getHappiness();
     }
 
     /*TODO Battle Tower poke
@@ -672,8 +673,15 @@ public class Pokemon implements Battleable {
     }
     
     // TODO: proper evolution
-    public void evolve(Species s) {
-        species = s;
+    public void evolve(Species newSpecies) {
+    	// Transfer ability
+        if(ability == species.getAbility1())
+        	ability = newSpecies.getAbility1();
+        else
+        	ability = newSpecies.getAbility2();
+        
+        // Set new species
+        species = newSpecies;
     }
 
 

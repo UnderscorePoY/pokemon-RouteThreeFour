@@ -18,7 +18,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import tool.exc.ToolInternalException;
+import tool.exception.ToolInternalException;
 
 public class Move {	
 	private static HashMap<IgnoreCaseString, Move> movesByName;

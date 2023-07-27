@@ -4,7 +4,7 @@ import java.util.EnumMap;
 import java.util.EnumSet;
 
 import tool.StatsContainer.ContainerType;
-import tool.exc.ToolInternalException;
+import tool.exception.ToolInternalException;
 
 public class BattleOptions {
 	public static final int MIN_NUMBER_OF_BATTLERS_PER_FIGHT = 1, MAX_NUMBER_OF_BATTLERS_PER_FIGHT = 12;

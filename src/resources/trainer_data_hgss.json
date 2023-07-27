@@ -1,13 +1,4 @@
 {
-    "PKMN_TRAINER_ETHAN_ -": {
-        "type": "TRTYPE_MON",
-        "class": "PKMN_TRAINER_ETHAN",
-        "name": " -",
-        "items": [],
-        "ai_flags": 0,
-        "double": 0,
-        "party": []
-    },
     "RIVAL_Silver_AZALEA_BAYLEEF": {
         "type": "TRTYPE_MON",
         "class": "RIVAL",
@@ -40,7 +31,8 @@
                 "species": "BAYLEEF",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 1
     },
     "RIVAL_Silver_CHERRYGROVE_CYNDAQUIL": {
         "type": "TRTYPE_MON",
@@ -58,7 +50,8 @@
                 "species": "CYNDAQUIL",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 2
     },
     "RIVAL_Silver_CHERRYGROVE_TOTODILE": {
         "type": "TRTYPE_MON",
@@ -76,7 +69,8 @@
                 "species": "TOTODILE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 3
     },
     "RIVAL_Silver_BURNED_TOWER_BAYLEEF": {
         "type": "TRTYPE_MON_MOVES",
@@ -142,7 +136,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 263
     },
     "RIVAL_Silver_VICTORY_ROAD_MEGANIUM": {
         "type": "TRTYPE_MON_MOVES",
@@ -236,7 +231,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 264
     },
     "RIVAL_Silver_CHERRYGROVE_CHIKORITA": {
         "type": "TRTYPE_MON",
@@ -254,7 +250,8 @@
                 "species": "CHIKORITA",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 265
     },
     "RIVAL_Silver_AZALEA_QUILAVA": {
         "type": "TRTYPE_MON",
@@ -288,7 +285,8 @@
                 "species": "QUILAVA",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 266
     },
     "RIVAL_Silver_BURNED_TOWER_QUILAVA": {
         "type": "TRTYPE_MON_MOVES",
@@ -354,7 +352,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 267
     },
     "RIVAL_Silver_VICTORY_ROAD_TYPHLOSION": {
         "type": "TRTYPE_MON_MOVES",
@@ -448,7 +447,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 268
     },
     "RIVAL_Silver_AZALEA_CROCONAW": {
         "type": "TRTYPE_MON",
@@ -482,7 +482,8 @@
                 "species": "CROCONAW",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 269
     },
     "RIVAL_Silver_BURNED_TOWER_CROCONAW": {
         "type": "TRTYPE_MON_MOVES",
@@ -548,7 +549,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 270
     },
     "RIVAL_Silver_GOLDENROD_TUNNEL_FERALIGATR": {
         "type": "TRTYPE_MON_MOVES",
@@ -628,7 +630,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 271
     },
     "RIVAL_Silver_VICTORY_ROAD_FERALIGATR": {
         "type": "TRTYPE_MON_MOVES",
@@ -722,7 +725,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 272
     },
     "RIVAL_Silver_MT_MOON_MEGANIUM": {
         "type": "TRTYPE_MON_MOVES",
@@ -816,7 +820,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 285
     },
     "RIVAL_Silver_MT_MOON_TYPHLOSION": {
         "type": "TRTYPE_MON_MOVES",
@@ -910,7 +915,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 286
     },
     "RIVAL_Silver_MT_MOON_FERALIGATR": {
         "type": "TRTYPE_MON_MOVES",
@@ -1004,7 +1010,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 287
     },
     "RIVAL_Silver_GOLDENROD_TUNNEL_MEGANIUM": {
         "type": "TRTYPE_MON_MOVES",
@@ -1084,7 +1091,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 288
     },
     "RIVAL_Silver_GOLDENROD_TUNNEL_QUILAVA": {
         "type": "TRTYPE_MON_MOVES",
@@ -1164,7 +1172,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 289
     },
     "RIVAL_Silver_INDIGO_PLATEAU_MEGANIUM": {
         "type": "TRTYPE_MON_MOVES",
@@ -1261,7 +1270,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 489
     },
     "RIVAL_Silver_INDIGO_PLATEAU_TYPHLOSION": {
         "type": "TRTYPE_MON_MOVES",
@@ -1358,7 +1368,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 490
     },
     "RIVAL_Silver_INDIGO_PLATEAU_FERALIGATR": {
         "type": "TRTYPE_MON_MOVES",
@@ -1461,7 +1472,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 491
     },
     "RIVAL_Silver_DRAGONS_DEN_MEGANIUM": {
         "type": "TRTYPE_MON_MOVES",
@@ -1519,7 +1531,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 735
     },
     "RIVAL_Silver_DRAGONS_DEN_TYPHLOSION": {
         "type": "TRTYPE_MON_MOVES",
@@ -1577,7 +1590,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 736
     },
     "RIVAL_Silver_DRAGONS_DEN_FERALIGATR": {
         "type": "TRTYPE_MON_MOVES",
@@ -1635,7 +1649,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 737
     },
     "BUG_CATCHER_Wade_1": {
         "type": "TRTYPE_MON",
@@ -1677,7 +1692,8 @@
                 "species": "CATERPIE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 4
     },
     "BUG_CATCHER_Wade_2": {
         "type": "TRTYPE_MON_MOVES",
@@ -1743,7 +1759,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 460
     },
     "BUG_CATCHER_Wade_3": {
         "type": "TRTYPE_MON_MOVES",
@@ -1804,7 +1821,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 461
     },
     "BUG_CATCHER_Wade_4": {
         "type": "TRTYPE_MON_MOVES",
@@ -1870,7 +1888,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 512
     },
     "BEAUTY_Victoria": {
         "type": "TRTYPE_MON",
@@ -1904,7 +1923,8 @@
                 "species": "SENTRET",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 5
     },
     "POLICEMAN_Keith": {
         "type": "TRTYPE_MON",
@@ -1922,7 +1942,8 @@
                 "species": "GROWLITHE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 6
     },
     "JUGGLER_Irwin_1": {
         "type": "TRTYPE_MON",
@@ -1964,7 +1985,8 @@
                 "species": "VOLTORB",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 7
     },
     "JUGGLER_Irwin_2": {
         "type": "TRTYPE_MON",
@@ -2006,7 +2028,8 @@
                 "species": "VOLTORB",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 454
     },
     "JUGGLER_Irwin_3": {
         "type": "TRTYPE_MON",
@@ -2048,7 +2071,8 @@
                 "species": "ELECTRODE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 455
     },
     "JUGGLER_Irwin_4": {
         "type": "TRTYPE_MON_MOVES",
@@ -2114,7 +2138,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 527
     },
     "YOUNGSTER_Joey_1": {
         "type": "TRTYPE_MON",
@@ -2132,7 +2157,8 @@
                 "species": "RATTATA",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 8
     },
     "YOUNGSTER_Joey_2": {
         "type": "TRTYPE_MON",
@@ -2150,7 +2176,8 @@
                 "species": "RATICATE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 279
     },
     "YOUNGSTER_Joey_3": {
         "type": "TRTYPE_MON_MOVES",
@@ -2174,7 +2201,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 280
     },
     "YOUNGSTER_Joey_4": {
         "type": "TRTYPE_MON_MOVES",
@@ -2198,7 +2226,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 510
     },
     "SWIMMER_F_Elaine": {
         "type": "TRTYPE_MON",
@@ -2216,7 +2245,8 @@
                 "species": "STARYU",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 9
     },
     "TWINS_Amy & Mimi_1": {
         "type": "TRTYPE_MON",
@@ -2242,7 +2272,8 @@
                 "species": "LEDYBA",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 10
     },
     "TWINS_Amy & Mimi_2": {
         "type": "TRTYPE_MON",
@@ -2268,7 +2299,8 @@
                 "species": "SPINARAK",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 387
     },
     "KIMONO_GIRL_Mickey": {
         "type": "TRTYPE_MON",
@@ -2302,7 +2334,8 @@
                 "species": "SKIPLOOM",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 11
     },
     "TEAM_ROCKET_Grunt_1": {
         "type": "TRTYPE_MON",
@@ -2336,7 +2369,8 @@
                 "species": "ZUBAT",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 12
     },
     "TEAM_ROCKET_Grunt_2": {
         "type": "TRTYPE_MON",
@@ -2362,7 +2396,8 @@
                 "species": "RATTATA",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 101
     },
     "TEAM_ROCKET_Grunt_3": {
         "type": "TRTYPE_MON",
@@ -2388,7 +2423,8 @@
                 "species": "RATICATE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 185
     },
     "TEAM_ROCKET_Grunt_4": {
         "type": "TRTYPE_MON",
@@ -2422,7 +2458,8 @@
                 "species": "MUK",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 186
     },
     "TEAM_ROCKET_Grunt_5": {
         "type": "TRTYPE_MON",
@@ -2472,7 +2509,8 @@
                 "species": "RATTATA",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 187
     },
     "TEAM_ROCKET_Grunt_6": {
         "type": "TRTYPE_MON",
@@ -2498,7 +2536,8 @@
                 "species": "ZUBAT",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 188
     },
     "TEAM_ROCKET_Grunt_7": {
         "type": "TRTYPE_MON",
@@ -2540,7 +2579,8 @@
                 "species": "RATTATA",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 189
     },
     "TEAM_ROCKET_Grunt_8": {
         "type": "TRTYPE_MON",
@@ -2558,7 +2598,8 @@
                 "species": "WEEZING",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 190
     },
     "TEAM_ROCKET_Grunt_9": {
         "type": "TRTYPE_MON",
@@ -2584,7 +2625,8 @@
                 "species": "KOFFING",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 191
     },
     "TEAM_ROCKET_Grunt_10": {
         "type": "TRTYPE_MON",
@@ -2618,7 +2660,8 @@
                 "species": "GRIMER",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 192
     },
     "TEAM_ROCKET_Grunt_11": {
         "type": "TRTYPE_MON",
@@ -2652,7 +2695,8 @@
                 "species": "RATTATA",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 193
     },
     "TEAM_ROCKET_Grunt_12": {
         "type": "TRTYPE_MON",
@@ -2670,7 +2714,8 @@
                 "species": "RATTATA",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 195
     },
     "TEAM_ROCKET_Grunt_13": {
         "type": "TRTYPE_MON",
@@ -2696,7 +2741,8 @@
                 "species": "GOLBAT",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 196
     },
     "TEAM_ROCKET_Grunt_14": {
         "type": "TRTYPE_MON",
@@ -2722,7 +2768,8 @@
                 "species": "WEEZING",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 197
     },
     "TEAM_ROCKET_Grunt_15": {
         "type": "TRTYPE_MON",
@@ -2764,7 +2811,8 @@
                 "species": "RATTATA",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 216
     },
     "TEAM_ROCKET_Grunt_16": {
         "type": "TRTYPE_MON",
@@ -2782,7 +2830,8 @@
                 "species": "GOLBAT",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 218
     },
     "TEAM_ROCKET_Grunt_17": {
         "type": "TRTYPE_MON",
@@ -2816,7 +2865,8 @@
                 "species": "RATTATA",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 219
     },
     "TEAM_ROCKET_Grunt_18": {
         "type": "TRTYPE_MON",
@@ -2842,7 +2892,8 @@
                 "species": "VENONAT",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 220
     },
     "TEAM_ROCKET_Grunt_19": {
         "type": "TRTYPE_MON",
@@ -2860,7 +2911,8 @@
                 "species": "RATICATE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 222
     },
     "TEAM_ROCKET_Grunt_20": {
         "type": "TRTYPE_MON",
@@ -2886,7 +2938,8 @@
                 "species": "ZUBAT",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 223
     },
     "TEAM_ROCKET_Grunt_21": {
         "type": "TRTYPE_MON",
@@ -2920,7 +2973,8 @@
                 "species": "RATTATA",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 224
     },
     "TEAM_ROCKET_Grunt_22": {
         "type": "TRTYPE_MON",
@@ -2946,7 +3000,8 @@
                 "species": "KOFFING",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 227
     },
     "TEAM_ROCKET_Grunt_23": {
         "type": "TRTYPE_MON",
@@ -2972,7 +3027,8 @@
                 "species": "MUK",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 228
     },
     "TEAM_ROCKET_Grunt_24": {
         "type": "TRTYPE_MON",
@@ -2990,7 +3046,8 @@
                 "species": "GOLBAT",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 353
     },
     "TEAM_ROCKET_Grunt_25": {
         "type": "TRTYPE_MON_MOVES",
@@ -3028,7 +3085,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 499
     },
     "TEAM_ROCKET_Grunt_26": {
         "type": "TRTYPE_MON",
@@ -3046,7 +3104,8 @@
                 "species": "KOFFING",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 601
     },
     "TEAM_ROCKET_F_Grunt_1": {
         "type": "TRTYPE_MON",
@@ -3072,7 +3131,8 @@
                 "species": "EKANS",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 13
     },
     "TEAM_ROCKET_F_Grunt_2": {
         "type": "TRTYPE_MON",
@@ -3090,7 +3150,8 @@
                 "species": "ARBOK",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 198
     },
     "TEAM_ROCKET_F_Grunt_3": {
         "type": "TRTYPE_MON",
@@ -3116,7 +3177,8 @@
                 "species": "GLOOM",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 199
     },
     "TEAM_ROCKET_F_Grunt_4": {
         "type": "TRTYPE_MON",
@@ -3158,7 +3220,8 @@
                 "species": "GLOOM",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 200
     },
     "TEAM_ROCKET_F_Grunt_5": {
         "type": "TRTYPE_MON_MOVES",
@@ -3196,7 +3259,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 404
     },
     "BURGLAR_Duncan": {
         "type": "TRTYPE_MON",
@@ -3230,7 +3294,8 @@
                 "species": "KOFFING",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 14
     },
     "FIREBREATHER_Otis": {
         "type": "TRTYPE_MON",
@@ -3264,7 +3329,8 @@
                 "species": "CAMERUPT",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 15
     },
     "SWIMMER_M_Simon": {
         "type": "TRTYPE_MON",
@@ -3290,7 +3356,8 @@
                 "species": "TENTACOOL",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 16
     },
     "BLACK_BELT_Kenji_1": {
         "type": "TRTYPE_MON",
@@ -3308,7 +3375,8 @@
                 "species": "MACHOKE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 17
     },
     "BLACK_BELT_Kenji_2": {
         "type": "TRTYPE_MON",
@@ -3350,7 +3418,8 @@
                 "species": "MACHOKE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 250
     },
     "BLACK_BELT_Kenji_3": {
         "type": "TRTYPE_MON",
@@ -3392,7 +3461,8 @@
                 "species": "HITMONLEE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 278
     },
     "BLACK_BELT_Kenji_4": {
         "type": "TRTYPE_MON",
@@ -3434,7 +3504,8 @@
                 "species": "HITMONLEE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 605
     },
     "FISHERMAN_Justin": {
         "type": "TRTYPE_MON",
@@ -3476,9 +3547,10 @@
                 "species": "MAGIKARP",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 18
     },
-    "BIKER_Mickey": {
+    "BIKER_Mickey_1": {
         "type": "TRTYPE_MON",
         "class": "BIKER",
         "name": "Mickey",
@@ -3510,9 +3582,45 @@
                 "species": "KOFFING",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 19
     },
-    "LEADER_Falkner_1": {
+    "BIKER_Mickey_2": {
+        "type": "TRTYPE_MON",
+        "class": "BIKER",
+        "name": "Mickey",
+        "items": [],
+        "ai_flags": 1,
+        "double": 0,
+        "party": [
+            {
+                "difficulty": 0,
+                "genderOverride": "GENDER_OVERRIDE_OFF",
+                "abilityOverride": "ABILITY_OVERRIDE_OFF",
+                "level": 20,
+                "species": "KOFFING",
+                "capsule": 0
+            },
+            {
+                "difficulty": 0,
+                "genderOverride": "GENDER_OVERRIDE_OFF",
+                "abilityOverride": "ABILITY_OVERRIDE_OFF",
+                "level": 20,
+                "species": "KOFFING",
+                "capsule": 0
+            },
+            {
+                "difficulty": 0,
+                "genderOverride": "GENDER_OVERRIDE_OFF",
+                "abilityOverride": "ABILITY_OVERRIDE_OFF",
+                "level": 20,
+                "species": "KOFFING",
+                "capsule": 0
+            }
+        ],
+        "index": 174
+    },
+    "LEADER_FALKNER_1": {
         "type": "TRTYPE_MON_MOVES",
         "class": "LEADER_FALKNER",
         "name": "Falkner",
@@ -3547,9 +3655,10 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 20
     },
-    "LEADER_Falkner_2": {
+    "LEADER_FALKNER_2": {
         "type": "TRTYPE_MON_MOVES",
         "class": "LEADER_FALKNER",
         "name": "Falkner",
@@ -3651,9 +3760,10 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 712
     },
-    "LEADER_Bugsy_1": {
+    "LEADER_BUGSY_1": {
         "type": "TRTYPE_MON_MOVES",
         "class": "LEADER_BUGSY",
         "name": "Bugsy",
@@ -3702,9 +3812,10 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 21
     },
-    "LEADER_Bugsy_2": {
+    "LEADER_BUGSY_2": {
         "type": "TRTYPE_MON_MOVES",
         "class": "LEADER_BUGSY",
         "name": "Bugsy",
@@ -3806,7 +3917,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 713
     },
     "LASS_Carrie": {
         "type": "TRTYPE_MON_MOVES",
@@ -3830,7 +3942,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 22
     },
     "POKE_MANIAC_Larry": {
         "type": "TRTYPE_MON",
@@ -3848,7 +3961,8 @@
                 "species": "SLOWPOKE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 23
     },
     "SCHOOL_KID_M_Alan_1": {
         "type": "TRTYPE_MON",
@@ -3866,7 +3980,8 @@
                 "species": "TANGELA",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 24
     },
     "SCHOOL_KID_M_Alan_2": {
         "type": "TRTYPE_MON",
@@ -3892,7 +4007,8 @@
                 "species": "YANMA",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 432
     },
     "SCHOOL_KID_M_Alan_3": {
         "type": "TRTYPE_MON",
@@ -3934,7 +4050,8 @@
                 "species": "YANMEGA",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 433
     },
     "SCHOOL_KID_M_Alan_4": {
         "type": "TRTYPE_MON",
@@ -3976,7 +4093,8 @@
                 "species": "YANMEGA",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 505
     },
     "HIKER_Russel": {
         "type": "TRTYPE_MON",
@@ -4010,7 +4128,8 @@
                 "species": "GEODUDE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 25
     },
     "CAMPER_Roland": {
         "type": "TRTYPE_MON",
@@ -4028,7 +4147,8 @@
                 "species": "NIDORAN_M",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 26
     },
     "PICNICKER_Liz_1": {
         "type": "TRTYPE_MON",
@@ -4046,7 +4166,8 @@
                 "species": "NIDORAN_F",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 27
     },
     "PICNICKER_Liz_2": {
         "type": "TRTYPE_MON",
@@ -4072,7 +4193,8 @@
                 "species": "NIDORINA",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 276
     },
     "PICNICKER_Liz_3": {
         "type": "TRTYPE_MON",
@@ -4106,7 +4228,8 @@
                 "species": "NIDOQUEEN",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 277
     },
     "PICNICKER_Liz_4": {
         "type": "TRTYPE_MON",
@@ -4140,7 +4263,8 @@
                 "species": "NIDOQUEEN",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 518
     },
     "ACE_TRAINER_M_Jake": {
         "type": "TRTYPE_MON_MOVES",
@@ -4192,7 +4316,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 28
     },
     "BIRD_KEEPER_GS_Rod": {
         "type": "TRTYPE_MON",
@@ -4218,9 +4343,10 @@
                 "species": "PIDGEY",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 29
     },
-    "LEADER_Whitney_1": {
+    "LEADER_WHITNEY_1": {
         "type": "TRTYPE_MON_MOVES",
         "class": "LEADER_WHITNEY",
         "name": "Whitney",
@@ -4261,9 +4387,10 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 30
     },
-    "LEADER_Whitney_2": {
+    "LEADER_WHITNEY_2": {
         "type": "TRTYPE_MON_MOVES",
         "class": "LEADER_WHITNEY",
         "name": "Whitney",
@@ -4365,9 +4492,10 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 714
     },
-    "LEADER_Morty_1": {
+    "LEADER_MORTY_1": {
         "type": "TRTYPE_MON_MOVES",
         "class": "LEADER_MORTY",
         "name": "Morty",
@@ -4438,9 +4566,10 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 31
     },
-    "LEADER_Morty_2": {
+    "LEADER_MORTY_2": {
         "type": "TRTYPE_MON_MOVES",
         "class": "LEADER_MORTY",
         "name": "Morty",
@@ -4542,9 +4671,10 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 715
     },
-    "LEADER_Pryce_1": {
+    "LEADER_PRYCE_1": {
         "type": "TRTYPE_MON_MOVES",
         "class": "LEADER_PRYCE",
         "name": "Pryce",
@@ -4600,9 +4730,10 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 32
     },
-    "LEADER_Pryce_2": {
+    "LEADER_PRYCE_2": {
         "type": "TRTYPE_MON_MOVES",
         "class": "LEADER_PRYCE",
         "name": "Pryce",
@@ -4704,9 +4835,10 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 716
     },
-    "LEADER_Jasmine_1": {
+    "LEADER_JASMINE_1": {
         "type": "TRTYPE_MON_MOVES",
         "class": "LEADER_JASMINE",
         "name": "Jasmine",
@@ -4762,9 +4894,10 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 33
     },
-    "LEADER_Jasmine_2": {
+    "LEADER_JASMINE_2": {
         "type": "TRTYPE_MON_MOVES",
         "class": "LEADER_JASMINE",
         "name": "Jasmine",
@@ -4866,9 +4999,10 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 717
     },
-    "LEADER_Chuck_1": {
+    "LEADER_CHUCK_1": {
         "type": "TRTYPE_MON_MOVES",
         "class": "LEADER_CHUCK",
         "name": "Chuck",
@@ -4909,9 +5043,10 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 34
     },
-    "LEADER_Chuck_2": {
+    "LEADER_CHUCK_2": {
         "type": "TRTYPE_MON_MOVES",
         "class": "LEADER_CHUCK",
         "name": "Chuck",
@@ -5013,9 +5148,10 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 718
     },
-    "LEADER_Clair_1": {
+    "LEADER_CLAIR_1": {
         "type": "TRTYPE_MON_MOVES",
         "class": "LEADER_CLAIR",
         "name": "Clair",
@@ -5086,9 +5222,10 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 35
     },
-    "LEADER_Clair_2": {
+    "LEADER_CLAIR_2": {
         "type": "TRTYPE_MON_MOVES",
         "class": "LEADER_CLAIR",
         "name": "Clair",
@@ -5190,9 +5327,10 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 719
     },
-    "LEADER_Clair_DRAGONS_DEN": {
+    "LEADER_CLAIR_DRAGONS_DEN": {
         "type": "TRTYPE_MON_MOVES",
         "class": "LEADER_CLAIR",
         "name": "Clair",
@@ -5248,7 +5386,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 734
     },
     "ACE_TRAINER_F_Joyce": {
         "type": "TRTYPE_MON_MOVES",
@@ -5286,7 +5425,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 36
     },
     "GENTLEMAN_Preston": {
         "type": "TRTYPE_MON",
@@ -5314,7 +5454,8 @@
                 "species": "GROWLITHE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 37
     },
     "TEACHER_Colette": {
         "type": "TRTYPE_MON",
@@ -5332,7 +5473,8 @@
                 "species": "CLEFAIRY",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 38
     },
     "SAILOR_Eugene": {
         "type": "TRTYPE_MON",
@@ -5366,7 +5508,8 @@
                 "species": "KRABBY",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 39
     },
     "SUPER_NERD_Mickey_1": {
         "type": "TRTYPE_MON",
@@ -5384,7 +5527,8 @@
                 "species": "GRIMER",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 40
     },
     "SUPER_NERD_Mickey_2": {
         "type": "TRTYPE_MON",
@@ -5410,7 +5554,8 @@
                 "species": "KOFFING",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 473
     },
     "SUPER_NERD_Mickey_3": {
         "type": "TRTYPE_MON",
@@ -5428,7 +5573,8 @@
                 "species": "DITTO",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 474
     },
     "SUPER_NERD_Mickey_4": {
         "type": "TRTYPE_MON",
@@ -5462,7 +5608,8 @@
                 "species": "MAGNEMITE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 475
     },
     "SUPER_NERD_Mickey_5": {
         "type": "TRTYPE_MON",
@@ -5496,7 +5643,8 @@
                 "species": "MAGNEMITE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 476
     },
     "SUPER_NERD_Mickey_6": {
         "type": "TRTYPE_MON_MOVES",
@@ -5520,7 +5668,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 477
     },
     "GUITARIST_Clyde": {
         "type": "TRTYPE_MON",
@@ -5538,7 +5687,8 @@
                 "species": "ELECTABUZZ",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 41
     },
     "PSYCHIC_M_Nathan": {
         "type": "TRTYPE_MON",
@@ -5556,7 +5706,8 @@
                 "species": "GIRAFARIG",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 42
     },
     "SAGE_Chow": {
         "type": "TRTYPE_MON",
@@ -5590,7 +5741,8 @@
                 "species": "BELLSPROUT",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 43
     },
     "POKEFAN_M_Derek_1": {
         "type": "TRTYPE_MON_MOVES",
@@ -5614,7 +5766,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 44
     },
     "POKEFAN_M_Derek_2": {
         "type": "TRTYPE_MON",
@@ -5640,7 +5793,8 @@
                 "species": "PIKACHU",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 438
     },
     "POKEFAN_M_Derek_3": {
         "type": "TRTYPE_MON",
@@ -5682,7 +5836,8 @@
                 "species": "TEDDIURSA",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 439
     },
     "POKEFAN_M_Derek_4": {
         "type": "TRTYPE_MON",
@@ -5724,7 +5879,8 @@
                 "species": "URSARING",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 610
     },
     "POKEFAN_Ruth": {
         "type": "TRTYPE_MON_MOVES",
@@ -5748,7 +5904,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 45
     },
     "MEDIUM_Martha": {
         "type": "TRTYPE_MON",
@@ -5782,7 +5939,8 @@
                 "species": "GASTLY",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 46
     },
     "YOUNGSTER_Mikey": {
         "type": "TRTYPE_MON",
@@ -5808,7 +5966,8 @@
                 "species": "RATTATA",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 47
     },
     "BUG_CATCHER_Rob_1": {
         "type": "TRTYPE_MON",
@@ -5834,7 +5993,8 @@
                 "species": "BUTTERFREE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 48
     },
     "BUG_CATCHER_Rob_2": {
         "type": "TRTYPE_MON",
@@ -5860,7 +6020,8 @@
                 "species": "BUTTERFREE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 625
     },
     "BUG_CATCHER_Rob_3": {
         "type": "TRTYPE_MON",
@@ -5886,7 +6047,8 @@
                 "species": "BUTTERFREE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 626
     },
     "BUG_CATCHER_Rob_4": {
         "type": "TRTYPE_MON",
@@ -5912,7 +6074,8 @@
                 "species": "BUTTERFREE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 627
     },
     "YOUNGSTER_Albert": {
         "type": "TRTYPE_MON",
@@ -5938,7 +6101,8 @@
                 "species": "ZUBAT",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 49
     },
     "BIRD_KEEPER_GS_Abe": {
         "type": "TRTYPE_MON",
@@ -5956,7 +6120,8 @@
                 "species": "SPEAROW",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 50
     },
     "SAGE_Nico": {
         "type": "TRTYPE_MON",
@@ -5990,7 +6155,8 @@
                 "species": "BELLSPROUT",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 51
     },
     "SAGE_Edmond": {
         "type": "TRTYPE_MON",
@@ -6024,7 +6190,8 @@
                 "species": "BELLSPROUT",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 52
     },
     "SAGE_Jin": {
         "type": "TRTYPE_MON",
@@ -6042,7 +6209,8 @@
                 "species": "BELLSPROUT",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 53
     },
     "SAGE_Troy": {
         "type": "TRTYPE_MON",
@@ -6068,7 +6236,8 @@
                 "species": "HOOTHOOT",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 54
     },
     "SAGE_Neal": {
         "type": "TRTYPE_MON",
@@ -6086,7 +6255,8 @@
                 "species": "BELLSPROUT",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 55
     },
     "YOUNGSTER_Gordon": {
         "type": "TRTYPE_MON",
@@ -6104,7 +6274,8 @@
                 "species": "WOOPER",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 56
     },
     "FISHERMAN_Ralph_1": {
         "type": "TRTYPE_MON",
@@ -6122,7 +6293,8 @@
                 "species": "GOLDEEN",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 57
     },
     "FISHERMAN_Ralph_2": {
         "type": "TRTYPE_MON",
@@ -6140,7 +6312,8 @@
                 "species": "SEAKING",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 462
     },
     "FISHERMAN_Ralph_3": {
         "type": "TRTYPE_MON",
@@ -6166,7 +6339,8 @@
                 "species": "SEAKING",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 463
     },
     "FISHERMAN_Ralph_4": {
         "type": "TRTYPE_MON",
@@ -6192,7 +6366,8 @@
                 "species": "SEAKING",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 515
     },
     "FISHERMAN_Arnold": {
         "type": "TRTYPE_MON",
@@ -6210,7 +6385,8 @@
                 "species": "SHELLDER",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 58
     },
     "FISHERMAN_Kyle_1": {
         "type": "TRTYPE_MON",
@@ -6244,7 +6420,8 @@
                 "species": "GOLDEEN",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 59
     },
     "FISHERMAN_Kyle_2": {
         "type": "TRTYPE_MON",
@@ -6278,7 +6455,8 @@
                 "species": "SEAKING",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 661
     },
     "FISHERMAN_Kyle_3": {
         "type": "TRTYPE_MON",
@@ -6320,7 +6498,8 @@
                 "species": "KRABBY",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 662
     },
     "FISHERMAN_Kyle_4": {
         "type": "TRTYPE_MON",
@@ -6362,7 +6541,8 @@
                 "species": "KINGLER",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 663
     },
     "FISHERMAN_Henry": {
         "type": "TRTYPE_MON",
@@ -6388,7 +6568,8 @@
                 "species": "POLIWAG",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 60
     },
     "HIKER_Anthony_1": {
         "type": "TRTYPE_MON",
@@ -6414,7 +6595,8 @@
                 "species": "MACHOP",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 61
     },
     "HIKER_Anthony_2": {
         "type": "TRTYPE_MON",
@@ -6440,7 +6622,8 @@
                 "species": "MACHOKE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 100
     },
     "HIKER_Anthony_3": {
         "type": "TRTYPE_MON",
@@ -6474,7 +6657,8 @@
                 "species": "MACHOKE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 155
     },
     "HIKER_Anthony_4": {
         "type": "TRTYPE_MON",
@@ -6508,7 +6692,8 @@
                 "species": "MACHAMP",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 523
     },
     "YOUNGSTER_Samuel": {
         "type": "TRTYPE_MON",
@@ -6550,7 +6735,8 @@
                 "species": "SPEAROW",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 62
     },
     "TEAM_ROCKET_Mickey_1": {
         "type": "TRTYPE_MON",
@@ -6568,7 +6754,8 @@
                 "species": "KOFFING",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 63
     },
     "TEAM_ROCKET_Mickey_2": {
         "type": "TRTYPE_MON",
@@ -6586,7 +6773,8 @@
                 "species": "HOUNDOUR",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 194
     },
     "TEAM_ROCKET_Mickey_3": {
         "type": "TRTYPE_MON",
@@ -6604,7 +6792,8 @@
                 "species": "ZUBAT",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 221
     },
     "TEAM_ROCKET_Mickey_4": {
         "type": "TRTYPE_MON",
@@ -6622,7 +6811,8 @@
                 "species": "GOLBAT",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 225
     },
     "TEAM_ROCKET_Mickey_5": {
         "type": "TRTYPE_MON",
@@ -6640,7 +6830,8 @@
                 "species": "KOFFING",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 226
     },
     "TEAM_ROCKET_Mickey_6": {
         "type": "TRTYPE_MON",
@@ -6666,7 +6857,8 @@
                 "species": "RATTATA",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 229
     },
     "TEAM_ROCKET_Mickey_7": {
         "type": "TRTYPE_MON",
@@ -6700,7 +6892,8 @@
                 "species": "ARBOK",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 262
     },
     "YOUNGSTER_Ian_1": {
         "type": "TRTYPE_MON_MOVES",
@@ -6738,7 +6931,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 64
     },
     "YOUNGSTER_Ian_2": {
         "type": "TRTYPE_MON",
@@ -6764,7 +6958,8 @@
                 "species": "DUGTRIO",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 616
     },
     "YOUNGSTER_Ian_3": {
         "type": "TRTYPE_MON",
@@ -6790,7 +6985,8 @@
                 "species": "DUGTRIO",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 617
     },
     "YOUNGSTER_Ian_4": {
         "type": "TRTYPE_MON",
@@ -6816,7 +7012,8 @@
                 "species": "DUGTRIO",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 618
     },
     "PICNICKER_Gina_1": {
         "type": "TRTYPE_MON",
@@ -6850,7 +7047,8 @@
                 "species": "BULBASAUR",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 65
     },
     "PICNICKER_Gina_2": {
         "type": "TRTYPE_MON",
@@ -6884,7 +7082,8 @@
                 "species": "IVYSAUR",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 142
     },
     "PICNICKER_Gina_3": {
         "type": "TRTYPE_MON",
@@ -6918,7 +7117,8 @@
                 "species": "IVYSAUR",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 334
     },
     "PICNICKER_Gina_4": {
         "type": "TRTYPE_MON",
@@ -6952,7 +7152,8 @@
                 "species": "VENUSAUR",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 520
     },
     "CAMPER_Todd_1": {
         "type": "TRTYPE_MON",
@@ -6970,7 +7171,8 @@
                 "species": "PSYDUCK",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 66
     },
     "CAMPER_Todd_2": {
         "type": "TRTYPE_MON",
@@ -7004,7 +7206,8 @@
                 "species": "PSYDUCK",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 274
     },
     "CAMPER_Todd_3": {
         "type": "TRTYPE_MON",
@@ -7046,7 +7249,8 @@
                 "species": "SLUGMA",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 275
     },
     "CAMPER_Todd_4": {
         "type": "TRTYPE_MON",
@@ -7088,7 +7292,8 @@
                 "species": "GOLDUCK",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 525
     },
     "BUG_CATCHER_Benny": {
         "type": "TRTYPE_MON",
@@ -7122,7 +7327,8 @@
                 "species": "BEEDRILL",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 67
     },
     "BUG_CATCHER_Al": {
         "type": "TRTYPE_MON",
@@ -7148,7 +7354,8 @@
                 "species": "WEEDLE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 68
     },
     "BUG_CATCHER_Josh": {
         "type": "TRTYPE_MON",
@@ -7166,7 +7373,8 @@
                 "species": "PARAS",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 69
     },
     "BEAUTY_Samantha": {
         "type": "TRTYPE_MON_MOVES",
@@ -7204,7 +7412,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 70
     },
     "LASS_Cathy": {
         "type": "TRTYPE_MON",
@@ -7238,7 +7447,8 @@
                 "species": "JIGGLYPUFF",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 71
     },
     "BIRD_KEEPER_GS_Bryan": {
         "type": "TRTYPE_MON",
@@ -7264,7 +7474,8 @@
                 "species": "PIDGEOTTO",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 72
     },
     "BIRD_KEEPER_GS_Theo": {
         "type": "TRTYPE_MON",
@@ -7314,7 +7525,8 @@
                 "species": "PIDGEY",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 73
     },
     "CAMPER_Ivan": {
         "type": "TRTYPE_MON",
@@ -7348,7 +7560,8 @@
                 "species": "DIGLETT",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 74
     },
     "CAMPER_Elliot": {
         "type": "TRTYPE_MON",
@@ -7374,7 +7587,8 @@
                 "species": "MARILL",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 75
     },
     "PICNICKER_Brooke": {
         "type": "TRTYPE_MON_MOVES",
@@ -7398,7 +7612,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 76
     },
     "PICNICKER_Kim": {
         "type": "TRTYPE_MON",
@@ -7416,7 +7631,8 @@
                 "species": "VULPIX",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 77
     },
     "BUG_CATCHER_Arnie_1": {
         "type": "TRTYPE_MON",
@@ -7434,7 +7650,8 @@
                 "species": "VENONAT",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 78
     },
     "BUG_CATCHER_Arnie_2": {
         "type": "TRTYPE_MON",
@@ -7452,7 +7669,8 @@
                 "species": "VENONAT",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 360
     },
     "BUG_CATCHER_Arnie_3": {
         "type": "TRTYPE_MON_MOVES",
@@ -7476,7 +7694,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 449
     },
     "BUG_CATCHER_Arnie_4": {
         "type": "TRTYPE_MON_MOVES",
@@ -7514,7 +7733,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 513
     },
     "BUG_CATCHER_Ken": {
         "type": "TRTYPE_MON",
@@ -7540,7 +7760,8 @@
                 "species": "PINSIR",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 79
     },
     "POLICEMAN_Dirk": {
         "type": "TRTYPE_MON",
@@ -7566,7 +7787,8 @@
                 "species": "GROWLITHE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 80
     },
     "TWINS_Tori & Til": {
         "type": "TRTYPE_MON",
@@ -7592,7 +7814,8 @@
                 "species": "MAREEP",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 81
     },
     "BIRD_KEEPER_GS_Toby": {
         "type": "TRTYPE_MON",
@@ -7626,7 +7849,8 @@
                 "species": "DODUO",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 82
     },
     "PICNICKER_Cindy": {
         "type": "TRTYPE_MON_MOVES",
@@ -7650,7 +7874,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 83
     },
     "CAMPER_Barry": {
         "type": "TRTYPE_MON_MOVES",
@@ -7674,7 +7899,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 84
     },
     "SWIMMER_F_Paula": {
         "type": "TRTYPE_MON",
@@ -7700,7 +7926,8 @@
                 "species": "SHELLDER",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 85
     },
     "SWIMMER_M_Randall": {
         "type": "TRTYPE_MON_MOVES",
@@ -7752,7 +7979,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 86
     },
     "SAGE_Mickey_1": {
         "type": "TRTYPE_MON",
@@ -7770,7 +7998,8 @@
                 "species": "HAUNTER",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 87
     },
     "SAGE_Mickey_2": {
         "type": "TRTYPE_MON",
@@ -7820,7 +8049,8 @@
                 "species": "GASTLY",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 88
     },
     "SAGE_Mickey_3": {
         "type": "TRTYPE_MON_MOVES",
@@ -7858,7 +8088,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 542
     },
     "SAGE_Mickey_4": {
         "type": "TRTYPE_MON_MOVES",
@@ -7896,7 +8127,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 543
     },
     "SAGE_Mickey_5": {
         "type": "TRTYPE_MON_MOVES",
@@ -7934,7 +8166,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 544
     },
     "MEDIUM_Grace": {
         "type": "TRTYPE_MON",
@@ -7960,7 +8193,8 @@
                 "species": "HAUNTER",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 89
     },
     "SWIMMER_F_Kaylee": {
         "type": "TRTYPE_MON_MOVES",
@@ -8012,7 +8246,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 90
     },
     "SWIMMER_F_Susie": {
         "type": "TRTYPE_MON_MOVES",
@@ -8050,7 +8285,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 91
     },
     "SWIMMER_F_Denise": {
         "type": "TRTYPE_MON",
@@ -8068,7 +8304,8 @@
                 "species": "SEEL",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 92
     },
     "SWIMMER_F_Kara": {
         "type": "TRTYPE_MON",
@@ -8094,7 +8331,8 @@
                 "species": "STARMIE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 93
     },
     "SWIMMER_F_Wendy": {
         "type": "TRTYPE_MON_MOVES",
@@ -8132,7 +8370,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 94
     },
     "SWIMMER_M_Charlie": {
         "type": "TRTYPE_MON",
@@ -8166,7 +8405,8 @@
                 "species": "TENTACRUEL",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 95
     },
     "SWIMMER_M_George": {
         "type": "TRTYPE_MON",
@@ -8224,7 +8464,8 @@
                 "species": "REMORAID",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 96
     },
     "SWIMMER_M_Berke": {
         "type": "TRTYPE_MON",
@@ -8242,7 +8483,8 @@
                 "species": "QWILFISH",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 97
     },
     "SWIMMER_M_Ronald": {
         "type": "TRTYPE_MON",
@@ -8268,7 +8510,8 @@
                 "species": "GYARADOS",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 98
     },
     "SWIMMER_M_Matthew": {
         "type": "TRTYPE_MON",
@@ -8286,7 +8529,8 @@
                 "species": "KRABBY",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 99
     },
     "ACE_TRAINER_M_Gaven_1": {
         "type": "TRTYPE_MON_MOVES",
@@ -8338,7 +8582,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 102
     },
     "ACE_TRAINER_M_Gaven_2": {
         "type": "TRTYPE_MON_MOVES",
@@ -8390,7 +8635,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 456
     },
     "ACE_TRAINER_M_Gaven_3": {
         "type": "TRTYPE_MON_MOVES",
@@ -8442,7 +8688,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 457
     },
     "ACE_TRAINER_M_Gaven_4": {
         "type": "TRTYPE_MON_MOVES",
@@ -8494,7 +8741,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 604
     },
     "ACE_TRAINER_M_Blake": {
         "type": "TRTYPE_MON_MOVES",
@@ -8546,7 +8794,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 103
     },
     "ACE_TRAINER_M_Brian": {
         "type": "TRTYPE_MON_MOVES",
@@ -8570,7 +8819,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 104
     },
     "ACE_TRAINER_M_Mickey_1": {
         "type": "TRTYPE_MON",
@@ -8604,9 +8854,80 @@
                 "species": "SQUIRTLE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 105
     },
     "ACE_TRAINER_M_Mickey_2": {
+        "type": "TRTYPE_MON",
+        "class": "ACE_TRAINER_M",
+        "name": "Mickey",
+        "items": [],
+        "ai_flags": 7,
+        "double": 0,
+        "party": [
+            {
+                "difficulty": 0,
+                "genderOverride": "GENDER_OVERRIDE_OFF",
+                "abilityOverride": "ABILITY_OVERRIDE_OFF",
+                "level": 10,
+                "species": "BULBASAUR",
+                "capsule": 0
+            },
+            {
+                "difficulty": 0,
+                "genderOverride": "GENDER_OVERRIDE_OFF",
+                "abilityOverride": "ABILITY_OVERRIDE_OFF",
+                "level": 10,
+                "species": "CHARMANDER",
+                "capsule": 0
+            },
+            {
+                "difficulty": 0,
+                "genderOverride": "GENDER_OVERRIDE_OFF",
+                "abilityOverride": "ABILITY_OVERRIDE_OFF",
+                "level": 10,
+                "species": "SQUIRTLE",
+                "capsule": 0
+            }
+        ],
+        "index": 106
+    },
+    "ACE_TRAINER_M_Mickey_3": {
+        "type": "TRTYPE_MON",
+        "class": "ACE_TRAINER_M",
+        "name": "Mickey",
+        "items": [],
+        "ai_flags": 7,
+        "double": 0,
+        "party": [
+            {
+                "difficulty": 0,
+                "genderOverride": "GENDER_OVERRIDE_OFF",
+                "abilityOverride": "ABILITY_OVERRIDE_OFF",
+                "level": 10,
+                "species": "BULBASAUR",
+                "capsule": 0
+            },
+            {
+                "difficulty": 0,
+                "genderOverride": "GENDER_OVERRIDE_OFF",
+                "abilityOverride": "ABILITY_OVERRIDE_OFF",
+                "level": 10,
+                "species": "CHARMANDER",
+                "capsule": 0
+            },
+            {
+                "difficulty": 0,
+                "genderOverride": "GENDER_OVERRIDE_OFF",
+                "abilityOverride": "ABILITY_OVERRIDE_OFF",
+                "level": 10,
+                "species": "SQUIRTLE",
+                "capsule": 0
+            }
+        ],
+        "index": 107
+    },
+    "ACE_TRAINER_M_Mickey_4": {
         "type": "TRTYPE_MON",
         "class": "ACE_TRAINER_M",
         "name": "Mickey",
@@ -8638,7 +8959,8 @@
                 "species": "SQUIRTLE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 394
     },
     "ACE_TRAINER_M_Ryan": {
         "type": "TRTYPE_MON_MOVES",
@@ -8676,7 +8998,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 108
     },
     "ACE_TRAINER_M_Alton": {
         "type": "TRTYPE_MON",
@@ -8710,7 +9033,8 @@
                 "species": "WARTORTLE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 109
     },
     "ACE_TRAINER_M_Paulo": {
         "type": "TRTYPE_MON",
@@ -8744,7 +9068,8 @@
                 "species": "DRATINI",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 110
     },
     "ACE_TRAINER_M_Mike": {
         "type": "TRTYPE_MON",
@@ -8762,7 +9087,8 @@
                 "species": "DRAGONAIR",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 111
     },
     "ACE_TRAINER_M_Cody": {
         "type": "TRTYPE_MON",
@@ -8788,7 +9114,8 @@
                 "species": "SEADRA",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 112
     },
     "ACE_TRAINER_F_Jamie_1": {
         "type": "TRTYPE_MON_MOVES",
@@ -8826,7 +9153,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 113
     },
     "ACE_TRAINER_F_Jamie_2": {
         "type": "TRTYPE_MON_MOVES",
@@ -8864,7 +9192,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 458
     },
     "ACE_TRAINER_F_Jamie_3": {
         "type": "TRTYPE_MON_MOVES",
@@ -8902,7 +9231,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 459
     },
     "ACE_TRAINER_F_Jamie_4": {
         "type": "TRTYPE_MON_MOVES",
@@ -8940,7 +9270,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 609
     },
     "ACE_TRAINER_F_Reena_1": {
         "type": "TRTYPE_MON",
@@ -8974,7 +9305,8 @@
                 "species": "STARYU",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 114
     },
     "ACE_TRAINER_F_Reena_2": {
         "type": "TRTYPE_MON",
@@ -9008,7 +9340,8 @@
                 "species": "STARYU",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 444
     },
     "ACE_TRAINER_F_Reena_3": {
         "type": "TRTYPE_MON",
@@ -9042,7 +9375,8 @@
                 "species": "STARMIE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 445
     },
     "ACE_TRAINER_F_Reena_4": {
         "type": "TRTYPE_MON_MOVES",
@@ -9094,7 +9428,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 607
     },
     "ACE_TRAINER_F_Megan": {
         "type": "TRTYPE_MON_MOVES",
@@ -9146,7 +9481,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 115
     },
     "ACE_TRAINER_F_Lois": {
         "type": "TRTYPE_MON_MOVES",
@@ -9184,7 +9520,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 116
     },
     "ACE_TRAINER_F_Lola": {
         "type": "TRTYPE_MON",
@@ -9210,7 +9547,8 @@
                 "species": "DRAGONAIR",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 117
     },
     "ACE_TRAINER_F_Kate": {
         "type": "TRTYPE_MON",
@@ -9236,7 +9574,8 @@
                 "species": "CLOYSTER",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 118
     },
     "ACE_TRAINER_F_Fran": {
         "type": "TRTYPE_MON",
@@ -9254,7 +9593,8 @@
                 "species": "SEADRA",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 119
     },
     "ACE_TRAINER_F_Irene": {
         "type": "TRTYPE_MON",
@@ -9280,7 +9620,8 @@
                 "species": "SEAKING",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 120
     },
     "ACE_TRAINER_F_Kelly": {
         "type": "TRTYPE_MON",
@@ -9314,7 +9655,8 @@
                 "species": "WARTORTLE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 121
     },
     "FISHERMAN_Marvin": {
         "type": "TRTYPE_MON_MOVES",
@@ -9360,7 +9702,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 122
     },
     "FISHERMAN_Tully_1": {
         "type": "TRTYPE_MON",
@@ -9378,7 +9721,8 @@
                 "species": "QWILFISH",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 123
     },
     "FISHERMAN_Tully_2": {
         "type": "TRTYPE_MON",
@@ -9396,7 +9740,8 @@
                 "species": "QWILFISH",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 323
     },
     "FISHERMAN_Tully_3": {
         "type": "TRTYPE_MON",
@@ -9430,7 +9775,8 @@
                 "species": "QWILFISH",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 324
     },
     "FISHERMAN_Tully_4": {
         "type": "TRTYPE_MON_MOVES",
@@ -9482,7 +9828,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 517
     },
     "FISHERMAN_Wilton_1": {
         "type": "TRTYPE_MON",
@@ -9516,7 +9863,8 @@
                 "species": "SEAKING",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 124
     },
     "FISHERMAN_Wilton_2": {
         "type": "TRTYPE_MON",
@@ -9550,7 +9898,8 @@
                 "species": "SEAKING",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 325
     },
     "FISHERMAN_Wilton_3": {
         "type": "TRTYPE_MON",
@@ -9584,7 +9933,8 @@
                 "species": "SEAKING",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 450
     },
     "FISHERMAN_Wilton_4": {
         "type": "TRTYPE_MON",
@@ -9618,7 +9968,8 @@
                 "species": "SEAKING",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 608
     },
     "FISHERMAN_Edgar": {
         "type": "TRTYPE_MON_MOVES",
@@ -9656,7 +10007,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 125
     },
     "FISHERMAN_Andre": {
         "type": "TRTYPE_MON",
@@ -9674,7 +10026,8 @@
                 "species": "GYARADOS",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 126
     },
     "FISHERMAN_Raymond": {
         "type": "TRTYPE_MON",
@@ -9716,7 +10069,8 @@
                 "species": "MAGIKARP",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 127
     },
     "FISHERMAN_Jonah": {
         "type": "TRTYPE_MON",
@@ -9758,7 +10112,8 @@
                 "species": "CLOYSTER",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 128
     },
     "POKE_MANIAC_Shane": {
         "type": "TRTYPE_MON",
@@ -9784,7 +10139,8 @@
                 "species": "NIDORINO",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 129
     },
     "POKE_MANIAC_Beckett": {
         "type": "TRTYPE_MON",
@@ -9802,7 +10158,8 @@
                 "species": "SLOWBRO",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 130
     },
     "POKE_MANIAC_Brent_1": {
         "type": "TRTYPE_MON",
@@ -9828,7 +10185,8 @@
                 "species": "NIDORINO",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 131
     },
     "POKE_MANIAC_Brent_2": {
         "type": "TRTYPE_MON",
@@ -9862,7 +10220,8 @@
                 "species": "GYARADOS",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 172
     },
     "POKE_MANIAC_Brent_3": {
         "type": "TRTYPE_MON",
@@ -9904,7 +10263,8 @@
                 "species": "NIDORINO",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 173
     },
     "POKE_MANIAC_Brent_4": {
         "type": "TRTYPE_MON",
@@ -9946,7 +10306,8 @@
                 "species": "NIDOKING",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 530
     },
     "POKE_MANIAC_Ron": {
         "type": "TRTYPE_MON",
@@ -9964,7 +10325,8 @@
                 "species": "NIDOKING",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 132
     },
     "POKE_MANIAC_Morgan": {
         "type": "TRTYPE_MON",
@@ -9990,7 +10352,8 @@
                 "species": "RHYDON",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 133
     },
     "HIKER_Benjamin": {
         "type": "TRTYPE_MON",
@@ -10024,7 +10387,8 @@
                 "species": "DUGTRIO",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 134
     },
     "SCHOOL_KID_M_Johnny": {
         "type": "TRTYPE_MON",
@@ -10058,7 +10422,8 @@
                 "species": "VICTREEBEL",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 135
     },
     "LASS_Linda": {
         "type": "TRTYPE_MON_MOVES",
@@ -10110,7 +10475,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 136
     },
     "BIRD_KEEPER_GS_Vance_1": {
         "type": "TRTYPE_MON",
@@ -10136,7 +10502,8 @@
                 "species": "PIDGEOTTO",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 137
     },
     "BIRD_KEEPER_GS_Vance_2": {
         "type": "TRTYPE_MON",
@@ -10162,7 +10529,8 @@
                 "species": "PIDGEOTTO",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 447
     },
     "BIRD_KEEPER_GS_Vance_3": {
         "type": "TRTYPE_MON",
@@ -10196,7 +10564,8 @@
                 "species": "NOCTOWL",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 448
     },
     "BIRD_KEEPER_GS_Vance_4": {
         "type": "TRTYPE_MON",
@@ -10230,7 +10599,8 @@
                 "species": "NOCTOWL",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 612
     },
     "CAMPER_Mickey_1": {
         "type": "TRTYPE_MON",
@@ -10248,9 +10618,29 @@
                 "species": "NIDORINO",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 138
     },
     "CAMPER_Mickey_2": {
+        "type": "TRTYPE_MON",
+        "class": "CAMPER",
+        "name": "Mickey",
+        "items": [],
+        "ai_flags": 7,
+        "double": 0,
+        "party": [
+            {
+                "difficulty": 0,
+                "genderOverride": "GENDER_OVERRIDE_OFF",
+                "abilityOverride": "ABILITY_OVERRIDE_OFF",
+                "level": 15,
+                "species": "NIDORINO",
+                "capsule": 0
+            }
+        ],
+        "index": 141
+    },
+    "CAMPER_Mickey_3": {
         "type": "TRTYPE_MON",
         "class": "CAMPER",
         "name": "Mickey",
@@ -10290,9 +10680,139 @@
                 "species": "GOLDUCK",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 304
     },
-    "CAMPER_Mickey_3": {
+    "CAMPER_Mickey_4": {
+        "type": "TRTYPE_MON",
+        "class": "CAMPER",
+        "name": "Mickey",
+        "items": [],
+        "ai_flags": 7,
+        "double": 0,
+        "party": [
+            {
+                "difficulty": 0,
+                "genderOverride": "GENDER_OVERRIDE_OFF",
+                "abilityOverride": "ABILITY_OVERRIDE_OFF",
+                "level": 33,
+                "species": "GRAVELER",
+                "capsule": 0
+            },
+            {
+                "difficulty": 0,
+                "genderOverride": "GENDER_OVERRIDE_OFF",
+                "abilityOverride": "ABILITY_OVERRIDE_OFF",
+                "level": 36,
+                "species": "GRAVELER",
+                "capsule": 0
+            },
+            {
+                "difficulty": 0,
+                "genderOverride": "GENDER_OVERRIDE_OFF",
+                "abilityOverride": "ABILITY_OVERRIDE_OFF",
+                "level": 40,
+                "species": "GOLBAT",
+                "capsule": 0
+            },
+            {
+                "difficulty": 0,
+                "genderOverride": "GENDER_OVERRIDE_OFF",
+                "abilityOverride": "ABILITY_OVERRIDE_OFF",
+                "level": 42,
+                "species": "GOLDUCK",
+                "capsule": 0
+            }
+        ],
+        "index": 305
+    },
+    "CAMPER_Mickey_5": {
+        "type": "TRTYPE_MON",
+        "class": "CAMPER",
+        "name": "Mickey",
+        "items": [],
+        "ai_flags": 7,
+        "double": 0,
+        "party": [
+            {
+                "difficulty": 0,
+                "genderOverride": "GENDER_OVERRIDE_OFF",
+                "abilityOverride": "ABILITY_OVERRIDE_OFF",
+                "level": 33,
+                "species": "GRAVELER",
+                "capsule": 0
+            },
+            {
+                "difficulty": 0,
+                "genderOverride": "GENDER_OVERRIDE_OFF",
+                "abilityOverride": "ABILITY_OVERRIDE_OFF",
+                "level": 36,
+                "species": "GRAVELER",
+                "capsule": 0
+            },
+            {
+                "difficulty": 0,
+                "genderOverride": "GENDER_OVERRIDE_OFF",
+                "abilityOverride": "ABILITY_OVERRIDE_OFF",
+                "level": 40,
+                "species": "GOLBAT",
+                "capsule": 0
+            },
+            {
+                "difficulty": 0,
+                "genderOverride": "GENDER_OVERRIDE_OFF",
+                "abilityOverride": "ABILITY_OVERRIDE_OFF",
+                "level": 42,
+                "species": "GOLDUCK",
+                "capsule": 0
+            }
+        ],
+        "index": 306
+    },
+    "CAMPER_Mickey_6": {
+        "type": "TRTYPE_MON",
+        "class": "CAMPER",
+        "name": "Mickey",
+        "items": [],
+        "ai_flags": 7,
+        "double": 0,
+        "party": [
+            {
+                "difficulty": 0,
+                "genderOverride": "GENDER_OVERRIDE_OFF",
+                "abilityOverride": "ABILITY_OVERRIDE_OFF",
+                "level": 33,
+                "species": "GRAVELER",
+                "capsule": 0
+            },
+            {
+                "difficulty": 0,
+                "genderOverride": "GENDER_OVERRIDE_OFF",
+                "abilityOverride": "ABILITY_OVERRIDE_OFF",
+                "level": 36,
+                "species": "GRAVELER",
+                "capsule": 0
+            },
+            {
+                "difficulty": 0,
+                "genderOverride": "GENDER_OVERRIDE_OFF",
+                "abilityOverride": "ABILITY_OVERRIDE_OFF",
+                "level": 40,
+                "species": "GOLBAT",
+                "capsule": 0
+            },
+            {
+                "difficulty": 0,
+                "genderOverride": "GENDER_OVERRIDE_OFF",
+                "abilityOverride": "ABILITY_OVERRIDE_OFF",
+                "level": 42,
+                "species": "GOLDUCK",
+                "capsule": 0
+            }
+        ],
+        "index": 307
+    },
+    "CAMPER_Mickey_7": {
         "type": "TRTYPE_MON_MOVES",
         "class": "CAMPER",
         "name": "Mickey",
@@ -10356,7 +10876,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 526
     },
     "PICNICKER_Debra": {
         "type": "TRTYPE_MON",
@@ -10374,7 +10895,8 @@
                 "species": "SEAKING",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 139
     },
     "BUG_CATCHER_Doug_1": {
         "type": "TRTYPE_MON",
@@ -10400,7 +10922,8 @@
                 "species": "ARIADOS",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 140
     },
     "BUG_CATCHER_Doug_2": {
         "type": "TRTYPE_MON",
@@ -10426,7 +10949,8 @@
                 "species": "ARIADOS",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 622
     },
     "BUG_CATCHER_Doug_3": {
         "type": "TRTYPE_MON",
@@ -10452,7 +10976,8 @@
                 "species": "ARIADOS",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 623
     },
     "BUG_CATCHER_Doug_4": {
         "type": "TRTYPE_MON",
@@ -10478,7 +11003,8 @@
                 "species": "ARIADOS",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 624
     },
     "HIKER_Erik": {
         "type": "TRTYPE_MON",
@@ -10512,7 +11038,8 @@
                 "species": "MACHOP",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 143
     },
     "HIKER_Michael": {
         "type": "TRTYPE_MON",
@@ -10546,7 +11073,8 @@
                 "species": "GOLEM",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 144
     },
     "HIKER_Parry_1": {
         "type": "TRTYPE_MON",
@@ -10564,7 +11092,8 @@
                 "species": "ONIX",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 145
     },
     "HIKER_Parry_2": {
         "type": "TRTYPE_MON",
@@ -10590,7 +11119,8 @@
                 "species": "GRAVELER",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 451
     },
     "HIKER_Parry_3": {
         "type": "TRTYPE_MON",
@@ -10616,7 +11146,8 @@
                 "species": "GRAVELER",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 452
     },
     "HIKER_Parry_4": {
         "type": "TRTYPE_MON",
@@ -10642,7 +11173,8 @@
                 "species": "GOLEM",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 606
     },
     "HIKER_Timothy": {
         "type": "TRTYPE_MON_MOVES",
@@ -10680,7 +11212,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 146
     },
     "CAMPER_Ted": {
         "type": "TRTYPE_MON",
@@ -10698,7 +11231,8 @@
                 "species": "MANKEY",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 147
     },
     "CAMPER_Lloyd": {
         "type": "TRTYPE_MON",
@@ -10716,7 +11250,8 @@
                 "species": "NIDOKING",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 148
     },
     "CAMPER_Dean": {
         "type": "TRTYPE_MON",
@@ -10742,7 +11277,8 @@
                 "species": "SANDSLASH",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 149
     },
     "CAMPER_Sid": {
         "type": "TRTYPE_MON",
@@ -10776,7 +11312,8 @@
                 "species": "POLIWRATH",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 150
     },
     "PICNICKER_Erin_1": {
         "type": "TRTYPE_MON",
@@ -10802,7 +11339,8 @@
                 "species": "ODDISH",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 151
     },
     "PICNICKER_Erin_2": {
         "type": "TRTYPE_MON",
@@ -10828,7 +11366,8 @@
                 "species": "RAPIDASH",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 335
     },
     "PICNICKER_Erin_3": {
         "type": "TRTYPE_MON",
@@ -10862,7 +11401,8 @@
                 "species": "RAPIDASH",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 453
     },
     "PICNICKER_Erin_4": {
         "type": "TRTYPE_MON",
@@ -10904,7 +11444,8 @@
                 "species": "RAPIDASH",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 603
     },
     "PICNICKER_Hope": {
         "type": "TRTYPE_MON",
@@ -10922,7 +11463,8 @@
                 "species": "FLAAFFY",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 152
     },
     "PICNICKER_Sharon": {
         "type": "TRTYPE_MON",
@@ -10948,7 +11490,8 @@
                 "species": "RAPIDASH",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 153
     },
     "HIKER_Bailey": {
         "type": "TRTYPE_MON",
@@ -10998,7 +11541,8 @@
                 "species": "GEODUDE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 154
     },
     "BLACK_BELT_Yoshi": {
         "type": "TRTYPE_MON_MOVES",
@@ -11022,7 +11566,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 156
     },
     "BLACK_BELT_Lao": {
         "type": "TRTYPE_MON_MOVES",
@@ -11046,7 +11591,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 157
     },
     "BLACK_BELT_Kiyo": {
         "type": "TRTYPE_MON",
@@ -11072,7 +11618,8 @@
                 "species": "HITMONCHAN",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 158
     },
     "BLACK_BELT_Lung": {
         "type": "TRTYPE_MON",
@@ -11106,7 +11653,8 @@
                 "species": "PRIMEAPE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 159
     },
     "KIMONO_GIRL_Naoko": {
         "type": "TRTYPE_MON_MOVES",
@@ -11131,7 +11679,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 160
     },
     "KIMONO_GIRL_Sayo": {
         "type": "TRTYPE_MON_MOVES",
@@ -11156,7 +11705,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 161
     },
     "KIMONO_GIRL_Zuki": {
         "type": "TRTYPE_MON_MOVES",
@@ -11181,7 +11731,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 162
     },
     "KIMONO_GIRL_Kuni": {
         "type": "TRTYPE_MON_MOVES",
@@ -11206,7 +11757,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 163
     },
     "KIMONO_GIRL_Miki": {
         "type": "TRTYPE_MON_MOVES",
@@ -11231,7 +11783,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 164
     },
     "SWIMMER_F_Mickey_1": {
         "type": "TRTYPE_MON",
@@ -11249,7 +11802,8 @@
                 "species": "JYNX",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 165
     },
     "SWIMMER_F_Mickey_2": {
         "type": "TRTYPE_MON",
@@ -11267,7 +11821,8 @@
                 "species": "DEWGONG",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 166
     },
     "SWIMMER_F_Mickey_3": {
         "type": "TRTYPE_MON",
@@ -11285,7 +11840,46 @@
                 "species": "SEAKING",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 167
+    },
+    "SWIMMER_F_Mickey_4": {
+        "type": "TRTYPE_MON",
+        "class": "SWIMMER_F",
+        "name": "Mickey",
+        "items": [],
+        "ai_flags": 1,
+        "double": 0,
+        "party": [
+            {
+                "difficulty": 0,
+                "genderOverride": "GENDER_OVERRIDE_OFF",
+                "abilityOverride": "ABILITY_OVERRIDE_OFF",
+                "level": 20,
+                "species": "SEAKING",
+                "capsule": 0
+            }
+        ],
+        "index": 292
+    },
+    "SWIMMER_F_Mickey_5": {
+        "type": "TRTYPE_MON",
+        "class": "SWIMMER_F",
+        "name": "Mickey",
+        "items": [],
+        "ai_flags": 1,
+        "double": 0,
+        "party": [
+            {
+                "difficulty": 0,
+                "genderOverride": "GENDER_OVERRIDE_OFF",
+                "abilityOverride": "ABILITY_OVERRIDE_OFF",
+                "level": 20,
+                "species": "SEAKING",
+                "capsule": 0
+            }
+        ],
+        "index": 295
     },
     "SWIMMER_M_Mickey_1": {
         "type": "TRTYPE_MON",
@@ -11319,7 +11913,8 @@
                 "species": "SEEL",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 168
     },
     "SWIMMER_M_Mickey_2": {
         "type": "TRTYPE_MON",
@@ -11345,7 +11940,8 @@
                 "species": "PILOSWINE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 169
     },
     "SWIMMER_M_Mickey_3": {
         "type": "TRTYPE_MON",
@@ -11379,7 +11975,8 @@
                 "species": "SHELLDER",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 170
     },
     "SWIMMER_M_Mickey_4": {
         "type": "TRTYPE_MON",
@@ -11413,7 +12010,8 @@
                 "species": "SEADRA",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 171
     },
     "SWIMMER_M_Mickey_5": {
         "type": "TRTYPE_MON",
@@ -11447,7 +12045,113 @@
                 "species": "HORSEA",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 273
+    },
+    "SWIMMER_M_Mickey_6": {
+        "type": "TRTYPE_MON",
+        "class": "SWIMMER_M",
+        "name": "Mickey",
+        "items": [],
+        "ai_flags": 1,
+        "double": 0,
+        "party": [
+            {
+                "difficulty": 0,
+                "genderOverride": "GENDER_OVERRIDE_OFF",
+                "abilityOverride": "ABILITY_OVERRIDE_OFF",
+                "level": 13,
+                "species": "STARYU",
+                "capsule": 0
+            },
+            {
+                "difficulty": 0,
+                "genderOverride": "GENDER_OVERRIDE_OFF",
+                "abilityOverride": "ABILITY_OVERRIDE_OFF",
+                "level": 18,
+                "species": "STARMIE",
+                "capsule": 0
+            },
+            {
+                "difficulty": 0,
+                "genderOverride": "GENDER_OVERRIDE_OFF",
+                "abilityOverride": "ABILITY_OVERRIDE_OFF",
+                "level": 16,
+                "species": "HORSEA",
+                "capsule": 0
+            }
+        ],
+        "index": 372
+    },
+    "SWIMMER_M_Mickey_7": {
+        "type": "TRTYPE_MON",
+        "class": "SWIMMER_M",
+        "name": "Mickey",
+        "items": [],
+        "ai_flags": 1,
+        "double": 0,
+        "party": [
+            {
+                "difficulty": 0,
+                "genderOverride": "GENDER_OVERRIDE_OFF",
+                "abilityOverride": "ABILITY_OVERRIDE_OFF",
+                "level": 13,
+                "species": "STARYU",
+                "capsule": 0
+            },
+            {
+                "difficulty": 0,
+                "genderOverride": "GENDER_OVERRIDE_OFF",
+                "abilityOverride": "ABILITY_OVERRIDE_OFF",
+                "level": 18,
+                "species": "STARMIE",
+                "capsule": 0
+            },
+            {
+                "difficulty": 0,
+                "genderOverride": "GENDER_OVERRIDE_OFF",
+                "abilityOverride": "ABILITY_OVERRIDE_OFF",
+                "level": 16,
+                "species": "HORSEA",
+                "capsule": 0
+            }
+        ],
+        "index": 375
+    },
+    "SWIMMER_M_Mickey_8": {
+        "type": "TRTYPE_MON",
+        "class": "SWIMMER_M",
+        "name": "Mickey",
+        "items": [],
+        "ai_flags": 1,
+        "double": 0,
+        "party": [
+            {
+                "difficulty": 0,
+                "genderOverride": "GENDER_OVERRIDE_OFF",
+                "abilityOverride": "ABILITY_OVERRIDE_OFF",
+                "level": 13,
+                "species": "STARYU",
+                "capsule": 0
+            },
+            {
+                "difficulty": 0,
+                "genderOverride": "GENDER_OVERRIDE_OFF",
+                "abilityOverride": "ABILITY_OVERRIDE_OFF",
+                "level": 18,
+                "species": "STARMIE",
+                "capsule": 0
+            },
+            {
+                "difficulty": 0,
+                "genderOverride": "GENDER_OVERRIDE_OFF",
+                "abilityOverride": "ABILITY_OVERRIDE_OFF",
+                "level": 16,
+                "species": "HORSEA",
+                "capsule": 0
+            }
+        ],
+        "index": 376
     },
     "MEDIUM_Bethany": {
         "type": "TRTYPE_MON",
@@ -11465,7 +12169,8 @@
                 "species": "HAUNTER",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 175
     },
     "MEDIUM_Margaret": {
         "type": "TRTYPE_MON",
@@ -11483,7 +12188,8 @@
                 "species": "HAUNTER",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 176
     },
     "MEDIUM_Ethel": {
         "type": "TRTYPE_MON",
@@ -11501,7 +12207,8 @@
                 "species": "HAUNTER",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 177
     },
     "SCHOOL_KID_M_Jack_1": {
         "type": "TRTYPE_MON",
@@ -11527,7 +12234,8 @@
                 "species": "VOLTORB",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 178
     },
     "SCHOOL_KID_M_Jack_2": {
         "type": "TRTYPE_MON",
@@ -11553,7 +12261,8 @@
                 "species": "VOLTORB",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 430
     },
     "SCHOOL_KID_M_Jack_3": {
         "type": "TRTYPE_MON",
@@ -11579,7 +12288,8 @@
                 "species": "ELECTRODE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 431
     },
     "SCHOOL_KID_M_Jack_4": {
         "type": "TRTYPE_MON_MOVES",
@@ -11633,7 +12343,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 503
     },
     "SCHOOL_KID_M_Kipp": {
         "type": "TRTYPE_MON",
@@ -11675,7 +12386,8 @@
                 "species": "MAGNETON",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 179
     },
     "BEAUTY_Mickey_1": {
         "type": "TRTYPE_MON",
@@ -11693,9 +12405,29 @@
                 "species": "SENTRET",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 180
     },
     "BEAUTY_Mickey_2": {
+        "type": "TRTYPE_MON",
+        "class": "BEAUTY",
+        "name": "Mickey",
+        "items": [],
+        "ai_flags": 1,
+        "double": 0,
+        "party": [
+            {
+                "difficulty": 0,
+                "genderOverride": "GENDER_OVERRIDE_OFF",
+                "abilityOverride": "ABILITY_OVERRIDE_OFF",
+                "level": 15,
+                "species": "SENTRET",
+                "capsule": 0
+            }
+        ],
+        "index": 207
+    },
+    "BEAUTY_Mickey_3": {
         "type": "TRTYPE_MON",
         "class": "BEAUTY",
         "name": "Mickey",
@@ -11711,7 +12443,141 @@
                 "species": "FURRET",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 208
+    },
+    "BEAUTY_Mickey_4": {
+        "type": "TRTYPE_MON",
+        "class": "BEAUTY",
+        "name": "Mickey",
+        "items": [],
+        "ai_flags": 1,
+        "double": 0,
+        "party": [
+            {
+                "difficulty": 0,
+                "genderOverride": "GENDER_OVERRIDE_OFF",
+                "abilityOverride": "ABILITY_OVERRIDE_OFF",
+                "level": 15,
+                "species": "SENTRET",
+                "capsule": 0
+            }
+        ],
+        "index": 340
+    },
+    "BEAUTY_Mickey_5": {
+        "type": "TRTYPE_MON",
+        "class": "BEAUTY",
+        "name": "Mickey",
+        "items": [],
+        "ai_flags": 1,
+        "double": 0,
+        "party": [
+            {
+                "difficulty": 0,
+                "genderOverride": "GENDER_OVERRIDE_OFF",
+                "abilityOverride": "ABILITY_OVERRIDE_OFF",
+                "level": 15,
+                "species": "SENTRET",
+                "capsule": 0
+            }
+        ],
+        "index": 341
+    },
+    "BEAUTY_Mickey_6": {
+        "type": "TRTYPE_MON",
+        "class": "BEAUTY",
+        "name": "Mickey",
+        "items": [],
+        "ai_flags": 1,
+        "double": 0,
+        "party": [
+            {
+                "difficulty": 0,
+                "genderOverride": "GENDER_OVERRIDE_OFF",
+                "abilityOverride": "ABILITY_OVERRIDE_OFF",
+                "level": 15,
+                "species": "SENTRET",
+                "capsule": 0
+            }
+        ],
+        "index": 342
+    },
+    "BEAUTY_Mickey_7": {
+        "type": "TRTYPE_MON",
+        "class": "BEAUTY",
+        "name": "Mickey",
+        "items": [],
+        "ai_flags": 1,
+        "double": 0,
+        "party": [
+            {
+                "difficulty": 0,
+                "genderOverride": "GENDER_OVERRIDE_OFF",
+                "abilityOverride": "ABILITY_OVERRIDE_OFF",
+                "level": 15,
+                "species": "SENTRET",
+                "capsule": 0
+            }
+        ],
+        "index": 343
+    },
+    "BEAUTY_Mickey_8": {
+        "type": "TRTYPE_MON",
+        "class": "BEAUTY",
+        "name": "Mickey",
+        "items": [],
+        "ai_flags": 1,
+        "double": 0,
+        "party": [
+            {
+                "difficulty": 0,
+                "genderOverride": "GENDER_OVERRIDE_OFF",
+                "abilityOverride": "ABILITY_OVERRIDE_OFF",
+                "level": 15,
+                "species": "SENTRET",
+                "capsule": 0
+            }
+        ],
+        "index": 344
+    },
+    "BEAUTY_Mickey_9": {
+        "type": "TRTYPE_MON",
+        "class": "BEAUTY",
+        "name": "Mickey",
+        "items": [],
+        "ai_flags": 1,
+        "double": 0,
+        "party": [
+            {
+                "difficulty": 0,
+                "genderOverride": "GENDER_OVERRIDE_OFF",
+                "abilityOverride": "ABILITY_OVERRIDE_OFF",
+                "level": 15,
+                "species": "SENTRET",
+                "capsule": 0
+            }
+        ],
+        "index": 345
+    },
+    "BEAUTY_Mickey_10": {
+        "type": "TRTYPE_MON",
+        "class": "BEAUTY",
+        "name": "Mickey",
+        "items": [],
+        "ai_flags": 1,
+        "double": 0,
+        "party": [
+            {
+                "difficulty": 0,
+                "genderOverride": "GENDER_OVERRIDE_OFF",
+                "abilityOverride": "ABILITY_OVERRIDE_OFF",
+                "level": 15,
+                "species": "SENTRET",
+                "capsule": 0
+            }
+        ],
+        "index": 347
     },
     "POKEFAN_M_William": {
         "type": "TRTYPE_MON",
@@ -11729,7 +12595,8 @@
                 "species": "RAICHU",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 181
     },
     "POKEFAN_Beverly_1": {
         "type": "TRTYPE_MON",
@@ -11747,7 +12614,8 @@
                 "species": "SNUBBULL",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 182
     },
     "POKEFAN_Beverly_2": {
         "type": "TRTYPE_MON",
@@ -11765,7 +12633,8 @@
                 "species": "SNUBBULL",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 436
     },
     "POKEFAN_Beverly_3": {
         "type": "TRTYPE_MON",
@@ -11783,7 +12652,8 @@
                 "species": "GRANBULL",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 437
     },
     "POKEFAN_Beverly_4": {
         "type": "TRTYPE_MON",
@@ -11801,7 +12671,8 @@
                 "species": "GRANBULL",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 611
     },
     "LASS_Alice": {
         "type": "TRTYPE_MON_MOVES",
@@ -11853,7 +12724,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 183
     },
     "LASS_Krise_1": {
         "type": "TRTYPE_MON",
@@ -11879,7 +12751,8 @@
                 "species": "CUBONE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 184
     },
     "LASS_Krise_2": {
         "type": "TRTYPE_MON",
@@ -11905,7 +12778,8 @@
                 "species": "CUBONE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 613
     },
     "LASS_Krise_3": {
         "type": "TRTYPE_MON",
@@ -11931,7 +12805,8 @@
                 "species": "MAROWAK",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 614
     },
     "LASS_Krise_4": {
         "type": "TRTYPE_MON",
@@ -11957,7 +12832,8 @@
                 "species": "MAROWAK",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 615
     },
     "POKE_MANIAC_Andrew": {
         "type": "TRTYPE_MON",
@@ -11983,7 +12859,8 @@
                 "species": "MAROWAK",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 201
     },
     "POKE_MANIAC_Calvin": {
         "type": "TRTYPE_MON",
@@ -12001,7 +12878,8 @@
                 "species": "KANGASKHAN",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 202
     },
     "HIKER_Phillip": {
         "type": "TRTYPE_MON",
@@ -12027,7 +12905,8 @@
                 "species": "GRAVELER",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 203
     },
     "HIKER_Leonard": {
         "type": "TRTYPE_MON",
@@ -12053,7 +12932,8 @@
                 "species": "MACHOP",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 204
     },
     "ACE_TRAINER_M_Nick": {
         "type": "TRTYPE_MON_MOVES",
@@ -12105,7 +12985,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 205
     },
     "ACE_TRAINER_F_Gwen": {
         "type": "TRTYPE_MON",
@@ -12147,7 +13028,8 @@
                 "species": "JOLTEON",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 206
     },
     "BEAUTY_Cassie": {
         "type": "TRTYPE_MON",
@@ -12173,7 +13055,8 @@
                 "species": "BUTTERFREE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 209
     },
     "BEAUTY_Caroline": {
         "type": "TRTYPE_MON",
@@ -12207,7 +13090,8 @@
                 "species": "MARILL",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 210
     },
     "SAILOR_Huey_1": {
         "type": "TRTYPE_MON",
@@ -12233,7 +13117,8 @@
                 "species": "POLIWHIRL",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 211
     },
     "SAILOR_Huey_2": {
         "type": "TRTYPE_MON",
@@ -12259,7 +13144,8 @@
                 "species": "POLIWHIRL",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 440
     },
     "SAILOR_Huey_3": {
         "type": "TRTYPE_MON",
@@ -12285,7 +13171,8 @@
                 "species": "POLIWRATH",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 441
     },
     "SAILOR_Huey_4": {
         "type": "TRTYPE_MON_MOVES",
@@ -12323,7 +13210,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 509
     },
     "SAILOR_Terrell": {
         "type": "TRTYPE_MON",
@@ -12341,7 +13229,8 @@
                 "species": "POLIWHIRL",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 212
     },
     "SAILOR_Kent": {
         "type": "TRTYPE_MON_MOVES",
@@ -12379,7 +13268,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 213
     },
     "SAILOR_Roberto": {
         "type": "TRTYPE_MON",
@@ -12413,7 +13303,8 @@
                 "species": "POLIWHIRL",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 214
     },
     "LASS_Connie": {
         "type": "TRTYPE_MON",
@@ -12431,7 +13322,8 @@
                 "species": "MARILL",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 215
     },
     "BIRD_KEEPER_GS_Denis": {
         "type": "TRTYPE_MON",
@@ -12465,7 +13357,8 @@
                 "species": "SPEAROW",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 217
     },
     "PSYCHIC_M_Franklin": {
         "type": "TRTYPE_MON_MOVES",
@@ -12503,7 +13396,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 230
     },
     "GENTLEMAN_Edward": {
         "type": "TRTYPE_MON",
@@ -12523,7 +13417,8 @@
                 "species": "PERSIAN",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 231
     },
     "GUITARIST_Vincent": {
         "type": "TRTYPE_MON_MOVES",
@@ -12575,7 +13470,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 232
     },
     "SUPER_NERD_Eric": {
         "type": "TRTYPE_MON",
@@ -12601,7 +13497,8 @@
                 "species": "GRIMER",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 233
     },
     "HIKER_Eoin": {
         "type": "TRTYPE_MON",
@@ -12635,7 +13532,8 @@
                 "species": "GRAVELER",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 234
     },
     "HIKER_Noland": {
         "type": "TRTYPE_MON",
@@ -12661,7 +13559,8 @@
                 "species": "GOLEM",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 235
     },
     "ACE_TRAINER_M_Shaye": {
         "type": "TRTYPE_MON_MOVES",
@@ -12713,7 +13612,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 236
     },
     "ACE_TRAINER_F_Carol": {
         "type": "TRTYPE_MON_MOVES",
@@ -12765,7 +13665,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 237
     },
     "SAILOR_Stanly": {
         "type": "TRTYPE_MON",
@@ -12799,7 +13700,8 @@
                 "species": "PSYDUCK",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 238
     },
     "SAILOR_Jeff": {
         "type": "TRTYPE_MON",
@@ -12825,7 +13727,8 @@
                 "species": "RATICATE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 239
     },
     "SAILOR_Garrett": {
         "type": "TRTYPE_MON",
@@ -12843,7 +13746,8 @@
                 "species": "KINGLER",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 240
     },
     "SAILOR_Kenneth": {
         "type": "TRTYPE_MON",
@@ -12885,7 +13789,8 @@
                 "species": "MACHOP",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 241
     },
     "JUGGLER_Fritz": {
         "type": "TRTYPE_MON_MOVES",
@@ -12937,7 +13842,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 242
     },
     "SWIMMER_F_Katie": {
         "type": "TRTYPE_MON",
@@ -12955,7 +13861,8 @@
                 "species": "DEWGONG",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 243
     },
     "CHAMPION_Lance_1": {
         "type": "TRTYPE_MON_MOVES",
@@ -13060,7 +13967,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 244
     },
     "CHAMPION_Lance_2": {
         "type": "TRTYPE_MON_MOVES",
@@ -13165,7 +14073,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 701
     },
     "CHAMPION_Lance_DRAGONS_DEN": {
         "type": "TRTYPE_MON_MOVES",
@@ -13223,9 +14132,10 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 733
     },
-    "ELITE_FOUR_Will_1": {
+    "ELITE_FOUR_WILL_1": {
         "type": "TRTYPE_MON_MOVES",
         "class": "ELITE_FOUR_WILL",
         "name": "Will",
@@ -13311,9 +14221,10 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 245
     },
-    "ELITE_FOUR_Will_2": {
+    "ELITE_FOUR_WILL_2": {
         "type": "TRTYPE_MON_MOVES",
         "class": "ELITE_FOUR_WILL",
         "name": "Will",
@@ -13414,9 +14325,10 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 702
     },
-    "ELITE_FOUR_Karen_1": {
+    "ELITE_FOUR_KAREN_1": {
         "type": "TRTYPE_MON_MOVES",
         "class": "ELITE_FOUR_KAREN",
         "name": "Karen",
@@ -13502,9 +14414,10 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 246
     },
-    "ELITE_FOUR_Karen_2": {
+    "ELITE_FOUR_KAREN_2": {
         "type": "TRTYPE_MON_MOVES",
         "class": "ELITE_FOUR_KAREN",
         "name": "Karen",
@@ -13605,9 +14518,10 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 705
     },
-    "ELITE_FOUR_Koga_1": {
+    "ELITE_FOUR_KOGA_1": {
         "type": "TRTYPE_MON_MOVES",
         "class": "ELITE_FOUR_KOGA",
         "name": "Koga",
@@ -13693,9 +14607,10 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 247
     },
-    "ELITE_FOUR_Koga_2": {
+    "ELITE_FOUR_KOGA_2": {
         "type": "TRTYPE_MON_MOVES",
         "class": "ELITE_FOUR_KOGA",
         "name": "Koga",
@@ -13796,7 +14711,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 703
     },
     "BUG_CATCHER_Ed": {
         "type": "TRTYPE_MON",
@@ -13830,7 +14746,8 @@
                 "species": "BEEDRILL",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 248
     },
     "BUG_CATCHER_Don": {
         "type": "TRTYPE_MON",
@@ -13856,7 +14773,8 @@
                 "species": "CATERPIE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 249
     },
     "BLACK_BELT_Nob": {
         "type": "TRTYPE_MON_MOVES",
@@ -13894,7 +14812,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 251
     },
     "SWIMMER_M_Harold": {
         "type": "TRTYPE_MON",
@@ -13920,9 +14839,10 @@
                 "species": "SEADRA",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 252
     },
-    "LEADER_Brock_1": {
+    "LEADER_BROCK_1": {
         "type": "TRTYPE_MON_MOVES",
         "class": "LEADER_BROCK",
         "name": "Brock",
@@ -14009,9 +14929,10 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 253
     },
-    "LEADER_Brock_2": {
+    "LEADER_BROCK_2": {
         "type": "TRTYPE_MON_MOVES",
         "class": "LEADER_BROCK",
         "name": "Brock",
@@ -14113,9 +15034,10 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 720
     },
-    "LEADER_Misty_1": {
+    "LEADER_MISTY_1": {
         "type": "TRTYPE_MON_MOVES",
         "class": "LEADER_MISTY",
         "name": "Misty",
@@ -14187,9 +15109,10 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 254
     },
-    "LEADER_Misty_2": {
+    "LEADER_MISTY_2": {
         "type": "TRTYPE_MON_MOVES",
         "class": "LEADER_MISTY",
         "name": "Misty",
@@ -14291,9 +15214,10 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 721
     },
-    "LEADER_Lt_Surge_1": {
+    "LEADER_LT_SURGE_1": {
         "type": "TRTYPE_MON_MOVES",
         "class": "LEADER_LT_SURGE",
         "name": "Lt. Surge",
@@ -14380,9 +15304,10 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 255
     },
-    "LEADER_Lt_Surge_2": {
+    "LEADER_LT_SURGE_2": {
         "type": "TRTYPE_MON_MOVES",
         "class": "LEADER_LT_SURGE",
         "name": "Lt. Surge",
@@ -14484,9 +15409,10 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 722
     },
-    "LEADER_Erika_1": {
+    "LEADER_ERIKA_1": {
         "type": "TRTYPE_MON_MOVES",
         "class": "LEADER_ERIKA",
         "name": "Erika",
@@ -14558,9 +15484,10 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 256
     },
-    "LEADER_Erika_2": {
+    "LEADER_ERIKA_2": {
         "type": "TRTYPE_MON_MOVES",
         "class": "LEADER_ERIKA",
         "name": "Erika",
@@ -14662,9 +15589,10 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 723
     },
-    "LEADER_Janine_1": {
+    "LEADER_JANINE_1": {
         "type": "TRTYPE_MON_MOVES",
         "class": "LEADER_JANINE",
         "name": "Janine",
@@ -14751,9 +15679,10 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 257
     },
-    "LEADER_Janine_2": {
+    "LEADER_JANINE_2": {
         "type": "TRTYPE_MON_MOVES",
         "class": "LEADER_JANINE",
         "name": "Janine",
@@ -14855,9 +15784,10 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 724
     },
-    "LEADER_Sabrina_1": {
+    "LEADER_SABRINA_1": {
         "type": "TRTYPE_MON_MOVES",
         "class": "LEADER_SABRINA",
         "name": "Sabrina",
@@ -14914,9 +15844,10 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 258
     },
-    "LEADER_Sabrina_2": {
+    "LEADER_SABRINA_2": {
         "type": "TRTYPE_MON_MOVES",
         "class": "LEADER_SABRINA",
         "name": "Sabrina",
@@ -15018,9 +15949,10 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 725
     },
-    "LEADER_Blaine_1": {
+    "LEADER_BLAINE_1": {
         "type": "TRTYPE_MON_MOVES",
         "class": "LEADER_BLAINE",
         "name": "Blaine",
@@ -15077,9 +16009,10 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 259
     },
-    "LEADER_Blaine_2": {
+    "LEADER_BLAINE_2": {
         "type": "TRTYPE_MON_MOVES",
         "class": "LEADER_BLAINE",
         "name": "Blaine",
@@ -15181,9 +16114,10 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 726
     },
-    "PKMN_TRAINER_RED_Red": {
+    "PKMN_TRAINER_RED": {
         "type": "TRTYPE_MON_MOVES",
         "class": "PKMN_TRAINER_RED",
         "name": "Red",
@@ -15286,9 +16220,10 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 260
     },
-    "LEADER_Blue_1": {
+    "LEADER_BLUE_1": {
         "type": "TRTYPE_MON_MOVES",
         "class": "LEADER_BLUE",
         "name": "Blue",
@@ -15391,9 +16326,10 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 261
     },
-    "LEADER_Blue_2": {
+    "LEADER_BLUE_2": {
         "type": "TRTYPE_MON_MOVES",
         "class": "LEADER_BLUE",
         "name": "Blue",
@@ -15496,7 +16432,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 727
     },
     "FIREBREATHER_Richard": {
         "type": "TRTYPE_MON",
@@ -15514,7 +16451,8 @@
                 "species": "CHARMELEON",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 281
     },
     "FIREBREATHER_Ned": {
         "type": "TRTYPE_MON",
@@ -15548,7 +16486,8 @@
                 "species": "KOFFING",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 282
     },
     "BURGLAR_Orson": {
         "type": "TRTYPE_MON_MOVES",
@@ -15586,7 +16525,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 283
     },
     "BURGLAR_Corey": {
         "type": "TRTYPE_MON",
@@ -15628,7 +16568,8 @@
                 "species": "KOFFING",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 284
     },
     "ELDER_Li": {
         "type": "TRTYPE_MON",
@@ -15662,7 +16603,8 @@
                 "species": "HOOTHOOT",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 290
     },
     "SWIMMER_F_Debbie": {
         "type": "TRTYPE_MON",
@@ -15680,7 +16622,8 @@
                 "species": "CLAMPERL",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 291
     },
     "SWIMMER_F_Nicole": {
         "type": "TRTYPE_MON",
@@ -15714,7 +16657,8 @@
                 "species": "LAPRAS",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 293
     },
     "SWIMMER_F_Lori": {
         "type": "TRTYPE_MON_MOVES",
@@ -15766,7 +16710,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 294
     },
     "SWIMMER_F_Nikki": {
         "type": "TRTYPE_MON",
@@ -15792,7 +16737,8 @@
                 "species": "DEWGONG",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 296
     },
     "SWIMMER_F_Diana": {
         "type": "TRTYPE_MON_MOVES",
@@ -15816,7 +16762,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 297
     },
     "SWIMMER_F_Briana": {
         "type": "TRTYPE_MON_MOVES",
@@ -15854,7 +16801,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 298
     },
     "BIRD_KEEPER_GS_Hank": {
         "type": "TRTYPE_MON",
@@ -15880,7 +16828,8 @@
                 "species": "PIDGEOT",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 299
     },
     "BIRD_KEEPER_GS_Roy": {
         "type": "TRTYPE_MON",
@@ -15906,7 +16855,8 @@
                 "species": "FEAROW",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 300
     },
     "BIRD_KEEPER_GS_Boris": {
         "type": "TRTYPE_MON",
@@ -15940,7 +16890,8 @@
                 "species": "DODRIO",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 301
     },
     "BIRD_KEEPER_GS_Bob": {
         "type": "TRTYPE_MON",
@@ -15958,7 +16909,8 @@
                 "species": "NOCTOWL",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 302
     },
     "BIRD_KEEPER_GS_Jose_1": {
         "type": "TRTYPE_MON",
@@ -15976,7 +16928,8 @@
                 "species": "FARFETCHD",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 303
     },
     "BIRD_KEEPER_GS_Jose_2": {
         "type": "TRTYPE_MON",
@@ -15994,7 +16947,8 @@
                 "species": "FARFETCHD",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 414
     },
     "BIRD_KEEPER_GS_Jose_3": {
         "type": "TRTYPE_MON",
@@ -16020,7 +16974,8 @@
                 "species": "FARFETCHD",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 446
     },
     "BIRD_KEEPER_GS_Jose_4": {
         "type": "TRTYPE_MON",
@@ -16056,7 +17011,8 @@
                 "species": "FARFETCHD",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 602
     },
     "CAMPER_Jerry": {
         "type": "TRTYPE_MON_MOVES",
@@ -16080,7 +17036,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 308
     },
     "BIKER_Dwayne": {
         "type": "TRTYPE_MON",
@@ -16122,7 +17079,8 @@
                 "species": "KOFFING",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 309
     },
     "BIKER_Harris": {
         "type": "TRTYPE_MON",
@@ -16140,7 +17098,8 @@
                 "species": "FLAREON",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 310
     },
     "BIKER_Zeke": {
         "type": "TRTYPE_MON",
@@ -16166,7 +17125,8 @@
                 "species": "KOFFING",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 311
     },
     "BIKER_Charles": {
         "type": "TRTYPE_MON",
@@ -16200,7 +17160,8 @@
                 "species": "WEEZING",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 312
     },
     "BIKER_Reese_1": {
         "type": "TRTYPE_MON",
@@ -16218,7 +17179,8 @@
                 "species": "WEEZING",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 313
     },
     "BIKER_Reese_2": {
         "type": "TRTYPE_MON_MOVES",
@@ -16256,7 +17218,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 628
     },
     "BIKER_Reese_3": {
         "type": "TRTYPE_MON_MOVES",
@@ -16294,7 +17257,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 629
     },
     "BIKER_Reese_4": {
         "type": "TRTYPE_MON_MOVES",
@@ -16332,7 +17296,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 630
     },
     "BIKER_Joel": {
         "type": "TRTYPE_MON",
@@ -16358,7 +17323,8 @@
                 "species": "MAGMAR",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 314
     },
     "BIKER_Glenn": {
         "type": "TRTYPE_MON",
@@ -16392,7 +17358,8 @@
                 "species": "WEEZING",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 315
     },
     "PSYCHIC_M_Herman": {
         "type": "TRTYPE_MON_MOVES",
@@ -16444,7 +17411,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 316
     },
     "PSYCHIC_M_Fidel": {
         "type": "TRTYPE_MON_MOVES",
@@ -16468,7 +17436,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 317
     },
     "FIREBREATHER_Burt": {
         "type": "TRTYPE_MON_MOVES",
@@ -16506,7 +17475,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 318
     },
     "FIREBREATHER_Bill": {
         "type": "TRTYPE_MON",
@@ -16532,7 +17502,8 @@
                 "species": "KOFFING",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 319
     },
     "FISHERMAN_Martin": {
         "type": "TRTYPE_MON",
@@ -16558,7 +17529,8 @@
                 "species": "OCTILLERY",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 320
     },
     "FISHERMAN_Stephen": {
         "type": "TRTYPE_MON",
@@ -16592,7 +17564,8 @@
                 "species": "TENTACRUEL",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 321
     },
     "FISHERMAN_Barney": {
         "type": "TRTYPE_MON",
@@ -16626,7 +17599,8 @@
                 "species": "GYARADOS",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 322
     },
     "TWINS_Jo & Zoe_1": {
         "type": "TRTYPE_MON_MOVES",
@@ -16664,7 +17638,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 326
     },
     "TWINS_Jo & Zoe_2": {
         "type": "TRTYPE_MON_MOVES",
@@ -16702,7 +17677,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 416
     },
     "SCHOOL_KID_M_Danny": {
         "type": "TRTYPE_MON",
@@ -16736,7 +17712,8 @@
                 "species": "MAGMAR",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 327
     },
     "SCHOOL_KID_M_Tommy": {
         "type": "TRTYPE_MON_MOVES",
@@ -16774,7 +17751,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 328
     },
     "SCHOOL_KID_M_Dudley": {
         "type": "TRTYPE_MON_ITEM",
@@ -16793,7 +17771,8 @@
                 "item": "SITRUS_BERRY",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 329
     },
     "SCHOOL_KID_M_Joe": {
         "type": "TRTYPE_MON_ITEM",
@@ -16821,7 +17800,8 @@
                 "item": "NONE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 330
     },
     "SCHOOL_KID_M_Billy_1": {
         "type": "TRTYPE_MON",
@@ -16855,7 +17835,8 @@
                 "species": "DITTO",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 331
     },
     "SCHOOL_KID_M_Billy_2": {
         "type": "TRTYPE_MON",
@@ -16889,7 +17870,8 @@
                 "species": "DITTO",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 640
     },
     "SCHOOL_KID_M_Billy_3": {
         "type": "TRTYPE_MON",
@@ -16923,7 +17905,8 @@
                 "species": "DITTO",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 641
     },
     "SCHOOL_KID_M_Billy_4": {
         "type": "TRTYPE_MON_MOVES",
@@ -16985,7 +17968,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 642
     },
     "PICNICKER_Heidi": {
         "type": "TRTYPE_MON",
@@ -17011,7 +17995,8 @@
                 "species": "SKIPLOOM",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 332
     },
     "PICNICKER_Edna": {
         "type": "TRTYPE_MON",
@@ -17037,7 +18022,8 @@
                 "species": "RAICHU",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 333
     },
     "PICNICKER_Tanya": {
         "type": "TRTYPE_MON_MOVES",
@@ -17061,7 +18047,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 336
     },
     "GENTLEMAN_Gregory": {
         "type": "TRTYPE_MON_MOVES",
@@ -17115,7 +18102,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 337
     },
     "GENTLEMAN_Mickey": {
         "type": "TRTYPE_MON",
@@ -17135,7 +18123,8 @@
                 "species": "PONYTA",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 338
     },
     "BLACK_BELT_Wai": {
         "type": "TRTYPE_MON",
@@ -17169,7 +18158,8 @@
                 "species": "MEDITITE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 339
     },
     "BEAUTY_Julia": {
         "type": "TRTYPE_MON_MOVES",
@@ -17221,7 +18211,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 346
     },
     "POKEFAN_M_Robert": {
         "type": "TRTYPE_MON",
@@ -17239,7 +18230,8 @@
                 "species": "QUAGSIRE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 348
     },
     "POKEFAN_M_Joshua": {
         "type": "TRTYPE_MON",
@@ -17297,7 +18289,8 @@
                 "species": "PIKACHU",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 349
     },
     "POKEFAN_M_Carter": {
         "type": "TRTYPE_MON",
@@ -17331,7 +18324,8 @@
                 "species": "SQUIRTLE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 350
     },
     "POKEFAN_M_Trevor": {
         "type": "TRTYPE_MON",
@@ -17349,7 +18343,8 @@
                 "species": "PSYDUCK",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 351
     },
     "POKEFAN_Georgia": {
         "type": "TRTYPE_MON",
@@ -17399,7 +18394,8 @@
                 "species": "SENTRET",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 352
     },
     "LASS_Laura": {
         "type": "TRTYPE_MON_ITEM",
@@ -17436,7 +18432,8 @@
                 "item": "NONE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 354
     },
     "LASS_Shannon": {
         "type": "TRTYPE_MON",
@@ -17470,7 +18467,8 @@
                 "species": "PARASECT",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 355
     },
     "LASS_Michelle": {
         "type": "TRTYPE_MON_MOVES",
@@ -17522,7 +18520,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 356
     },
     "HIKER_Clarke": {
         "type": "TRTYPE_MON",
@@ -17548,7 +18547,8 @@
                 "species": "DUGTRIO",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 357
     },
     "HIKER_Kenny_1": {
         "type": "TRTYPE_MON",
@@ -17582,7 +18582,8 @@
                 "species": "GOLEM",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 358
     },
     "HIKER_Kenny_2": {
         "type": "TRTYPE_MON",
@@ -17624,7 +18625,8 @@
                 "species": "SANDSLASH",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 655
     },
     "HIKER_Kenny_3": {
         "type": "TRTYPE_MON",
@@ -17666,7 +18668,8 @@
                 "species": "ONIX",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 656
     },
     "HIKER_Kenny_4": {
         "type": "TRTYPE_MON",
@@ -17708,7 +18711,8 @@
                 "species": "STEELIX",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 657
     },
     "HIKER_Jim": {
         "type": "TRTYPE_MON",
@@ -17726,7 +18730,8 @@
                 "species": "MACHAMP",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 359
     },
     "ACE_TRAINER_M_Kevin": {
         "type": "TRTYPE_MON_MOVES",
@@ -17778,7 +18783,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 361
     },
     "ACE_TRAINER_F_Quinn": {
         "type": "TRTYPE_MON_MOVES",
@@ -17816,7 +18822,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 362
     },
     "ACE_TRAINER_F_Emma": {
         "type": "TRTYPE_MON",
@@ -17834,7 +18841,8 @@
                 "species": "POLIWHIRL",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 363
     },
     "SUPER_NERD_Sam": {
         "type": "TRTYPE_MON_ITEM",
@@ -17862,7 +18870,8 @@
                 "item": "TOXIC_ORB",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 364
     },
     "SUPER_NERD_Tyrone": {
         "type": "TRTYPE_MON",
@@ -17896,7 +18905,8 @@
                 "species": "MAGNEMITE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 365
     },
     "SUPER_NERD_Pat": {
         "type": "TRTYPE_MON_MOVES",
@@ -17921,7 +18931,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 366
     },
     "SUPER_NERD_Shawn": {
         "type": "TRTYPE_MON_ITEM",
@@ -17958,7 +18969,8 @@
                 "item": "NONE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 367
     },
     "MEDIUM_Rebecca": {
         "type": "TRTYPE_MON_MOVES",
@@ -17996,7 +19008,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 368
     },
     "MEDIUM_Darcy": {
         "type": "TRTYPE_MON_MOVES",
@@ -18034,7 +19047,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 369
     },
     "SWIMMER_M_Jerome": {
         "type": "TRTYPE_MON",
@@ -18076,7 +19090,8 @@
                 "species": "GOLDEEN",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 370
     },
     "SWIMMER_M_Tucker": {
         "type": "TRTYPE_MON",
@@ -18102,7 +19117,8 @@
                 "species": "CLOYSTER",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 371
     },
     "SWIMMER_M_Frankie": {
         "type": "TRTYPE_MON",
@@ -18120,7 +19136,8 @@
                 "species": "AZUMARILL",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 373
     },
     "SWIMMER_M_Tyson": {
         "type": "TRTYPE_MON_MOVES",
@@ -18158,7 +19175,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 374
     },
     "SWIMMER_M_Parker": {
         "type": "TRTYPE_MON_MOVES",
@@ -18196,7 +19214,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 377
     },
     "YOUNGSTER_Warren": {
         "type": "TRTYPE_MON",
@@ -18222,7 +19241,8 @@
                 "species": "RATICATE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 378
     },
     "YOUNGSTER_Jimmy": {
         "type": "TRTYPE_MON",
@@ -18256,7 +19276,8 @@
                 "species": "PARASECT",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 379
     },
     "YOUNGSTER_Owen": {
         "type": "TRTYPE_MON",
@@ -18274,7 +19295,8 @@
                 "species": "GROWLITHE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 380
     },
     "YOUNGSTER_Jason": {
         "type": "TRTYPE_MON",
@@ -18300,7 +19322,8 @@
                 "species": "CROBAT",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 381
     },
     "TEACHER_Hillary_1": {
         "type": "TRTYPE_MON",
@@ -18326,7 +19349,8 @@
                 "species": "AIPOM",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 382
     },
     "TEACHER_Hillary_2": {
         "type": "TRTYPE_MON",
@@ -18352,7 +19376,8 @@
                 "species": "SUNFLORA",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 637
     },
     "TEACHER_Hillary_3": {
         "type": "TRTYPE_MON",
@@ -18378,7 +19403,8 @@
                 "species": "SUNFLORA",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 638
     },
     "TEACHER_Hillary_4": {
         "type": "TRTYPE_MON",
@@ -18404,7 +19430,8 @@
                 "species": "SUNFLORA",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 639
     },
     "BIRD_KEEPER_GS_Peter": {
         "type": "TRTYPE_MON",
@@ -18438,7 +19465,8 @@
                 "species": "SPEAROW",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 383
     },
     "HIKER_Daniel": {
         "type": "TRTYPE_MON",
@@ -18456,7 +19484,8 @@
                 "species": "ONIX",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 384
     },
     "TWINS_Dara & Dia": {
         "type": "TRTYPE_MON",
@@ -18482,7 +19511,8 @@
                 "species": "MARILL",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 385
     },
     "PSYCHIC_M_Greg": {
         "type": "TRTYPE_MON_MOVES",
@@ -18505,7 +19535,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 386
     },
     "FIREBREATHER_Walt_1": {
         "type": "TRTYPE_MON",
@@ -18531,7 +19562,8 @@
                 "species": "MAGMAR",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 388
     },
     "FIREBREATHER_Walt_2": {
         "type": "TRTYPE_MON",
@@ -18557,7 +19589,8 @@
                 "species": "MAGMAR",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 619
     },
     "FIREBREATHER_Walt_3": {
         "type": "TRTYPE_MON",
@@ -18583,7 +19616,8 @@
                 "species": "MAGMAR",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 620
     },
     "FIREBREATHER_Walt_4": {
         "type": "TRTYPE_MON",
@@ -18617,7 +19651,8 @@
                 "species": "MAGMORTAR",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 621
     },
     "PSYCHIC_M_Nelson": {
         "type": "TRTYPE_MON_MOVES",
@@ -18654,7 +19689,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 389
     },
     "FIREBREATHER_Ray": {
         "type": "TRTYPE_MON",
@@ -18672,7 +19708,8 @@
                 "species": "VULPIX",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 390
     },
     "POKE_MANIAC_Issac": {
         "type": "TRTYPE_MON_MOVES",
@@ -18695,7 +19732,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 391
     },
     "POKE_MANIAC_Donald": {
         "type": "TRTYPE_MON",
@@ -18721,7 +19759,8 @@
                 "species": "SLOWPOKE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 392
     },
     "SUPER_NERD_Teru": {
         "type": "TRTYPE_MON",
@@ -18763,7 +19802,8 @@
                 "species": "MAGNEMITE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 393
     },
     "PSYCHIC_M_Mark": {
         "type": "TRTYPE_MON_MOVES",
@@ -18810,7 +19850,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 395
     },
     "JUGGLER_Horton": {
         "type": "TRTYPE_MON_MOVES",
@@ -18862,7 +19903,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 396
     },
     "SCHOOL_KID_M_Chad_1": {
         "type": "TRTYPE_MON",
@@ -18880,7 +19922,8 @@
                 "species": "MR_MIME",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 397
     },
     "SCHOOL_KID_M_Chad_2": {
         "type": "TRTYPE_MON",
@@ -18906,7 +19949,8 @@
                 "species": "MAGNEMITE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 434
     },
     "SCHOOL_KID_M_Chad_3": {
         "type": "TRTYPE_MON",
@@ -18932,7 +19976,8 @@
                 "species": "MAGNETON",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 435
     },
     "SCHOOL_KID_M_Chad_4": {
         "type": "TRTYPE_MON_MOVES",
@@ -18970,7 +20015,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 507
     },
     "BEAUTY_Valerie": {
         "type": "TRTYPE_MON_MOVES",
@@ -19008,7 +20054,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 398
     },
     "FIREBREATHER_Lyle": {
         "type": "TRTYPE_MON",
@@ -19042,7 +20089,8 @@
                 "species": "KOFFING",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 399
     },
     "LASS_Dana_1": {
         "type": "TRTYPE_MON_MOVES",
@@ -19082,7 +20130,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 400
     },
     "LASS_Dana_2": {
         "type": "TRTYPE_MON_MOVES",
@@ -19122,7 +20171,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 464
     },
     "LASS_Dana_3": {
         "type": "TRTYPE_MON_MOVES",
@@ -19162,7 +20212,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 465
     },
     "LASS_Dana_4": {
         "type": "TRTYPE_MON_MOVES",
@@ -19202,7 +20253,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 528
     },
     "GENTLEMAN_Alfred_1": {
         "type": "TRTYPE_MON",
@@ -19222,7 +20274,8 @@
                 "species": "NOCTOWL",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 401
     },
     "GENTLEMAN_Alfred_2": {
         "type": "TRTYPE_MON",
@@ -19242,7 +20295,8 @@
                 "species": "NOCTOWL",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 672
     },
     "GENTLEMAN_Alfred_3": {
         "type": "TRTYPE_MON",
@@ -19262,7 +20316,8 @@
                 "species": "NOCTOWL",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 673
     },
     "GENTLEMAN_Alfred_4": {
         "type": "TRTYPE_MON_MOVES",
@@ -19288,7 +20343,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 674
     },
     "PICNICKER_Tiffany_1": {
         "type": "TRTYPE_MON_MOVES",
@@ -19312,7 +20368,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 402
     },
     "PICNICKER_Tiffany_2": {
         "type": "TRTYPE_MON_MOVES",
@@ -19336,7 +20393,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 466
     },
     "PICNICKER_Tiffany_3": {
         "type": "TRTYPE_MON_MOVES",
@@ -19360,7 +20418,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 467
     },
     "PICNICKER_Tiffany_4": {
         "type": "TRTYPE_MON_MOVES",
@@ -19384,7 +20443,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 522
     },
     "CAMPER_Spencer": {
         "type": "TRTYPE_MON",
@@ -19418,7 +20478,8 @@
                 "species": "ZUBAT",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 403
     },
     "PSYCHIC_M_Phil": {
         "type": "TRTYPE_MON_MOVES",
@@ -19456,7 +20517,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 405
     },
     "POKE_MANIAC_Zach": {
         "type": "TRTYPE_MON",
@@ -19474,7 +20536,8 @@
                 "species": "RHYHORN",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 406
     },
     "ACE_TRAINER_M_Allen": {
         "type": "TRTYPE_MON_MOVES",
@@ -19512,7 +20575,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 407
     },
     "ACE_TRAINER_F_Cybil": {
         "type": "TRTYPE_MON_MOVES",
@@ -19550,7 +20614,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 408
     },
     "POKEFAN_M_Brandon": {
         "type": "TRTYPE_MON",
@@ -19576,7 +20641,8 @@
                 "species": "MAREEP",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 409
     },
     "SAILOR_Harry": {
         "type": "TRTYPE_MON_MOVES",
@@ -19600,7 +20666,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 410
     },
     "PSYCHIC_M_Vernon": {
         "type": "TRTYPE_MON",
@@ -19618,7 +20685,8 @@
                 "species": "ESPEON",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 411
     },
     "PSYCHIC_M_Eli": {
         "type": "TRTYPE_MON",
@@ -19652,7 +20720,8 @@
                 "species": "GIRAFARIG",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 412
     },
     "FISHERMAN_Scott": {
         "type": "TRTYPE_MON_MOVES",
@@ -19704,7 +20773,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 413
     },
     "PSYCHIC_M_Jared": {
         "type": "TRTYPE_MON_MOVES",
@@ -19756,7 +20826,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 415
     },
     "ACE_TRAINER_F_Jenn": {
         "type": "TRTYPE_MON",
@@ -19782,9 +20853,10 @@
                 "species": "STARMIE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 417
     },
-    "ELITE_FOUR_Bruno_1": {
+    "ELITE_FOUR_BRUNO_1": {
         "type": "TRTYPE_MON_MOVES",
         "class": "ELITE_FOUR_BRUNO",
         "name": "Bruno",
@@ -19870,9 +20942,10 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 418
     },
-    "ELITE_FOUR_Bruno_2": {
+    "ELITE_FOUR_BRUNO_2": {
         "type": "TRTYPE_MON_MOVES",
         "class": "ELITE_FOUR_BRUNO",
         "name": "Bruno",
@@ -19973,7 +21046,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 704
     },
     "LASS_Ellen": {
         "type": "TRTYPE_MON",
@@ -19999,7 +21073,8 @@
                 "species": "GRANBULL",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 419
     },
     "BIRD_KEEPER_GS_Perry": {
         "type": "TRTYPE_MON",
@@ -20017,7 +21092,8 @@
                 "species": "FARFETCHD",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 420
     },
     "BIRD_KEEPER_GS_Bret": {
         "type": "TRTYPE_MON",
@@ -20043,7 +21119,8 @@
                 "species": "FEAROW",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 421
     },
     "PSYCHIC_M_Rodney": {
         "type": "TRTYPE_MON",
@@ -20069,7 +21146,8 @@
                 "species": "HYPNO",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 422
     },
     "POKEFAN_M_Jeremy": {
         "type": "TRTYPE_MON",
@@ -20103,7 +21181,8 @@
                 "species": "MEOWTH",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 423
     },
     "POKEFAN_M_Colin": {
         "type": "TRTYPE_MON_MOVES",
@@ -20126,7 +21205,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 424
     },
     "TWINS_Meg & Peg_1": {
         "type": "TRTYPE_MON",
@@ -20152,7 +21232,8 @@
                 "species": "PHANPY",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 425
     },
     "TWINS_Meg & Peg_2": {
         "type": "TRTYPE_MON",
@@ -20178,7 +21259,8 @@
                 "species": "TEDDIURSA",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 426
     },
     "TEACHER_Shirley": {
         "type": "TRTYPE_MON",
@@ -20204,7 +21286,8 @@
                 "species": "JIGGLYPUFF",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 427
     },
     "SCHOOL_KID_M_Nate": {
         "type": "TRTYPE_MON",
@@ -20230,7 +21313,8 @@
                 "species": "EXEGGUTOR",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 428
     },
     "SCHOOL_KID_M_Ricky": {
         "type": "TRTYPE_MON_ITEM",
@@ -20258,7 +21342,8 @@
                 "item": "NONE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 429
     },
     "LASS_Mickey_1": {
         "type": "TRTYPE_MON",
@@ -20276,9 +21361,29 @@
                 "species": "MARILL",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 442
     },
     "LASS_Mickey_2": {
+        "type": "TRTYPE_MON",
+        "class": "LASS",
+        "name": "Mickey",
+        "items": [],
+        "ai_flags": 5,
+        "double": 0,
+        "party": [
+            {
+                "difficulty": 0,
+                "genderOverride": "GENDER_OVERRIDE_OFF",
+                "abilityOverride": "ABILITY_OVERRIDE_OFF",
+                "level": 21,
+                "species": "MARILL",
+                "capsule": 0
+            }
+        ],
+        "index": 443
+    },
+    "LASS_Mickey_3": {
         "type": "TRTYPE_MON_MOVES",
         "class": "LASS",
         "name": "Mickey",
@@ -20314,7 +21419,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 529
     },
     "SCIENTIST_GS_Ross": {
         "type": "TRTYPE_MON",
@@ -20340,7 +21446,8 @@
                 "species": "KOFFING",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 468
     },
     "SCIENTIST_GS_Mitch": {
         "type": "TRTYPE_MON",
@@ -20358,7 +21465,8 @@
                 "species": "DITTO",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 469
     },
     "SCIENTIST_GS_Gregg": {
         "type": "TRTYPE_MON",
@@ -20392,7 +21500,8 @@
                 "species": "MAGNEMITE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 470
     },
     "SCIENTIST_GS_Garett": {
         "type": "TRTYPE_MON",
@@ -20426,7 +21535,8 @@
                 "species": "MAGNEMITE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 471
     },
     "SCIENTIST_GS_Trenton": {
         "type": "TRTYPE_MON_MOVES",
@@ -20450,9 +21560,10 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 472
     },
-    "EXECUTIVE_ARIANA_Ariana_1": {
+    "EXECUTIVE_ARIANA_1": {
         "type": "TRTYPE_MON_MOVES",
         "class": "EXECUTIVE_ARIANA",
         "name": "Ariana",
@@ -20502,9 +21613,10 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 478
     },
-    "EXECUTIVE_ARIANA_Ariana_2": {
+    "EXECUTIVE_ARIANA_2": {
         "type": "TRTYPE_MON_MOVES",
         "class": "EXECUTIVE_ARIANA",
         "name": "Ariana",
@@ -20554,7 +21666,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 479
     },
     "SKIER_Diana": {
         "type": "TRTYPE_MON",
@@ -20572,7 +21685,8 @@
                 "species": "JYNX",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 480
     },
     "SKIER_Jill": {
         "type": "TRTYPE_MON",
@@ -20590,7 +21704,8 @@
                 "species": "DEWGONG",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 481
     },
     "BOARDER_Deandre": {
         "type": "TRTYPE_MON",
@@ -20624,7 +21739,8 @@
                 "species": "SEEL",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 482
     },
     "BOARDER_Patton": {
         "type": "TRTYPE_MON",
@@ -20650,7 +21766,8 @@
                 "species": "SWINUB",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 483
     },
     "BOARDER_Gerardo": {
         "type": "TRTYPE_MON_MOVES",
@@ -20702,9 +21819,10 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 484
     },
-    "EXECUTIVE_ARCHER_Archer": {
+    "EXECUTIVE_ARCHER": {
         "type": "TRTYPE_MON_MOVES",
         "class": "EXECUTIVE_ARCHER",
         "name": "Archer",
@@ -20754,9 +21872,10 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 485
     },
-    "EXECUTIVE_PROTON_Proton_1": {
+    "EXECUTIVE_PROTON_1": {
         "type": "TRTYPE_MON",
         "class": "EXECUTIVE_PROTON",
         "name": "Proton",
@@ -20780,9 +21899,10 @@
                 "species": "KOFFING",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 486
     },
-    "EXECUTIVE_PROTON_Proton_2": {
+    "EXECUTIVE_PROTON_2": {
         "type": "TRTYPE_MON_MOVES",
         "class": "EXECUTIVE_PROTON",
         "name": "Proton",
@@ -20818,9 +21938,10 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 706
     },
-    "EXECUTIVE_PETREL_Petrel_1": {
+    "EXECUTIVE_PETREL_1": {
         "type": "TRTYPE_MON_MOVES",
         "class": "EXECUTIVE_PETREL",
         "name": "Petrel",
@@ -20912,9 +22033,10 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 487
     },
-    "EXECUTIVE_PETREL_Petrel_2": {
+    "EXECUTIVE_PETREL_2": {
         "type": "TRTYPE_MON",
         "class": "EXECUTIVE_PETREL",
         "name": "Petrel",
@@ -20946,7 +22068,8 @@
                 "species": "KOFFING",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 488
     },
     "POKEFAN_M_Alex": {
         "type": "TRTYPE_MON",
@@ -20980,7 +22103,8 @@
                 "species": "MAGIKARP",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 492
     },
     "MEDIUM_Edith": {
         "type": "TRTYPE_MON",
@@ -20998,7 +22122,8 @@
                 "species": "HAUNTER",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 493
     },
     "MEDIUM_Georgina": {
         "type": "TRTYPE_MON",
@@ -21048,7 +22173,8 @@
                 "species": "GASTLY",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 494
     },
     "PASSERBY_Boy_1": {
         "type": "TRTYPE_MON",
@@ -21066,7 +22192,8 @@
                 "species": "CHIKORITA",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 495
     },
     "PASSERBY_Boy_2": {
         "type": "TRTYPE_MON",
@@ -21084,7 +22211,8 @@
                 "species": "CYNDAQUIL",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 496
     },
     "PASSERBY_Boy_3": {
         "type": "TRTYPE_MON",
@@ -21102,7 +22230,8 @@
                 "species": "TOTODILE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 497
     },
     "MYSTERY_MAN_Eusine": {
         "type": "TRTYPE_MON_MOVES",
@@ -21154,7 +22283,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 498
     },
     "ACE_TRAINER_M_Kobe": {
         "type": "TRTYPE_MON_MOVES",
@@ -21178,7 +22308,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 500
     },
     "ACE_TRAINER_F_Piper": {
         "type": "TRTYPE_MON_MOVES",
@@ -21230,7 +22361,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 501
     },
     "TWINS_Clea & Gil": {
         "type": "TRTYPE_MON_MOVES",
@@ -21268,7 +22400,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 502
     },
     "SCHOOL_KID_M_Mickey_1": {
         "type": "TRTYPE_MON_MOVES",
@@ -21320,7 +22453,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 504
     },
     "SCHOOL_KID_M_Mickey_2": {
         "type": "TRTYPE_MON_MOVES",
@@ -21386,7 +22520,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 506
     },
     "SCHOOL_KID_M_Mickey_3": {
         "type": "TRTYPE_MON_MOVES",
@@ -21424,7 +22559,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 508
     },
     "YOUNGSTER_Mickey": {
         "type": "TRTYPE_MON_MOVES",
@@ -21448,7 +22584,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 511
     },
     "BUG_CATCHER_Mickey_1": {
         "type": "TRTYPE_MON_MOVES",
@@ -21472,7 +22609,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 514
     },
     "BUG_CATCHER_Mickey_2": {
         "type": "TRTYPE_MON_MOVES",
@@ -21538,7 +22676,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 532
     },
     "FISHERMAN_Mickey": {
         "type": "TRTYPE_MON_MOVES",
@@ -21576,7 +22715,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 516
     },
     "PICNICKER_Mickey_1": {
         "type": "TRTYPE_MON_MOVES",
@@ -21628,7 +22768,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 519
     },
     "PICNICKER_Mickey_2": {
         "type": "TRTYPE_MON_MOVES",
@@ -21680,7 +22821,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 521
     },
     "HIKER_Mickey": {
         "type": "TRTYPE_MON_MOVES",
@@ -21732,7 +22874,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 524
     },
     "TWINS_Mickey": {
         "type": "TRTYPE_MON_MOVES",
@@ -21770,7 +22913,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 531
     },
     "BUG_CATCHER_Wayne": {
         "type": "TRTYPE_MON",
@@ -21796,7 +22940,8 @@
                 "species": "PARAS",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 533
     },
     "BEAUTY_Kimberly": {
         "type": "TRTYPE_MON",
@@ -21814,7 +22959,8 @@
                 "species": "CORSOLA",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 534
     },
     "POKEFAN_Marigold": {
         "type": "TRTYPE_MON",
@@ -21832,7 +22978,8 @@
                 "species": "MEOWTH",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 535
     },
     "CAMPER_Bertrand": {
         "type": "TRTYPE_MON",
@@ -21866,7 +23013,8 @@
                 "species": "TAUROS",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 536
     },
     "POKE_MANIAC_Harrison": {
         "type": "TRTYPE_MON",
@@ -21892,7 +23040,8 @@
                 "species": "NIDOQUEEN",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 537
     },
     "SUPER_NERD_Hugh": {
         "type": "TRTYPE_MON_MOVES",
@@ -21916,7 +23065,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 538
     },
     "SUPER_NERD_Markus": {
         "type": "TRTYPE_MON_MOVES",
@@ -21940,7 +23090,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 539
     },
     "POKEFAN_M_Rex": {
         "type": "TRTYPE_MON",
@@ -21958,7 +23109,8 @@
                 "species": "PHANPY",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 540
     },
     "POKEFAN_M_Andy": {
         "type": "TRTYPE_MON",
@@ -21976,7 +23128,8 @@
                 "species": "TEDDIURSA",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 541
     },
     "ACE_TRAINER_M_French": {
         "type": "TRTYPE_MON_MOVES",
@@ -22018,7 +23171,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 545
     },
     "SCHOOL_KID_M_Sherman": {
         "type": "TRTYPE_MON_MOVES",
@@ -22056,7 +23210,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 546
     },
     "HIKER_Bruce": {
         "type": "TRTYPE_MON",
@@ -22090,7 +23245,8 @@
                 "species": "CLEFAIRY",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 547
     },
     "BLACK_BELT_Manford": {
         "type": "TRTYPE_MON_MOVES",
@@ -22114,7 +23270,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 548
     },
     "DOUBLE_TEAM_Zac & Jen": {
         "type": "TRTYPE_MON_MOVES",
@@ -22152,7 +23309,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 549
     },
     "BLACK_BELT_Ander": {
         "type": "TRTYPE_MON",
@@ -22186,7 +23344,8 @@
                 "species": "MACHOKE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 550
     },
     "HIKER_Dwight": {
         "type": "TRTYPE_MON",
@@ -22212,7 +23371,8 @@
                 "species": "STEELIX",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 551
     },
     "YOUNGSTER_Regis": {
         "type": "TRTYPE_MON",
@@ -22238,7 +23398,8 @@
                 "species": "ELECTRODE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 552
     },
     "YOUNG_COUPLE_Moe & Lulu": {
         "type": "TRTYPE_MON",
@@ -22264,7 +23425,8 @@
                 "species": "SEEDOT",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 553
     },
     "GENTLEMAN_Milton": {
         "type": "TRTYPE_MON",
@@ -22284,7 +23446,8 @@
                 "species": "GROWLITHE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 554
     },
     "BIRD_KEEPER_GS_Justin": {
         "type": "TRTYPE_MON",
@@ -22310,7 +23473,8 @@
                 "species": "NOCTOWL",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 555
     },
     "BIRD_KEEPER_GS_Gail": {
         "type": "TRTYPE_MON",
@@ -22336,7 +23500,8 @@
                 "species": "SPEAROW",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 556
     },
     "YOUNG_COUPLE_Vic & Tara": {
         "type": "TRTYPE_MON_MOVES",
@@ -22374,7 +23539,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 557
     },
     "FISHERMAN_Kyler_1": {
         "type": "TRTYPE_MON",
@@ -22408,7 +23574,8 @@
                 "species": "MAGIKARP",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 558
     },
     "FISHERMAN_Kyler_2": {
         "type": "TRTYPE_MON",
@@ -22450,7 +23617,8 @@
                 "species": "MAGIKARP",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 664
     },
     "FISHERMAN_Kyler_3": {
         "type": "TRTYPE_MON",
@@ -22500,7 +23668,8 @@
                 "species": "MAGIKARP",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 665
     },
     "FISHERMAN_Kyler_4": {
         "type": "TRTYPE_MON",
@@ -22558,7 +23727,8 @@
                 "species": "MAGIKARP",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 666
     },
     "YOUNG_COUPLE_Tim & Sue_1": {
         "type": "TRTYPE_MON",
@@ -22584,7 +23754,8 @@
                 "species": "PSYDUCK",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 559
     },
     "YOUNG_COUPLE_Tim & Sue_2": {
         "type": "TRTYPE_MON",
@@ -22610,7 +23781,8 @@
                 "species": "GOLDUCK",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 652
     },
     "YOUNG_COUPLE_Tim & Sue_3": {
         "type": "TRTYPE_MON_MOVES",
@@ -22648,7 +23820,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 653
     },
     "YOUNG_COUPLE_Tim & Sue_4": {
         "type": "TRTYPE_MON_MOVES",
@@ -22686,7 +23859,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 654
     },
     "CAMPER_Clark": {
         "type": "TRTYPE_MON",
@@ -22704,7 +23878,8 @@
                 "species": "BUIZEL",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 560
     },
     "CAMPER_Tanner_1": {
         "type": "TRTYPE_MON",
@@ -22722,7 +23897,8 @@
                 "species": "SUDOWOODO",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 561
     },
     "CAMPER_Tanner_2": {
         "type": "TRTYPE_MON",
@@ -22748,7 +23924,8 @@
                 "species": "CHINCHOU",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 658
     },
     "CAMPER_Tanner_3": {
         "type": "TRTYPE_MON",
@@ -22782,7 +23959,8 @@
                 "species": "SKIPLOOM",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 659
     },
     "CAMPER_Tanner_4": {
         "type": "TRTYPE_MON",
@@ -22816,7 +23994,8 @@
                 "species": "LANTURN",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 660
     },
     "PICNICKER_Piper": {
         "type": "TRTYPE_MON",
@@ -22834,7 +24013,8 @@
                 "species": "SPOINK",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 562
     },
     "PICNICKER_Ginger": {
         "type": "TRTYPE_MON",
@@ -22852,7 +24032,8 @@
                 "species": "WHISMUR",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 563
     },
     "TEACHER_Clarice": {
         "type": "TRTYPE_MON_MOVES",
@@ -22892,7 +24073,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 564
     },
     "BIRD_KEEPER_GS_Josh_1": {
         "type": "TRTYPE_MON",
@@ -22910,7 +24092,8 @@
                 "species": "FEAROW",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 565
     },
     "BIRD_KEEPER_GS_Josh_2": {
         "type": "TRTYPE_MON",
@@ -22936,7 +24119,8 @@
                 "species": "SKARMORY",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 646
     },
     "BIRD_KEEPER_GS_Josh_3": {
         "type": "TRTYPE_MON",
@@ -22962,7 +24146,8 @@
                 "species": "FEAROW",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 647
     },
     "BIRD_KEEPER_GS_Josh_4": {
         "type": "TRTYPE_MON",
@@ -22988,7 +24173,8 @@
                 "species": "FEAROW",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 648
     },
     "SCHOOL_KID_M_Connor": {
         "type": "TRTYPE_MON_MOVES",
@@ -23013,7 +24199,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 566
     },
     "SCHOOL_KID_M_Torin_1": {
         "type": "TRTYPE_MON",
@@ -23039,7 +24226,8 @@
                 "species": "GOLBAT",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 567
     },
     "SCHOOL_KID_M_Torin_2": {
         "type": "TRTYPE_MON",
@@ -23073,7 +24261,8 @@
                 "species": "VULPIX",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 649
     },
     "SCHOOL_KID_M_Torin_3": {
         "type": "TRTYPE_MON",
@@ -23107,7 +24296,8 @@
                 "species": "VULPIX",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 650
     },
     "SCHOOL_KID_M_Torin_4": {
         "type": "TRTYPE_MON",
@@ -23141,7 +24331,8 @@
                 "species": "VULPIX",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 651
     },
     "SCHOOL_KID_M_Travis": {
         "type": "TRTYPE_MON_MOVES",
@@ -23165,7 +24356,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 568
     },
     "TWINS_Kay & Tia_1": {
         "type": "TRTYPE_MON_MOVES",
@@ -23201,7 +24393,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 569
     },
     "TWINS_Kay & Tia_2": {
         "type": "TRTYPE_MON_MOVES",
@@ -23237,7 +24430,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 643
     },
     "TWINS_Kay & Tia_3": {
         "type": "TRTYPE_MON_MOVES",
@@ -23275,7 +24469,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 644
     },
     "TWINS_Kay & Tia_4": {
         "type": "TRTYPE_MON_MOVES",
@@ -23313,7 +24508,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 645
     },
     "POKEFAN_M_Boone": {
         "type": "TRTYPE_MON",
@@ -23339,7 +24535,8 @@
                 "species": "VOLBEAT",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 570
     },
     "POKEFAN_Eleanor": {
         "type": "TRTYPE_MON",
@@ -23365,7 +24562,8 @@
                 "species": "ILLUMISE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 571
     },
     "BIKER_Dale": {
         "type": "TRTYPE_MON_ITEM",
@@ -23384,7 +24582,8 @@
                 "item": "BLACK_SLUDGE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 572
     },
     "BIKER_Jacob": {
         "type": "TRTYPE_MON",
@@ -23410,7 +24609,8 @@
                 "species": "TENTACRUEL",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 573
     },
     "BIKER_Aiden_1": {
         "type": "TRTYPE_MON",
@@ -23428,7 +24628,8 @@
                 "species": "TENTACRUEL",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 574
     },
     "BIKER_Aiden_2": {
         "type": "TRTYPE_MON",
@@ -23454,7 +24655,8 @@
                 "species": "TENTACRUEL",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 631
     },
     "BIKER_Aiden_3": {
         "type": "TRTYPE_MON",
@@ -23480,7 +24682,8 @@
                 "species": "TENTACRUEL",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 632
     },
     "BIKER_Aiden_4": {
         "type": "TRTYPE_MON",
@@ -23514,7 +24717,8 @@
                 "species": "TENTACRUEL",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 633
     },
     "BIKER_Dan": {
         "type": "TRTYPE_MON",
@@ -23548,7 +24752,8 @@
                 "species": "WEEZING",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 575
     },
     "BIKER_Theron": {
         "type": "TRTYPE_MON",
@@ -23566,7 +24771,8 @@
                 "species": "CROAGUNK",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 576
     },
     "BIKER_Markey": {
         "type": "TRTYPE_MON",
@@ -23584,7 +24790,8 @@
                 "species": "SKORUPI",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 577
     },
     "BIKER_Teddy": {
         "type": "TRTYPE_MON",
@@ -23602,7 +24809,8 @@
                 "species": "SEVIPER",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 578
     },
     "BIKER_Ernest_1": {
         "type": "TRTYPE_MON",
@@ -23628,7 +24836,8 @@
                 "species": "MARILL",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 579
     },
     "BIKER_Ernest_2": {
         "type": "TRTYPE_MON",
@@ -23654,7 +24863,8 @@
                 "species": "AZUMARILL",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 634
     },
     "BIKER_Ernest_3": {
         "type": "TRTYPE_MON",
@@ -23680,7 +24890,8 @@
                 "species": "AZUMARILL",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 635
     },
     "BIKER_Ernest_4": {
         "type": "TRTYPE_MON",
@@ -23706,7 +24917,8 @@
                 "species": "AZUMARILL",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 636
     },
     "CAMPER_Pedro": {
         "type": "TRTYPE_MON_MOVES",
@@ -23731,7 +24943,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 580
     },
     "PICNICKER_Adrian": {
         "type": "TRTYPE_MON",
@@ -23749,7 +24962,8 @@
                 "species": "SHROOMISH",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 581
     },
     "PICNICKER_Cheyenne": {
         "type": "TRTYPE_MON",
@@ -23767,7 +24981,8 @@
                 "species": "SHINX",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 582
     },
     "BIRD_KEEPER_GS_Bert": {
         "type": "TRTYPE_MON",
@@ -23793,7 +25008,8 @@
                 "species": "FEAROW",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 583
     },
     "BIRD_KEEPER_GS_Ernie": {
         "type": "TRTYPE_MON",
@@ -23811,7 +25027,8 @@
                 "species": "STARLY",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 584
     },
     "SWIMMER_M_Elmo": {
         "type": "TRTYPE_MON",
@@ -23837,7 +25054,8 @@
                 "species": "TENTACRUEL",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 585
     },
     "SWIMMER_M_Luis": {
         "type": "TRTYPE_MON",
@@ -23863,7 +25081,8 @@
                 "species": "QUAGSIRE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 586
     },
     "SWIMMER_F_Leona": {
         "type": "TRTYPE_MON",
@@ -23881,7 +25100,8 @@
                 "species": "BIDOOF",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 587
     },
     "SWIMMER_F_Mina": {
         "type": "TRTYPE_MON",
@@ -23915,7 +25135,8 @@
                 "species": "LUVDISC",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 588
     },
     "FISHERMAN_Murphy": {
         "type": "TRTYPE_MON",
@@ -23957,7 +25178,8 @@
                 "species": "CORSOLA",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 589
     },
     "FISHERMAN_Liam": {
         "type": "TRTYPE_MON",
@@ -23975,7 +25197,8 @@
                 "species": "SEADRA",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 590
     },
     "FISHERMAN_Gideon": {
         "type": "TRTYPE_MON_MOVES",
@@ -24013,7 +25236,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 591
     },
     "SWIMMER_F_Chelan": {
         "type": "TRTYPE_MON_MOVES",
@@ -24037,7 +25261,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 592
     },
     "SWIMMER_F_Kendra": {
         "type": "TRTYPE_MON",
@@ -24055,7 +25280,8 @@
                 "species": "SLOWKING",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 593
     },
     "SWIMMER_M_Esteban": {
         "type": "TRTYPE_MON",
@@ -24081,7 +25307,8 @@
                 "species": "POLIWHIRL",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 594
     },
     "SWIMMER_M_Duane": {
         "type": "TRTYPE_MON",
@@ -24107,7 +25334,8 @@
                 "species": "KABUTOPS",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 595
     },
     "BIRD_KEEPER_GS_Kinsley": {
         "type": "TRTYPE_MON",
@@ -24141,7 +25369,8 @@
                 "species": "PIDGEOTTO",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 596
     },
     "BIRD_KEEPER_GS_Easton": {
         "type": "TRTYPE_MON",
@@ -24183,7 +25412,8 @@
                 "species": "DODRIO",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 597
     },
     "TWINS_Day & Dani": {
         "type": "TRTYPE_MON",
@@ -24209,7 +25439,8 @@
                 "species": "MINUN",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 598
     },
     "CAMPER_Virgil": {
         "type": "TRTYPE_MON",
@@ -24227,7 +25458,8 @@
                 "species": "SLAKOTH",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 599
     },
     "PICNICKER_Selina": {
         "type": "TRTYPE_MON",
@@ -24245,9 +25477,10 @@
                 "species": "CHERUBI",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 600
     },
-    "PKMN_TRAINER_CHERYL_Cheryl": {
+    "PKMN_TRAINER_CHERYL": {
         "type": "TRTYPE_MON_MOVES",
         "class": "PKMN_TRAINER_CHERYL",
         "name": "Cheryl",
@@ -24333,7 +25566,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 667
     },
     "PKMN_TRAINER_BUCK_Marley": {
         "type": "TRTYPE_MON_MOVES",
@@ -24421,7 +25655,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 668
     },
     "PKMN_TRAINER_MARLEY_Mira": {
         "type": "TRTYPE_MON_MOVES",
@@ -24509,9 +25744,10 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 669
     },
-    "PKMN_TRAINER_RILEY_Riley": {
+    "PKMN_TRAINER_RILEY": {
         "type": "TRTYPE_MON_MOVES",
         "class": "PKMN_TRAINER_RILEY",
         "name": "Riley",
@@ -24597,7 +25833,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 670
     },
     "PKMN_TRAINER_MIRA_Buck": {
         "type": "TRTYPE_MON_MOVES",
@@ -24685,9 +25922,10 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 671
     },
-    "PKMN_TRAINER_Lance_ROCKET_HQ": {
+    "PKMN_TRAINER_LANCE": {
         "type": "TRTYPE_MON_MOVES",
         "class": "PKMN_TRAINER_LANCE",
         "name": "Lance",
@@ -24709,7 +25947,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 675
     },
     "SAILOR_Parker": {
         "type": "TRTYPE_MON_MOVES",
@@ -24747,7 +25986,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 676
     },
     "SAILOR_Eddie": {
         "type": "TRTYPE_MON_MOVES",
@@ -24771,7 +26011,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 677
     },
     "SWIMMER_F_Joy": {
         "type": "TRTYPE_MON_MOVES",
@@ -24795,7 +26036,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 678
     },
     "BEAUTY_Callie": {
         "type": "TRTYPE_MON_MOVES",
@@ -24833,7 +26075,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 679
     },
     "BEAUTY_Kassandra": {
         "type": "TRTYPE_MON_MOVES",
@@ -24871,7 +26114,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 680
     },
     "ACE_TRAINER_M_Arabella": {
         "type": "TRTYPE_MON_MOVES",
@@ -24909,7 +26153,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 681
     },
     "ACE_TRAINER_M_Bonita": {
         "type": "TRTYPE_MON_MOVES",
@@ -24947,7 +26192,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 682
     },
     "ACE_TRAINER_F_Salma": {
         "type": "TRTYPE_MON_MOVES",
@@ -24987,7 +26233,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 683
     },
     "DOUBLE_TEAM_Elan & Ida": {
         "type": "TRTYPE_MON_MOVES",
@@ -25027,7 +26274,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 684
     },
     "HIKER_Edwin": {
         "type": "TRTYPE_MON_MOVES",
@@ -25051,7 +26299,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 685
     },
     "BOARDER_Bryce": {
         "type": "TRTYPE_MON",
@@ -25077,7 +26326,8 @@
                 "species": "LAPRAS",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 686
     },
     "BOARDER_Shaun": {
         "type": "TRTYPE_MON",
@@ -25103,7 +26353,8 @@
                 "species": "DEWGONG",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 687
     },
     "SKIER_Cady": {
         "type": "TRTYPE_MON",
@@ -25121,7 +26372,8 @@
                 "species": "DELIBIRD",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 688
     },
     "SUPER_NERD_Cary": {
         "type": "TRTYPE_MON_MOVES",
@@ -25145,7 +26397,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 689
     },
     "SUPER_NERD_Waldo": {
         "type": "TRTYPE_MON_MOVES",
@@ -25169,7 +26422,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 690
     },
     "SUPER_NERD_Merle": {
         "type": "TRTYPE_MON_MOVES",
@@ -25193,7 +26447,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 691
     },
     "SCIENTIST_GS_Lowell": {
         "type": "TRTYPE_MON_MOVES",
@@ -25217,7 +26472,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 692
     },
     "SCIENTIST_GS_Linden": {
         "type": "TRTYPE_MON_MOVES",
@@ -25241,7 +26497,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 693
     },
     "SCIENTIST_GS_Daniel": {
         "type": "TRTYPE_MON_MOVES",
@@ -25265,7 +26522,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 694
     },
     "BUG_CATCHER_Dane": {
         "type": "TRTYPE_MON",
@@ -25291,7 +26549,8 @@
                 "species": "BUTTERFREE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 695
     },
     "BUG_CATCHER_Dion": {
         "type": "TRTYPE_MON",
@@ -25309,7 +26568,8 @@
                 "species": "ARIADOS",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 696
     },
     "BUG_CATCHER_Stacey": {
         "type": "TRTYPE_MON",
@@ -25343,7 +26603,8 @@
                 "species": "METAPOD",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 697
     },
     "BUG_CATCHER_Ellis": {
         "type": "TRTYPE_MON",
@@ -25377,7 +26638,8 @@
                 "species": "BEEDRILL",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 698
     },
     "BUG_CATCHER_Abner": {
         "type": "TRTYPE_MON",
@@ -25411,7 +26673,8 @@
                 "species": "PIKACHU",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 699
     },
     "ROCKET_BOSS_Giovanni": {
         "type": "TRTYPE_MON_MOVES",
@@ -25483,7 +26746,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 700
     },
     "TOWER_TYCOON_Palmer": {
         "type": "TRTYPE_MON",
@@ -25501,7 +26765,8 @@
                 "species": "RATTATA",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 707
     },
     "HALL_MATRON_Argenta": {
         "type": "TRTYPE_MON",
@@ -25519,7 +26784,8 @@
                 "species": "RATTATA",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 708
     },
     "FACTORY_HEAD_Thorton": {
         "type": "TRTYPE_MON",
@@ -25537,7 +26803,8 @@
                 "species": "RATTATA",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 709
     },
     "ARCADE_STAR_Dahlia": {
         "type": "TRTYPE_MON",
@@ -25555,7 +26822,8 @@
                 "species": "RATTATA",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 710
     },
     "CASTLE_VALET_Darach": {
         "type": "TRTYPE_MON",
@@ -25573,7 +26841,8 @@
                 "species": "RATTATA",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 711
     },
     "BEAUTY_Charlotte": {
         "type": "TRTYPE_MON",
@@ -25591,7 +26860,8 @@
                 "species": "BELLOSSOM",
                 "capsule": 1
             }
-        ]
+        ],
+        "index": 728
     },
     "YOUNG_COUPLE_Duff & Eda": {
         "type": "TRTYPE_MON",
@@ -25617,7 +26887,8 @@
                 "species": "CLOYSTER",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 729
     },
     "DOUBLE_TEAM_Thom & Kae": {
         "type": "TRTYPE_MON_MOVES",
@@ -25655,7 +26926,8 @@
                 ],
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 730
     },
     "HIKER_Devin": {
         "type": "TRTYPE_MON",
@@ -25689,7 +26961,8 @@
                 "species": "DUNSPARCE",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 731
     },
     "CAMPER_Grant": {
         "type": "TRTYPE_MON",
@@ -25715,6 +26988,7 @@
                 "species": "MARILL",
                 "capsule": 0
             }
-        ]
+        ],
+        "index": 732
     }
 }

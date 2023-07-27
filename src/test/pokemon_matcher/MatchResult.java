@@ -1,6 +1,6 @@
-package test;
+package test.pokemon_matcher;
 
-public class Result {
+public class MatchResult {
 	private String trainerName;
 	private String speciesName;
 	private boolean isValid;
@@ -11,7 +11,7 @@ public class Result {
 	/**
 	 * Valid result constructor.
 	 */
-	public Result(String trainerName, String speciesName) {
+	public MatchResult(String trainerName, String speciesName) {
 		 this(trainerName, speciesName, true,
 					null, null, null);
 	}
@@ -19,7 +19,7 @@ public class Result {
 	/**
 	 * Invalid result constructor.
 	 */
-	public Result(String trainerName, String speciesName,
+	public MatchResult(String trainerName, String speciesName,
 			String field, Object expected, Object received) {
 		 this(trainerName, speciesName, false,
 					field, expected, received);
@@ -28,7 +28,7 @@ public class Result {
 	/**
 	 * Generic result constructor.
 	 */
-	private Result(String trainerName, String speciesName, boolean isValid,
+	private MatchResult(String trainerName, String speciesName, boolean isValid,
 			String field, Object expected, Object received) {
 		this.trainerName = trainerName;
 		this.speciesName = speciesName;

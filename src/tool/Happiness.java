@@ -2,7 +2,7 @@ package tool;
 
 import java.util.Set;
 
-import tool.exc.ToolInternalException;
+import tool.exception.ToolInternalException;
 
 public class Happiness {
 	public enum HappinessEvent{

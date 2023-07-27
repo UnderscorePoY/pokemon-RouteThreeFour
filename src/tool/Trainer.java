@@ -11,7 +11,7 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 import tool.StatsContainer.ContainerType;
-import tool.exc.ToolInternalException;
+import tool.exception.ToolInternalException;
 
 /**
  * A trainer. Also contains a static reference to all existing trainers.
@@ -125,6 +125,10 @@ public class Trainer implements Battleable, Iterable<Pokemon> {
         			heldItem = Item.getItemByName((String) pokemonDic.get("heldItem"));
         		
         		Moveset moveset = null;
+        		
+        		if(species == Species.getSpeciesByName("SLAKING"))
+        			System.out.println("inin");
+        		
         		if (pokemonDic.containsKey("moves")) {
         			moveset = new Moveset();
         			JSONArray movesArray = (JSONArray) pokemonDic.get("moves");
@@ -415,14 +419,27 @@ public class Trainer implements Battleable, Iterable<Pokemon> {
 	 *  HGSS : <a href="https://github.com/pret/pokeheartgold/blob/decd3cd653c535358a7f01a68cbc27a5823601a6/src/trainer_data.c#L281-L347">CreateNPCTrainerParty</a>.
 	 */
 	private static void initTrainersHGSS(Game game, BufferedReader in) throws FileNotFoundException, IOException, ParseException, ToolInternalException {
-		// TODO: not properly implemented yet
+		//int index = 0;
 		JSONParser jsonParser = new JSONParser();
 		
 		TrainerClass.initTrainerClasses(game); // Decided to split trainer data & trainer classes in Gen 4
     	
+		//JSONArray trainersList = (JSONArray) jsonParser.parse(in);
+    	//for(Object trainerEntryObj : trainersList) {
     	JSONObject trainersDic = (JSONObject) jsonParser.parse(in);
         for(Object trainerEntryObj : trainersDic.entrySet()) {
+        	//index++;
             Trainer trainer = null;
+            //String trainerAlias = null;
+            //JSONObject trainerDic = null;
+            
+            //JSONObject trainersFakeDic = (JSONObject) trainerEntryObj;
+            //for(Object entry : trainersFakeDic.entrySet()) {
+            //	@SuppressWarnings("unchecked")
+			//	Map.Entry<Object, Object> entry_ = (Map.Entry<Object, Object>) entry;
+            //	trainerAlias = (String) entry_.getKey();
+            //	trainerDic = (JSONObject) entry_.getValue();
+            //}
             
         	@SuppressWarnings("unchecked")
 			Map.Entry<Object, Object> trainerEntry = (Map.Entry<Object, Object>) trainerEntryObj;

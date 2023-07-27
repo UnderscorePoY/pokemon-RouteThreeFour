@@ -1,4 +1,4 @@
-package test;
+package test.pokemon_matcher;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -12,7 +12,7 @@ import tool.Pokemon;
 import tool.Species;
 import tool.Stat;
 
-public class PokemonTest {
+public class PokemonTarget {
     private Species species;
     private Gender gender;
     private Integer level;
@@ -25,7 +25,7 @@ public class PokemonTest {
     private Item heldItem;
     private Integer happiness;
     
-    public PokemonTest(String speciesName, String genderName, Integer level, String natureName, String abilityName,
+    public PokemonTarget(String speciesName, String genderName, Integer level, String natureName, String abilityName,
     		Integer hp, Integer atk, Integer def, Integer spa, Integer spd, Integer spe,
     		Integer hpIV, Integer atkIV, Integer defIV, Integer spaIV, Integer spdIV, Integer speIV,
     		String itemName, Integer happiness, String... moveNames) throws Exception {
@@ -76,7 +76,7 @@ public class PokemonTest {
     	}
     }
     
-    public PokemonTest(String speciesName, String genderName, Integer level, String natureName, String abilityName,
+    public PokemonTarget(String speciesName, String genderName, Integer level, String natureName, String abilityName,
     		Integer hp, Integer atk, Integer def, Integer spa, Integer spd, Integer spe,
     		Integer fixedIV,
     		String itemName, Integer happiness, String... moveNames) throws Exception {
@@ -91,56 +91,56 @@ public class PokemonTest {
      * Returns null if the test Pokémon matches the actual Pokémon. 
      * Otherwise, returns a descriptive object of the first encountered difference.
      */
-    public Result tryMatch(Pokemon p) {
+    public MatchResult tryMatch(Pokemon p) {
     	// Mandatory comparisons
     	if(species != p.getSpecies())
-    		return new Result(null, species.getDisplayName(), "species", species, p.getSpecies());
+    		return new MatchResult(null, species.getDisplayName(), "species", species, p.getSpecies());
     	if(gender != p.getGender())
-    		return new Result(null, species.getDisplayName(), "gender", gender, p.getGender());
+    		return new MatchResult(null, species.getDisplayName(), "gender", gender, p.getGender());
     	if(level != p.getLevel())
-    		return new Result(null, species.getDisplayName(), "level", level, p.getLevel());
+    		return new MatchResult(null, species.getDisplayName(), "level", level, p.getLevel());
     	if(nature != p.getNature())
-    		return new Result(null, species.getDisplayName(), "nature", nature, p.getNature());
+    		return new MatchResult(null, species.getDisplayName(), "nature", nature, p.getNature());
     	if(ability != p.getAbility())
-    		return new Result(null, species.getDisplayName(), "ability", ability, p.getAbility());
+    		return new MatchResult(null, species.getDisplayName(), "ability", ability, p.getAbility());
     	
     	// Optional comparisons
     	if(hp != null && hp != p.getStatValue(Stat.HP))
-    		return new Result(null, species.getDisplayName(), "hp", hp, p.getStatValue(Stat.HP));
+    		return new MatchResult(null, species.getDisplayName(), "hp", hp, p.getStatValue(Stat.HP));
     	if(atk != null && atk != p.getStatValue(Stat.ATK))
-    		return new Result(null, species.getDisplayName(), "atk", atk, p.getStatValue(Stat.ATK));
+    		return new MatchResult(null, species.getDisplayName(), "atk", atk, p.getStatValue(Stat.ATK));
     	if(def != null && def != p.getStatValue(Stat.DEF))
-    		return new Result(null, species.getDisplayName(), "def", def, p.getStatValue(Stat.DEF));
+    		return new MatchResult(null, species.getDisplayName(), "def", def, p.getStatValue(Stat.DEF));
     	if(spa != null && spa != p.getStatValue(Stat.SPA))
-    		return new Result(null, species.getDisplayName(), "spa", spa, p.getStatValue(Stat.SPA));
+    		return new MatchResult(null, species.getDisplayName(), "spa", spa, p.getStatValue(Stat.SPA));
     	if(spd != null && spd != p.getStatValue(Stat.SPD))
-    		return new Result(null, species.getDisplayName(), "spd", spd, p.getStatValue(Stat.SPD));
+    		return new MatchResult(null, species.getDisplayName(), "spd", spd, p.getStatValue(Stat.SPD));
     	if(spe != null && spe != p.getStatValue(Stat.SPE))
-    		return new Result(null, species.getDisplayName(), "spe", spe, p.getStatValue(Stat.SPE));
+    		return new MatchResult(null, species.getDisplayName(), "spe", spe, p.getStatValue(Stat.SPE));
     	
     	if(hpIV != null && hpIV != p.getIVs().get(Stat.HP))
-    		return new Result(null, species.getDisplayName(), "hpIV", hpIV, p.getIVs().get(Stat.HP));
+    		return new MatchResult(null, species.getDisplayName(), "hpIV", hpIV, p.getIVs().get(Stat.HP));
     	if(atkIV != null && atkIV != p.getIVs().get(Stat.ATK))
-    		return new Result(null, species.getDisplayName(), "atkIV", atkIV, p.getIVs().get(Stat.ATK));
+    		return new MatchResult(null, species.getDisplayName(), "atkIV", atkIV, p.getIVs().get(Stat.ATK));
     	if(defIV != null && defIV != p.getIVs().get(Stat.DEF))
-    		return new Result(null, species.getDisplayName(), "defIV", defIV, p.getIVs().get(Stat.DEF));
+    		return new MatchResult(null, species.getDisplayName(), "defIV", defIV, p.getIVs().get(Stat.DEF));
     	if(spaIV != null && spaIV != p.getIVs().get(Stat.SPA))
-    		return new Result(null, species.getDisplayName(), "spaIV", spaIV, p.getIVs().get(Stat.SPA));
+    		return new MatchResult(null, species.getDisplayName(), "spaIV", spaIV, p.getIVs().get(Stat.SPA));
     	if(spdIV != null && spdIV != p.getIVs().get(Stat.SPD))
-    		return new Result(null, species.getDisplayName(), "spdIV", spdIV, p.getIVs().get(Stat.SPD));
+    		return new MatchResult(null, species.getDisplayName(), "spdIV", spdIV, p.getIVs().get(Stat.SPD));
     	if(speIV != null && speIV != p.getIVs().get(Stat.SPE))
-    		return new Result(null, species.getDisplayName(), "speIV", speIV, p.getIVs().get(Stat.SPE));
+    		return new MatchResult(null, species.getDisplayName(), "speIV", speIV, p.getIVs().get(Stat.SPE));
     	
     	if(happiness != null && happiness != p.getHappiness())
-    		return new Result(null, species.getDisplayName(), "happiness", happiness,  p.getHappiness());
+    		return new MatchResult(null, species.getDisplayName(), "happiness", happiness,  p.getHappiness());
     	
     	if(heldItem != null && heldItem != p.getHeldItem())
-    		return new Result(null, species.getDisplayName(), "item", heldItem,  p.getHeldItem());
+    		return new MatchResult(null, species.getDisplayName(), "item", heldItem,  p.getHeldItem());
     	
     	if(moves != null && !p.getMoveset().getSetView().equals(moves))
-    		return new Result(null, species.getDisplayName(), "moves", moves, p.getMoveset().getSetView());
+    		return new MatchResult(null, species.getDisplayName(), "moves", moves, p.getMoveset().getSetView());
     	
-		return new Result(null, species.getDisplayName()); // Valid
+		return new MatchResult(null, species.getDisplayName()); // Valid
     }
 
     /*
