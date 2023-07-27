@@ -604,17 +604,17 @@ Some options can have incompatible behaviour : they would either cancel each oth
 ### 8. CONTACT INFO AND ACKNOWLEDGEMENTS
 
 #### 8.1. COMMUNITIES
-[`PokemonSpeedruns` Discord server (archived)](https://discord.gg/0UUw8zDe2hWlwRsm)
+- [`PokemonSpeedruns` Discord server (archived)](https://discord.gg/0UUw8zDe2hWlwRsm)
 
-[`Gen 1-3 Pokemon Speedrunning` Discord server](https://discord.gg/NjQFEkc)  
+- [`Gen 1-3 Pokemon Speedrunning` Discord server](https://discord.gg/NjQFEkc)  
 
-[`DS Pokémon Speedrunning` Discord server](https://discord.gg/HqRC6ZU)  
+- [`DS Pokémon Speedrunning` Discord server](https://discord.gg/HqRC6ZU)  
 
-`Pokémon French Racing Team` Discord server (semi-private)
+- `Pokémon French Racing Team` Discord server (semi-private)
 
-[`pret` Discord server](https://discord.gg/MAhw9Uxe)
+- [`pret` Discord server](https://discord.gg/MAhw9Uxe)
 
-[`SpeedRunsLive`](http://speedrunslive.com) - for inspiration/awesome races  
+- [`SpeedRunsLive`](http://speedrunslive.com) - for inspiration/awesome races  
 
 #### 8.2. PROGRAMMERS
 Big aknowledgements to these people, who either initiated this tool or helped improve and/or maintain it at a technical level.  
