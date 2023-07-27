@@ -280,6 +280,14 @@ public class Move {
     	return false;
     }
     
+    public void appendName(String s) {
+    	setName(String.format("%s %s", getName(), s));
+    }
+    
+    public void appendName(int i) {
+    	setName(String.format("%s %d", getName(), i));
+    }
+    
     // Contact moves : https://bulbapedia.bulbagarden.net/wiki/Contact#Moves_that_make_contact
     // TODO: store it in moves json instead, separately or with moves
     private static final String[] contactsStrArr = new String[] {

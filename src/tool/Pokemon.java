@@ -415,14 +415,16 @@ public class Pokemon implements Battleable {
         return totalExp;
     }
 
+    /*
     /**
      * Returns the yielded experience if shared among a certain number of participants.
-     */
+     
     public int expGivenWithoutEXPBoost(int participants) {
         return species.getBaseExp() * level / 7 * 3
                 / (isWild() ? 3 : 2)
                 / participants;
     }
+    */
     
     public Item getHeldItem() {
     	return heldItem;
@@ -584,15 +586,44 @@ public class Pokemon implements Battleable {
     // in game actions
 
     // gain num exp
-    private void gainExp(int num) throws ToolInternalException {
-    	final int TRADE_EXP_NUM = 3, TRADE_EXP_DENOM = 2; // TODO : move constants somewhere else ?
-    	final int ITEM_EXP_NUM = 3, ITEM_EXP_DENOM = 2; // TODO : move constants somewhere else ?
+    public int earnedExpFrom(Pokemon other, int nbOfParticipants) throws ToolInternalException {
+    	if(nbOfParticipants == 0)
+    		return 0;
     	
-    	if(hasBoostedExp)
-    		num = num * TRADE_EXP_NUM / TRADE_EXP_DENOM;
-    	if(heldItem != null && heldItem.isBoostingExperience())
-    		num = num * ITEM_EXP_NUM / ITEM_EXP_DENOM;
-        totalExp += num;
+    	int earnedExp = other.species.getBaseExp() * other.getLevel() / 7;
+    	if(Settings.game.isGen3()) {
+    		// https://github.com/pret/pokeemerald/blob/39192725f22351678c9cfe2c79ce025d6802110c/src/battle_script_commands.c#L3222
+    		earnedExp /= nbOfParticipants;
+    		
+    		if(heldItem != null && heldItem.isBoostingExperience())
+    			earnedExp = earnedExp * 150 / 100;
+    		
+    		if(!other.isWild())
+    			earnedExp = earnedExp * 150 / 100;
+    		
+    		if(hasBoostedExp)
+    			earnedExp = earnedExp * 150 / 100;
+    		
+    	} else if (Settings.game.isGen4()) {
+    		if(!other.isWild())
+    			earnedExp = earnedExp * 150 / 100;
+    		
+    		earnedExp /= nbOfParticipants;
+    		
+    		if(hasBoostedExp)
+    			earnedExp = earnedExp * 150 / 100;
+    		
+    		if(heldItem != null && heldItem.isBoostingExperience())
+    			earnedExp = earnedExp * 150 / 100;
+    	} else {
+    		throw new ToolInternalException(null, "earnedExpFrom", "Gen not implemented");
+    	}
+    	
+    	return earnedExp;
+    }
+    
+    private void gainExp(Pokemon other, int nbOfParticipants) throws ToolInternalException {
+    	totalExp += earnedExpFrom(other, nbOfParticipants);
         
         // update lvl if necessary
         while (expToNextLevel() <= 0 && level < MAX_LEVEL) {
@@ -601,6 +632,26 @@ public class Pokemon implements Battleable {
             updateEVsAndCalculateStats();
         }
     }
+    
+    /*
+    private void gainExp(int exp) throws ToolInternalException {
+    	final int TRADE_EXP_NUM = 3, TRADE_EXP_DENOM = 2; // TODO : move constants somewhere else ?
+    	final int ITEM_EXP_NUM = 3, ITEM_EXP_DENOM = 2; // TODO : move constants somewhere else ?
+    	
+    	if(hasBoostedExp)
+    		exp = exp * TRADE_EXP_NUM / TRADE_EXP_DENOM;
+    	if(heldItem != null && heldItem.isBoostingExperience())
+    		exp = exp * ITEM_EXP_NUM / ITEM_EXP_DENOM;
+        totalExp += exp;
+        
+        // update lvl if necessary
+        while (expToNextLevel() <= 0 && level < MAX_LEVEL) {
+            level++;
+            this.setHappiness(HappinessEvent.LEVEL_UP.getFinalHappiness(this.getHappiness(), heldItem != null && heldItem.isBoostingHappiness(), this.isInLuxuryBall(), false));
+            updateEVsAndCalculateStats();
+        }
+    }
+    */
 
     // gain stat exp from a pokemon of species s
     private void gainEvs(Species s) {
@@ -631,7 +682,8 @@ public class Pokemon implements Battleable {
     	// if no participants (for example a death), don't give any ev or exp
     	if (options.getNumberOfParticipants() > 0) {
 	        p.gainEvs(this.getSpecies());
-	        p.gainExp(this.expGivenWithoutEXPBoost(options.getNumberOfParticipants()));
+	        //p.gainExp(this.expGivenWithoutEXPBoost(options.getNumberOfParticipants()));
+	        p.gainExp(this, options.getNumberOfParticipants());
     	}
     }
 

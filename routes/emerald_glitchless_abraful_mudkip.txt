@@ -90,7 +90,8 @@ WALLY_MAUVILLE -v 1
 
 ## MAUVILLE CITY GYM 
 BEN -xatksUse 0/-1 -v 1
-WATTSON_1 -xspeUse 1 -xatksUse 0/1/0/0 -v 1
+WATTSON_1 -xspeUse 1 -xatksUse 0/1/0/0 -v 1 -scenario ELECTRIKE_X_ATK -backtrack
+WATTSON_1 -xspeUse 1 -xatksUse 1/0/0/0 -v 1 -scenario VOLTORB_X_ATK
 
 ## FALLARBOR SHOPPING 
 sell NUGGET
@@ -118,10 +119,11 @@ GRUNT_MT_CHIMNEY_2 -v 1
 TABITHA_MT_CHIMNEY -order 1/2/4/3 -v 1
 stats
 stats -b 
-MAXIE_MT_CHIMNEY -xatkUse 1 -v 1
+MAXIE_MT_CHIMNEY -xatkSet 1 -v 1
 
 ## LAVARIDGE CITY 
-FLANNERY_1 -xatksUse 0/1/0/0 -weathers 0/SUN/SUN/SUN -v 1
+FLANNERY_1 -xatksUse 0/1/0/0 -weathers 0/SUN/SUN/SUN -v 1 -scenario SUN -backtrack
+FLANNERY_1 -xatksUse 0/1/0/0 -v 1 -scenario NO_SUN
 
 buy 7 ENERGYPOWDER
 buy 3 ENERGYROOT
@@ -136,7 +138,9 @@ rarecandy
 RANDALL -v 1
 PARKER -v 1
 JODY -v 1
-NORMAN_1 -xspeUse 1 -xatkUse 3 -v 1
+NORMAN_1 -xspeUse 1 -xatkUse 3 -v 1 -ydefsSet 0/0/0/0 -scenario SLAKING_NO_DEF_DROP -backtrack
+NORMAN_1 -xspeUse 1 -xatkUse 3 -v 1 -ydefsSet 0/0/0/-1 -scenario SLAKING_1_DEF_DROP -backtrack
+NORMAN_1 -xspeUse 1 -xatkUse 3 -v 1 -ydefsSet 0/0/0/-2 -scenario SLAKING_2_DEF_DROP
 
 lm SURF
 um WATERGUN
@@ -155,11 +159,10 @@ equip MYSTICWATER
 rarecandy
 rarecandy
 evolve SWAMPERT
-stats
 
 GRUNT_MT_PYRE_2 -v 1
 GRUNT_MT_PYRE_1 -v 1
-GRUNT_MT_PYRE_3 -ypartner GRUNT_MT_PYRE_4 -v 1
+GRUNT_MT_PYRE_3 -ypartner GRUNT_MT_PYRE_4 -order 1/2/3+4 -v 1
 
 ## FORTREE CITY GYM 
 FLINT -ypartner EDWARDO -v 1

@@ -62,7 +62,7 @@ public class BattleOptions {
     
     public BattleOptions() throws ToolInternalException {
     	// TODO: Don't really know yet how to avoid setting custom values.
-    	setSxps(1); 
+    	//setSxps(1); 
     	setWeather(Weather.NONE); // TODO: same
     	for(Side side : Side.values()) {
     		setStatus1(side, Status.noStatus1());
@@ -557,8 +557,10 @@ public class BattleOptions {
 		return this.getSxps().get(this.currentOpponentIndex);
 	}
 	
-	private int setNumberOfParticipants(int nbOfParticipants) {
-		return this.getSxps().set(this.currentOpponentIndex, nbOfParticipants);
+	private void setNumberOfParticipants(int nbOfParticipants) {
+		if(currentOpponentIndex < sxps.size())
+			sxps.set(this.currentOpponentIndex, nbOfParticipants);
+		sxps.add(nbOfParticipants);
 	}
 
 	public int getCurrentOpponentIndex() {
@@ -582,7 +584,7 @@ public class BattleOptions {
     	}
     	
     		// Overrides natural player+player vs. double split
-    	if(!sxps.isEmpty()) {
+    	if(!sxps.isEmpty() && currentOpponentIndex < sxps.size()) {
             nbOfParticipants = this.sxps.get(currentOpponentIndex);
         }
     	
@@ -596,7 +598,7 @@ public class BattleOptions {
         	weather = Weather.NONE; // TODO: hardcoded default
     	getStatModifier(Side.PLAYER).setWeather(weather);
     	getStatModifier(Side.ENEMY).setWeather(weather);
-    	    	
+    	
     	
     	/* ************************ */
     	/* Side-dependent variables */

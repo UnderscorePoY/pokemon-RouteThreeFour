@@ -326,10 +326,15 @@ public class DamageCalculator {
 			}
 		}		
 		
-		public void appendAftermathIfApplicable(StringBuilder sb) {
-			if(defender.getAbility() == Ability.AFTERMATH && attackMove.makesContact()) {
+		public void appendPostKODamageIfApplicable(StringBuilder sb) {
+			if(defender.getAbility() == Ability.AFTERMATH && attackMove.makesContact() && attacker.getAbility() != Ability.DAMP) {
 				sb.append(String.format("\t(aftermath: %d)", attacker.getStatValue(Stat.HP) / 4)); // TODO: hardcoded constant
 				sb.append(Constants.endl);
+			} 
+			
+			else if(attackMove.makesContact() && defender.getAbility() == Ability.ROUGH_SKIN) {
+				int div = Settings.game.isGen3() ? 16 : 8; // TODO : hardcoded constants
+				sb.append(String.format("\t(%s: %s)%s", Ability.ROUGH_SKIN, attacker.getStatValue(Stat.HP)/div, Constants.endl));
 			}
 		}
 		
@@ -613,7 +618,7 @@ public class DamageCalculator {
 					
 					appendOneShotProbIfNotGuaranteed(sb);
 					appendRecoilDamagesIfApplicable(sb, normalDamageRolls);
-					appendAftermathIfApplicable(sb);
+					//appendPostKODamageIfApplicable(sb);
 					printDamageWithIVvariationIfApplicable(sb, m, p1, p2, atkMod, defMod, 1, isBattleTower, isDoubleBattle, false);
 					
 					// crit rolls
@@ -622,9 +627,10 @@ public class DamageCalculator {
 						appendCritDamages(sb);
 						appendNShots(sb);
 						appendRecoilDamagesIfApplicable(sb, critDamageRolls);
-						appendAftermathIfApplicable(sb);
+						//appendPostKODamageIfApplicable(sb);
 						printDamageWithIVvariationIfApplicable(sb, m, p1, p2, atkMod, defMod, 1, isBattleTower, isDoubleBattle, true);
 					}
+					appendPostKODamageIfApplicable(sb);
 					
 					
 					// guaranteed n-shot
@@ -662,7 +668,7 @@ public class DamageCalculator {
 					
 					appendOneShotProbIfNotGuaranteed(sb);
 					appendRecoilDamagesIfApplicable(sb, normalDamageRolls);
-					appendAftermathIfApplicable(sb);
+					//appendPostKODamageIfApplicable(sb);
 					printDamageWithIVvariationIfApplicable(sb, m, p1, p2, atkMod, defMod, 1, isBattleTower, isDoubleBattle, false);
 					
 					// crit rolls
@@ -670,6 +676,7 @@ public class DamageCalculator {
 						sb.append("\tCrit rolls: ");
 						appendCritDamages(sb);
 					}
+					appendPostKODamageIfApplicable(sb);
 					
 					/*
 					appendNShots(sb);
@@ -1121,6 +1128,11 @@ public class DamageCalculator {
         	damage *= 2;
         
         // Damage multiplier (TODO: What is this exactly ? Seems to be sDMG_MULTIPLIER)
+        if(modifiedAttackMove.matchesAny("Pursuit") && defMod.hasStatus2_3(Status.SWITCHING_OUT)) {
+        	extra_multiplier = 2; // TODO : hardcoded
+        	modifiedAttackMove.setName(String.format("%s +%s",modifiedAttackMove.getName(), Status.SWITCHING_OUT));
+        }
+        
         damage *= extra_multiplier;
         
         // Charged up
@@ -2047,6 +2059,18 @@ public class DamageCalculator {
             }
         }
         
+        // Rivalry
+        if(attacker.getAbility() == Ability.RIVALRY) {
+        	if(attacker.getGender() == defender.getGender() && attacker.getGender() != Gender.GENDERLESS) {
+            	movePower = movePower * (100 + 25) / 100;
+            	move.setName(String.format("%s +%s",move.getName(), attackerItem));
+        	} else if (attacker.getGender() != defender.getGender() && attacker.getGender() != Gender.GENDERLESS
+        		&& defender.getGender() != Gender.GENDERLESS) {
+        		movePower = movePower * (100 - 25) / 100;
+            	move.setName(String.format("%s -%s",move.getName(), attackerItem));
+        	}
+        }
+        
         // Reckless
         if(attackerAbility == Ability.RECKLESS
         && (moveEffect == MoveEffect.RECOIL_HIT 
@@ -2461,8 +2485,9 @@ public class DamageCalculator {
     // HELPER STRING FORMATTING METHODS //
     // ******************************** //
     
-    public static void appendBattleIntroSummary(StringBuilder sb, Pokemon p1, Pokemon p2, BattleOptions options) {
+    public static void appendBattleIntroSummary(StringBuilder sb, Pokemon p1, Pokemon p2, BattleOptions options) throws ToolInternalException {
         sb.append(String.format("%s vs %s", p1.levelNameNatureAbilityItemStr(), p2.levelNameNatureAbilityItemStr()));
+
         // Don't show exp for tower pokes (minor thing since exp isn't added anyway)
         if(!options.isBattleTower()) {
         	boolean isItemBoosted = p1.getHeldItem() != null && p1.getHeldItem().isBoostingExperience();
@@ -2471,9 +2496,10 @@ public class DamageCalculator {
         	String startBracket = isItemBoosted || isTradeBoosted ? " (" : "";
         	String endBracket = isItemBoosted || isTradeBoosted ? ")" : "";
         	String itemStr = String.format("%s%s%s%s%s", startBracket, isItemBoosted ? p1.getHeldItem().getDisplayName() : "",sep, isTradeBoosted ? "TRADE" : "", endBracket);
-        	int expGiven = options.getNumberOfParticipants() == 0 ? 0 : p2.expGivenWithoutEXPBoost(options.getNumberOfParticipants());
-        	expGiven = (expGiven * 3) / (isTradeBoosted ? 2 : 3); // TODO : duplicate code from the Pokemon.gainExp method
-        	expGiven = (expGiven * 3) / (isItemBoosted ? 2 : 3);
+        	//int expGiven = options.getNumberOfParticipants() == 0 ? 0 : p2.expGivenWithoutEXPBoost(options.getNumberOfParticipants());
+        	//expGiven = (expGiven * 3) / (isTradeBoosted ? 2 : 3); // TODO : duplicate code from the Pokemon.gainExp method
+        	//expGiven = (expGiven * 3) / (isItemBoosted ? 2 : 3);
+        	int expGiven = options.getNumberOfParticipants() == 0 ? 0 : p1.earnedExpFrom(p2, options.getNumberOfParticipants());
             sb.append(String.format("          >>> EXP GIVEN: %d%s%s", 
             		expGiven, 
             		options.getNumberOfParticipants() > 1 ? String.format(" (split in %d)", options.getNumberOfParticipants()) : "",
@@ -2858,12 +2884,14 @@ public class DamageCalculator {
         for (Move move : p1.getMoveset()) {
         	int maxDamage = 0; 
         	int initialMovePower = move.getPower();
+        	String initialName = move.getName();
         	Move moveCopy = new Move(move); // copy
         	
         	switch (moveCopy.getEffect()) {
         	case FURY_CUTTER:
         		for (int _extra_multiplier : new Integer[] {0, 1, 2, 3, 4}) { //TODO: hardcoded
-        			moveCopy.setName(move.getBoostedName(_extra_multiplier));
+        			moveCopy.setName(initialName);
+        			moveCopy.appendName(_extra_multiplier + 1);
         			moveCopy.setPower(initialMovePower * (1 << _extra_multiplier));
         			maxDamage = calculateDamageAndPrintBasedOnVerboseLevel(sb, moveCopy, p1, p2, mod1, mod2, 1, isBattleTower, isDoubleBattle, verboseLevel);
                 }
@@ -2871,9 +2899,15 @@ public class DamageCalculator {
         		
         	case ROLLOUT: // Gen 3 Rollout, Ice Ball
         	case INCREASING_HIT: // Gen 4 Rollout, Ice Ball
-        		for (int _extra_multiplier : new Integer[] {0, 1, 2, 3, 4, 5}) { //TODO: hardcoded
-        			moveCopy.setName(move.getBoostedName(_extra_multiplier));
-        			moveCopy.setPower(initialMovePower * (1 << _extra_multiplier));
+        		for (int _extra_multiplier : new Integer[] {0, 1, 2, 3, 4}) { //TODO: hardcoded
+        			moveCopy.setName(initialName);
+        			int newPower = initialMovePower * (1 << _extra_multiplier);
+        			moveCopy.appendName(_extra_multiplier + 1);
+        			if(mod1.hasStatus2_3(Status.DEFENSE_CURL)) {
+        				newPower *= 2;
+            			moveCopy.appendName(String.format("+%s", Status.DEFENSE_CURL));
+        			}
+        			moveCopy.setPower(newPower);
         			maxDamage = calculateDamageAndPrintBasedOnVerboseLevel(sb, moveCopy, p1, p2, mod1, mod2, 1, isBattleTower, isDoubleBattle, verboseLevel);
                 }
         		break;
@@ -2886,7 +2920,7 @@ public class DamageCalculator {
         			              power ==  70 ? 30 :
         		                  power ==  90 ? 20 : 
         			              power == 110 ? 10 : 5;
-        			moveCopy.setName(String.format("%s (%d%%)", move.getBoostedName(power), percent));
+        			moveCopy.setName(String.format("%s %s (%d%%)", initialName, power, percent));
                     moveCopy.setPower(power);
                     maxDamage = calculateDamageAndPrintBasedOnVerboseLevel(sb, moveCopy, p1, p2, mod1, mod2, 1, isBattleTower, isDoubleBattle, verboseLevel);
                 }
@@ -2931,7 +2965,7 @@ public class DamageCalculator {
                 	}
                 	mod1.setCurrHP(maxHP);
                 	String hpString = minHP == maxHP ? String.format("%d", minHP) : String.format("%d-%d", minHP, maxHP);
-        			moveCopy.setName(String.format("%s (%sHP)", move.getBoostedName(power), hpString));
+                	moveCopy.setName(String.format("%s %s (%sHP)", initialName, power, hpString));
             		moveCopy.setPower(power);
             		maxDamage = calculateDamageAndPrintBasedOnVerboseLevel(sb, moveCopy, p1, p2, mod1, mod2, 1, isBattleTower, isDoubleBattle, verboseLevel);
         		}
@@ -3004,8 +3038,8 @@ public class DamageCalculator {
     			//moveCopy.setName(moveCopy.getName() + " SWITCH");
     			maxDamage = calculateDamageAndPrintBasedOnVerboseLevel(sb, moveCopy, p1, p2, mod1, mod2, 1, isBattleTower, isDoubleBattle, verboseLevel);
     			
-    			if(oldHasSwitch) 
-    				mod2.addStatus2_3(Status.SWITCHING_OUT);
+    			if(!oldHasSwitch) 
+    				mod2.removeStatus2_3(Status.SWITCHING_OUT);
                 break;
                 
         	case RETURN:
@@ -3036,15 +3070,6 @@ public class DamageCalculator {
         	// As a side effect of previous damage calculation call, the true move's type is in the move copy
         	Type trueMoveType = moveCopy.getType();
         	boolean isDealingDamage = maxDamage > 0;
-        	
-        	/*
-        	// Round 1 of IV variation
-        	if(isDealingDamage && (mod1.isIVvariation() || mod2.isIVvariation())) {
-        		printDamageWithIVvariation(sb, moveCopy, p1, p2, mod1, mod2, 1, isBattleTower, isDoubleBattle, verboseLevel, false);
-        		if(verboseLevel == VerboseLevel.MOST || verboseLevel == VerboseLevel.EVERYTHING)
-            		printDamageWithIVvariation(sb, moveCopy, p1, p2, mod1, mod2, 1, isBattleTower, isDoubleBattle, verboseLevel, true);
-        	}
-        	*/
         	
         	Move moveCopy2 = new Move(move); // copy
 
@@ -3082,9 +3107,9 @@ public class DamageCalculator {
         		if(trueMoveType == Type.BUG && isDealingDamage) {
         			mod1.setCurrHP(1);
         			if(moveCopy2.getEffect() == MoveEffect.FURY_CUTTER) { //TODO: find a way to not repeat ?
-                		for (int _extra_multiplier : new Integer[] {1, 2, 3, 4, 5}) { //TODO: hardcoded
-                			moveCopy2 = new Move(move); // copy
-                			moveCopy2.setPower(initialMovePower * _extra_multiplier);
+                		for (int _extra_multiplier : new Integer[] {0, 1, 2, 3, 4}) { //TODO: hardcoded
+                			moveCopy2.appendName(_extra_multiplier + 1);
+                			moveCopy2.setPower(initialMovePower * (1 << _extra_multiplier));
                 			calculateDamageAndPrintBasedOnVerboseLevel(sb, moveCopy2, p1, p2, mod1, mod2, 1, isBattleTower, isDoubleBattle, verboseLevel);
                         }
         			} else {
@@ -3097,24 +3122,6 @@ public class DamageCalculator {
         	default:
             	break;
         	} // end ability
-        	
-        	/*
-        	// Round 2 of IV variation
-        	if(isDealingDamage && (mod1.isIVvariation() || mod2.isIVvariation())) {
-	        	Ability a = p1.getAbility();
-	        	if(a == Ability.BLAZE && trueMoveType == Type.FIRE
-	            || a == Ability.TORRENT && trueMoveType == Type.WATER
-	            || a == Ability.OVERGROW && trueMoveType == Type.GRASS
-	            || a == Ability.SWARM && trueMoveType == Type.BUG) {
-	        		int oldHP = mod1.getCurrHP();
-        			mod1.setCurrHP(1);
-	        		printDamageWithIVvariation(sb, moveCopy, p1, p2, mod1, mod2, 1, isBattleTower, isDoubleBattle, verboseLevel, false);
-	        		if(verboseLevel == VerboseLevel.MOST || verboseLevel == VerboseLevel.EVERYTHING)
-	            		printDamageWithIVvariation(sb, moveCopy, p1, p2, mod1, mod2, 1, isBattleTower, isDoubleBattle, verboseLevel, true);
-	        		mod1.setCurrHP(oldHP);
-	        	}
-        	}
-        	*/
         	
         } // end for
         

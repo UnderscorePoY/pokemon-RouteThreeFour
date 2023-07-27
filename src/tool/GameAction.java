@@ -162,7 +162,7 @@ class UnlearnMove extends GameAction {
     UnlearnMove(Move m) { move = m; }
     public Move getMove() { return move; }
     @Override
-    void performAction(Pokemon p) { 
+    void performAction(Pokemon p) {
     	p.getMoveset().delMove(move);
     }
 }
@@ -171,9 +171,10 @@ class Evolve extends GameAction {
     private Species target;
     Evolve(Species s) { target = s; }
     @Override
-    void performAction(Pokemon p) {
+    void performAction(Pokemon p) throws UnsupportedOperationException, ToolInternalException {
         p.evolve(target);
         p.updateEVsAndCalculateStats();
+        GameAction.printAllStatsNoBoost.performAction(p);
     }
 }
 

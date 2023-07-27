@@ -1392,6 +1392,7 @@ public class RouteParser {
             	String[] weatherStrArr = parameterToken.split(BattleFlag.parameterSeparatorRegex);
             	String weatherStrBackup = null;
             	try {
+            		options.getWeathers().clear();
 	            	for (String weatherStr : weatherStrArr) {
 	            		weatherStrBackup = weatherStr;
 	            		Weather weather = Weather.getWeatherFromString(weatherStr);

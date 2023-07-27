@@ -14,14 +14,19 @@ It is derived from a custom RouteThree, itself derived from Dabomstew & entrpntr
 
 **`[2023/07/27]` - v0.4.1**  
 **!!** Abilities are now properly updated when evolving.  
-**!!** Fury Cutter/Rollout now have the correct damage progression.  
+**!!** Fury Cutter/Rollout now have the correct damage progression and numbering.  
 **!!** Option `-ivvariation` now displays correct damage for every battle modifier.  
+**!!** Weathers are now properly accounted for in battles.  
 **!!** [*Gen 3*] The tool now stops displaying an obscure error message upon loading.  
 **!!** [*Gen 3*] Move modifiers are now properly displayed in battles.  
 **!!** [*Gen 3*] Fixed an issue involving moves relying on Special Attack.  
 **!!** [*Gen 3*] Fixed an issue involving 0 damage cases.  
+**!!** [*Gen 3*] Pursuit + switch out is properly calculated.  
+**!!** [*Gen 3*] Shared exp is now accurate.  
 **!!** [*HeartGold/SoulSilver*] Routes are now parsed by the tool without randomly crashing.  
 **!!** [*HeartGold/SoulSilver*] Trainer natures are now correct.  
+○ Added Rough Skin damage.  
+○ [*Gen 4*] Added Rivalry effect.  
 ○ Added a `Contributors` section at the end of the readme.  
 
 **`[2023/07/26]` - v0.4.0**  
@@ -633,8 +638,8 @@ Big aknowledgements to these people, who either initiated this tool or helped im
 - [`Grogir`](https://www.twitch.tv/grogir) - for the attention to details and various ideas 
 
 #### 8.3. CONTRIBUTORS
-People who reported errors and/or provided feedback, which made the tool better. Thanks to them !  
-[`BillBonzai`](https://www.twitch.tv/billbonzai), `Gabraltar`, [`Graizi`](https://www.twitch.tv/graizi), [`Grogir`](https://www.twitch.tv/grogir), [`Plot`](https://www.twitch.tv/plotwyx)
+People who reported errors and/or provided feedback, who made the tool better in the end. Thanks to them !  
+[`BillBonzai`](https://www.twitch.tv/billbonzai), [`Gabraltar`](https://github.com/gabraltar), [`Gimmy`](https://www.twitch.tv/gimmytomas), [`Graizi`](https://www.twitch.tv/graizi), [`Grogir`](https://www.twitch.tv/grogir), [`Plot`](https://www.twitch.tv/plotwyx)
 
 -- -- 
 
