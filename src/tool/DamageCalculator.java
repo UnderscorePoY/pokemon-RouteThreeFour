@@ -69,6 +69,11 @@ public class DamageCalculator {
 			this.isBattleTower = isBattleTower;
 			this.isDoubleBattle = isDoubleBattle;
 			
+			/*
+			if(attackMove.matchesAny("WATERGUN") && defender.getSpecies() == Species.getSpeciesByName("NOSEPASS"))
+				System.out.println("Damages : in");
+			*/
+			
 			this.calculate();
 			for(long mult : normalDamageRolls.tailMap(defender.getStatValue(Stat.HP)).values())
 				normalHitsGreaterOrEqualThanEnemyHP += mult;
@@ -77,7 +82,7 @@ public class DamageCalculator {
 		}
 		
 		private void calculate() throws UnsupportedOperationException, ToolInternalException {
-			Move modifiedMove = new Move(attackMove); // used to store a copy of the move, which is modified by the damage functions as side-effects
+			Move modifiedMove = null; // used to store a copy of the move, which is modified by the damage functions as side-effects
 			
 			if(Settings.game.isGen3()) {
 				switch(attackMove.getEffect()) {
@@ -85,7 +90,7 @@ public class DamageCalculator {
 				case RANDOM_DAMAGE:
 					this.setCrit(false);
 					for (int roll = MIN_PSYWAVE_ROLL; roll <= MAX_PSYWAVE_ROLL; roll += PSYWAVE_ROLL_STEP) {
-						//modifiedMove = new Move(attackMove);
+						modifiedMove = new Move(attackMove);
 						int dmg = damageGen3(modifiedMove, attacker, defender, atkMod, defMod, roll, false, extra_multiplier, isBattleTower, isDoubleBattle);
 						this.addNormalDamage(dmg);
 					}
@@ -94,7 +99,7 @@ public class DamageCalculator {
 				case FUTURE_SIGHT:
 				case HIT_LATER:
 					this.setCrit(false);
-					//modifiedMove = new Move(attackMove);
+					modifiedMove = new Move(attackMove);
 					int dmg = calculateBaseDamageGen3(modifiedMove, attacker, defender, atkMod, defMod, false, extra_multiplier, isBattleTower, isDoubleBattle);
 					this.addNormalDamage(dmg);
 					break;
@@ -103,14 +108,14 @@ public class DamageCalculator {
 				case DRAGON_RAGE:
 				case SONICBOOM:
 					this.setCrit(false);
-					//modifiedMove = new Move(attackMove);
+					modifiedMove = new Move(attackMove);
 					dmg = calculateBaseDamageGen3(modifiedMove, attacker, defender, atkMod, defMod, false, extra_multiplier, isBattleTower, isDoubleBattle);
 					this.addNormalDamage(dmg);
 					break;
 					
 				default:
 					for (int roll = MIN_ROLL; roll <= MAX_ROLL; roll++) {
-						//modifiedMove = new Move(attackMove);
+						modifiedMove = new Move(attackMove);
 						dmg = damageGen3(modifiedMove, attacker, defender, atkMod, defMod, roll, false, extra_multiplier, isBattleTower, isDoubleBattle);
 						this.addNormalDamage(dmg);
 
@@ -125,7 +130,7 @@ public class DamageCalculator {
 				case RANDOM_DAMAGE: // Psywave
 					this.setCrit(false);
 					for (int roll = MIN_PSYWAVE_ROLL; roll <= MAX_PSYWAVE_ROLL; roll += PSYWAVE_ROLL_STEP) {
-						//modifiedMove = new Move(attackMove);
+						modifiedMove = new Move(attackMove);
 						int dmg = damageGen4(modifiedMove, attacker, defender, atkMod, defMod, roll, false, extra_multiplier, isBattleTower, isDoubleBattle);
 						this.addNormalDamage(dmg);
 					}
@@ -134,7 +139,7 @@ public class DamageCalculator {
 
 				case HIT_LATER: // Future Sight, Doom Desire
 					this.setCrit(false);
-					//modifiedMove = new Move(attackMove);
+					modifiedMove = new Move(attackMove);
 					int dmg = damageGen4(modifiedMove, attacker, defender, atkMod, defMod, MAX_ROLL, false, extra_multiplier, isBattleTower, isDoubleBattle);
 					this.addNormalDamage(dmg);
 					break;
@@ -143,14 +148,14 @@ public class DamageCalculator {
 				case FIXED_20: // Sonicboom
 				case FIXED_40: // Dragon Rage
 					this.setCrit(false);
-					//modifiedMove = new Move(attackMove);
+					modifiedMove = new Move(attackMove);
 					dmg = damageGen4(modifiedMove, attacker, defender, atkMod, defMod, MAX_ROLL, false, extra_multiplier, isBattleTower, isDoubleBattle);
 					this.addNormalDamage(dmg);
 					break;
 					
 				default:
 					for (int roll = MIN_ROLL; roll <= MAX_ROLL; roll++) {
-						//modifiedMove = new Move(attackMove);
+						modifiedMove = new Move(attackMove);
 						dmg = damageGen4(modifiedMove, attacker, defender, atkMod, defMod, roll, false, extra_multiplier, isBattleTower, isDoubleBattle);
 						this.addNormalDamage(dmg);
 
@@ -1085,7 +1090,7 @@ public class DamageCalculator {
         
         // Overwrite multiplier if Surfing an underwater pokemon
         // TODO : maybe put this somewhere else, idk
-        if(modifiedAttackMove.getName().equalsIgnoreCase("SURF") && defMod.hasStatus2_3(Status.UNDERWATER)) {
+        if(modifiedAttackMove.matchesAny("SURF") && defMod.hasStatus2_3(Status.UNDERWATER)) {
         	modifiedAttackMove.setName(String.format("%s +%s",modifiedAttackMove.getName(), Status.UNDERWATER));
         	extra_multiplier = 2;
         }
@@ -1255,7 +1260,7 @@ public class DamageCalculator {
         int attackerSpa = attacker.getBattleTowerStatValue(Stat.SPA);
         
         int defenderDef = defender.getBattleTowerStatValue(Stat.DEF);
-        int defenderSpd = defender.getBattleTowerStatValue(Stat.SPA);
+        int defenderSpd = defender.getBattleTowerStatValue(Stat.SPD);
         
         // (retrieving items)
         Item attackerItem = attacker.getHeldItem();
@@ -1274,10 +1279,14 @@ public class DamageCalculator {
         if(!isBattleTower) { 
         	// TODO : game checks for 'gBattleTypeFlags & BATTLE_TYPE_TRAINER', so maybe no badge boosts against encounters ?
         	// See : https://github.com/pret/pokeruby/blob/a3228d4c86494ee25aff60fc037805ddc1d47d32/src/calculate_base_damage.c#L85
-	        attackerAtk = attacker.applyBadgeBoostIfPossible(Stat.ATK, attackerAtk);
-	        attackerSpa = attacker.applyBadgeBoostIfPossible(Stat.SPA, attackerSpa);
-	        defenderDef = defender.applyBadgeBoostIfPossible(Stat.DEF, defenderDef);
-	        defenderSpd = defender.applyBadgeBoostIfPossible(Stat.SPD, defenderSpd);
+	        //attackerAtk = attacker.applyBadgeBoostIfPossible(Stat.ATK, attackerAtk);
+	        //attackerSpa = attacker.applyBadgeBoostIfPossible(Stat.SPA, attackerSpa);
+	        //defenderDef = defender.applyBadgeBoostIfPossible(Stat.DEF, defenderDef);
+	        //defenderSpd = defender.applyBadgeBoostIfPossible(Stat.SPD, defenderSpd);
+        	attackerAtk = attacker.getStatValue(Stat.ATK);
+        	attackerSpa = attacker.getStatValue(Stat.SPA);
+        	defenderDef = defender.getStatValue(Stat.DEF);
+        	defenderSpd = defender.getStatValue(Stat.SPD);
         }
         
         // Type boosting items

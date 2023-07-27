@@ -9,17 +9,18 @@ It is derived from a custom RouteThree, itself derived from Dabomstew & entrpntr
 *Syntax :*    
 **`[YYYY/MM/DD]` - version**  
 ► Compatibility-breaking update.  
-○ Usual update.
-‼ Bug fixes
+○ Usual update.  
+**!!** Bug fixes
 
 **`[2023/07/27]` - v0.4.1**  
-‼ Abilities are now properly updated when evolving.  
-‼ Fury Cutter/Rollout now have the correct damage progression.  
-‼ Option `-ivvariation` now displays correct damage for every battle modifier.  
-‼ [*Gen 3*] : The tool now stops displaying an obscure error message upon loading.  
-‼ [*Gen 3*] : Move modifiers are now properly displayed in battles.  
-‼ [*HeartGold/SoulSilver*] Routes are now parsed by the tool without randomly crashing.  
-‼ [*HeartGold/SoulSilver*] Trainer natures are now correct.  
+**!!** Abilities are now properly updated when evolving.  
+**!!** Fury Cutter/Rollout now have the correct damage progression.  
+**!!** Option `-ivvariation` now displays correct damage for every battle modifier.  
+**!!** [*Gen 3*] The tool now stops displaying an obscure error message upon loading.  
+**!!** [*Gen 3*] Move modifiers are now properly displayed in battles.  
+**!!** [*Gen 3*] Fixed an issue involving moves relying on Special Attack.  
+**!!** [*HeartGold/SoulSilver*] Routes are now parsed by the tool without randomly crashing.  
+**!!** [*HeartGold/SoulSilver*] Trainer natures are now correct.  
 ○ Added a `Contributors` section at the end of the readme.  
 
 **`[2023/07/26]` - v0.4.0**  
@@ -604,17 +605,17 @@ Some options can have incompatible behaviour : they would either cancel each oth
 ### 8. CONTACT INFO AND ACKNOWLEDGEMENTS
 
 #### 8.1. COMMUNITIES
-[`PokemonSpeedruns` Discord server (archived)](https://discord.gg/0UUw8zDe2hWlwRsm)
+- [`PokemonSpeedruns` Discord server (archived)](https://discord.gg/0UUw8zDe2hWlwRsm)
 
-[`Gen 1-3 Pokemon Speedrunning` Discord server](https://discord.gg/NjQFEkc)  
+- [`Gen 1-3 Pokemon Speedrunning` Discord server](https://discord.gg/NjQFEkc)  
 
-[`DS Pokémon Speedrunning` Discord server](https://discord.gg/HqRC6ZU)  
+- [`DS Pokémon Speedrunning` Discord server](https://discord.gg/HqRC6ZU)  
 
-`Pokémon French Racing Team` Discord server (semi-private)
+- `Pokémon French Racing Team` Discord server (semi-private)
 
-[`pret` Discord server](https://discord.gg/MAhw9Uxe)
+- [`pret` Discord server](https://discord.gg/MAhw9Uxe)
 
-[`SpeedRunsLive`](http://speedrunslive.com) - for inspiration/awesome races  
+- [`SpeedRunsLive`](http://speedrunslive.com) - for inspiration/awesome races  
 
 #### 8.2. PROGRAMMERS
 Big aknowledgements to these people, who either initiated this tool or helped improve and/or maintain it at a technical level.  

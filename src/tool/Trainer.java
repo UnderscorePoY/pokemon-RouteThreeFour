@@ -126,9 +126,6 @@ public class Trainer implements Battleable, Iterable<Pokemon> {
         		
         		Moveset moveset = null;
         		
-        		if(species == Species.getSpeciesByName("SLAKING"))
-        			System.out.println("inin");
-        		
         		if (pokemonDic.containsKey("moves")) {
         			moveset = new Moveset();
         			JSONArray movesArray = (JSONArray) pokemonDic.get("moves");
