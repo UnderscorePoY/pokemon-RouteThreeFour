@@ -19,6 +19,7 @@ It is derived from a custom RouteThree, itself derived from Dabomstew & entrpntr
 **!!** [*Gen 3*] The tool now stops displaying an obscure error message upon loading.  
 **!!** [*Gen 3*] Move modifiers are now properly displayed in battles.  
 **!!** [*Gen 3*] Fixed an issue involving moves relying on Special Attack.  
+**!!** [*Gen 3*] Fixed an issue involving 0 damage cases.  
 **!!** [*HeartGold/SoulSilver*] Routes are now parsed by the tool without randomly crashing.  
 **!!** [*HeartGold/SoulSilver*] Trainer natures are now correct.  
 ○ Added a `Contributors` section at the end of the readme.  

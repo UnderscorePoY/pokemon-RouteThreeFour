@@ -70,7 +70,7 @@ public class DamageCalculator {
 			this.isDoubleBattle = isDoubleBattle;
 			
 			/*
-			if(attackMove.matchesAny("WATERGUN") && defender.getSpecies() == Species.getSpeciesByName("NOSEPASS"))
+			if(attackMove.matchesAny("TACKLE") && defender.getSpecies() == Species.getSpeciesByName("GEODUDE"))
 				System.out.println("Damages : in");
 			*/
 			
@@ -1173,7 +1173,12 @@ public class DamageCalculator {
         // ************************** //
         
         // Damage roll
-        damage = damage * roll / MAX_ROLL;
+        // https://github.com/pret/pokeemerald/blob/master/src/battle_script_commands.c#L1639
+        if(damage != 0) {
+	        damage = damage * roll / MAX_ROLL;
+	        if(damage == 0)
+	        	damage = 1;
+        }
         
         // Bunch of stuff skipped because not useful or linked to damage
         
