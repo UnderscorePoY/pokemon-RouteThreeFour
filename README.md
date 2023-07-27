@@ -9,7 +9,7 @@ It is derived from a custom RouteThree, itself derived from Dabomstew & entrpntr
 *Syntax :*    
 **`[YYYY/MM/DD]` - version**  
 ► Compatibility-breaking update.  
-○ Usual update.
+○ Usual update.  
 ‼ Bug fixes
 
 **`[2023/07/27]` - v0.4.1**  
