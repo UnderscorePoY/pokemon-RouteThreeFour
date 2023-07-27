@@ -32,9 +32,10 @@ public class Move {
 		movesByName = new LinkedHashMap<IgnoreCaseString, Move>();
 		
         BufferedReader in;
-    	System.out.println("/resources/"+game.getMovesFilename()); // TODO
-        in = new BufferedReader(new InputStreamReader(Move.class
-                .getResource("/resources/"+game.getMovesFilename()).openStream())); // TODO : handle custom files ?
+        String movesResourcePathName = Settings.getResourceRelativePathName(game.getMovesFilename());
+        System.out.println(String.format("INFO: Moves loaded from '%s'", movesResourcePathName));
+        in = new BufferedReader(new InputStreamReader(Move.class.getResource(
+        		movesResourcePathName).openStream())); // TODO : handle custom files ?
         
         if(game.isGen3())          
             initMovesGen3(in);
@@ -571,6 +572,38 @@ public class Move {
     }
     public boolean makesContact() {
     	return contacts.contains(new IgnoreCaseString(this.unmodifiedName));
+    }
+    
+    // Sound moves
+    private static final String[] soundsStrArr = new String[] {
+    		"GROWL", "ROAR", "SING", "SUPERSONIC", "SCREECH", "SNORE",
+    		"UPROAR", "METALSOUND", "GRASSWHISTLE", "HYPERVOICE", "BUGBUZZ", "CHATTER"
+    };
+    
+    private static final Set<IgnoreCaseString> sounds = new HashSet<>();
+    static {
+    	for(String soundStr : soundsStrArr)
+    		sounds.add(new IgnoreCaseString(soundStr));
+    }
+    
+    public boolean isSoundMove() {
+    	return sounds.contains(new IgnoreCaseString(this.unmodifiedName));
+    }
+    
+    // Fist moves
+    private static final String[] fistsStrArr = new String[] {
+    		"ICE PUNCH", "FIRE PUNCH", "THUNDER PUNCH", "MACH PUNCH", "FOCUS PUNCH", "DIZZY PUNCH", "DYNAMIC PUNCH",
+    		"HAMMER ARM", "MEGA PUNCH", "COMET PUNCH", "METEOR MASH", "SHADOW PUNCH", "DRAIN PUNCH", "BULLET PUNCH", "SKY UPPERCUT"
+    };
+    
+    private static final Set<IgnoreCaseString> fists = new HashSet<>();
+    static {
+    	for(String fistStr : fistsStrArr)
+    		fists.add(new IgnoreCaseString(fistStr));
+    }
+    
+    public boolean isFistMove() {
+    	return fists.contains(new IgnoreCaseString(this.unmodifiedName));
     }
     
 }

@@ -1,5 +1,5 @@
 // Route layout by GarfieldTheLightning (2019) : https://docs.google.com/document/d/1XdaLcJ-dlyCr8hey-3k1_KpuC9eEjUJIkXbkYKq7Nzw/edit
-// Adapted with 2021 crafted run : https://www.speedrun.com/pkmndp/run/ylogrwny
+// Adapted with 2021 craftedite run : https://www.speedrun.com/pkmndp/run/ylogrwny
 
 stats
 ranges

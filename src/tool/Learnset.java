@@ -33,9 +33,10 @@ public class Learnset {
 		learnsetsByName = new LinkedHashMap<IgnoreCaseString, Learnset>();
 		
         BufferedReader in;
-    	System.out.println("/resources/"+game.getLearnsetsFilename()); // TODO
-        in = new BufferedReader(new InputStreamReader(Learnset.class
-                .getResource("/resources/"+game.getLearnsetsFilename()).openStream())); // TODO : handle custom files ?
+        String learnsetsResourcePathName = Settings.getResourceRelativePathName(game.getLearnsetsFilename());
+        System.out.println(String.format("INFO: Learnsets loaded from '%s'", learnsetsResourcePathName));
+        in = new BufferedReader(new InputStreamReader(Learnset.class.getResource(
+        		learnsetsResourcePathName).openStream())); // TODO : handle custom files ?
         
         if(game.isGen3())
         	initLearnsetsGen3(in);

@@ -31,9 +31,10 @@ public class Species {
 		speciesByName = new LinkedHashMap<IgnoreCaseString, Species>();
 
         BufferedReader in;
-    	System.out.println("/resources/"+game.getSpeciesFilename()); // TODO
-        in = new BufferedReader(new InputStreamReader(Species.class
-                .getResource("/resources/"+game.getSpeciesFilename()).openStream())); // TODO : handle custom files ?
+        String speciesResourcePathName = Settings.getResourceRelativePathName(game.getSpeciesFilename());
+        System.out.println(String.format("INFO: Species loaded from '%s'", speciesResourcePathName));
+        in = new BufferedReader(new InputStreamReader(Species.class.getResource(
+        		speciesResourcePathName).openStream())); // TODO : handle custom files ?
         
     	if(game.isGen3())
     		initSpeciesGen3(in);

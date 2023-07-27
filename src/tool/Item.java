@@ -30,9 +30,10 @@ public class Item {
 		JSONParser jsonParser = new JSONParser();
         BufferedReader in;
         
-    	System.out.println("/resources/"+game.getItemsFilename()); // TODO
-        in = new BufferedReader(new InputStreamReader(Trainer.class
-                .getResource("/resources/"+game.getItemsFilename()).openStream())); // TODO : handle custom files ?
+        String itemsResourcePathName = Settings.getResourceRelativePathName(game.getItemsFilename());
+    	System.out.println(String.format("INFO: Items loaded from '%s'", itemsResourcePathName));
+        in = new BufferedReader(new InputStreamReader(Trainer.class.getResource(
+        		itemsResourcePathName).openStream())); // TODO : handle custom files ?
         JSONArray itemsArray = (JSONArray) jsonParser.parse(in);
         for(Object itemObj : itemsArray) {
 			JSONObject itemDic = (JSONObject) itemObj;

@@ -25,9 +25,10 @@ public class TrainerClass {
 		
 		JSONParser jsonParser = new JSONParser();
         BufferedReader in;
-    	System.out.println("/resources/"+game.getTrainersFilename()); // TODO
-        in = new BufferedReader(new InputStreamReader(Trainer.class
-                .getResource("/resources/"+game.getTrainerClassesFilename()).openStream())); // TODO : handle custom files ?
+        String trainerClassesResourcePathName = Settings.getResourceRelativePathName(game.getTrainerClassesFilename());
+        System.out.println(String.format("INFO: Trainer classes loaded from '%s'", trainerClassesResourcePathName));
+        in = new BufferedReader(new InputStreamReader(Trainer.class.getResource(
+        		trainerClassesResourcePathName).openStream())); // TODO : handle custom files ?
 
         JSONArray trainers = (JSONArray) jsonParser.parse(in);
         for(Object trainer : trainers) {

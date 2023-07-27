@@ -391,13 +391,18 @@ public class Battle extends GameAction {
         if(p.getSpecies().isUpdatingStatsAfterEveryBattle())
         	p.updateEVsAndCalculateStats();
         
-        // Revert to poke before trainer if a scenario is active
-        if(scenarioName != null || isBacktrackingAfterBattle) {
-        	Main.mainPoke = pCopy;
+        // Scenario name and backtracking
+        if(getVerbose() != VerboseLevel.NONE) {
         	Main.appendln("");
-        	Main.appendln(String.format("End of scenario%s.%s", 
-        			scenarioName == null ? "" : String.format(" '%s'", scenarioName),
-        			isBacktrackingAfterBattle ? " Backtracking before last battle." : ""));
+	        if(scenarioName != null) {
+	        	Main.append(String.format("End of scenario%s. ", 
+	        			scenarioName == null ? "" : String.format(" '%s'", scenarioName)));
+	        }
+	        if(isBacktrackingAfterBattle) {
+	        	Main.mainPoke = pCopy;
+	        	Main.append("Backtracking before last battle.");
+	        }
+        	Main.appendln("");
         }
     }
 

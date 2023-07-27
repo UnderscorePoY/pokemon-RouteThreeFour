@@ -31,9 +31,10 @@ public class Trainer implements Battleable, Iterable<Pokemon> {
 		trainersByName = new LinkedHashMap<IgnoreCaseString, Trainer>();
 		
         BufferedReader in;
-    	System.out.println("/resources/"+game.getTrainersFilename()); // TODO
-        in = new BufferedReader(new InputStreamReader(Trainer.class
-                .getResource("/resources/"+game.getTrainersFilename()).openStream())); // TODO : handle custom files ?
+        String trainersResourcePathName = Settings.getResourceRelativePathName(game.getTrainersFilename());
+        System.out.println(String.format("INFO: Trainers loaded from '%s'", trainersResourcePathName));
+        in = new BufferedReader(new InputStreamReader(Trainer.class.getResource(
+        		trainersResourcePathName).openStream())); // TODO : handle custom files ?
         
         if(game.isGen3())
         	initTrainersGen3(game, in);	
@@ -628,9 +629,10 @@ public class Trainer implements Battleable, Iterable<Pokemon> {
 		
 		JSONParser jsonParser = new JSONParser();
         BufferedReader in;
-    	System.out.println("/resources/"+game.getCharCodesFilename()); // TODO
-        in = new BufferedReader(new InputStreamReader(Trainer.class
-                .getResource("/resources/"+game.getCharCodesFilename()).openStream())); // TODO : handle custom files ?
+        String charcodesResourcePathName = Settings.getResourceRelativePathName(game.getCharCodesFilename());
+        System.out.println(String.format("INFO: Charcodes loaded from %s", charcodesResourcePathName));
+        in = new BufferedReader(new InputStreamReader(Trainer.class.getResource(
+        		charcodesResourcePathName).openStream())); // TODO : handle custom files ?
         JSONObject charCodesDic = (JSONObject) jsonParser.parse(in);
         for(Object charCodesObj : charCodesDic.entrySet()) {
             @SuppressWarnings("unchecked")

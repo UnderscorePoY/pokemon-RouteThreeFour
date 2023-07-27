@@ -69,10 +69,10 @@ public class DamageCalculator {
 			this.isBattleTower = isBattleTower;
 			this.isDoubleBattle = isDoubleBattle;
 			
-			/*
-			if(attackMove.matchesAny("TACKLE") && defender.getSpecies() == Species.getSpeciesByName("GEODUDE"))
-				System.out.println("Damages : in");
-			*/
+			
+			//if(attackMove.matchesAny("TACKLE") && defender.getSpecies() == Species.getSpeciesByName("GEODUDE"))
+			//	System.out.println("Damages : in");
+			
 			
 			this.calculate();
 			for(long mult : normalDamageRolls.tailMap(defender.getStatValue(Stat.HP)).values())
@@ -700,8 +700,10 @@ public class DamageCalculator {
 		    		return false;
 		    	
 		    	Damages d = (Damages)o;
-		    	return d.highestCritDamage() == this.highestCritDamage() && d.lowestCritDamage() == this.lowestCritDamage()
-		    		 && d.highestDamage() == this.highestDamage() && d.lowestDamage() == this.lowestDamage();
+		    	return this.highestCritDamage() == d.highestCritDamage()     && this.critDamageRolls.get(this.highestCritDamage()) == d.critDamageRolls.get(d.highestCritDamage())
+		    		&& this.lowestCritDamage() == d.lowestCritDamage()       && this.critDamageRolls.get(this.lowestCritDamage()) == d.critDamageRolls.get(d.lowestCritDamage())
+		    		&& this.highestNormalDamage() == d.highestNormalDamage() && this.normalDamageRolls.get(this.highestNormalDamage()) == d.normalDamageRolls.get(d.highestNormalDamage())
+		    		&& this.lowestNormalDamage() == d.lowestNormalDamage()   && this.normalDamageRolls.get(this.lowestNormalDamage()) == d.normalDamageRolls.get(d.lowestNormalDamage());
 		    }
 
 		
@@ -1672,11 +1674,11 @@ public class DamageCalculator {
     private static int damageGen4(Move move, Pokemon attacker, Pokemon defender,
                               StatModifier atkMod, StatModifier defMod, int roll,
                               boolean isCrit, int extra_multiplier, boolean isBattleTower, boolean isDoubleBattle) throws UnsupportedOperationException, ToolInternalException {
-    	/*
-    	if(move.getName().equalsIgnoreCase("TACKLE") && attacker.getSpecies().getHashName().equalsIgnoreCase("Starly")
-    			&& attacker.getLevel() == 5)
-    		System.out.println("in");
-    		*/
+    	
+    	//if(move.getName().equalsIgnoreCase("TACKLE") && attacker.getSpecies().getHashName().equalsIgnoreCase("Starly")
+    	//		&& attacker.getLevel() == 5)
+    	//	System.out.println("in");
+    	//
     	
         MoveClass moveClass = move.getMoveClass();
         MoveEffect moveEffect = move.getEffect();
@@ -1903,10 +1905,7 @@ public class DamageCalculator {
         || moveType == Type.WATER && (defenderAbility == Ability.DRY_SKIN || defenderAbility == Ability.WATER_ABSORB)
         || moveType == Type.ELECTRIC && (defenderAbility == Ability.MOTOR_DRIVE || defenderAbility == Ability.VOLT_ABSORB)
         || moveType == Type.GROUND && !isGrounded && defenderAbility == Ability.LEVITATE
-        || defenderAbility == Ability.SOUNDPROOF && move.matchesAny(
-        		"GROWL", "ROAR", "SING", "SUPERSONIC", "SCREECH", "SNORE",
-        		"UPROAR", "METALSOUND", "GRASSWHISTLE", "HYPERVOICE", "BUGBUZZ", "CHATTER")
-        ) {
+        || defenderAbility == Ability.SOUNDPROOF && move.isSoundMove()) {
         	move.setName(String.format("%s -%s",move.getName(), defenderAbility)); // TODO: find better way
         	return 0;
         }
@@ -2062,10 +2061,7 @@ public class DamageCalculator {
         
         // Iron Fist
         // https://github.com/pret/pokeheartgold/blob/866d850ffe510ab7e73a8c2e3e4cdc48e2526b45/asm/overlay_12_0224E4FC_s.s#L1246
-        else if(attackerAbility == Ability.IRON_FIST && move.matchesAny(
-        		"ICE PUNCH", "FIRE PUNCH", "THUNDER PUNCH", "MACH PUNCH", "FOCUS PUNCH", "DIZZY PUNCH", "DYNAMIC PUNCH",
-        		"HAMMER ARM", "MEGA PUNCH", "COMET PUNCH", "METEOR MASH", "SHADOW PUNCH", "DRAIN PUNCH", "BULLET PUNCH", "SKY UPPERCUT")
-        ){
+        else if(attackerAbility == Ability.IRON_FIST && move.isFistMove()){
         	movePower = movePower * (100 + 20) / 100;  // TODO: hardcoded
     		move.setName(String.format("%s +%s",move.getName(), attackerAbility)); // TODO: find better way
         }
@@ -3341,6 +3337,10 @@ public class DamageCalculator {
     	
     	String[] names = new String[] {"-", "", "+"}; // TODO : hardcoded
 
+    	//if(move.matchesAny("Strength") && p2.getSpecies() == Species.getSpeciesByName("FLAREON"))
+    	//	System.out.println("printDamageWithIVvariationIfApplicable");
+    	
+    	
 		sb.append(String.format("\t%s DAMAGE VARIATION", isCrit ? "CRIT": "NORMAL"));
 		sb.append(Constants.endl);
     	for(int k = 0; k < natures.length; k++) {
