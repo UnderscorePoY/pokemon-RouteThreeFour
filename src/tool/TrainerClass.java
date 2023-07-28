@@ -26,7 +26,6 @@ public class TrainerClass {
 		JSONParser jsonParser = new JSONParser();
         BufferedReader in;
         String trainerClassesResourcePathName = Settings.getResourceRelativePathName(game.getTrainerClassesFilename());
-        System.out.println(String.format("INFO: Trainer classes loaded from '%s'", trainerClassesResourcePathName));
         in = new BufferedReader(new InputStreamReader(Trainer.class.getResource(
         		trainerClassesResourcePathName).openStream())); // TODO : handle custom files ?
 
@@ -42,6 +41,8 @@ public class TrainerClass {
         			new IgnoreCaseString(trainerClass), 
         			new TrainerClass(trainerClass, id, money, genderOrCount));
         }
+
+        System.out.println(String.format("INFO: Trainer classes loaded from '%s'", trainerClassesResourcePathName));
 	}
 	
     private String trainerClass;

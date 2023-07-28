@@ -33,7 +33,6 @@ public class Move {
 		
         BufferedReader in;
         String movesResourcePathName = Settings.getResourceRelativePathName(game.getMovesFilename());
-        System.out.println(String.format("INFO: Moves loaded from '%s'", movesResourcePathName));
         in = new BufferedReader(new InputStreamReader(Move.class.getResource(
         		movesResourcePathName).openStream())); // TODO : handle custom files ?
         
@@ -43,6 +42,8 @@ public class Move {
         	initMovesGen4(in);
         else
         	throw new ToolInternalException(Move.class.getEnclosingMethod(), game, "");
+
+        System.out.println(String.format("INFO: Moves loaded from '%s'", movesResourcePathName));
     }
 	
 	private static void initMovesGen3(BufferedReader in) throws IOException, ParseException {
@@ -267,10 +268,13 @@ public class Move {
     }
     
     /**
-     * Returns true if the move matches any of the move in the list. This is robust to name or reference changes.
+     * Returns true if the move matches any of the move in the list. Ignores non alphanumerical characters. This is robust to name or reference changes.
      */
     @SuppressWarnings("unlikely-arg-type")
 	public boolean matchesAny(String... names) {
+    	if(names == null)
+    		return false;
+    	
     	IgnoreCaseString ics = new IgnoreCaseString(unmodifiedName);
     	for(String name : names) {
     		if(ics.equals(name))

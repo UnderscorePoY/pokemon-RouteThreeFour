@@ -585,7 +585,9 @@ public class Pokemon implements Battleable {
 
     // in game actions
 
-    // gain num exp
+    /**
+     * Returns the earned experience this gains when defeating the other Pokémon, or 0 if the number of participants is 0.
+     */
     public int earnedExpFrom(Pokemon other, int nbOfParticipants) throws ToolInternalException {
     	if(nbOfParticipants == 0)
     		return 0;
@@ -679,15 +681,15 @@ public class Pokemon implements Battleable {
         // p is the one that gets leveled up
         // this is the one that dies like noob
         // be sure to gain EVs before the exp
-    	// if no participants (for example a death), don't give any ev or exp
-    	if (options.getNumberOfParticipants() > 0) {
-	        p.gainEvs(this.getSpecies());
-	        //p.gainExp(this.expGivenWithoutEXPBoost(options.getNumberOfParticipants()));
-	        p.gainExp(this, options.getNumberOfParticipants());
-    	}
+    	
+    	if(options.getCurrentNumberOfParticipants() == 0 || options.isCurrentPostponedExp())
+    		return;
+    	
+        p.gainEvs(this.getSpecies());
+        //p.gainExp(this.expGivenWithoutEXPBoost(options.getNumberOfParticipants()));
+        p.gainExp(this, options.getCurrentNumberOfParticipants());
     }
 
-    // gains from eating stat/level boosters
     /**
      * Eats a Rare Candy, i.e. triggers a flat level up. Returns true if the Candy is effectively consumed.
      */
@@ -915,5 +917,10 @@ public class Pokemon implements Battleable {
 	
 	public boolean isInLuxuryBall() {
 		return isInLuxuryBall;
+	}
+	
+	@Override
+	public int getNbOfBattlers() {
+		return 1;
 	}
 }

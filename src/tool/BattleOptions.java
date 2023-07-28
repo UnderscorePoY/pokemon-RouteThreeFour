@@ -2,36 +2,51 @@ package tool;
 import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.EnumSet;
+import java.util.HashSet;
+import java.util.Set;
 
 import tool.StatsContainer.ContainerType;
+import tool.exception.RouteParserException;
 import tool.exception.ToolInternalException;
 
 public class BattleOptions {
 	public static final int MIN_NUMBER_OF_BATTLERS_PER_FIGHT = 1, MAX_NUMBER_OF_BATTLERS_PER_FIGHT = 12;
 	public static final int MIN_NUMBER_OF_EXP_SHARERS_PER_FIGHT = 0, MAX_NUMBER_OF_EXP_SHARERS_PER_FIGHT = 6; // 0 means no exp
+	public static final int DEFAULT_NB_OF_EXP_SHARERS = 1;
 	public static final int MIN_BATCH_SIZE = 1, MAX_BATCH_SIZE = 2;
 
+	/**
+	 * Index compatible with array/list indexing. BEWARE of miss-by-one errors.
+	 */
 	private int currentOpponentIndex = -1; // -1 allows to update stuff at the beginning of any needed loop, instead of at the end
     private ArrayList<Integer> sxps = new ArrayList<Integer>();
+    private boolean isSxpConstant = false;
     
     private EnumMap<Stat, ArrayList<Integer>> xStages = new EnumMap<Stat, ArrayList<Integer>>(Stat.class);
+    private EnumSet<Stat> xStageIsConstant = EnumSet.noneOf(Stat.class);
     private EnumSet<Stat> xStagesAreForced = EnumSet.noneOf(Stat.class);
     private ArrayList<Status> xStatus1List = new ArrayList<Status>();
+    private boolean isXStatus1Constant = false;
     private ArrayList<EnumSet<Status>> xStatuses2_3List = new ArrayList<EnumSet<Status>>();
+    private boolean isXStatuses2_3Constant = false;
     private int xCurrentHP = 0;
     private CurrentHPid xCurrentHPid = CurrentHPid.FULL;
     private Trainer xPartner = null;
 
     private EnumMap<Stat, ArrayList<Integer>> yStages = new EnumMap<Stat, ArrayList<Integer>>(Stat.class);
+    private EnumSet<Stat> yStageIsConstant = EnumSet.noneOf(Stat.class);
     private EnumSet<Stat> yStagesAreForced = EnumSet.noneOf(Stat.class);
     private ArrayList<Status> yStatus1List = new ArrayList<Status>();
+    private boolean isYStatus1Constant = false;
     private ArrayList<EnumSet<Status>> yStatuses2_3List = new ArrayList<EnumSet<Status>>();
+    private boolean isYStatuses2_3Constant = false;
     private int yCurrentHP = 0;
     private CurrentHPid yCurrentHPid = CurrentHPid.FULL;
     private Trainer yPartner = null;
     
     private ArrayList<ArrayList<Integer>> order = new ArrayList<ArrayList<Integer>>();
     private ArrayList<Weather> weathers = new ArrayList<Weather>();
+    private boolean isWeatherConstant = false;
     
     private boolean isBattleTower = false;
     private boolean forcingMultiTargetDamage = false;
@@ -45,7 +60,12 @@ public class BattleOptions {
     private StatModifier mod1 = new StatModifier();
     private StatModifier mod2 = new StatModifier();
     
-    private boolean isPostponedExp = false;
+    //private boolean isPostponedExp = false;
+    
+    /**
+     * Potential indices are from 1 to max number of battlers
+     */
+    private Set<Integer> postponeExpSet = new HashSet<Integer>();
     
     private String scenarioName = null;
     private boolean isBacktrackingAfterBattle = false;
@@ -61,16 +81,10 @@ public class BattleOptions {
     }
     
     public BattleOptions() throws ToolInternalException {
-    	// TODO: Don't really know yet how to avoid setting custom values.
-    	//setSxps(1); 
-    	setWeather(Weather.NONE); // TODO: same
-    	for(Side side : Side.values()) {
-    		setStatus1(side, Status.noStatus1());
-    		setStatuses2_3(side, Status.noStatus2_3());
-    		for(Stat stat : ContainerType.STAT_INCREMENTS) {
-    			for(int i = 0; i < MAX_NUMBER_OF_BATTLERS_PER_FIGHT; i++)
-    				setStage(side, stat, ContainerType.STAT_INCREMENTS.getDefaultValue(), false); // TODO: hardcoded
-    		}
+    	// Only makes sure there's no null
+    	for(Stat stat : Stat.stagesStats) {
+    		xStages.put(stat, new ArrayList<Integer>());
+    		yStages.put(stat, new ArrayList<Integer>());
     	}
     }
 
@@ -79,6 +93,107 @@ public class BattleOptions {
 		return participants;
 	}
 	*/
+    
+    public boolean isPostponedExp(int index) {
+    	return postponeExpSet.contains(index);
+    }
+    
+    
+
+    /**
+     * Performs another set of sanity checks, and updates options which were awaiting the final battle info.
+     * Throws errors if a check doesn't pass.
+     */
+    public void compileAndValidate(Battleable opponent) throws RouteParserException, ToolInternalException {
+    	int nbOfBattlers = getTotalNbOfEnemyBattlers(opponent);
+    	
+    	// Preparing data that were waiting for total nb of battlers
+		this.updateStages(nbOfBattlers);
+		this.updateOrderAndPostponedExp(opponent);
+		this.updateSxps(nbOfBattlers);
+		this.updateStatus1List(nbOfBattlers);
+		this.updateStatus2_3List(nbOfBattlers);
+		this.updateWeathers(nbOfBattlers);		
+		
+		// Verify options have the correct length
+		// - stat stages
+		{
+	    	for(Side side : Side.values()) {
+	    		for(Stat stat : Stat.stagesStats) {
+	    			int numberOfStages = this.getStages(side, stat).size();
+	    			if(numberOfStages != nbOfBattlers) {
+	    				throw new RouteParserException(String.format("in %s's %s stat stages, received '%s' parameters in total, expected '%s'.", 
+	    						side, stat, numberOfStages, nbOfBattlers));
+	    			}
+	    		}
+	    	}
+		}
+    	
+    	// - shared exp
+		{
+	    	int numberOfSxps = this.getSxps().size();
+			if(numberOfSxps != nbOfBattlers)
+	    		throw new RouteParserException(String.format("in shared exp, received '%s' parameters in total, expected '%s'.", numberOfSxps, nbOfBattlers));	
+		}
+		
+    	// - order
+		{
+	    	ArrayList<ArrayList<Integer>> order = this.getOrder();
+	    	int nbOfOrder = 0;
+	    	for(ArrayList<Integer> batch : order) {
+	    		for(int index : batch) {
+	    			nbOfOrder++;
+	    			if(index > nbOfBattlers)
+	    	    		throw new RouteParserException(String.format("in enemy order, received '%s' as parameter, maximum possible index is '%s'.", index, nbOfBattlers));
+	    		}
+	    	}
+	    	if(nbOfOrder != nbOfBattlers)
+	    		throw new RouteParserException(String.format("in enemy order, received '%s' parameters in total, expected '%s'.", nbOfOrder, nbOfBattlers));
+		}
+
+		// - status 1
+		{
+			for(Side side : Side.values()) {
+				int nbOfStatus1 = this.getStatus1List(side).size();
+				if(nbOfStatus1 != nbOfBattlers)
+    	    		throw new RouteParserException(String.format("in %s primary status, received '%s' parameters in total, expected '%s'.", side, nbOfStatus1, nbOfBattlers));
+			}
+		}
+		
+		// - status 2_3
+		{
+			for(Side side : Side.values()) {
+				int nbOfStatus2_3 = this.getStatuses2_3List(side).size();
+				if(nbOfStatus2_3 != nbOfBattlers)
+    	    		throw new RouteParserException(String.format("in %s seondary status, received '%s' parameters in total, expected '%s'.", side, nbOfStatus2_3, nbOfBattlers));
+			}
+		}
+		
+		// - weather
+		{
+			int nbOfWeather = getWeathers().size();
+			if(nbOfWeather != nbOfBattlers)
+				throw new RouteParserException(String.format("in weather, received '%s' parameters in total, expected '%s'.", nbOfWeather, nbOfBattlers));
+		}
+    }
+    
+    public int getTotalNbOfEnemyBattlers(Battleable opponent) throws ToolInternalException {
+    	int nbOfBattlers;
+    	if(opponent instanceof Pokemon)
+    		nbOfBattlers = 1;
+    	else if (opponent instanceof Trainer) {
+    		Trainer t = (Trainer) opponent;
+    		nbOfBattlers = t.getParty().size();
+    		if(this.getPartner(Side.ENEMY) != null)
+    			nbOfBattlers += this.getPartner(Side.ENEMY).getParty().size();
+    	} else
+    		throw new ToolInternalException(Battle.class.getEnclosingMethod(), opponent.getClass(), "Invalid opponent type.");
+    
+    	return nbOfBattlers;
+    }
+
+    
+    
 
 	public ArrayList<Integer> getSxps() {
 		return sxps;
@@ -167,6 +282,8 @@ public class BattleOptions {
 		return statuses2_3List;
 	}
 	
+	
+	
 	/*
 	public ArrayList<EnumMap<Status, Boolean>> getXstatuses2_3(){
 		return xstatuses2_3;
@@ -224,6 +341,39 @@ public class BattleOptions {
 	public ArrayList<ArrayList<Integer>> getOrder() {
 		return order;
 	}
+	
+	
+	
+	private void updateOrderAndPostponedExp(Battleable opponent) throws ToolInternalException {
+		if(order.isEmpty()) {
+			// Default order : each Pokemon is alone in its batch
+			int totalNbOfEnemyBattlers = getTotalNbOfEnemyBattlers(opponent);
+			for(int i = 1; i <= totalNbOfEnemyBattlers; i++) {
+				ArrayList<Integer> batch = new ArrayList<>();
+				batch.add(i);
+				order.add(batch);
+			}
+		}
+		// else it's a custom order
+		
+		this.updatePostponedExpSet();
+	}
+	
+	/**
+	 * Updates the set of postponed-exp indices (1-indexed) for the NEW order.
+	 * Example : 1/3/2+4 results in the 3rd Pokémon in the new order to have postponed exp, thus 3 in put into the set.
+	 */
+	private void updatePostponedExpSet() {
+		int newIndex = 0;
+		for(ArrayList<Integer> batch : order) {
+			// Adds any non batch-terminating index
+			for(@SuppressWarnings("unused") int i : batch.subList(0, batch.size() - 1)) {
+				newIndex++;
+				postponeExpSet.add(newIndex);
+			}
+			newIndex++;
+		}
+	}
 
 	public ArrayList<Weather> getWeathers() {
 		return weathers;
@@ -258,17 +408,55 @@ public class BattleOptions {
 	}
 	*/
 
+	/*
 	public void setSxps(ArrayList<Integer> sxps) {
 		this.sxps = sxps; // TODO: is it really working without copying ?
+	}
+	*/
+	
+	public void addSxp(int sxp) {
+		sxps.add(sxp);
 	}
 	
 	/**
 	 * Sets a fixed number of participants for the whole fight.
 	 */
-	public void setSxps(int nbOfParticipants) {
-		this.sxps.clear();
-		for(int i = 0; i < MAX_NUMBER_OF_BATTLERS_PER_FIGHT; i++)
-			this.sxps.add(nbOfParticipants);
+	public void setSxp(int nbOfParticipants) {
+		//this.sxps.clear();
+		sxps.add(nbOfParticipants);
+		isSxpConstant = true;
+	}
+	
+	private void setSxpsFromIndex0(int nbOfParticipants) {
+		int sxp = sxps.get(0);
+		for(int i = 1; i < nbOfParticipants; i++)
+			sxps.add(sxp);
+	}
+	
+	public void updateSxps(int nbOfParticipants) {
+		if(!isSxpConstant && !sxps.isEmpty()) // non-constant custom order
+			return;
+		
+    	if(isSxpConstant) { // constant custom order
+			this.setSxpsFromIndex0(nbOfParticipants);
+			return;
+		}
+    	
+    	// Default share exp    	
+		int defaultNbOfParticipants = DEFAULT_NB_OF_EXP_SHARERS;
+			
+			// "Weak" override : split exp if player+player vs. double
+		if(yPartner != null && xPartner == null)
+			defaultNbOfParticipants = 2; // TODO: hardcoded constant
+		
+			// "Strong" override
+		if(isForcedDoubleBattle)
+			defaultNbOfParticipants = 2; // TODO: hardcoded constant
+		if(isForcedSingleBattle)
+			defaultNbOfParticipants = DEFAULT_NB_OF_EXP_SHARERS; // TODO: hardcoded constant
+		
+		sxps.add(defaultNbOfParticipants);
+		this.setSxpsFromIndex0(nbOfParticipants);
 	}
 	
 	/**
@@ -294,32 +482,159 @@ public class BattleOptions {
 			forcedSet.add(stat);
 	}
 	
+	public boolean isStageConstant(Side side, Stat stat) {
+		Boolean isConstant = null;
+		switch(side) {
+		case PLAYER: isConstant = xStageIsConstant.contains(stat); break;
+		case ENEMY:  isConstant = yStageIsConstant.contains(stat); break;
+		}
+		return isConstant;
+	}
+	
+	private void setStageIsConstant(Side side, Stat stat) {
+		EnumSet<Stat> map = null;
+		switch(side) {
+		case PLAYER: map = xStageIsConstant; break;
+		case ENEMY:  map = yStageIsConstant; break;
+		}
+		
+		map.add(stat);
+	}
+	
 	/**
 	 * Sets a fixed stage to a specified side and stat for the whole fight. Stores whether these stages are forced or not for the whole fight.
 	 */
 	public void setStage(Side side, Stat stat, int stage, boolean isForced) throws ToolInternalException {
 		ArrayList<Integer> stages = new ArrayList<>();
-		for(int i = 0; i < MAX_NUMBER_OF_BATTLERS_PER_FIGHT; i++)
-			stages.add(stage);
-		
+		stages.add(stage);		
 		this.setStages(side, stat, stages, isForced);
+		setStageIsConstant(side, stat);
 	}
 	
 	/**
-	 * Adds a status1.
+	 * Update a specific stage from the 0th index once the number of battlers is known.
 	 */
+	private void setStageFromIndex0(Side side, Stat stat, int nbOfBattlers) throws ToolInternalException {
+		ArrayList<Integer> stages = this.getStages(side, stat);
+		int stage = stages.get(0);
+		for(int i = 1; i < nbOfBattlers; i++) // Only add 'nbOfBattles - 1' times
+			stages.add(stage);
+	}
+	
+	/**
+	 * Updates stages once the number of battlers is known.
+	 */
+	public void updateStages(int nbOfBattlers) throws ToolInternalException {
+		for(Side side : Side.values()) {
+			for(Stat stat : Stat.stagesStats) {
+				if(isStageConstant(side, stat))
+					this.setStageFromIndex0(side, stat, nbOfBattlers);
+				else if(this.getStages(side, stat).isEmpty()) {
+					this.getStages(side, stat).add(ContainerType.STAT_STAGES.getDefaultValue()); // fancy way of adding stage 0
+					this.setStageFromIndex0(side, stat, nbOfBattlers);
+				}
+				// else it's custom stages
+			}
+		}
+	}
+	
+	/*
+	/**
+	 * Adds a status1.
+	 
 	public void addStatus1(Side side, Status status1) {
 		ArrayList<Status> status1List = getStatus1List(side);
 		status1List.add(status1);
+	}
+	*/
+	
+	private boolean isStatus1Constant(Side side) {
+		Boolean isStatus1Constant = null;
+		switch(side) {
+		case PLAYER: isStatus1Constant = isXStatus1Constant; break;
+		case ENEMY:  isStatus1Constant = isYStatus1Constant; break;
+		}
+		return isStatus1Constant;
+	}
+	
+	private void setStatus1Constant(Side side) {
+		switch(side) {
+		case PLAYER: isXStatus1Constant = true; break;
+		case ENEMY:  isYStatus1Constant = true; break;
+		}
 	}
 	
 	/**
 	 * Sets a status1 for the whole fight.
 	 */
 	public void setStatus1(Side side, Status status1) {
+		//ArrayList<Status> status1List = getStatus1List(side);
+		//for(int i = 0; i < nbOfBattlers; i++)
+		//	status1List.add(status1);
+
 		ArrayList<Status> status1List = getStatus1List(side);
-		for(int i = 0; i < MAX_NUMBER_OF_BATTLERS_PER_FIGHT; i++)
+		status1List.add(status1);
+		setStatus1Constant(side);
+	}
+	
+	private void populateStatus1ListFromIndex0(Side side, int nbOfBattlers) {
+		ArrayList<Status> status1List = this.getStatus1List(side);
+		Status status1 = status1List.get(0);
+		for(int i = 1; i < nbOfBattlers; i++) {
 			status1List.add(status1);
+		}
+	}
+	
+	public void updateStatus1List(int nbOfBattlers) {
+		for(Side side : Side.values()) {
+			if(isStatus1Constant(side)) {
+				this.populateStatus1ListFromIndex0(side, nbOfBattlers);
+			} else if(getStatus1List(side).isEmpty()) {
+				getStatus1List(side).add(Status.noStatus1());
+				this.populateStatus1ListFromIndex0(side, nbOfBattlers);
+			}
+			// else it's custom status1 list
+		}
+	}
+	
+	public void addStatus1(Side side, Status status1) {
+		getStatus1List(side).add(status1);
+	}
+	
+	
+	private boolean isStatuses2_3Constant(Side side) {
+		Boolean isStatus2_3Constant = null;
+		switch(side) {
+		case PLAYER: isStatus2_3Constant = isXStatuses2_3Constant; break;
+		case ENEMY:  isStatus2_3Constant = isYStatuses2_3Constant; break;
+		}
+		return isStatus2_3Constant;
+	}
+	
+	private void setStatuses2_3Constant(Side side) {
+		switch(side) {
+		case PLAYER: isXStatuses2_3Constant = true; break;
+		case ENEMY:  isYStatuses2_3Constant = true; break;
+		}
+	}
+	
+	private void populateStatuses2_3ListFromIndex0(Side side, int nbOfBattlers) {
+		ArrayList<EnumSet<Status>> statuses2_3List = getStatuses2_3List(side);
+		EnumSet<Status> statuses2_3 = statuses2_3List.get(0);
+		for(int i = 1; i < nbOfBattlers; i++)
+			statuses2_3List.add(statuses2_3);
+	}
+	
+	private void updateStatus2_3List(int nbOfBattlers) {
+		for(Side side : Side.values()) {
+			if(isStatuses2_3Constant(side)) {
+				this.populateStatuses2_3ListFromIndex0(side, nbOfBattlers);
+			} else if (getStatuses2_3List(side).isEmpty()) {
+				getStatuses2_3List(side).add(Status.noStatus2_3());
+				this.populateStatuses2_3ListFromIndex0(side, nbOfBattlers);
+			}
+			// else it's custom statuses2_3 list
+		}
 	}
 	
 	/**
@@ -327,11 +642,10 @@ public class BattleOptions {
 	 */
 	public void setStatuses2_3(Side side, EnumSet<Status> statuses2_3) {
 		ArrayList<EnumSet<Status>> statuses2_3List = getStatuses2_3List(side);
-		statuses2_3List.clear();
-		
-		for(int i = 0; i < MAX_NUMBER_OF_BATTLERS_PER_FIGHT; i++)
-			statuses2_3List.add(statuses2_3);
+		statuses2_3List.add(statuses2_3);
+		setStatuses2_3Constant(side);
 	}
+	
 	
 	/**
 	 * Adds a combination of status2_3.
@@ -340,26 +654,65 @@ public class BattleOptions {
 		ArrayList<EnumSet<Status>> statuses2_3List = getStatuses2_3List(side);
 		statuses2_3List.add(statuses2_3);
 	}
+	
 
+	/*
 	public void setOrder(ArrayList<ArrayList<Integer>> order) {
 		this.order = order; // TODO: is it really working without copying ?
+	}
+	*/
+	
+	public void addOrderBatch(ArrayList<Integer> batch) {
+		order.add(batch);
 	}
 	
 	/**
 	 * Sets a fixed weather for the whole fight.
 	 */
 	public void setWeather(Weather weather) {
-		this.weathers.clear();
-		for(int i = 0; i < MAX_NUMBER_OF_BATTLERS_PER_FIGHT; i++)
-			this.weathers.add(weather);
+		this.weathers.add(weather);
+		isWeatherConstant = true;
 	}
 	
-	/**
-	 * Adds a weather.
-	 */
 	public void addWeather(Weather weather) {
 		this.weathers.add(weather);
 	}
+	
+	/*
+	/**
+	 * Sets weathers.
+	 
+	public void setWeathers(ArrayList<Weather> weathers) {
+		this.weathers = weathers;
+	}
+	*/
+	
+	private void setWeatherFromIndex0(int nbOfBattlers) {
+		ArrayList<Weather> weathers = getWeathers();
+		Weather weather = weathers.get(0);
+		for(int i = 1; i < nbOfBattlers; i++)
+			weathers.add(weather);
+	}
+	
+	public void updateWeathers(int nbOfBattlers) {
+		if(isWeatherConstant)
+			setWeatherFromIndex0(nbOfBattlers);
+		else if(getWeathers().size() == 0) {
+			getWeathers().add(Weather.NONE); // TODO: hardcoded
+			setWeatherFromIndex0(nbOfBattlers);
+		}
+		// else it's custom weather list
+	}
+	
+	
+	/*
+	/**
+	 * Adds a weather.
+	 
+	public void addWeather(Weather weather) {
+		this.weathers.add(weather);
+	}
+	*/
 
 	public void setPrintStatRangesOnLvl() {
 		this.printStatRangesOnLvl = true;
@@ -481,6 +834,7 @@ public class BattleOptions {
 		this.isSingleTrainerForcedToBeFoughtAsDouble = b;
 	}
 
+	/*
 	public boolean isPostponedExp() {
 		return isPostponedExp;
 	}
@@ -488,6 +842,7 @@ public class BattleOptions {
 	public void setPostponedExp(boolean isPostponedExp) {
 		this.isPostponedExp = isPostponedExp;
 	}
+	*/
 
 	public String getScenarioName() {
 		return scenarioName;
@@ -553,27 +908,37 @@ public class BattleOptions {
 		return this.currentOpponentIndex;
 	}
 	
-	public int getNumberOfParticipants() {
+	public int getCurrentNumberOfParticipants() {
 		return this.getSxps().get(this.currentOpponentIndex);
 	}
 	
-	private void setNumberOfParticipants(int nbOfParticipants) {
-		if(currentOpponentIndex < sxps.size())
-			sxps.set(this.currentOpponentIndex, nbOfParticipants);
-		sxps.add(nbOfParticipants);
+	public boolean isCurrentPostponedExp() {
+		return isPostponedExp(currentOpponentIndex + 1);
 	}
+	
+	/*
+	private void setNumberOfParticipants(int nbOfParticipants) {
+		//if(currentOpponentIndex < sxps.size())
+			sxps.set(this.currentOpponentIndex, nbOfParticipants);
+		//sxps.add(nbOfParticipants);
+	}
+	*/
 
 	public int getCurrentOpponentIndex() {
 		return currentOpponentIndex;
 	}
 	
-	public void updateStatModifiersAndOptions(Pokemon player, Pokemon enemy, boolean isPostponedExperience) {
+	/**
+	 * Prepares stat modifiers for the player and the enemy based on the current enemy index.
+	 */
+	public void prepareStatModifiers(Pokemon player, Pokemon enemy) {
     	int currentOpponentIndex = this.incrementCurrentOpponentIndex();
     	
     	/* **************************** */
     	/* Non side-dependent variables */
     	/* **************************** */
     	
+    	/* Done in updateSxps
     	// Experience
     	this.setPostponedExp(isPostponedExperience); // TODO: put postponed exp in StatMod ?
     	
@@ -589,13 +954,22 @@ public class BattleOptions {
         }
     	
     	this.setNumberOfParticipants(nbOfParticipants);
+    	*/
     	
+    	
+    	
+    	
+    	/* Done in updateWeathers
     	// Weather | TODO: Find a way to get rid of duplicate weather
 		Weather weather;
         if(!weathers.isEmpty())
             weather = weathers.get(currentOpponentIndex);
         else
         	weather = Weather.NONE; // TODO: hardcoded default
+        */
+        
+    	// TODO: Find a way to get rid of duplicate weather
+    	Weather weather = weathers.get(currentOpponentIndex);
     	getStatModifier(Side.PLAYER).setWeather(weather);
     	getStatModifier(Side.ENEMY).setWeather(weather);
     	
@@ -651,39 +1025,45 @@ public class BattleOptions {
             if(attacker.getAbility() == Ability.SPEED_BOOST && !isForcedStat(side, Stat.SPE))
     			incrementStatUntilBattleEnds(side, Stat.SPE);
 				
-            	// Intimidate | TODO: Guard Spec, more ?
+            	// Intimidate
             if(defender.getAbility() == Ability.INTIMIDATE 
             		&& attacker.getAbility() != Ability.HYPER_CUTTER && attacker.getAbility() != Ability.CLEAR_BODY && attacker.getAbility() != Ability.WHITE_SMOKE
             		&& !isForcedStat(side, Stat.ATK))
     			decrementStatUntilBattleEnds(side, Stat.ATK);
             
 			// X Items
-			for(Stat stat : Stat.values()) {
-				if(stat == Stat.HP)
-					continue;
-
+			for(Stat stat : Stat.stagesStats) {
+				/*
 				int stage;
-				if(!this.getStages(side, stat).isEmpty())
+				//if(!this.getStages(side, stat).isEmpty())
+				if(this.getStages(otherSide, stat) != null)
 					stage = this.getStages(side, stat).get(currentOpponentIndex);
 				else
 					stage = ContainerType.STAT_STAGES.getDefaultValue();
-
+				*/
+				int stage = this.getStages(side, stat).get(currentOpponentIndex);
 				attackerMod.setStage(stat, stage); //mod.setStage(stat, stage);
 			}
 			
 			// Status
+			/*
 			Status status1;
 			if(!getStatus1List(side).isEmpty())
 				status1 = getStatus1List(side).get(currentOpponentIndex);
 			else
 				status1 = Status.noStatus1();
+			*/
+			Status status1 = getStatus1List(side).get(currentOpponentIndex);
 			attackerMod.setStatus1(status1);
 			
+			/*
 			EnumSet<Status> statuses2_3;
 			if(!getStatuses2_3List(side).isEmpty())
 				statuses2_3 = getStatuses2_3List(side).get(currentOpponentIndex);
 			else
 				statuses2_3 = Status.noStatus2_3();
+			*/
+			EnumSet<Status> statuses2_3 = getStatuses2_3List(side).get(currentOpponentIndex);
 			attackerMod.setStatuses2_3(statuses2_3);
 		} // end side loop
 	}
@@ -710,5 +1090,9 @@ public class BattleOptions {
 	
 	public boolean isIVvariation() {
 		return isIVvariation;
+	}
+
+	public void disablePostponedExperience() {
+		postponeExpSet.remove(currentOpponentIndex + 1);
 	}
 }

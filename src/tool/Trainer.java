@@ -32,7 +32,6 @@ public class Trainer implements Battleable, Iterable<Pokemon> {
 		
         BufferedReader in;
         String trainersResourcePathName = Settings.getResourceRelativePathName(game.getTrainersFilename());
-        System.out.println(String.format("INFO: Trainers loaded from '%s'", trainersResourcePathName));
         in = new BufferedReader(new InputStreamReader(Trainer.class.getResource(
         		trainersResourcePathName).openStream())); // TODO : handle custom files ?
         
@@ -50,6 +49,8 @@ public class Trainer implements Battleable, Iterable<Pokemon> {
         
         else
         	throw new UnsupportedOperationException(String.format("Game '%s' is not supported yet.", game));
+
+        System.out.println(String.format("INFO: Trainers loaded from '%s'", trainersResourcePathName));
     }
 	
 	/**
@@ -630,7 +631,6 @@ public class Trainer implements Battleable, Iterable<Pokemon> {
 		JSONParser jsonParser = new JSONParser();
         BufferedReader in;
         String charcodesResourcePathName = Settings.getResourceRelativePathName(game.getCharCodesFilename());
-        System.out.println(String.format("INFO: Charcodes loaded from %s", charcodesResourcePathName));
         in = new BufferedReader(new InputStreamReader(Trainer.class.getResource(
         		charcodesResourcePathName).openStream())); // TODO : handle custom files ?
         JSONObject charCodesDic = (JSONObject) jsonParser.parse(in);
@@ -642,6 +642,8 @@ public class Trainer implements Battleable, Iterable<Pokemon> {
             
             charValues.put(charr, value);
         }
+
+        System.out.println(String.format("INFO: Charcodes loaded from '%s'", charcodesResourcePathName));
 	}
 	
 	public static int getCharValue(char c) throws ToolInternalException {
@@ -658,6 +660,7 @@ public class Trainer implements Battleable, Iterable<Pokemon> {
 		}
 	}
 	
+	/*
 	public static void main(String[] args) {
 		try {
 			Game game = Game.EMERALD;
@@ -684,6 +687,7 @@ public class Trainer implements Battleable, Iterable<Pokemon> {
 			e.printStackTrace();
 		}
 	}
+	*/
 	
 	private String trainerAlias;
 	private int partyFlags;
@@ -849,5 +853,72 @@ public class Trainer implements Battleable, Iterable<Pokemon> {
 		return getTrainerClass().isBoostingHappiness();
 	}
 	*/
+    
+	@Override
+	public int getNbOfBattlers() {
+		return party.size();
+	}
+	
+	
+	/**
+	 * Reorders this trainer party with the ones of the partner, and the order provided which is compatible for both.
+	 * Returns the list of Pokes in the new order and split into sublists corresponding to batches.
+	 */
+	public ArrayList<ArrayList<Pokemon>> reorderPokesWithPartner(Trainer yPartner, ArrayList<ArrayList<Integer>> order) {
+		ArrayList<Pokemon> finalTrainerPokes = null; // to set in trainer
+        ArrayList<ArrayList<Pokemon>> finalTrainerPokesByBatch = new ArrayList<>();
+        
+        ArrayList<Pokemon> pokes = new ArrayList<>();
+        for(Pokemon poke : this)
+        	pokes.add(poke);
+        
+        if(yPartner != null) {
+            for(Pokemon poke : yPartner)
+            	pokes.add(poke);
+        }
+        
+        if(order.isEmpty()) {
+        	finalTrainerPokes = pokes;
+        	order = new ArrayList<>();
+        	for(Pokemon poke : pokes) {
+        		ArrayList<Pokemon> singleton = new ArrayList<>();
+        		singleton.add(poke);
+        		finalTrainerPokesByBatch.add(singleton);
+        	}
+        } else {
+        	finalTrainerPokes = new ArrayList<>();
+            Set<Integer> expectedOrderIndices = new HashSet<Integer>();
+            for(int i = 1; i <= pokes.size(); i++)
+            	expectedOrderIndices.add(i);
+            
+            for(ArrayList<Integer> batch : order) {
+            	ArrayList<Pokemon> batchPokes = new ArrayList<>();
+            	for(int index : batch) {
+            		Pokemon poke = null;
+            		try {
+            			poke = pokes.get(index-1);
+            		} catch (Exception e) {
+            			throw new IndexOutOfBoundsException(String.format("In trainer '%s', index '%d' is too high in order option.",
+            					this.getTrainerAlias(), index));
+        			}
+            			
+            		finalTrainerPokes.add(poke);
+            		batchPokes.add(poke);
+            		
+            		if(!expectedOrderIndices.remove(index))
+            			throw new IndexOutOfBoundsException(String.format("In trainer '%s', duplicate index '%d' in order option.",
+            					this.getTrainerAlias(), index));
+            	}
+            	finalTrainerPokesByBatch.add(batchPokes);
+            }
+            
+            if(!expectedOrderIndices.isEmpty()) {
+    			throw new IllegalArgumentException(String.format("In trainer '%s', missing indices %s in order option.",
+    					this.getTrainerAlias(), expectedOrderIndices.toString()));
+            }
+        }
+        this.setParty(finalTrainerPokes);
+        return finalTrainerPokesByBatch;
+	}
     
 }

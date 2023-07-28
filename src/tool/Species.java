@@ -32,7 +32,6 @@ public class Species {
 
         BufferedReader in;
         String speciesResourcePathName = Settings.getResourceRelativePathName(game.getSpeciesFilename());
-        System.out.println(String.format("INFO: Species loaded from '%s'", speciesResourcePathName));
         in = new BufferedReader(new InputStreamReader(Species.class.getResource(
         		speciesResourcePathName).openStream())); // TODO : handle custom files ?
         
@@ -42,6 +41,8 @@ public class Species {
     		initSpeciesGen4(in);
     	else
     		throw new ToolInternalException(Species.class.getEnclosingMethod(), game, "");
+
+        System.out.println(String.format("INFO: Species loaded from '%s'", speciesResourcePathName));
     }
 	
 	private static void initSpeciesGen3(BufferedReader in) throws IOException, ParseException {
@@ -333,8 +334,7 @@ public class Species {
     }
     
     public boolean isUpdatingStatsAfterEveryBattle() {
-    	return this == Species.getSpeciesByName("DEOXYS") || this == Species.getSpeciesByName("DEOXYSATK") || 
-    			this == Species.getSpeciesByName("DEOXYSDEF") || this == Species.getSpeciesByName("DEOXYSSPE");
+    	return this.matchesAny("DEOXYS", "DEOXYSATK", "DEOXYSDEF", "DEOXYSSPE");
     }
     
     // TODO : only testing purposes
@@ -348,6 +348,23 @@ public class Species {
     	} catch (Exception e) {
     		e.printStackTrace();
     	}
+    }
+
+    @SuppressWarnings("unlikely-arg-type")
+    public boolean matchesAny(String... names) {
+    	if(names == null)
+    		return false;
+    	
+    	/**
+         * Returns true if the move matches any of the species in the list. Ignores non alphanumerical characters.
+         */
+    	IgnoreCaseString ics = new IgnoreCaseString(displayName);
+    	for(String name : names) {
+    		if(ics.equals(name))
+    			return true;
+    	}
+    	
+    	return false;
     }
 
 

@@ -34,7 +34,6 @@ public class Learnset {
 		
         BufferedReader in;
         String learnsetsResourcePathName = Settings.getResourceRelativePathName(game.getLearnsetsFilename());
-        System.out.println(String.format("INFO: Learnsets loaded from '%s'", learnsetsResourcePathName));
         in = new BufferedReader(new InputStreamReader(Learnset.class.getResource(
         		learnsetsResourcePathName).openStream())); // TODO : handle custom files ?
         
@@ -44,6 +43,8 @@ public class Learnset {
         	initLearnsetsGen4(in);
         else
         	throw new ToolInternalException(Learnset.class.getEnclosingMethod(), game, "");
+
+        System.out.println(String.format("INFO: Learnsets loaded from '%s'", learnsetsResourcePathName));
     }
 	
 	private static void initLearnsetsGen3(BufferedReader in) throws IOException, ParseException {

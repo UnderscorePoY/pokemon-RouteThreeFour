@@ -2489,22 +2489,34 @@ public class DamageCalculator {
         sb.append(String.format("%s vs %s", p1.levelNameNatureAbilityItemStr(), p2.levelNameNatureAbilityItemStr()));
 
         // Don't show exp for tower pokes (minor thing since exp isn't added anyway)
-        if(!options.isBattleTower()) {
-        	boolean isItemBoosted = p1.getHeldItem() != null && p1.getHeldItem().isBoostingExperience();
-        	boolean isTradeBoosted = p1.hasBoostedExp();
-        	String sep = isItemBoosted && isTradeBoosted ? "/" : "";
-        	String startBracket = isItemBoosted || isTradeBoosted ? " (" : "";
-        	String endBracket = isItemBoosted || isTradeBoosted ? ")" : "";
-        	String itemStr = String.format("%s%s%s%s%s", startBracket, isItemBoosted ? p1.getHeldItem().getDisplayName() : "",sep, isTradeBoosted ? "TRADE" : "", endBracket);
-        	//int expGiven = options.getNumberOfParticipants() == 0 ? 0 : p2.expGivenWithoutEXPBoost(options.getNumberOfParticipants());
-        	//expGiven = (expGiven * 3) / (isTradeBoosted ? 2 : 3); // TODO : duplicate code from the Pokemon.gainExp method
-        	//expGiven = (expGiven * 3) / (isItemBoosted ? 2 : 3);
-        	int expGiven = options.getNumberOfParticipants() == 0 ? 0 : p1.earnedExpFrom(p2, options.getNumberOfParticipants());
-            sb.append(String.format("          >>> EXP GIVEN: %d%s%s", 
-            		expGiven, 
-            		options.getNumberOfParticipants() > 1 ? String.format(" (split in %d)", options.getNumberOfParticipants()) : "",
-            		expGiven == 0 ? "" : options.isPostponedExp() ? " (POSTPONED)" : itemStr));
-        }
+        if(options.isBattleTower())
+        	return;
+        
+    	boolean isItemBoosted = p1.getHeldItem() != null && p1.getHeldItem().isBoostingExperience();
+    	boolean isTradeBoosted = p1.hasBoostedExp();
+    	String sep = isItemBoosted && isTradeBoosted ? "+" : "";
+    	String startBracket = isItemBoosted || isTradeBoosted ? " (" : "";
+    	String endBracket = isItemBoosted || isTradeBoosted ? ")" : "";
+    	String itemStr = String.format("%s%s%s%s%s", startBracket, isItemBoosted ? p1.getHeldItem().getDisplayName() : "",sep, isTradeBoosted ? "TRADE" : "", endBracket);
+    	//int expGiven = options.getNumberOfParticipants() == 0 ? 0 : p2.expGivenWithoutEXPBoost(options.getNumberOfParticipants());
+    	//expGiven = (expGiven * 3) / (isTradeBoosted ? 2 : 3); // TODO : duplicate code from the Pokemon.gainExp method
+    	//expGiven = (expGiven * 3) / (isItemBoosted ? 2 : 3);
+    	//int expGiven = options.getNumberOfParticipants() == 0 ? 0 : p1.earnedExpFrom(p2, options.getNumberOfParticipants());
+    	/*
+        sb.append(String.format("          >>> EXP GIVEN: %d%s%s", 
+        		expGiven, 
+        		options.getNumberOfParticipants() > 1 ? String.format(" (split in %d)", options.getNumberOfParticipants()) : "",
+        		expGiven == 0 ? "" : options.isPostponedExp() ? " (POSTPONED)" : itemStr));
+		*/
+    	int expGiven = p1.earnedExpFrom(p2, options.getCurrentNumberOfParticipants());
+    	//if(options.isCurrentPostponedExp())
+    	//	expGiven = 0;
+    	
+        sb.append(String.format("          >>> EXP GIVEN: %d%s%s", 
+        		expGiven, 
+        		options.getCurrentNumberOfParticipants() > 1 ? String.format(" (was split in %d)", options.getCurrentNumberOfParticipants()) : "",
+        		expGiven == 0 ? "" : options.isCurrentPostponedExp() ? " (POSTPONED)" : itemStr));
+
     }
     
     public static void appendPokemonSummary(StringBuilder sb, Pokemon p, StatModifier mod) {
@@ -2827,6 +2839,8 @@ public class DamageCalculator {
         appendMainDamagesSummary(sb, p2, p1, mod2, mod1, options.isBattleTower(), options.isDoubleBattleSplittingDamage(), options.getVerbose());
         sb.append(endl);
 
+        // Speed information
+        appendSpeedInfo(sb, p1, p2, mod1, mod2);
         
         return sb.toString();
     }
@@ -3447,10 +3461,130 @@ public class DamageCalculator {
     		sb.append(Constants.endl);
     		*/
     	}
-    	
-    	
-    	
     }
+    
+    /**
+     * Prints speed information : current speed comparison with the opponent, and with full IV+nature variation.
+     */
+    public static void appendSpeedInfo(StringBuilder sb, Pokemon player, Pokemon opponent, StatModifier playerMod, StatModifier opponentMod) {
+        int minIV = ContainerType.IV.getMinPerStat();
+		int maxIV = ContainerType.IV.getMaxPerStat();
+		String endl = Constants.endl;
+		
+    	Pokemon pSpeedCopy = new Pokemon(player);
+    	int currentSpeed = playerMod.getFinalSpeed(player);
+    	int oppSpeed = opponentMod.getFinalSpeed(opponent);
+    	
+    	sb.append(String.format("SPEED INFO (vs. %s %s SPE)%s", opponent.getDisplayName(), oppSpeed, endl));
+    	
+    		// Check if player is always slower or always faster, whatever nature it has
+    	pSpeedCopy.getIVs().put(Stat.SPE, ContainerType.IV.getMinPerStat()); // min iv
+		pSpeedCopy.setNature(Nature.BRAVE); // minus spe
+    	int meMinSpeed = playerMod.getFinalSpeed(pSpeedCopy);
+    	
+    	pSpeedCopy.getIVs().put(Stat.SPE, ContainerType.IV.getMaxPerStat()); //max iv
+		pSpeedCopy.setNature(Nature.TIMID); // bonus spe
+    	int meMaxSpeed = playerMod.getFinalSpeed(pSpeedCopy);
+    	
+    	if(meMinSpeed > oppSpeed) {
+    		sb.append(">> Player is always faster than enemy.");
+    		sb.append(endl);
+    		sb.append(endl);
+    	} else if(meMaxSpeed < oppSpeed) {
+    		sb.append(">> Player is always slower than enemy.");
+    		sb.append(endl);
+    		sb.append(endl);
+    	} else {  // There exist speed thresholds
+    		// Current speed comparison
+    		if(currentSpeed > oppSpeed) {
+    			sb.append("~~ Player is currently faster than enemy.");
+        		sb.append(endl);
+    		} else if (currentSpeed < oppSpeed) {
+    			sb.append("~~ Player is currently slower than enemy.");
+        		sb.append(endl);
+    		} else {
+    			sb.append("~~ Player is currently speedtied with enemy.");
+        		sb.append(endl);
+    		}
+    		
+    		// Speed IV and nature variation
+    		String[] names = new String[] {"-", "", "+"}; // TODO : hardcoded
+        	Nature[] natures = new Nature[] {Nature.BRAVE, Nature.HARDY, Nature.TIMID}; // Spe : minus, neutral, bonus
+        	for(int k = 0; k < natures.length; k++) { 
+        		Nature nature = natures[k];
+        		String statStr = String.format(">> %s%1s : ", Stat.SPE, names[k]);
+        		
+        		pSpeedCopy.getIVs().put(Stat.SPE, ContainerType.IV.getMinPerStat());
+        		pSpeedCopy.setNature(nature);
+            	meMinSpeed = playerMod.getFinalSpeed(pSpeedCopy);
+            	
+        		pSpeedCopy.getIVs().put(Stat.SPE, ContainerType.IV.getMaxPerStat());
+        		pSpeedCopy.setNature(nature);
+            	meMaxSpeed = playerMod.getFinalSpeed(pSpeedCopy);
+            	
+            	sb.append(statStr);
+        		
+            		// Checking always slower/faster for this nature
+            	if(meMaxSpeed < oppSpeed) {
+            		sb.append("Player always slower than enemy.");
+            		sb.append(endl);
+                    continue;
+            	} else if (meMinSpeed > oppSpeed) {
+            		sb.append("Player always faster than enemy.");
+            		sb.append(endl);
+            		sb.append(endl);
+            		break;
+            	}
+            	
+            		// If there exist speed thresholds for this nature
+            	else if (meMinSpeed <= oppSpeed && meMaxSpeed >= oppSpeed) {    	                    		
+                    int minIvToSpeedtie = Integer.MAX_VALUE, minIvToOutspeed = Integer.MAX_VALUE;
+                    for (int sIV = minIV; sIV <= maxIV; sIV++) {
+                    	pSpeedCopy.getIVs().put(Stat.SPE, sIV);
+                		pSpeedCopy.setNature(nature);
+                        int mySpd = playerMod.getFinalSpeed(pSpeedCopy);
+                        if (mySpd == oppSpeed && sIV < minIvToSpeedtie) {
+                            minIvToSpeedtie = sIV;
+                        }
+                        if (mySpd > oppSpeed && sIV < minIvToOutspeed) {
+                            minIvToOutspeed = sIV;
+                            break;
+                        }
+                    }
+                    
+                    int maxIvToSpeedtie = minIvToOutspeed - 1;
+                    //Main.append("(Speed IV required");
+                    if (minIvToSpeedtie != Integer.MAX_VALUE && minIvToOutspeed != Integer.MAX_VALUE && (minIvToSpeedtie != minIvToOutspeed)) {
+                    	String speedtieStr = minIvToSpeedtie == maxIvToSpeedtie || maxIvToSpeedtie == 0 ?
+                    			String.format("%d", minIvToSpeedtie) : String.format("%d-%d", minIvToSpeedtie, maxIvToSpeedtie);
+                    	String outspeedStr = minIvToOutspeed == 31 ? String.format("%d", minIvToOutspeed) : String.format("%d-%d", minIvToOutspeed, 31);
+                    	
+                    	sb.append(String.format("%s to outspeed, %s to speedtie.", outspeedStr, speedtieStr));
+                        //Main.append(" to outspeed: " + outspeedIV + ", to speedtie: " + tieIV);
+                    } else if (minIvToOutspeed != Integer.MAX_VALUE) {
+                    	minIvToOutspeed = (int)Math.max(0, minIvToOutspeed);
+                    	String outspeedStr = minIvToOutspeed == 31 ? String.format("%d", minIvToOutspeed) : String.format("%d-%d", (int)minIvToOutspeed, 31);
+                    	
+                    	sb.append(String.format("%s to outspeed.", outspeedStr));
+                    	//Main.append(" to outspeed: " + outspeedIV);
+                    } else {
+                    	maxIvToSpeedtie = (int)Math.min(31, maxIvToSpeedtie);
+                    	String speedtieStr = minIvToSpeedtie == maxIvToSpeedtie || maxIvToSpeedtie == 0 ?
+                    			String.format("%d", minIvToSpeedtie) : String.format("%d-%d", minIvToSpeedtie, maxIvToSpeedtie);
+                    	
+                    	sb.append(String.format("%s to speedtie.", speedtieStr));
+                        //Main.append(" to speedtie: " + tieIV);
+                    }
+                    //Main.appendln(" with the same nature)");
+                    sb.append(endl);
+
+            	} // end speed thresholds
+            } // end for 
+            sb.append(endl);
+    	}
+    }
+    
+    
     
     /**
      * (Return the highest damage for side-effect purposes.)

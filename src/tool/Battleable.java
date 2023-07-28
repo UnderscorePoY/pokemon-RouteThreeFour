@@ -3,6 +3,13 @@ package tool;
 import tool.exception.ToolInternalException;
 
 public interface Battleable {
-    //makes pokemon p get exp from this object
+    /**
+     * Makes pokemon p get experience from this object.
+     */
     void battle(Pokemon p, BattleOptions options) throws ToolInternalException;
+    
+    /**
+     * Returns the number of battlers.
+     */
+    int getNbOfBattlers();
 }

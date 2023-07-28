@@ -162,10 +162,10 @@ evolve SWAMPERT
 
 GRUNT_MT_PYRE_2 -v 1
 GRUNT_MT_PYRE_1 -v 1
-GRUNT_MT_PYRE_3 -ypartner GRUNT_MT_PYRE_4 -order 1/2/3+4 -v 1
+GRUNT_MT_PYRE_3 -ypartner GRUNT_MT_PYRE_4 -order 1/3/2+4 -v 1
 
 ## FORTREE CITY GYM 
-FLINT -ypartner EDWARDO -v 1
+FLINT -ypartner EDWARDO -order 3/4/1/2 -singleDmg -v 1
 DARIUS -sxp 0 -v 1 // KOed by Tropius
 rarecandy
 WINONA_1 -xatksUse 1/0/3/0/0 -v 1

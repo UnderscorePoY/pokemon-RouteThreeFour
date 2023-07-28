@@ -865,7 +865,7 @@ public class RouteParser {
 			{
         		VerboseLevel verboseLevel;
 				try {
-					if (parameterToken.matches("[0-9]+")) { // Parsing level as number | TODO : hardcoded
+					if (parameterToken.matches("[0-9]+")) { // Parsing verbose level as number | TODO : hardcoded
 						Integer verboseLevelInt = Integer.parseInt(parameterToken);
 						verboseLevel = VerboseLevel.values()[verboseLevelInt];
 					} else { // Parsing level as string
@@ -1044,6 +1044,8 @@ public class RouteParser {
             	
             	options.setStages(side, stat, increments, isForced);
             	
+            	// Can't check now if the number of indices is correct, because additional partners could come later
+            	
             	continue toNextFlag;
 			}
         		
@@ -1103,6 +1105,8 @@ public class RouteParser {
             	
             	options.setStages(side, stat, stages, isForced);
             	
+            	// Can't check now if the number of indices is correct, because additional partners could come later
+            	
             	continue toNextFlag;
 			}
     			
@@ -1119,7 +1123,7 @@ public class RouteParser {
             						BattleOptions.MIN_NUMBER_OF_EXP_SHARERS_PER_FIGHT, BattleOptions.MAX_NUMBER_OF_EXP_SHARERS_PER_FIGHT));
             	}
 
-        		options.setSxps(participantNb);
+        		options.setSxp(participantNb);
             		
             	continue toNextFlag;
     			
@@ -1128,7 +1132,7 @@ public class RouteParser {
         	case SHARE_EXPS:
 			{
 				String[] participantNbStrArr = parameterToken.split(BattleFlag.parameterSeparatorRegex);
-                ArrayList<Integer> list = new ArrayList<>();
+                //ArrayList<Integer> list = new ArrayList<>();
                 String participantNbStrBackup = null;
                 try {
 	                for(String  participantNbStr : participantNbStrArr) {
@@ -1137,7 +1141,7 @@ public class RouteParser {
 	            		if(participantNb < BattleOptions.MIN_NUMBER_OF_EXP_SHARERS_PER_FIGHT || participantNb > BattleOptions.MAX_NUMBER_OF_EXP_SHARERS_PER_FIGHT)
 	            			throw new Exception();
 	            		
-	                    list.add(participantNb);
+	                    options.addSxp(participantNb);
 	                }
                 } catch(Exception e) {
                 	throw new BattleFlagParamException(flagToken, participantNbStrBackup, 
@@ -1146,8 +1150,8 @@ public class RouteParser {
                     				BattleFlag.parameterSeparator, BattleOptions.MIN_NUMBER_OF_EXP_SHARERS_PER_FIGHT, BattleOptions.MAX_NUMBER_OF_EXP_SHARERS_PER_FIGHT,
                     				Constants.endl));
                 }
-                
-                options.setSxps(list);
+            	
+            	// Can't check now if the number of indices is correct, because additional partners could come later
                 
             	continue toNextFlag;
             }
@@ -1157,18 +1161,18 @@ public class RouteParser {
 				HashSet<Integer> alreadyEncounteredSlots = new HashSet<Integer>(); // to prevent duplicates by accidents
             	
                 String[] batchStrs = parameterToken.split(BattleFlag.parameterSeparatorRegex);
-            	ArrayList<ArrayList<Integer>> listOfBatches = new ArrayList<>();
+            	//ArrayList<ArrayList<Integer>> listOfBatches = new ArrayList<>();
             	String batchStrBackup = null;
             	String indexStrBackup = null;
             	try {
 	                for(String batchStr : batchStrs) {
 	                	batchStrBackup = batchStr;
-	                	ArrayList<Integer> batch = new ArrayList<>();
 	                	String[] indexStrArr = batchStr.split(BattleFlag.parameterUnifierRegex);
 	                	if(indexStrArr.length < BattleOptions.MIN_BATCH_SIZE || indexStrArr.length > BattleOptions.MAX_BATCH_SIZE) {
 	                		throw new IndexOutOfBoundsException();
 	                	}
-	                		
+
+	                	ArrayList<Integer> batch = new ArrayList<>();
 	                	for(String numStr : indexStrArr) {
 	                		indexStrBackup = numStr;
 	                		int index = Integer.parseInt(numStr);
@@ -1179,7 +1183,7 @@ public class RouteParser {
 	                		if(!alreadyEncounteredSlots.add(index))
 	                			throw new ArrayStoreException();
 	                	}
-	                	listOfBatches.add(batch);
+	                	options.addOrderBatch(batch);
 	                }
             	} catch(ArrayStoreException e) {
             		throw new BattleFlagParamException(flagToken, indexStrBackup, "Duplicate index.");
@@ -1197,7 +1201,7 @@ public class RouteParser {
             				1, BattleFlag.parameterUnifier, 3, BattleFlag.parameterSeparator, 2, BattleFlag.parameterUnifier, 5, BattleFlag.parameterSeparator, 4)); // TODO : maybe factor this out.
             	}
             	
-                options.setOrder(listOfBatches);
+            	// Can't check now if the number of indices is correct, because additional partners could come later
                 
                 continue toNextFlag;
 			}
@@ -1294,7 +1298,10 @@ public class RouteParser {
         						+ "Each belonging to the following list :%s%s",
 	            				BattleFlag.parameterSeparator, Constants.endl, 
 	            				Constants.endl, Status.getAllStatus1AsString()));
-            		}
+        		}
+            	
+            	// Can't check now if the number of indices is correct, because additional partners could come later
+	            
 	            continue toNextFlag;
             }
            
@@ -1303,8 +1310,8 @@ public class RouteParser {
 			{
             	Side side = null;
             	switch(currentFlag) {
-            	case X_STATUS2: side = Side.PLAYER; break;
-            	case Y_STATUS2: side = Side.ENEMY;  break;
+            	case X_STATUSES2: side = Side.PLAYER; break;
+            	case Y_STATUSES2: side = Side.ENEMY;  break;
             	default:
             		throw new RouteParserInternalException(flagToken, flagTokensQ);
             	}
@@ -1337,6 +1344,8 @@ public class RouteParser {
     	            				BattleFlag.parameterUnifier, Constants.endl,
     	            				Constants.endl, Status.getAllStatus23AsString()));
             	}
+            	
+            	// Can't check now if the number of indices is correct, because additional partners could come later
             	
             	continue toNextFlag;
 			}
@@ -1392,7 +1401,6 @@ public class RouteParser {
             	String[] weatherStrArr = parameterToken.split(BattleFlag.parameterSeparatorRegex);
             	String weatherStrBackup = null;
             	try {
-            		options.getWeathers().clear();
 	            	for (String weatherStr : weatherStrArr) {
 	            		weatherStrBackup = weatherStr;
 	            		Weather weather = Weather.getWeatherFromString(weatherStr);
@@ -1406,7 +1414,9 @@ public class RouteParser {
 									BattleFlag.parameterSeparator, Constants.endl,
 									Constants.endl, Weather.getAllWeathersString()));
             	}
-            	
+            	            	
+            	// Can't check now if the number of indices is correct, because additional partners could come later
+            	            	
 	        	continue toNextFlag;
 			}
 
@@ -1435,6 +1445,7 @@ public class RouteParser {
 			} // end switch Flag
         } // end flagTokens
 
+        // Data goes through another round of validation in the Battle creation too
         return new Battle(b, options);
     }
 }

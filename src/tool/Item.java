@@ -31,7 +31,6 @@ public class Item {
         BufferedReader in;
         
         String itemsResourcePathName = Settings.getResourceRelativePathName(game.getItemsFilename());
-    	System.out.println(String.format("INFO: Items loaded from '%s'", itemsResourcePathName));
         in = new BufferedReader(new InputStreamReader(Trainer.class.getResource(
         		itemsResourcePathName).openStream())); // TODO : handle custom files ?
         JSONArray itemsArray = (JSONArray) jsonParser.parse(in);
@@ -73,6 +72,8 @@ public class Item {
         	
         	itemsByName.put(new IgnoreCaseString(displayName), item);
         }
+        
+    	System.out.println(String.format("INFO: Items loaded from '%s'", itemsResourcePathName));
     }
 	
 	private static void printItems() {

@@ -6,13 +6,15 @@ public enum ExpCurve {
         if (curve == NONE || currLevel >= Pokemon.MAX_LEVEL)
             return 0;
         
-        int n = currLevel + 1; //next level
-        int nextExp = lowestExpForLevel(curve, n);
+        int nextExp = lowestExpForLevel(curve, currLevel + 1);
         
         return nextExp - totalExp;
     }
     
     public static int lowestExpForLevel(ExpCurve curve, int level) {
+    	if(level > Pokemon.MAX_LEVEL)
+    		level = Pokemon.MAX_LEVEL;
+    	
         int n = level;
         int exp = 0;
         switch(curve) {
@@ -58,7 +60,9 @@ public enum ExpCurve {
         return exp;
     }
     
-    //
+    /**
+     * Returns the experience needed to reach next level for the given experience curve.
+     */
     public static int expForLevel(ExpCurve curve, int level) {
         return lowestExpForLevel(curve, level + 1) - lowestExpForLevel(curve, level);
     }

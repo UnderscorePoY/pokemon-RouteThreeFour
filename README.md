@@ -10,7 +10,11 @@ It is derived from a custom RouteThree, itself derived from Dabomstew & entrpntr
 **`[YYYY/MM/DD]` - version**  
 ► Compatibility-breaking update.  
 ○ Usual update.  
-**!!** Bug fixes
+**!!** Bug fixes.  
+
+**`[2023/07/28]` - v0.4.2**  
+**!!** Fixed an issue involving `-doubleBattle` and `-singleBattle` options and shared experience.  
+○ Improved debugging messages.  
 
 **`[2023/07/27]` - v0.4.1**  
 **!!** Abilities are now properly updated when evolving.  
@@ -22,7 +26,7 @@ It is derived from a custom RouteThree, itself derived from Dabomstew & entrpntr
 **!!** [*Gen 3*] Fixed an issue involving moves relying on Special Attack.  
 **!!** [*Gen 3*] Fixed an issue involving 0 damage cases.  
 **!!** [*Gen 3*] Pursuit + switch out is properly calculated.  
-**!!** [*Gen 3*] Shared exp is now accurate.  
+**!!** [*Gen 3*] Shared exp is now accurate for natural double battles.  
 **!!** [*HeartGold/SoulSilver*] Routes are now parsed by the tool without randomly crashing.  
 **!!** [*HeartGold/SoulSilver*] Trainer natures are now correct.  
 ○ Added Rough Skin damage.  
