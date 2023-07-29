@@ -171,7 +171,7 @@ A configuration file (generally with the `.ini` extension) gathers the primary i
 ##### Section : `[util]`
    Tag | Expected value | Usage
   --------------- | -------------- | --------------
-   `"defaultOutputDetails"` | An integer between `0` and `3`.| The default detail level for the output. <br/>
+   `"defaultOutputDetails"` | An integer between `0` and `3`. | The default detail level for the output. <br/>
   `0` means close to nothing, `3` means everything. <br/>
   *(Defaults to `0` if missing.)*
   `"defaultShowStatsOnLevelUp"` | `true` or `false`. | Whether all level ups should display stats or not. <br/>
