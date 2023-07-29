@@ -171,14 +171,10 @@ A configuration file (generally with the `.ini` extension) gathers the primary i
 ##### Section : `[util]`
    Tag | Expected value | Usage
   --------------- | -------------- | --------------
-   `"defaultOutputDetails"` | An integer between `0` and `3`. | The default detail level for the output. <br/>
-  `0` means close to nothing, `3` means everything. <br/>  *(Defaults to `0` if missing.)*
-  `"defaultShowStatsOnLevelUp"` | `true` or `false`. | Whether all level ups should display stats or not. <br/>
-  *(Defaults to `false` if missing.)*
-  `"defaultShowStatRangesOnLevelUp"` | `true` or `false`. | Whether all level ups should display stat ranges or not. <br/>
-  *(Defaults to `false` if missing.)*
-  `"defaultIvVariation"` | `true` or `false`. | Whether all damage calculation should be performed with all nature and IV values possible. <br/>
-  *(Defaults to `false` if missing.)*
+   `"defaultOutputDetails"` | An integer between `0` and `3`. | The default detail level for the output. <br/>  `0` means close to nothing, `3` means everything. <br/>  *(Defaults to `0` if missing.)*
+  `"defaultShowStatsOnLevelUp"` | `true` or `false`. | Whether all level ups should display stats or not. <br/>  *(Defaults to `false` if missing.)*
+  `"defaultShowStatRangesOnLevelUp"` | `true` or `false`. | Whether all level ups should display stat ranges or not. <br/>  *(Defaults to `false` if missing.)*
+  `"defaultIvVariation"` | `true` or `false`. | Whether all damage calculation should be performed with all nature and IV values possible. <br/>  *(Defaults to `false` if missing.)*
   `"overallChanceKO"`   | `true` or `false`. | Whether the tool displays overall chance of KOing the opponent or not. <br/>**(Defaults to `false` if missing.)**
   `"showGuarantees"`   | `true` or `false`. | Whether the information that n-shots are guaranteed is displayed or not. <br/>**(Defaults to `false` if missing.)**
   
