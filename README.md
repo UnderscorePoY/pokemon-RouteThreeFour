@@ -166,7 +166,7 @@ A configuration file (generally with the `.ini` extension) gathers the primary i
    Tag | Expected value | Usage
   --------------- | -------------- | --------------
   `"routeFile"`   | A filename. | The name of the route file the tool will read from.
-  `"outputFile"`   | A filename. | The name of the output file the tool will write to. <br/> **(Defaults to `outputs/out_<nameOfRouteFile>` if missing.)**
+  `"outputFile"`   | A filename. | The name of the output file the tool will write to. <br/> *(Defaults to `outputs/out_<nameOfRouteFile>` if missing.)*
 
 ##### Section : `[util]`
    Tag | Expected value | Usage
