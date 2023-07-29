@@ -19,7 +19,7 @@ It is derived from a custom RouteThree, itself derived from Dabomstew & entrpntr
 **!!** Fixed wrong behavior when earning EVs after reaching the 510 EV limit.  
 ○ Improved debugging messages.  
 ○ Added increasing/decreasing natures in `-IVvariation` display and speed thresholds display.  
-○ In config files, in section `poke` : added support for starting EVs.
+○ In config files, in section `poke` : added support for starting EVs.  
 ○ In config files, in section `util` : added options `defaultOutputDetails`,  `defaultShowStatsOnLevelUp`, `defaultShowStatRangesOnLevelUp` and `defaultIvVariation`.  
 ○ [*Emerald*] Added `STEVEN_PARTNER` as a valid trainer.  
 ○ [*Emerald*] Updated Any% Glitchless route files (Mudkip, Castform, Rayquaza).  
