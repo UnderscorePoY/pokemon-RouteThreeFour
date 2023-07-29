@@ -16,11 +16,11 @@ import java.util.Queue;
 import org.ini4j.jdk14.edu.emory.mathcs.backport.java.util.Arrays;
 
 import tool.StatsContainer.ContainerType;
-import tool.exception.BattleFlagNoParamException;
-import tool.exception.BattleFlagParamException;
-import tool.exception.RouteParserException;
-import tool.exception.RouteParserInternalException;
 import tool.exception.ToolInternalException;
+import tool.exception.route.BattleFlagNoParamException;
+import tool.exception.route.BattleFlagParamException;
+import tool.exception.route.RouteParserException;
+import tool.exception.route.RouteParserInternalException;
 
 public class RouteParser {
     public static int lineNum = 0;
@@ -780,9 +780,14 @@ public class RouteParser {
     	for(String flagToken : flagTokens)
     		flagTokensQ.add(flagToken);
     	
-        BattleOptions options = new BattleOptions();
+        BattleOptions options = new BattleOptions(b instanceof Trainer && ((Trainer) b).isDoubleBattle());
         FlagMap alreadyEncounteredFlags = new FlagMap();
 
+
+		//if(b instanceof Trainer && ((Trainer)b).getTrainerName().equals("TATE&LIZA"))
+		//	System.out.println("RouteParser.addFlagsToBattleable");
+        
+        
         // Iterate until there's no more flag to parse
         toNextFlag: 
         while(!flagTokensQ.isEmpty()) {
@@ -1444,7 +1449,7 @@ public class RouteParser {
     			throw new RouteParserInternalException(flagToken, flagTokensQ);
 			} // end switch Flag
         } // end flagTokens
-
+        
         // Data goes through another round of validation in the Battle creation too
         return new Battle(b, options);
     }

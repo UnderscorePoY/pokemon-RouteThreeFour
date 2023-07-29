@@ -1,4 +1,4 @@
-package tool.exception;
+package tool.exception.route;
 
 import tool.Constants;
 

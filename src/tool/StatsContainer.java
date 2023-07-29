@@ -70,6 +70,10 @@ public class StatsContainer implements Iterable<Integer> {
 			return statValue;
 		}
 		
+		public boolean isInStatBound(int i) {
+			return minPerStat <= i && i <= maxPerStat;
+		}
+		
 
 		@Override
 		public Iterator<Stat> iterator() {
@@ -164,8 +168,10 @@ public class StatsContainer implements Iterable<Integer> {
 		statValue = containerType.boundStatOnly(statValue);
 		
 		int newTotal = getStatsTotal() - (get(stat) == null ? containerType.getDefaultValue(): get(stat)) + statValue;
-		if(newTotal > containerType.maxTotal)
-			return newTotal - containerType.maxTotal;
+		if(newTotal > containerType.maxTotal) {
+			int overflow = newTotal - containerType.maxTotal;
+			return statValue - overflow;
+		}
 		
 		return statValue;
 	}

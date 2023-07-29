@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import org.ini4j.Wini;
 
 import tool.StatsContainer.ContainerType;
+import tool.exception.config.ConfigMissingKeyException;
+import tool.exception.config.ConfigWrongValueException;
 
 public class Main {
 	public static Pokemon mainPoke = null; // TODO : Really bad, but it works for scenario handling for now
@@ -154,28 +156,98 @@ public class Main {
             Ability ability = Ability.getAbilityFromString(abilityStr);
             if(ability == null)
     			throw new Exception(String.format("Invalid ability '%s' in '%s'.", abilityStr, configFileStr));
+            if(ability != species.getAbility1() && ability != species.getAbility2())
+    			throw new Exception(String.format("%s ability can only be %s%s.", species, species.getAbility1(),
+    					species.getAbility2() == Ability.NONE ? "" : String.format(" or %s", species.getAbility2())));
+            	
 
             	// IVs (mandatory)
             if(!configIni.get("poke").containsKey("hpIV"))
-    			throw new Exception(String.format("Missing mandatory hpIV in '%s', in [%s] section.", configFileStr, "poke")); // TODO: hardcoded
+            	throw new ConfigMissingKeyException(configFileStr, "poke", "hpIV", null);
             if(!configIni.get("poke").containsKey("atkIV"))
-    			throw new Exception(String.format("Missing mandatory atkIV in '%s', in [%s] section.", configFileStr, "poke")); // TODO: hardcoded
+            	throw new ConfigMissingKeyException(configFileStr, "poke", "atkIV", null);
             if(!configIni.get("poke").containsKey("defIV"))
-    			throw new Exception(String.format("Missing mandatory defIV in '%s', in [%s] section.", configFileStr, "poke")); // TODO: hardcoded
+            	throw new ConfigMissingKeyException(configFileStr, "poke", "defIV", null);
             if(!configIni.get("poke").containsKey("spaIV"))
-    			throw new Exception(String.format("Missing mandatory spaIV in '%s', in [%s] section.", configFileStr, "poke")); // TODO: hardcoded
+            	throw new ConfigMissingKeyException(configFileStr, "poke", "spaIV", null);
             if(!configIni.get("poke").containsKey("spdIV"))
-    			throw new Exception(String.format("Missing mandatory spdIV in '%s', in [%s] section.", configFileStr, "poke")); // TODO: hardcoded
+            	throw new ConfigMissingKeyException(configFileStr, "poke", "spdIV", null);
             if(!configIni.get("poke").containsKey("speIV"))
-    			throw new Exception(String.format("Missing mandatory speIV in '%s', in [%s] section.", configFileStr, "poke")); // TODO: hardcoded
+            	throw new ConfigMissingKeyException(configFileStr, "poke", "speIV", null);
             
-            int hpIV = configIni.get("poke", "hpIV", int.class);
-            int atkIV = configIni.get("poke", "atkIV", int.class);
-            int defIV = configIni.get("poke", "defIV", int.class);
-            int spaIV = configIni.get("poke", "spaIV", int.class);
-            int spdIV = configIni.get("poke", "spdIV", int.class);
-            int speIV = configIni.get("poke", "speIV", int.class);
+            int hpIV;
             
+        	String hpIVStr = null;
+            try {
+            	hpIVStr = (String) configIni.get("poke", "hpIV");
+            	hpIV = Integer.parseInt(hpIVStr);
+            	if(!ContainerType.IV.isInStatBound(hpIV))
+            		throw new Exception();
+            } catch(Exception e) {
+        		throw new ConfigWrongValueException(configFileStr, "poke", "hpIV", hpIVStr,
+        				String.format("must be an integer between '%s' or '%s'.", ContainerType.IV.getMinPerStat(), ContainerType.IV.getMaxPerStat()));
+            }
+            
+            int atkIV;
+        	String atkIVStr = null;
+            try {
+            	atkIVStr = (String) configIni.get("poke", "atkIV");
+            	atkIV = Integer.parseInt(atkIVStr);
+            	if(!ContainerType.IV.isInStatBound(atkIV))
+            		throw new Exception();
+            } catch(Exception e) {
+        		throw new ConfigWrongValueException(configFileStr, "poke", "atkIV", atkIVStr,
+        				String.format("must be an integer between '%s' or '%s'.", ContainerType.IV.getMinPerStat(), ContainerType.IV.getMaxPerStat()));
+            }
+            
+            int defIV;
+        	String defIVStr = null;
+            try {
+            	defIVStr = (String) configIni.get("poke", "defIV");
+            	defIV = Integer.parseInt(defIVStr);
+            	if(!ContainerType.IV.isInStatBound(defIV))
+            		throw new Exception();
+            } catch(Exception e) {
+        		throw new ConfigWrongValueException(configFileStr, "poke", "defIV", defIVStr,
+        				String.format("must be an integer between '%s' or '%s'.", ContainerType.IV.getMinPerStat(), ContainerType.IV.getMaxPerStat()));
+            }
+            
+            int spaIV;
+        	String spaIVStr = null;
+            try {
+            	spaIVStr = (String) configIni.get("poke", "spaIV");
+            	spaIV = Integer.parseInt(spaIVStr);
+            	if(!ContainerType.IV.isInStatBound(spaIV))
+            		throw new Exception();
+            } catch(Exception e) {
+        		throw new ConfigWrongValueException(configFileStr, "poke", "spaIV", spaIVStr,
+        				String.format("must be an integer between '%s' or '%s'.", ContainerType.IV.getMinPerStat(), ContainerType.IV.getMaxPerStat()));
+            }
+            
+            int spdIV;
+        	String spdIVStr = null;
+            try {
+            	spdIVStr = (String) configIni.get("poke", "spdIV");
+            	spdIV = Integer.parseInt(spdIVStr);
+            	if(!ContainerType.IV.isInStatBound(spdIV))
+            		throw new Exception();
+            } catch(Exception e) {
+        		throw new ConfigWrongValueException(configFileStr, "poke", "spdIV", spdIVStr,
+        				String.format("must be an integer between '%s' or '%s'.", ContainerType.IV.getMinPerStat(), ContainerType.IV.getMaxPerStat()));
+            }
+            
+            int speIV;
+        	String speIVStr = null;
+            try {
+            	speIVStr = (String) configIni.get("poke", "speIV");
+            	speIV = Integer.parseInt(speIVStr);
+            	if(!ContainerType.IV.isInStatBound(speIV))
+            		throw new Exception();
+            } catch(Exception e) {
+        		throw new ConfigWrongValueException(configFileStr, "poke", "speIV", speIVStr,
+        				String.format("must be an integer between '%s' or '%s'.", ContainerType.IV.getMinPerStat(), ContainerType.IV.getMaxPerStat()));
+            }
+
             StatsContainer ivs = new StatsContainer(ContainerType.IV);
             ivs.put(Stat.HP, hpIV);
             ivs.put(Stat.ATK, atkIV);
@@ -184,24 +256,194 @@ public class Main {
             ivs.put(Stat.SPD, spdIV);
             ivs.put(Stat.SPE, speIV);
             
+        	// Evs (optional)
+	        int hpEV = ContainerType.EV.getDefaultValue();
+	        if(configIni.get("poke").containsKey("hpEV")) {
+		    	String hpEVStr = null;
+		        try {
+		        	hpEVStr = (String) configIni.get("poke", "hpEV");
+		        	hpEV = Integer.parseInt(hpEVStr);
+		        	if(!ContainerType.EV.isInStatBound(hpEV))
+		        		throw new Exception();
+		        } catch(Exception e) {
+		    		throw new ConfigWrongValueException(configFileStr, "poke", "hpEV", hpEVStr,
+		    				String.format("must be an integer between '%s' or '%s'.", ContainerType.EV.getMinPerStat(), ContainerType.EV.getMaxPerStat()));
+		        }
+	        }
+	        
+	        int atkEV = ContainerType.EV.getDefaultValue();
+	        if(configIni.get("poke").containsKey("atkEV")) {
+		    	String atkEVStr = null;
+		        try {
+		        	atkEVStr = (String) configIni.get("poke", "atkEV");
+		        	atkEV = Integer.parseInt(atkEVStr);
+		        	if(!ContainerType.EV.isInStatBound(atkEV))
+		        		throw new Exception();
+		        } catch(Exception e) {
+		    		throw new ConfigWrongValueException(configFileStr, "poke", "atkEV", atkEVStr,
+		    				String.format("must be an integer between '%s' or '%s'.", ContainerType.EV.getMinPerStat(), ContainerType.EV.getMaxPerStat()));
+		        }
+	        }
+	        
+	        int defEV = ContainerType.EV.getDefaultValue();
+	        if(configIni.get("poke").containsKey("defEV")) {
+		    	String defEVStr = null;
+		        try {
+		        	defEVStr = (String) configIni.get("poke", "defEV");
+		        	defEV = Integer.parseInt(defEVStr);
+		        	if(!ContainerType.EV.isInStatBound(defEV))
+		        		throw new Exception();
+		        } catch(Exception e) {
+		    		throw new ConfigWrongValueException(configFileStr, "poke", "defEV", defEVStr,
+		    				String.format("must be an integer between '%s' or '%s'.", ContainerType.EV.getMinPerStat(), ContainerType.EV.getMaxPerStat()));
+		        }
+	        }
+	        
+	        int spaEV = ContainerType.EV.getDefaultValue();
+	        if(configIni.get("poke").containsKey("spaEV")) {
+		    	String spaEVStr = null;
+		        try {
+		        	spaEVStr = (String) configIni.get("poke", "spaEV");
+		        	spaEV = Integer.parseInt(spaEVStr);
+		        	if(!ContainerType.EV.isInStatBound(spaEV))
+		        		throw new Exception();
+		        } catch(Exception e) {
+		    		throw new ConfigWrongValueException(configFileStr, "poke", "spaEV", spaEVStr,
+		    				String.format("must be an integer between '%s' or '%s'.", ContainerType.EV.getMinPerStat(), ContainerType.EV.getMaxPerStat()));
+		        }
+	        }
+	        
+	        int spdEV = ContainerType.EV.getDefaultValue();
+	        if(configIni.get("poke").containsKey("spdEV")) {
+		    	String spdEVStr = null;
+		        try {
+		        	spdEVStr = (String) configIni.get("poke", "spdEV");
+		        	spdEV = Integer.parseInt(spdEVStr);
+		        	if(!ContainerType.EV.isInStatBound(spdEV))
+		        		throw new Exception();
+		        } catch(Exception e) {
+		    		throw new ConfigWrongValueException(configFileStr, "poke", "spdEV", spdEVStr,
+		    				String.format("must be an integer between '%s' or '%s'.", ContainerType.EV.getMinPerStat(), ContainerType.EV.getMaxPerStat()));
+		        }
+	        }
+	        
+	        int speEV = ContainerType.EV.getDefaultValue();
+	        if(configIni.get("poke").containsKey("speEV")) {
+		    	String speEVStr = null;
+		        try {
+		        	speEVStr = (String) configIni.get("poke", "speEV");
+		        	speEV = Integer.parseInt(speEVStr);
+		        	if(!ContainerType.EV.isInStatBound(speEV))
+		        		throw new Exception();
+		        } catch(Exception e) {
+		    		throw new ConfigWrongValueException(configFileStr, "poke", "speEV", speEVStr,
+		    				String.format("must be an integer between '%s' or '%s'.", ContainerType.EV.getMinPerStat(), ContainerType.EV.getMaxPerStat()));
+		        }
+	        }
+	        
+            
             	// Boosted EXP (optional)
             boolean hasBoostedExp = false; // TODO : hardcoded
-            if(configIni.get("poke").containsKey("boostedExp"))
-            	hasBoostedExp = configIni.get("poke", "boostedExp", boolean.class);
+            if(configIni.get("poke").containsKey("boostedExp")) {
+            	String boostedExpStr = null;
+            	try{
+            		boostedExpStr = (String) configIni.get("poke", "boostedExp");
+            		hasBoostedExp = Boolean.parseBoolean(boostedExpStr);
+            	} catch (Exception e) {
+            		throw new ConfigWrongValueException(configFileStr, "poke", "boostedExp", boostedExpStr,
+            				String.format("must be either '%s' or '%s'.", true, false));
+            	}
+            }
             
         		// Pokerus (optional)
             boolean hasPokerus = false; // TODO : hardcoded
-            if(configIni.get("poke").containsKey("pokerus"))
-            	hasPokerus = configIni.get("poke", "pokerus", boolean.class);
+            if(configIni.get("poke").containsKey("pokerus")) {
+            	String pokerusStr = null;
+            	try{
+            		pokerusStr = (String) configIni.get("poke", "pokerus");
+            		hasPokerus = Boolean.parseBoolean(pokerusStr);
+            	} catch (Exception e) {
+            		throw new ConfigWrongValueException(configFileStr, "poke", "pokerus", pokerusStr,
+            				String.format("must be either '%s' or '%s'.", true, false));
+            	}
+            }
 
             // Main Pokémon instanciation
         	mainPoke = new Pokemon(species, gender, level, nature, ability, ivs, hasBoostedExp, hasPokerus);
+        	mainPoke.setEV(Stat.HP, hpEV);
+        	mainPoke.setEV(Stat.ATK, atkEV);
+        	mainPoke.setEV(Stat.DEF, defEV);
+        	mainPoke.setEV(Stat.SPA, spaEV);
+        	mainPoke.setEV(Stat.SPD, spdEV);
+        	mainPoke.setEV(Stat.SPE, speEV);
+        	mainPoke.updateEVsAndCalculateStats();
 
             // Other non-mandatory options
-            if(configIni.get("util").containsKey("overallChanceKO"))
-            	Settings.overallChanceKO = configIni.get("util", "overallChanceKO", boolean.class);
-            if(configIni.get("util").containsKey("showGuarantees"))
-            	Settings.showGuarantees = configIni.get("util", "showGuarantees", boolean.class);
+            if(configIni.get("util").containsKey("defaultOutputDetails")) {
+            	String verboseLevelStr = null;
+            	try{
+            		verboseLevelStr = (String) configIni.get("util", "defaultOutputDetails");
+            		int verboseLevelInt = Integer.parseInt(verboseLevelStr);
+            		Settings.verboseLevel = VerboseLevel.values()[verboseLevelInt];
+            	} catch (Exception e) {
+            		throw new ConfigWrongValueException(configFileStr, "util", "defaultOutputDetails", verboseLevelStr,
+            				String.format("must be an integer between '%s' and '%s'.", VerboseLevel.NONE.ordinal(), VerboseLevel.EVERYTHING.ordinal()));
+            	}
+            }
+            
+            if(configIni.get("util").containsKey("defaultShowStatsOnLevelUp")) {
+            	String defaultShowStatsOnLevelUpStr = null;
+            	try {
+            		defaultShowStatsOnLevelUpStr = (String) configIni.get("util", "defaultShowStatsOnLevelUp");
+            		Settings.showStatsOnLevelUp = Boolean.parseBoolean(defaultShowStatsOnLevelUpStr);
+            	} catch(Exception e) {
+            		throw new ConfigWrongValueException(configFileStr, "util", "defaultShowStatsOnLevelUp", defaultShowStatsOnLevelUpStr, 
+            				String.format("must be either '%s' or '%s'.", true, false));
+            	}
+            }
+            
+            if(configIni.get("util").containsKey("defaultShowStatRangesOnLevelUp")) {
+            	String defaultShowStatRangesOnLevelUpStr = null;
+            	try {
+            		defaultShowStatRangesOnLevelUpStr = (String) configIni.get("util", "defaultShowStatRangesOnLevelUp");
+            		Settings.showStatsOnLevelUp = Boolean.parseBoolean(defaultShowStatRangesOnLevelUpStr);
+            	} catch(Exception e) {
+            		throw new ConfigWrongValueException(configFileStr, "util", "defaultShowStatRangesOnLevelUp", defaultShowStatRangesOnLevelUpStr, 
+            				String.format("must be either '%s' or '%s'.", true, false));
+            	}
+            }
+            
+            if(configIni.get("util").containsKey("defaultIvVariation")) {
+            	String defaultIvVariationStr = null;
+            	try {
+            		defaultIvVariationStr = (String) configIni.get("util", "defaultIvVariation");
+            		Settings.defaultIvVariation = Boolean.parseBoolean(defaultIvVariationStr);
+            	} catch(Exception e) {
+            		throw new ConfigWrongValueException(configFileStr, "util", "defaultIvVariation", defaultIvVariationStr, 
+            				String.format("must be either '%s' or '%s'.", true, false));
+            	}
+            }
+            
+            if(configIni.get("util").containsKey("overallChanceKO")) {
+            	String overallChanceKOStr = null;
+            	try {
+            		overallChanceKOStr = (String) configIni.get("util", "overallChanceKO");
+            		Settings.overallChanceKO = Boolean.parseBoolean(overallChanceKOStr);
+            	} catch(Exception e) {
+            		throw new ConfigWrongValueException(configFileStr, "util", "overallChanceKO", overallChanceKOStr, 
+            				String.format("must be either '%s' or '%s'.", true, false));
+            	}
+            }
+            if(configIni.get("util").containsKey("showGuarantees")){
+            	String showGuaranteesStr = null;
+            	try {
+            		showGuaranteesStr = (String) configIni.get("util", "showGuarantees");
+            		Settings.showGuarantees = Boolean.parseBoolean(showGuaranteesStr);
+            	} catch(Exception e) {
+            		throw new ConfigWrongValueException(configFileStr, "util", "showGuarantees", showGuaranteesStr, 
+            				String.format("must be either '%s' or '%s'.", true, false));
+            	}
+            }
             
 
             /* ************* */

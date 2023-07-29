@@ -6,8 +6,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 import tool.StatsContainer.ContainerType;
-import tool.exception.RouteParserException;
 import tool.exception.ToolInternalException;
+import tool.exception.route.RouteParserException;
 
 public class BattleOptions {
 	public static final int MIN_NUMBER_OF_BATTLERS_PER_FIGHT = 1, MAX_NUMBER_OF_BATTLERS_PER_FIGHT = 12;
@@ -32,6 +32,7 @@ public class BattleOptions {
     private int xCurrentHP = 0;
     private CurrentHPid xCurrentHPid = CurrentHPid.FULL;
     private Trainer xPartner = null;
+    private boolean xHasUsedSingleTimeAbility = false;
 
     private EnumMap<Stat, ArrayList<Integer>> yStages = new EnumMap<Stat, ArrayList<Integer>>(Stat.class);
     private EnumSet<Stat> yStageIsConstant = EnumSet.noneOf(Stat.class);
@@ -43,6 +44,7 @@ public class BattleOptions {
     private int yCurrentHP = 0;
     private CurrentHPid yCurrentHPid = CurrentHPid.FULL;
     private Trainer yPartner = null;
+    private boolean yHasUsedSingleTimeAbility = false; // TODO: not needed ?
     
     private ArrayList<ArrayList<Integer>> order = new ArrayList<ArrayList<Integer>>();
     private ArrayList<Weather> weathers = new ArrayList<Weather>();
@@ -55,10 +57,11 @@ public class BattleOptions {
     private boolean isForcedSingleBattle = false;
     private boolean isSingleTrainerForcedToBeFoughtAsDouble = false;
     
-    private boolean printStatRangesOnLvl = false;
-    private boolean printStatsOnLvl = false;
+    
     private StatModifier mod1 = new StatModifier();
     private StatModifier mod2 = new StatModifier();
+    
+    private ArrayList<ArrayList<Pokemon>> newPartySeparatedInBatches;
     
     //private boolean isPostponedExp = false;
     
@@ -69,10 +72,12 @@ public class BattleOptions {
     
     private String scenarioName = null;
     private boolean isBacktrackingAfterBattle = false;
+
+    private VerboseLevel verbose = Settings.verboseLevel;
+    private boolean printStatsOnLvl = Settings.showStatsOnLevelUp;
+    private boolean printStatRangesOnLvl = Settings.showStatRangesOnLevelUp;
+    private boolean isIVvariation = Settings.defaultIvVariation;
     
-    private boolean isIVvariation = false;
-    
-    private VerboseLevel verbose = VerboseLevel.NONE;
 
     
     public BattleOptions(boolean isInseparableDoubleBattle) throws ToolInternalException {
@@ -110,7 +115,17 @@ public class BattleOptions {
     	// Preparing data that were waiting for total nb of battlers
 		this.updateStages(nbOfBattlers);
 		this.updateOrderAndPostponedExp(opponent);
-		this.updateSxps(nbOfBattlers);
+		// TODO: At this point, the postponedExp indices are in sync with the new order, 
+		//         but this new order is not already applied to the Battleable. 
+		//       Currently, the Battleable order is updated in the Battle.doBattle routine, by fear of :
+		//        - introducing side effects in the party management, 
+		//        - having a trainer party filled with the yPartner party in addition with a non-null yPartner
+		//       There's probably a better way to do all this.
+		
+		if(opponent instanceof Trainer && ((Trainer)opponent).getTrainerName().equals("TATE&LIZA"))
+			System.out.println("BattleOptions.compileAndValidate");
+		
+		this.updateSxps(opponent, nbOfBattlers);
 		this.updateStatus1List(nbOfBattlers);
 		this.updateStatus2_3List(nbOfBattlers);
 		this.updateWeathers(nbOfBattlers);		
@@ -401,18 +416,6 @@ public class BattleOptions {
 	public VerboseLevel getVerbose() {
 		return verbose;
 	}
-
-	/*
-	public void setParticipants(int participants) {
-		this.participants = participants;
-	}
-	*/
-
-	/*
-	public void setSxps(ArrayList<Integer> sxps) {
-		this.sxps = sxps; // TODO: is it really working without copying ?
-	}
-	*/
 	
 	public void addSxp(int sxp) {
 		sxps.add(sxp);
@@ -433,20 +436,25 @@ public class BattleOptions {
 			sxps.add(sxp);
 	}
 	
-	public void updateSxps(int nbOfParticipants) {
-		if(!isSxpConstant && !sxps.isEmpty()) // non-constant custom order
+	public void updateSxps(Battleable opponent, int nbOfParticipants) {		
+		if(!isSxpConstant && !sxps.isEmpty()) // non-constant custom sxps
 			return;
 		
-    	if(isSxpConstant) { // constant custom order
+    	if(isSxpConstant) { // constant custom sxps
 			this.setSxpsFromIndex0(nbOfParticipants);
 			return;
 		}
     	
-    	// Default share exp    	
-		int defaultNbOfParticipants = DEFAULT_NB_OF_EXP_SHARERS;
+    	// Default share exp
+		int defaultNbOfParticipants = isSingleTrainerForcedToBeFoughtAsDouble ? 2 : DEFAULT_NB_OF_EXP_SHARERS;
 			
-			// "Weak" override : split exp if player+player vs. double
+			// "Weak" override : player+player vs. double is always split exp
 		if(yPartner != null && xPartner == null)
+			defaultNbOfParticipants = 2; // TODO: hardcoded constant
+		
+
+			// "Weak" override : in Gen 3, player+partner vs. double is also split exp
+		if(Settings.game.isGen3() && yPartner != null)
 			defaultNbOfParticipants = 2; // TODO: hardcoded constant
 		
 			// "Strong" override
@@ -773,7 +781,7 @@ public class BattleOptions {
 		if(isForcedSingleDamage())
 			return false;
 		
-		return yPartner != null;
+		return yPartner != null || isSingleTrainerForcedToBeFoughtAsDouble();
 	}
 	
 	public boolean isSharingExp() {
@@ -930,8 +938,9 @@ public class BattleOptions {
 	
 	/**
 	 * Prepares stat modifiers for the player and the enemy based on the current enemy index.
+	 * Skipping abilities refers to deactivating automatic stat increases or drops, such as Intimidate or Speed Boost.
 	 */
-	public void prepareStatModifiers(Pokemon player, Pokemon enemy) {
+	public void prepareStatModifiers(Pokemon player, Pokemon enemy, boolean isSkipAbilityStatModifs) {
     	int currentOpponentIndex = this.incrementCurrentOpponentIndex();
     	
     	/* **************************** */
@@ -978,26 +987,26 @@ public class BattleOptions {
     	/* Side-dependent variables */
     	/* ************************ */
     	
-		for(Side side : Side.values()) {
+		for(Side attackerSide : Side.values()) {
 			Pokemon attacker = null, defender = null;
 			Integer currentHP = null;
-			Side otherSide = null;
-			switch(side) {
-			case PLAYER: attacker = player; defender = enemy;  currentHP = xCurrentHP; otherSide = Side.ENEMY;  break;
-			case ENEMY:  attacker = enemy;  defender = player; currentHP = yCurrentHP; otherSide = Side.PLAYER; break;
+			Side defenderSide = null;
+			switch(attackerSide) {
+			case PLAYER: attacker = player; defender = enemy;  currentHP = xCurrentHP; defenderSide = Side.ENEMY;  break;
+			case ENEMY:  attacker = enemy;  defender = player; currentHP = yCurrentHP; defenderSide = Side.PLAYER; break;
 			}
 			
-			StatModifier attackerMod = this.getStatModifier(side);
-			StatModifier defenderMod = this.getStatModifier(otherSide);
+			StatModifier attackerMod = this.getStatModifier(attackerSide);
+			StatModifier defenderMod = this.getStatModifier(defenderSide);
 			
 			// IV variation for player ?
-			if(side == Side.PLAYER)
+			if(attackerSide == Side.PLAYER)
 				attackerMod.setIVvariation(this.isIVvariation());
-			if(side == Side.ENEMY)
+			if(attackerSide == Side.ENEMY)
 				defenderMod.setIVvariation(this.isIVvariation());
 			
 			// Overriding currentHP if necessary
-			switch(getCurrentHPid(side)) { // TODO: hardcoded constants
+			switch(getCurrentHPid(attackerSide)) { // TODO: hardcoded constants
 			case FULL:  currentHP = attacker.getStatValue(Stat.HP);   break;
 			case HALF:  currentHP = attacker.getStatValue(Stat.HP)/2; break;
 			case THIRD: currentHP = attacker.getStatValue(Stat.HP)/3; break;
@@ -1007,65 +1016,61 @@ public class BattleOptions {
 			
 			
 			// Applying abilities stat modifications
-            	// Download
+			if(!isSkipAbilityStatModifs) {
+	            // Download
 				// TODO: Doesn't properly work for Double Battles, as it seems to calculate average Def & Spd to choose which offensive stat to boost
-            if(attacker.getAbility() == Ability.DOWNLOAD) {
-            	int def = defenderMod.modStat(Stat.DEF, defender.getStatValue(Stat.DEF), defender.getAbility() == Ability.SIMPLE);
-            	int spd = defenderMod.modStat(Stat.SPD, defender.getStatValue(Stat.SPD), defender.getAbility() == Ability.SIMPLE);
-            	if(spd <= def) {
-            		if(!isForcedStat(side, Stat.SPD))
-            			incrementStatUntilBattleEnds(side, Stat.SPD);
-            	} else {
-            		if(!isForcedStat(side, Stat.DEF))
-            			incrementStatUntilBattleEnds(side, Stat.DEF);
-            	}
-            }
-            
-            	// Speed Boost
-            if(attacker.getAbility() == Ability.SPEED_BOOST && !isForcedStat(side, Stat.SPE))
-    			incrementStatUntilBattleEnds(side, Stat.SPE);
+	            if(attacker.getAbility() == Ability.DOWNLOAD) {
+	            	int def = defenderMod.modStat(Stat.DEF, defender.getStatValue(Stat.DEF), defender.getAbility() == Ability.SIMPLE);
+	            	int spd = defenderMod.modStat(Stat.SPD, defender.getStatValue(Stat.SPD), defender.getAbility() == Ability.SIMPLE);
+	            	if(spd <= def) {
+	            		if(!isForcedStat(attackerSide, Stat.SPD))
+	            			incrementStatUntilBattleEnds(attackerSide, Stat.SPD);
+	            	} else {
+	            		if(!isForcedStat(attackerSide, Stat.DEF))
+	            			incrementStatUntilBattleEnds(attackerSide, Stat.DEF);
+	            	}
+	            }
+	            
+	            // Speed Boost
+	            if(attacker.getAbility() == Ability.SPEED_BOOST && !isForcedStat(attackerSide, Stat.SPE))
+	    			incrementStatUntilBattleEnds(attackerSide, Stat.SPE);
 				
-            	// Intimidate
-            if(defender.getAbility() == Ability.INTIMIDATE 
-            		&& attacker.getAbility() != Ability.HYPER_CUTTER && attacker.getAbility() != Ability.CLEAR_BODY && attacker.getAbility() != Ability.WHITE_SMOKE
-            		&& !isForcedStat(side, Stat.ATK))
-    			decrementStatUntilBattleEnds(side, Stat.ATK);
+	            if(defender.getSpecies().matchesAny("GYARADOS") && attacker.getSpecies().matchesAny("GEODUDE") && attacker.getLevel() == 8)
+	            	System.out.println("BattleOptions.prepareStatModifiers");
+	            
+	            // Intimidate
+	            if(defender.getAbility() == Ability.INTIMIDATE 
+	            		&& attacker.getAbility() != Ability.HYPER_CUTTER && attacker.getAbility() != Ability.CLEAR_BODY && attacker.getAbility() != Ability.WHITE_SMOKE
+	            		&& !isForcedStat(attackerSide, Stat.ATK)
+	            		&& !hasUsedSingleTimeAbility(defenderSide)) {
+	            	if(attackerSide == Side.PLAYER)
+	            		decrementStatUntilBattleEnds(attackerSide, Stat.ATK);
+	            	else if (attackerSide == Side.ENEMY)
+	            		decrementEnemyStatForCurrentIndex(Stat.ATK);
+	            		
+	    			setHasUsedSingleTimeAbility(defenderSide, true);
+	            }
+			}
             
 			// X Items
 			for(Stat stat : Stat.stagesStats) {
-				/*
-				int stage;
-				//if(!this.getStages(side, stat).isEmpty())
-				if(this.getStages(otherSide, stat) != null)
-					stage = this.getStages(side, stat).get(currentOpponentIndex);
-				else
-					stage = ContainerType.STAT_STAGES.getDefaultValue();
-				*/
-				int stage = this.getStages(side, stat).get(currentOpponentIndex);
-				attackerMod.setStage(stat, stage); //mod.setStage(stat, stage);
+				int stage = this.getStages(attackerSide, stat).get(currentOpponentIndex);
+				attackerMod.setStage(stat, stage);
 			}
 			
 			// Status
-			/*
-			Status status1;
-			if(!getStatus1List(side).isEmpty())
-				status1 = getStatus1List(side).get(currentOpponentIndex);
-			else
-				status1 = Status.noStatus1();
-			*/
-			Status status1 = getStatus1List(side).get(currentOpponentIndex);
+			Status status1 = getStatus1List(attackerSide).get(currentOpponentIndex);
 			attackerMod.setStatus1(status1);
-			
-			/*
-			EnumSet<Status> statuses2_3;
-			if(!getStatuses2_3List(side).isEmpty())
-				statuses2_3 = getStatuses2_3List(side).get(currentOpponentIndex);
-			else
-				statuses2_3 = Status.noStatus2_3();
-			*/
-			EnumSet<Status> statuses2_3 = getStatuses2_3List(side).get(currentOpponentIndex);
+
+			EnumSet<Status> statuses2_3 = getStatuses2_3List(attackerSide).get(currentOpponentIndex);
 			attackerMod.setStatuses2_3(statuses2_3);
 		} // end side loop
+	}
+	
+	public void decrementEnemyStatForCurrentIndex(Stat stat) {
+		int curr = yStages.get(stat).get(currentOpponentIndex);
+		int next = ContainerType.STAT_STAGES.boundStatOnly(curr - 1);
+		yStages.get(stat).set(currentOpponentIndex, next);
 	}
 	
 	public void incrementStatUntilBattleEnds(Side side, Stat stat, int stage) {
@@ -1094,5 +1099,29 @@ public class BattleOptions {
 
 	public void disablePostponedExperience() {
 		postponeExpSet.remove(currentOpponentIndex + 1);
+	}
+
+	public ArrayList<ArrayList<Pokemon>> getNewPartySeparatedInBatches() {
+		return newPartySeparatedInBatches;
+	}
+	
+	private boolean hasUsedSingleTimeAbility(Side side) {
+		Boolean hasUsedSingleTimeAbility = null;
+		switch(side) {
+		case PLAYER : hasUsedSingleTimeAbility = xHasUsedSingleTimeAbility; break;
+		case ENEMY :  hasUsedSingleTimeAbility = yHasUsedSingleTimeAbility; break;
+		}
+		return hasUsedSingleTimeAbility;
+	}
+	
+	private void setHasUsedSingleTimeAbility(Side side, boolean b) {
+		switch(side) {
+		case PLAYER: xHasUsedSingleTimeAbility = b; break;
+		case ENEMY:  yHasUsedSingleTimeAbility = b; break;
+		}
+	}
+	
+	public void resetSingleTimeAbility(Side side) {
+		setHasUsedSingleTimeAbility(side, false);
 	}
 }

@@ -2,18 +2,20 @@ package tool;
 import java.util.ArrayList;
 import java.util.List;
 
-import tool.exception.RouteParserException;
 import tool.exception.ToolInternalException;
+import tool.exception.route.RouteParserException;
 
 //represents a battle, with planned statmods
 public class Battle extends GameAction {
     private Battleable opponent;
     private BattleOptions options;
 
+    /*
     public Battle(Battleable b) throws ToolInternalException {
         opponent = b;
         options = new BattleOptions();
     }
+    */
 
     public Battle(Battleable b, BattleOptions options) throws RouteParserException, ToolInternalException {
         this.opponent = b;
@@ -76,7 +78,7 @@ public class Battle extends GameAction {
         int lastLvl = p.getLevel();
 
         if (opponent instanceof Pokemon) {
-        	options.prepareStatModifiers(p, (Pokemon)opponent);
+        	options.prepareStatModifiers(p, (Pokemon)opponent, false);
         	
         	if(getVerbose() != VerboseLevel.NONE)
         		printBattle(p, (Pokemon) opponent);
@@ -109,8 +111,8 @@ public class Battle extends GameAction {
             Trainer yPartner = options.getPartner(Side.ENEMY);
             ArrayList<ArrayList<Integer>> order = options.getOrder();
             
-            if(options.getPartner(Side.ENEMY) != null)
-            	System.out.println("Battle.doBattle");
+            //if(options.getPartner(Side.ENEMY) != null)
+            //	System.out.println("Battle.doBattle");
             
             // Reordering enemy trainer pokes
             ArrayList<ArrayList<Pokemon>> trainerPokesByBatch = t.reorderPokesWithPartner(yPartner, order);
@@ -126,18 +128,19 @@ public class Battle extends GameAction {
 	            	// Postpone EXP if we're not at the last Pokémon of the batch
 	            	//boolean isPostponedExperience = opps != batchPokes.get(batchPokes.size() - 1);
 	            	
-	            	options.prepareStatModifiers(p, opps);
+	            	options.prepareStatModifiers(p, opps, false);
 
                     if (getVerbose() != VerboseLevel.NONE)                 	
                     	printBattle(p, opps);
-                    
+
+	            	options.resetSingleTimeAbility(Side.ENEMY); // Each enemy can trigger a one-time ability increase/drop, not the player | TODO: pretty bad, but works
 	            } // end batch 
 	            
 	            options.backtrackCurrentOpponentIndex(batchPokes.size());
 	            
 	            // Update EVs and EXP only at the end of a batch
 	            for (Pokemon opps : batchPokes) {
-	            	options.prepareStatModifiers(p, opps);
+	            	options.prepareStatModifiers(p, opps, true);
 	            	options.disablePostponedExperience(); // always do it after preparing StatMods, due to inner index update
 
                     opps.battle(p, options);

@@ -12,6 +12,18 @@ It is derived from a custom RouteThree, itself derived from Dabomstew & entrpntr
 ○ Usual update.  
 **!!** Bug fixes.  
 
+**`[2023/07/30]` - v0.4.3**  
+**!!** Fixed automatic `Intimidate` which could be triggered several times by the same Pokémon.  
+**!!** Fixed trainers like `Tate & Liza` who where not considered as double battle by default (damage mode and experience).  
+**!!** Fixed `-IVvariation` when encountering fixed damage moves.  
+**!!** Fixed wrong behavior when earning EVs after reaching the 510 EV limit.  
+○ Improved debugging messages.  
+○ Added increasing/decreasing natures in `-IVvariation` display and speed thresholds display.  
+○ In config files, in section `poke` : added support for starting EVs.
+○ In config files, in section `util` : added options `defaultOutputDetails`,  `defaultShowStatsOnLevelUp`, `defaultShowStatRangesOnLevelUp` and `defaultIvVariation`.  
+○ [*Emerald*] Added `STEVEN_PARTNER` as a valid trainer.  
+○ [*Emerald*] Updated Any% Glitchless route files (Mudkip, Castform, Rayquaza).  
+
 **`[2023/07/28]` - v0.4.2**  
 **!!** Fixed an issue involving `-doubleBattle` and `-singleBattle` options and shared experience.  
 ○ Improved debugging messages.  
@@ -134,14 +146,21 @@ A configuration file (generally with the `.ini` extension) gathers the primary i
   `"species"`   | A string. | The name of the main Pokémon species.
   `"nature"`   | A string. | The nature of the species. <br/>*(Defaults to a neutral species if missing.)*
   `"ability"`   | A string. | The ability of the species. <br/>*(Defaults to the first species ability if missing.)*
-  `"hpIV"`   | An integer between `0` and `31`.| The HP IV (Individual Value) of the main Pokémon. <br/>*(Defaults to `31` if missing.)*
-  `"atkIV"`   | An integer between `0` and `31`.| The Attack IV of the main Pokémon. <br/>*(Defaults to `31` if missing.)*
-  `"defIV"`   | An integer between `0` and `31`.| The Defense IV of the main Pokémon. <br/>*(Defaults to `31` if missing.)*
-  `"spaIV"`   | An integer between `0` and `31`.| The Special Attack IV of the main Pokémon. <br/>*(Defaults to `31` if missing.)* 
-  `"spdIV"`   | An integer between `0` and `31`.| The Special Defense IV of the main Pokémon. <br/>*(Defaults to `31` if missing.)*
-  `"speIV"`   | An integer between `0` and `31`.| The Speed IV of the main Pokémon. <br/>*(Defaults to `31` if missing.)*
+  `"hpIV"`   | An integer between `0` and `31`.| The HP IV (Individual Value) of the main Pokémon.
+  `"atkIV"`   | An integer between `0` and `31`.| The Attack IV of the main Pokémon.
+  `"defIV"`   | An integer between `0` and `31`.| The Defense IV of the main Pokémon.
+  `"spaIV"`   | An integer between `0` and `31`.| The Special Attack IV of the main Pokémon.
+  `"spdIV"`   | An integer between `0` and `31`.| The Special Defense IV of the main Pokémon.
+  `"speIV"`   | An integer between `0` and `31`.| The Speed IV of the main Pokémon.
   `"boostedExp"`   | `true` or `false`. | Whether the main Pokémon benefits from the trading experience boost or not. <br/>*(Defaults to `false` if missing.)*
   `"pokerus"`   | `true` or `false`. | Whether the main Pokémon benefits from the Pokérus Effort Value (EV) boost or not. <br/>*(Defaults to `false` if missing.)*
+  `"hpEV"`    | An integer between `0` and `252`.| The HP EV (Effort Value) of the main Pokémon. <br/>*(Defaults to `0` if missing.)*
+  `"atkEV"`   | An integer between `0` and `252`.| The Attack EV of the main Pokémon. <br/>*(Defaults to `0` if missing.)*
+  `"defEV"`   | An integer between `0` and `252`.| The Defense EV of the main Pokémon. <br/>*(Defaults to `0` if missing.)*
+  `"spaEV"`   | An integer between `0` and `252`.| The Special Attack EV of the main Pokémon. <br/>*(Defaults to `0` if missing.)*
+  `"spdEV"`   | An integer between `0` and `252`.| The Special Defense EV of the main Pokémon. <br/>*(Defaults to `0` if missing.)*
+  `"speEV"`   | An integer between `0` and `252`.| The Speed EV of the main Pokémon. <br/>*(Defaults to `0` if missing.)*
+
   
 ##### Section : `[files]`
    Tag | Expected value | Usage
@@ -152,6 +171,15 @@ A configuration file (generally with the `.ini` extension) gathers the primary i
 ##### Section : `[util]`
    Tag | Expected value | Usage
   --------------- | -------------- | --------------
+   `"defaultOutputDetails"` | An integer between `0` and `3`.| The default detail level for the output. <br/>
+  `0` means close to nothing, `3` means everything. <br/>
+  *(Defaults to `0` if missing.)*
+  `"defaultShowStatsOnLevelUp"` | `true` or `false`. | Whether all level ups should display stats or not. <br/>
+  *(Defaults to `false` if missing.)*
+  `"defaultShowStatRangesOnLevelUp"` | `true` or `false`. | Whether all level ups should display stat ranges or not. <br/>
+  *(Defaults to `false` if missing.)*
+  `"defaultIvVariation"` | `true` or `false`. | Whether all damage calculation should be performed with all nature and IV values possible. <br/>
+  *(Defaults to `false` if missing.)*
   `"overallChanceKO"`   | `true` or `false`. | Whether the tool displays overall chance of KOing the opponent or not. <br/>**(Defaults to `false` if missing.)**
   `"showGuarantees"`   | `true` or `false`. | Whether the information that n-shots are guaranteed is displayed or not. <br/>**(Defaults to `false` if missing.)**
   

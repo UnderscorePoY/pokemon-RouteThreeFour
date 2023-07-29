@@ -200,6 +200,23 @@ public class DamageCalculator {
 			return normalDamageRolls.lastKey();
 		}
 		
+		private Long highestNormalRoll() {
+			return normalDamageRolls.get(highestNormalDamage());
+		}
+		
+		private Long lowestNormalRoll() {
+			return normalDamageRolls.get(lowestNormalDamage());
+		}
+		
+		private Long highestCritRoll() {
+			return critDamageRolls.get(highestCritDamage());
+		}
+		
+		private Long lowestCritRoll() {
+			return critDamageRolls.get(lowestCritDamage());
+		}
+		
+		
 		private void increment(TreeMap<Integer, Long> map, int dmg) {
 			if (!map.containsKey(dmg))
 				map.put(dmg, (long) 1);
@@ -265,9 +282,15 @@ public class DamageCalculator {
 			for (Map.Entry<Integer, Long> entry : cappedMap.entrySet()) {
 				int dmg = entry.getKey();
 				long mult = entry.getValue();
+				if(dmg == enemyHP)
+					sb.append("#");
+				else
+					sb.append(" ");
 				sb.append(String.format("%dx%d", dmg, mult));
 				if(dmg < lastHPtoPrint)
-					sb.append(", ");
+					sb.append(",");
+				if(dmg == enemyHP)
+					sb.append("#");
 			}
 			
 			/*
@@ -707,10 +730,12 @@ public class DamageCalculator {
 		    		return false;
 		    	
 		    	Damages d = (Damages)o;
-		    	return this.highestCritDamage() == d.highestCritDamage()     && this.critDamageRolls.get(this.highestCritDamage()) == d.critDamageRolls.get(d.highestCritDamage())
-		    		&& this.lowestCritDamage() == d.lowestCritDamage()       && this.critDamageRolls.get(this.lowestCritDamage()) == d.critDamageRolls.get(d.lowestCritDamage())
-		    		&& this.highestNormalDamage() == d.highestNormalDamage() && this.normalDamageRolls.get(this.highestNormalDamage()) == d.normalDamageRolls.get(d.highestNormalDamage())
-		    		&& this.lowestNormalDamage() == d.lowestNormalDamage()   && this.normalDamageRolls.get(this.lowestNormalDamage()) == d.normalDamageRolls.get(d.lowestNormalDamage());
+		    	return (!d.hasCrit() || d.hasCrit() 
+		    			 && this.highestCritDamage() == d.highestCritDamage() && this.highestCritRoll() == d.highestCritRoll()
+		    		     && this.lowestCritDamage() == d.lowestCritDamage()   && this.lowestCritRoll() == d.lowestCritRoll()
+		    		   )
+		    		&& this.highestNormalDamage() == d.highestNormalDamage() && this.highestNormalRoll() == d.highestNormalRoll()
+		    		&& this.lowestNormalDamage() == d.lowestNormalDamage()   && this.lowestNormalRoll() == d.lowestNormalRoll();
 		    }
 
 		
@@ -1293,6 +1318,9 @@ public class DamageCalculator {
         	if(modifiedAttackMove.isPhysical())
         		modifiedAttackMove.setName(String.format("%s +x%s",modifiedAttackMove.getName(), attacker.getAbility()));
     	}
+        
+        //if(defender.getSpecies().matchesAny("ABSOL"))
+        //	System.out.println("damageGen3");
         
         // Badge boosts
         if(!isBattleTower) { 
@@ -2828,6 +2856,10 @@ public class DamageCalculator {
         appendPokemonSummary(sb, p1, mod1);
         sb.append(endl);
 
+        if(p2.getSpecies().matchesAny("Lunatone")) {
+        	System.out.println("DamageCalculator.battleSummary");
+        }
+        
         appendMainDamagesSummary(sb, p1, p2, mod1, mod2, options.isBattleTower(), options.isDoubleBattleSplittingDamage(), options.getVerbose());
         sb.append(endl);
         
@@ -3365,7 +3397,9 @@ public class DamageCalculator {
 		sb.append(String.format("\t%s DAMAGE VARIATION", isCrit ? "CRIT": "NORMAL"));
 		sb.append(Constants.endl);
     	for(int k = 0; k < natures.length; k++) {
-    		sb.append(String.format("\t%s%1s", stat, names[k]));
+    		ArrayList<Nature> listOfNaturesProducingTheSameBoost = (k == 0) ? Nature.getNaturesDecreasing(stat) : 
+    															   (k == 2) ? Nature.getNaturesIncreasing(stat) : null;
+    		sb.append(String.format("\t%s%1s %s", stat, names[k], listOfNaturesProducingTheSameBoost == null ? "[all the other natures]" : String.format("%s", listOfNaturesProducingTheSameBoost)));
     		sb.append(Constants.endl);
     		
     		Nature nature = natures[k];
@@ -3512,7 +3546,8 @@ public class DamageCalculator {
         	Nature[] natures = new Nature[] {Nature.BRAVE, Nature.HARDY, Nature.TIMID}; // Spe : minus, neutral, bonus
         	for(int k = 0; k < natures.length; k++) { 
         		Nature nature = natures[k];
-        		String statStr = String.format(">> %s%1s : ", Stat.SPE, names[k]);
+        		String statStr = String.format("  •%s%1s : %s", Stat.SPE, names[k], (k == 0) ? Nature.getNaturesDecreasing(Stat.SPE) :
+        				                                                            (k == 2) ? Nature.getNaturesIncreasing(Stat.SPE) : "[all the other natures]");
         		
         		pSpeedCopy.getIVs().put(Stat.SPE, ContainerType.IV.getMinPerStat());
         		pSpeedCopy.setNature(nature);
@@ -3523,14 +3558,15 @@ public class DamageCalculator {
             	meMaxSpeed = playerMod.getFinalSpeed(pSpeedCopy);
             	
             	sb.append(statStr);
+            	sb.append(endl);
         		
             		// Checking always slower/faster for this nature
             	if(meMaxSpeed < oppSpeed) {
-            		sb.append("Player always slower than enemy.");
+            		sb.append("   >> Player always slower than enemy.");
             		sb.append(endl);
                     continue;
             	} else if (meMinSpeed > oppSpeed) {
-            		sb.append("Player always faster than enemy.");
+            		sb.append("   >> Player always faster than enemy.");
             		sb.append(endl);
             		sb.append(endl);
             		break;
@@ -3559,20 +3595,20 @@ public class DamageCalculator {
                     			String.format("%d", minIvToSpeedtie) : String.format("%d-%d", minIvToSpeedtie, maxIvToSpeedtie);
                     	String outspeedStr = minIvToOutspeed == 31 ? String.format("%d", minIvToOutspeed) : String.format("%d-%d", minIvToOutspeed, 31);
                     	
-                    	sb.append(String.format("%s to outspeed, %s to speedtie.", outspeedStr, speedtieStr));
+                    	sb.append(String.format("   >> %s to outspeed, %s to speedtie.", outspeedStr, speedtieStr));
                         //Main.append(" to outspeed: " + outspeedIV + ", to speedtie: " + tieIV);
                     } else if (minIvToOutspeed != Integer.MAX_VALUE) {
                     	minIvToOutspeed = (int)Math.max(0, minIvToOutspeed);
                     	String outspeedStr = minIvToOutspeed == 31 ? String.format("%d", minIvToOutspeed) : String.format("%d-%d", (int)minIvToOutspeed, 31);
                     	
-                    	sb.append(String.format("%s to outspeed.", outspeedStr));
+                    	sb.append(String.format("   >> %s to outspeed.", outspeedStr));
                     	//Main.append(" to outspeed: " + outspeedIV);
                     } else {
                     	maxIvToSpeedtie = (int)Math.min(31, maxIvToSpeedtie);
                     	String speedtieStr = minIvToSpeedtie == maxIvToSpeedtie || maxIvToSpeedtie == 0 ?
                     			String.format("%d", minIvToSpeedtie) : String.format("%d-%d", minIvToSpeedtie, maxIvToSpeedtie);
                     	
-                    	sb.append(String.format("%s to speedtie.", speedtieStr));
+                    	sb.append(String.format("   >> %s to speedtie.", speedtieStr));
                         //Main.append(" to speedtie: " + tieIV);
                     }
                     //Main.appendln(" with the same nature)");

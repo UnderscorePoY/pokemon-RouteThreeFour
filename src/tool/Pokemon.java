@@ -895,6 +895,7 @@ public class Pokemon implements Battleable {
 	/**
 	 * Puts the ev inside the container, throwing if it's not within container constraints.
 	 * Returns the previous value, or null if there was no previous mapping.
+	 * Doesn't update stats.
 	 */
 	public Integer setEV(Stat stat, int ev) {
 		return this.evs.put(stat, ev);

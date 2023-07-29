@@ -23,37 +23,37 @@ stats
 ranges
 
 ## LITTLEROOT
-L2 ZIGZAGOON HARDY -v 1 // Zigzagoon IVs and Nature are wrong
-BRENDAN_ROUTE_103_TREECKO -v 1
+L2 ZIGZAGOON HARDY // Zigzagoon IVs and Nature are wrong
+BRENDAN_ROUTE_103_TREECKO
 lm MUDSLAP
 
 ## ROUTE 102 - PETALBURG
-CALVIN_1 -v 1 -yatkuse 0 -scenario 0_HOWL -backtrack
-CALVIN_1 -v 1 -yatkuse 1 -scenario 1_HOWL -backtrack
-CALVIN_1 -v 1 -yatkuse 2 -scenario 2_HOWLS
+CALVIN_1 -yatkuse 0 -scenario 0_HOWL -backtrack
+CALVIN_1 -yatkuse 1 -scenario 1_HOWL -backtrack
+CALVIN_1 -yatkuse 2 -scenario 2_HOWLS
 
 buy 6 POTION
 buy 4 REPEL
 money
 
 ## ROUTE 103 - PETALBURG FOREST
-GRUNT_PETALBURG_WOODS -v 1 -yatkuse 0 -scenario 0_HOWL -backtrack
-GRUNT_PETALBURG_WOODS -v 1 -yatkuse 1 -scenario 1_HOWL -backtrack
-GRUNT_PETALBURG_WOODS -v 1 -yatkuse 2 -scenario 2_HOWLS -backtrack
-GRUNT_PETALBURG_WOODS -v 1 -yatkuse 3 -scenario 3_HOWLS -backtrack
-GRUNT_PETALBURG_WOODS -v 1 -yatkuse 4 -scenario 4_HOWLS
+GRUNT_PETALBURG_WOODS -yatkuse 0 -scenario 0_HOWL -backtrack
+GRUNT_PETALBURG_WOODS -yatkuse 1 -scenario 1_HOWL -backtrack
+GRUNT_PETALBURG_WOODS -yatkuse 2 -scenario 2_HOWLS -backtrack
+GRUNT_PETALBURG_WOODS -yatkuse 3 -scenario 3_HOWLS -backtrack
+GRUNT_PETALBURG_WOODS -yatkuse 4 -scenario 4_HOWLS
 
 ## RUSTBORO CITY GYM 
-JOSH -v 1
+JOSH
 lm WATERGUN
-TOMMY -v 1
-MARC -v 1
-ROXANNE_1 -v 1 -yatkuse -0 -scenario 0_GROWL -backtrack
-ROXANNE_1 -v 1 -yatkuse -1 -scenario 1_GROWL
+TOMMY
+MARC
+ROXANNE_1 -yatkuse -0 -scenario 0_GROWL -backtrack
+ROXANNE_1 -yatkuse -1 -scenario 1_GROWL
 
 ## ABRA MANIP - SAVING PEEKO 
-DEVAN -v 1
-GRUNT_RUSTURF_TUNNEL -v 1 
+DEVAN
+GRUNT_RUSTURF_TUNNEL 
 
 buy 2 REPEL
 buy 2 XSPEED
@@ -63,35 +63,35 @@ money
 ## SLATEPORT CITY 
 equip SOFTSAND
 spendmoney 50
-GRUNT_MUSEUM_1 -v 1
+GRUNT_MUSEUM_1
 evolve MARSHTOMP
 lm MUDSHOT
 um GROWL
-GRUNT_MUSEUM_2 -v 1
+GRUNT_MUSEUM_2
 
-ISABEL_1 -v 1 -xatkuse -0 -scenario 0_GROWL -backtrack
-ISABEL_1 -v 1 -xatkuse -1 -scenario 1_GROWL -backtrack
-ISABEL_1 -v 1 -xatkuse -2 -scenario 2_GROWLS
+ISABEL_1 -xatkuse -0 -scenario 0_GROWL -backtrack
+ISABEL_1 -xatkuse -1 -scenario 1_GROWL -backtrack
+ISABEL_1 -xatkuse -2 -scenario 2_GROWLS
 
-KALEB -v 1 -xatkuse -0 -scenario 0_GROWL -backtrack
-KALEB -v 1 -xatkuse -1 -scenario 1_GROWL -backtrack
-KALEB -v 1 -xatkuse -2 -scenario 2_GROWLS
+KALEB -xatkuse -0 -scenario 0_GROWL -backtrack
+KALEB -xatkuse -1 -scenario 1_GROWL -backtrack
+KALEB -xatkuse -2 -scenario 2_GROWLS
 
 ## RIVAL 2 
-BRENDAN_ROUTE_110_GROVYLE -order 1/3/2 -xspeUse 1 -xatkUse 2 -yspesSet 0/-1/0 -v 1
+BRENDAN_ROUTE_110_GROVYLE -order 1/3/2 -xspeUse 1 -xatkUse 2 -yspesSet 0/-1/0
 
-ALYSSA -v 1
-EDWARD -v 1
+ALYSSA
+EDWARD
 
 lm ROCKSMASH
 um TACKLE
-DEANDRE -v 1
-WALLY_MAUVILLE -v 1
+DEANDRE
+WALLY_MAUVILLE
 
 ## MAUVILLE CITY GYM 
-BEN -xatksUse 0/-1 -v 1
-WATTSON_1 -xspeUse 1 -xatksUse 0/1/0/0 -v 1 -scenario ELECTRIKE_X_ATK -backtrack
-WATTSON_1 -xspeUse 1 -xatksUse 1/0/0/0 -v 1 -scenario VOLTORB_X_ATK
+BEN -xatksUse 0/-1
+WATTSON_1 -xspeUse 1 -xatksUse 0/1/0/0 -scenario ELECTRIKE_X_ATK -backtrack
+WATTSON_1 -xspeUse 1 -xatksUse 1/0/0/0 -scenario VOLTORB_X_ATK
 
 ## FALLARBOR SHOPPING 
 sell NUGGET
@@ -108,22 +108,22 @@ money
 
 ## METEOR FALLS - RUSTURF TUNNEL 
 ##protein  optional, increases some ranges
-LUCAS_1 -v 1
+LUCAS_1
 lm STRENGTH
 um MUDSLAP
-ROSE_1 -v 1
+ROSE_1
 
 ## MT CHIMNEY - JAGGED PASS 
-GRUNT_MT_CHIMNEY_1 -v 1
-GRUNT_MT_CHIMNEY_2 -v 1
-TABITHA_MT_CHIMNEY -order 1/2/4/3 -v 1
+GRUNT_MT_CHIMNEY_1
+GRUNT_MT_CHIMNEY_2
+TABITHA_MT_CHIMNEY -order 1/2/4/3
 stats
 stats -b 
-MAXIE_MT_CHIMNEY -xatkSet 1 -v 1
+MAXIE_MT_CHIMNEY -xatkSet 1
 
 ## LAVARIDGE CITY 
-FLANNERY_1 -xatksUse 0/1/0/0 -weathers 0/SUN/SUN/SUN -v 1 -scenario SUN -backtrack
-FLANNERY_1 -xatksUse 0/1/0/0 -v 1 -scenario NO_SUN
+FLANNERY_1 -xatksUse 0/1/0/0 -weathers 0/SUN/SUN/SUN -scenario SUN -backtrack
+FLANNERY_1 -xatksUse 0/1/0/0 -scenario NO_SUN
 
 buy 7 ENERGYPOWDER
 buy 3 ENERGYROOT
@@ -131,28 +131,28 @@ buy 4 HEALPOWDER
 money
 
 ## DEWFORD GYM 
-BRAWLY_1 -v 1
+BRAWLY_1
 rarecandy
 
 ## PETALBURG CITY GYM 
-RANDALL -v 1
-PARKER -v 1
-JODY -v 1
-NORMAN_1 -xspeUse 1 -xatkUse 3 -v 1 -ydefsSet 0/0/0/0 -scenario SLAKING_NO_DEF_DROP -backtrack
-NORMAN_1 -xspeUse 1 -xatkUse 3 -v 1 -ydefsSet 0/0/0/-1 -scenario SLAKING_1_DEF_DROP -backtrack
-NORMAN_1 -xspeUse 1 -xatkUse 3 -v 1 -ydefsSet 0/0/0/-2 -scenario SLAKING_2_DEF_DROP
+RANDALL
+PARKER
+JODY
+NORMAN_1 -xspeUse 1 -xatkUse 3 -ydefsSet 0/0/0/0 -scenario SLAKING_NO_DEF_DROP -backtrack
+NORMAN_1 -xspeUse 1 -xatkUse 3 -ydefsSet 0/0/0/-1 -scenario SLAKING_1_DEF_DROP -backtrack
+NORMAN_1 -xspeUse 1 -xatkUse 3 -ydefsSet 0/0/0/-2 -scenario SLAKING_2_DEF_DROP
 
 lm SURF
 um WATERGUN
 
 ## WEATHER INSTITUTE 
-GRUNT_WEATHER_INST_4 -v 1
-GRUNT_WEATHER_INST_1 -v 1
-GRUNT_WEATHER_INST_2 -v 1
-SHELLY_WEATHER_INSTITUTE -v 1
+GRUNT_WEATHER_INST_4
+GRUNT_WEATHER_INST_1
+GRUNT_WEATHER_INST_2
+SHELLY_WEATHER_INSTITUTE
 
 ## RIVAL 3 - DEVON SCOPE 
-BRENDAN_ROUTE_119_GROVYLE -order 1/3/2 -xspeUse 1 -xatkUse 1 -v 1
+BRENDAN_ROUTE_119_GROVYLE -order 1/3/2 -xspeUse 1 -xatkUse 1
 equip MYSTICWATER
 
 ## ROUTE 120 - MT PYRE 
@@ -160,31 +160,33 @@ rarecandy
 rarecandy
 evolve SWAMPERT
 
-GRUNT_MT_PYRE_2 -v 1
-GRUNT_MT_PYRE_1 -v 1
-GRUNT_MT_PYRE_3 -ypartner GRUNT_MT_PYRE_4 -order 1/3/2+4 -v 1
+GRUNT_MT_PYRE_2
+GRUNT_MT_PYRE_1
+GRUNT_MT_PYRE_3 -ypartner GRUNT_MT_PYRE_4 -order 1/3/2+4
 
 ## FORTREE CITY GYM 
-FLINT -ypartner EDWARDO -order 3/4/1/2 -singleDmg -v 1
-DARIUS -sxp 0 -v 1 // KOed by Tropius
+FLINT -ypartner EDWARDO -order 3/4/1/2 -singleDmg
+stats
+DARIUS -sxp 0 // KOed by Tropius
 rarecandy
-WINONA_1 -xatksUse 1/0/3/0/0 -v 1
+WINONA_1 -xatksUse 1/0/3/0/0 -scenario ALTARIA_4_X_ATTACKS -backtrack
+WINONA_1 -xatksUse 1/0/2/0/0 -scenario ALTARIA_3_X_ATTACKS
 
 ## MAGMA HIDEOUT 
-GRUNT_MAGMA_HIDEOUT_2 -v 1 // L29 Poochyena
-GRUNT_MAGMA_HIDEOUT_3 -v 1 // L29 Numel
-GRUNT_MAGMA_HIDEOUT_1 -v 1 // L29 Zubat
-GRUNT_MAGMA_HIDEOUT_16 -v 1 // L28 Baltoy
-GRUNT_MAGMA_HIDEOUT_7 -v 1 // L28 Baltoy
-GRUNT_MAGMA_HIDEOUT_12 -ypartner GRUNT_MAGMA_HIDEOUT_13 -v 1
-TABITHA_MAGMA_HIDEOUT -v 1
-MAXIE_MAGMA_HIDEOUT -v 1
+GRUNT_MAGMA_HIDEOUT_2 // L29 Poochyena
+GRUNT_MAGMA_HIDEOUT_3 // L29 Numel
+GRUNT_MAGMA_HIDEOUT_1 // L29 Zubat
+GRUNT_MAGMA_HIDEOUT_16 // L29 Baltoy - Grunt F
+GRUNT_MAGMA_HIDEOUT_11 // L29 Baltoy - Grunt M
+GRUNT_MAGMA_HIDEOUT_12 -ypartner GRUNT_MAGMA_HIDEOUT_13 -order 1+2 // L29 Numel + L29 Zubat
+TABITHA_MAGMA_HIDEOUT
+MAXIE_MAGMA_HIDEOUT
 
 ## AQUA HIDEOUT 
-GRUNT_AQUA_HIDEOUT_7 -ypartner GRUNT_AQUA_HIDEOUT_2 -v 1
-GRUNT_AQUA_HIDEOUT_3 -ypartner GRUNT_AQUA_HIDEOUT_4 -v 1
-MATT -v 1
-DECLAN -v 1
+GRUNT_AQUA_HIDEOUT_7 -ypartner GRUNT_AQUA_HIDEOUT_2 -order 1+3/2+4
+GRUNT_AQUA_HIDEOUT_3 -ypartner GRUNT_AQUA_HIDEOUT_4 -order 1+2
+MATT
+DECLAN
 
 ## MOSDEEP CITY 
 buy 2 HYPERPOTION
@@ -193,26 +195,26 @@ buy 2 FULLHEAL
 buy 11 XATTACK
 buy 11 MAXREPEL
 
-PRESTON -ypartner MAURA -v 1
-MACEY -v 1
-SYLVIA -v 1
-HANNAH -v 1
-TATE_AND_LIZA_1 -xspeUse 1 -xspaUse 1 -v 1
+PRESTON -ypartner MAURA -order 2/1
+MACEY
+SYLVIA
+HANNAH
+TATE_AND_LIZA_1 -xspeUse 1 -xspaUse 1 -sxp 1 -order 1+2/3+4 // All slaves are KO when attacking
 
 ## TRUE DOUBLE 
-GRUNT_SPACE_CENTER_4 -v 1
-GRUNT_SPACE_CENTER_2 -v 1
+GRUNT_SPACE_CENTER_4
+GRUNT_SPACE_CENTER_2
 
-GRUNT_SPACE_CENTER_5 -v 1
-GRUNT_SPACE_CENTER_6 -v 1
-GRUNT_SPACE_CENTER_7 -v 1
+GRUNT_SPACE_CENTER_5
+GRUNT_SPACE_CENTER_6
+GRUNT_SPACE_CENTER_7
 
-MAXIE_MOSSDEEP -ypartner TABITHA_MOSSDEEP -v 1
+MAXIE_MOSSDEEP -ypartner TABITHA_MOSSDEEP -xpartner STEVEN_PARTNER -order 1+4/2+5/3+6 -xspaUse 1 -yspdsUse 0/2/0/0/0/0
 
 ## SEAFLOOR CAVERN 
 lm DIVE
 um MUDSHOT
-ARCHIE -xspesUse 0/1/0 -xspasUse 0/1/0 -v 1
+ARCHIE -xspesUse 0/1/0 -xspasUse 0/1/0
 
 
 ## end of Swampert section ##

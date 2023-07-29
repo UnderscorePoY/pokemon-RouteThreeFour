@@ -1,5 +1,7 @@
 package tool;
 
+import java.util.ArrayList;
+
 public enum Nature {
 	HARDY  (null, null),
 	LONELY (Stat.ATK, Stat.DEF),
@@ -93,4 +95,22 @@ public enum Nature {
             if(ics.equals(n.name())) return n;
         return null;
     }
+	
+	public static ArrayList<Nature> getNaturesIncreasing(Stat stat) {
+		ArrayList<Nature> natures = new ArrayList<>();
+		for(Nature n : values()) {
+			if(n.getIncreased() == stat)
+				natures.add(n);
+		}
+		return natures;
+	}
+	
+	public static ArrayList<Nature> getNaturesDecreasing(Stat stat) {
+		ArrayList<Nature> natures = new ArrayList<>();
+		for(Nature n : values()) {
+			if(n.getDecreased() == stat)
+				natures.add(n);
+		}
+		return natures;
+	}
 }

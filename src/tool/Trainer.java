@@ -140,28 +140,63 @@ public class Trainer implements Battleable, Iterable<Pokemon> {
         		else
         			moveset = Moveset.defaultMoveset(species, level);
         		
-        		// personality value logic
-        		// doc : https://github.com/pret/pokeemerald/blob/d79e62690b0d3f898beb18eff1a33fa36ab24408/src/battle_main.c#L1961
-                if (doubleBattle != 0) personalityValue = 0x80;
-                else if ((encounterMusicGender & 0x80) != 0) personalityValue = 0x78;
-                else personalityValue = 0x88;
-                
-                for(int i = 0; i < trainerName.length(); i++)
-                	nameHash = (nameHash + getCharValue(trainerName.charAt(i))) & 0xFFFFFFFF;
-                
-        		for(int i = 0; i < hashName.length(); i++)
-                	nameHash = (nameHash + getCharValue(hashName.charAt(i))) & 0xFFFFFFFF;
-        		personalityValue = (personalityValue + ((nameHash << 8) & 0xFFFFFFFF)) & 0xFFFFFFFF;
-        		
-        		int fixedIV = difficulty * 31 / 255;
-        		//
-
-        		Gender gender = Gender.getGenderFromSpeciesAndPersonalityValue(species, personalityValue);
-        		Nature nature = Nature.getNatureFromPersonalityValue(personalityValue);
-        		Ability ability = Ability.getAbilityFromPersonalityValue(species, personalityValue);
-        		
-        		Pokemon pokemon = new Pokemon(species, gender, level, nature, ability, fixedIV, moveset, heldItem);
-        		party.add(pokemon);
+        		if(!trainerDic.containsKey("fixedParty")) { // classic overworld trainers
+            		// personality value logic
+            		// doc : https://github.com/pret/pokeemerald/blob/d79e62690b0d3f898beb18eff1a33fa36ab24408/src/battle_main.c#L1961
+	                if (doubleBattle != 0) personalityValue = 0x80;
+	                else if ((encounterMusicGender & 0x80) != 0) personalityValue = 0x78;
+	                else personalityValue = 0x88;
+	                
+	                for(int i = 0; i < trainerName.length(); i++)
+	                	nameHash = (nameHash + getCharValue(trainerName.charAt(i))) & 0xFFFFFFFF;
+	                
+	        		for(int i = 0; i < hashName.length(); i++)
+	                	nameHash = (nameHash + getCharValue(hashName.charAt(i))) & 0xFFFFFFFF;
+	        		personalityValue = (personalityValue + ((nameHash << 8) & 0xFFFFFFFF)) & 0xFFFFFFFF;
+	        		
+	        		int fixedIV = difficulty * 31 / 255;
+	        		//
+	
+	        		Gender gender = Gender.getGenderFromSpeciesAndPersonalityValue(species, personalityValue);
+	        		Nature nature = Nature.getNatureFromPersonalityValue(personalityValue);
+	        		Ability ability = Ability.getAbilityFromPersonalityValue(species, personalityValue);
+	        		
+	        		Pokemon pokemon = new Pokemon(species, gender, level, nature, ability, fixedIV, moveset, heldItem);
+	        		
+	        		party.add(pokemon);
+        		} else { // special trainers | TODO: implement the actual generation if going for Battle Tower data, maybe even put this data in a separate file
+        			int fixedIV = difficulty * 31 / 255;
+            		String natureStr = (String) pokemonDic.get("nature");
+            		Nature nature = Nature.getNatureFromString(natureStr);
+            		
+            		JSONArray evsArr = (JSONArray) pokemonDic.get("evs");
+            		int hpEv = ((Long) evsArr.get(0)).intValue();
+            		int atkEv = ((Long) evsArr.get(1)).intValue();
+            		int defEv = ((Long) evsArr.get(2)).intValue();
+            		int speEv = ((Long) evsArr.get(3)).intValue();
+            		int spaEv = ((Long) evsArr.get(4)).intValue();
+            		int spdEv = ((Long) evsArr.get(5)).intValue();
+            		
+            		Gender gender;
+            		if(pokemonDic.containsKey("gender")) {
+            			String genderStr = (String) pokemonDic.get("gender");
+            			gender = Gender.getGenderFromStr(genderStr);
+            		} else {
+            			gender = Gender.predominantGender(species); // TODO: might not be accurate
+            		}
+            		Ability ability = species.getAbility1(); // TODO: might not be accurate
+            		
+            		Pokemon pokemon = new Pokemon(species, gender, level, nature, ability, fixedIV, moveset, heldItem);
+            		pokemon.setEV(Stat.HP, hpEv);
+            		pokemon.setEV(Stat.ATK, atkEv);
+            		pokemon.setEV(Stat.DEF, defEv);
+            		pokemon.setEV(Stat.SPE, speEv);
+            		pokemon.setEV(Stat.SPA, spaEv);
+            		pokemon.setEV(Stat.SPD, spdEv);
+            		pokemon.updateEVsAndCalculateStats();
+            		
+            		party.add(pokemon);
+        		}
         	}
         	trainer = new Trainer(trainerAlias, partyFlags, trainerClass, baseMoney, encounterMusicGender, trainerPic, 
         			trainerName, items, doubleBattle != 0, aiFlags, badgeBoosts, partyType, party); // TODO : hardcoded
