@@ -267,7 +267,10 @@ The `resources` folder contains most of the data used by the tool. You can look 
 
 ###### Pokerus
 - `"setPokerus"` : Infects your Pokémon with Pokérus. Allows to double EV yields until maximum values are reached.
-- `"unsetPokerus"` : Deactivates Pokérus.
+- `"unsetPokerus"` : Deactivates Pokérus.  
+
+##### Happiness
+- `"setHappiness <VALUE>"` : Sets happiness to value `VALUE`. Must be an integer between `0` and `255`.  
 
 ##### 5.3.2. Items
 - `"equipItem <ITEM>"` : Equips the item `ITEM`. If an item was already held, it is replaced by the specified one. `ITEM` only considers alphanumerical characters in a case-incensitive way.  
