@@ -63,23 +63,28 @@ public abstract class GameAction {
             Main.appendln(String.format(Locale.US, "MONEY: %,d", Settings.money));
         }
     };
+    /*
     public static final GameAction printAllStats = new GameAction() {
         void performAction(Pokemon p) { 
             Main.appendln(p.getDetailledStatsStr(true));
             Main.appendln(p.levelAndExperienceNeededToLevelUpStr());
         }
     };
+    */
     public static final GameAction printAllStatsNoBoost = new GameAction() {
         void performAction(Pokemon p) { 
-            Main.appendln(p.getDetailledStatsStr(false));
+            //Main.appendln(p.getDetailledStatsStr(false));
+        	Main.appendln(p.getDetailledStatsStr());
             Main.appendln(p.levelAndExperienceNeededToLevelUpStr());
         }
     };
+    /*
     public static final GameAction printStatRanges = new GameAction() {
         void performAction(Pokemon p) { Main.appendln(p.statRanges(true)); }
     };
+    */
     public static final GameAction printStatRangesNoBoost = new GameAction() {
-        void performAction(Pokemon p) { Main.appendln(p.statRanges(false)); }
+        void performAction(Pokemon p) { Main.appendln(p.statRanges()); }
     };
     
     public static final GameAction updateEVs = new GameAction() {
@@ -116,7 +121,7 @@ class EatConsumable extends GameAction {
 			if(isConsumed) {
 				Main.appendln(""); 
 				Main.appendln(String.format("Using a %s.", consumable.getDisplayName())); 
-				printAllStats.performAction(p);
+				printAllStatsNoBoost.performAction(p);
 			} else {
 				Main.appendln(String.format("WARNING : %s #%d had no effect.", consumable.getDisplayName(), i)); // TODO : better warning
 			}

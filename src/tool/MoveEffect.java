@@ -541,6 +541,5 @@ public enum MoveEffect {
     
     public boolean isRecoil() {
     	return getRecoilDivider() != null;
-    }
-	
+    }	
 }

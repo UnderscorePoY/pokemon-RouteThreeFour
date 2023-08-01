@@ -691,7 +691,7 @@ public class Trainer implements Battleable, Iterable<Pokemon> {
 	
 	public static void printTrainers() {
 		for(Map.Entry<IgnoreCaseString, Trainer> entry : trainersByName.entrySet()) {
-			System.out.println(entry.getKey()+"="+entry.getValue().allPokes());
+			System.out.println(entry.getKey()+"="+entry.getValue().allPokesStr());
 		}
 	}
 	
@@ -854,8 +854,10 @@ public class Trainer implements Battleable, Iterable<Pokemon> {
 	    	}
 	    	sb.append(sbItems.delete(sbItems.length()-2, sbItems.length()).toString()); // TODO: hardcoded based on the length of string ", "
 	    	sb.append("] ");
+	    	sb.append(Constants.endl);
     	}
-    	sb.append(String.format("{%s}", allPokes()));
+    	//sb.append(String.format("{%s}", allPokesStr()));
+    	sb.append(allPokesStrMultiline());
     	
     	return sb.toString();
     }
@@ -875,12 +877,22 @@ public class Trainer implements Battleable, Iterable<Pokemon> {
     }
     */
 
-    public String allPokes() {
+    public String allPokesStr() {
         StringBuilder sb = new StringBuilder();
         for (Pokemon p : party) {
             sb.append(p.levelNameNatureAbilityItemStr() + ", ");
         }
         return sb.delete(sb.length()-2, sb.length()).toString(); // TODO: hardcoded based on the length of string ", "
+    }
+    
+    public String allPokesStrMultiline() {
+        StringBuilder sb = new StringBuilder();
+        for (Pokemon p : party) {
+        	sb.append("  - ");
+            sb.append(p.levelNameNatureAbilityItemStr());
+            sb.append(Constants.endl);
+        }
+        return sb.toString(); // TODO: hardcoded based on the length of string ", "
     }
 
     /*

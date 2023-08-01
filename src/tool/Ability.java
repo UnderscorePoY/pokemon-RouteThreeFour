@@ -213,4 +213,8 @@ public enum Ability {
 	public boolean avoidsRecoil() {
 		return this == ROCK_HEAD || this == MAGIC_GUARD;
 	}
+
+	boolean ignoresWeather() {
+		return this == AIR_LOCK || this == CLOUD_NINE;
+	}
 }

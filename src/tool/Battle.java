@@ -87,10 +87,12 @@ public class Battle extends GameAction {
             if (p.getLevel() > lastLvl) {
                 lastLvl = p.getLevel();
                 if (options.isPrintStatRangesOnLvl()) {
-                    Main.appendln(p.statRanges(false));
+                    //Main.appendln(p.statRanges(false));
+                	Main.appendln(p.statRanges());
                 }
                 if (options.isPrintStatsOnLvl()) {
-                    Main.appendln(p.statRanges(true));
+                    //Main.appendln(p.statRanges(true));
+                	Main.appendln(p.getDetailledStatsStr());
                 }
             }
             if(getVerbose() != VerboseLevel.NONE)
@@ -149,10 +151,12 @@ public class Battle extends GameAction {
                     if (p.getLevel() > lastLvl) {
                         lastLvl = p.getLevel();
                         if (options.isPrintStatRangesOnLvl()) {
-                            Main.appendln(p.statRanges(false));
+                            //Main.appendln(p.statRanges(false));
+                        	Main.appendln(p.statRanges());
                         }
                         if (options.isPrintStatsOnLvl()) {
-                            Main.appendln(p.getDetailledStatsStr(false));
+                            //Main.appendln(p.getDetailledStatsStr(false));
+                        	Main.appendln(p.getDetailledStatsStr());
                         }
                     }
 	            } // end batch

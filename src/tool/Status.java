@@ -40,7 +40,8 @@ public enum Status {
 	REFLECT    ("REFLECT",       "REFLECT", "R"),
 	LIGHTSCREEN("LIGHTSCREEN",   "LIGHTSCREEN", "LS"),
 	SPIKES     ("SPIKES",        "SPIKES"),
-	TAILWIND   ("TAILWIND",      "TAILWIND");
+	TAILWIND   ("TAILWIND",      "TAILWIND"),
+	;
 
 	private String displayName;
 	private ArrayList<String> tokens;

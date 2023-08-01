@@ -241,6 +241,9 @@ public class Move {
     
     public void setType(Type type) {
         this.type = type;
+        if(Settings.game.isGen3()) {
+        	this.moveClass = MoveClass.getGen3MoveClassFromType(type);
+        }
     }
     
     public boolean isPhysical() {
@@ -617,5 +620,19 @@ public class Move {
     public boolean isFistMove() {
     	return fists.contains(new IgnoreCaseString(this.unmodifiedName));
     }
+
+    // Moves who only work if not grounded
+    private static final String[] requiresNotGroundedStrArr = new String[] {
+    		"Bounce", "Fly", "High Jump Kick", "Jump Kick", "Splash" , "Telekinesis"
+    };
+    private static final Set<IgnoreCaseString> requiresNotGrounded = new HashSet<>();
+    static {
+    	for(String requiresNotGroundedStr : requiresNotGroundedStrArr)
+    		requiresNotGrounded.add(new IgnoreCaseString(requiresNotGroundedStr));
+    }
+    
+	public boolean requiresNotGrounded() {
+		return requiresNotGrounded.add(new IgnoreCaseString(this.unmodifiedName));
+	}
     
 }

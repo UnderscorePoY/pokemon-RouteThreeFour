@@ -478,6 +478,8 @@ public class RouteParser {
         	return GameAction.printMoney;
 			
         case PRINT_STATS:
+        	return GameAction.printAllStatsNoBoost;
+        	/*
         	if(nbNonOptionalParams > 1 && tokens[1].equalsIgnoreCase("-b")) { // TODO: hacky
         		if(!Settings.game.isGen3())
         			throw new RouteParserException("badge boosts are not available in this game.");
@@ -485,8 +487,11 @@ public class RouteParser {
                 return GameAction.printAllStats;
         	} else
         		return GameAction.printAllStatsNoBoost;
+        		*/
         	
         case PRINT_STATS_RANGES:
+    		return GameAction.printStatRangesNoBoost;
+        	/*
         	if(nbNonOptionalParams > 1 && tokens[1].equalsIgnoreCase("-b")) { // TODO: hacky
         		if(!Settings.game.isGen3())
         			throw new RouteParserException("badge boosts are not available in this game.");
@@ -494,6 +499,7 @@ public class RouteParser {
                 return GameAction.printStatRanges;
         	} else
         		return GameAction.printStatRangesNoBoost;
+        		*/
         	
         case PC_WITHDRAWAL:
         	return GameAction.updateEVs;

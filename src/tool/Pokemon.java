@@ -22,8 +22,8 @@ public class Pokemon implements Battleable {
     private StatsContainer evs;
     private StatsContainer evs_used;
     private StatsContainer statsWithoutAnyBadgeBoosts;
-    private StatsContainer statsWithApplicableBadgeBoosts;
-    private StatsContainer statsWithForcedBadgeBoosts;
+    //private StatsContainer statsWithApplicableBadgeBoosts;
+    //private StatsContainer statsWithForcedBadgeBoosts;
 
     private int totalExp;
     private Moveset moves;
@@ -112,8 +112,8 @@ public class Pokemon implements Battleable {
         this.evs = new StatsContainer(ContainerType.EV);
         this.evs_used = new StatsContainer(ContainerType.EV);
         this.statsWithoutAnyBadgeBoosts = new StatsContainer(ContainerType.STATS);
-        this.statsWithApplicableBadgeBoosts = new StatsContainer(ContainerType.STATS);
-        this.statsWithForcedBadgeBoosts = new StatsContainer(ContainerType.STATS);
+        //this.statsWithApplicableBadgeBoosts = new StatsContainer(ContainerType.STATS);
+        //this.statsWithForcedBadgeBoosts = new StatsContainer(ContainerType.STATS);
         this.moves = Moveset.defaultMoveset(species, level);
         this.wild = false;
         this.happiness = species.getFriendship();
@@ -132,8 +132,8 @@ public class Pokemon implements Battleable {
         this.evs = new StatsContainer(p.evs);
         this.evs_used = new StatsContainer(p.evs_used);
         this.statsWithoutAnyBadgeBoosts = new StatsContainer(p.statsWithoutAnyBadgeBoosts);
-        this.statsWithApplicableBadgeBoosts = new StatsContainer(p.statsWithApplicableBadgeBoosts);
-        this.statsWithForcedBadgeBoosts = new StatsContainer(p.statsWithForcedBadgeBoosts);
+        //this.statsWithApplicableBadgeBoosts = new StatsContainer(p.statsWithApplicableBadgeBoosts);
+        //this.statsWithForcedBadgeBoosts = new StatsContainer(p.statsWithForcedBadgeBoosts);
         this.totalExp = p.totalExp;
         this.moves = new Moveset(p.moves);
         this.wild = p.wild;
@@ -181,12 +181,13 @@ public class Pokemon implements Battleable {
 		return statsWithoutAnyBadgeBoosts.get(stat);
 	}
 	
-	/**
+	/*
 	 * Returns stat value with applicable badge boost. Used in overworld battles in Gen 3.
-	 */
+	 *
 	public int getStatValue(Stat stat) {
 		return statsWithApplicableBadgeBoosts.get(stat);
 	}
+	*/
 	
 
     // call this to update your stats
@@ -203,8 +204,8 @@ public class Pokemon implements Battleable {
     	for(Stat stat : statsWithoutAnyBadgeBoosts.getContainerType()) {
     		int trueStatValue = calculateNonBoostedStat(stat, ivs.get(stat), nature);
     		statsWithoutAnyBadgeBoosts.put(stat, trueStatValue);
-    		statsWithApplicableBadgeBoosts.put(stat, applyBadgeBoostIfPossible(stat, trueStatValue));
-    		statsWithForcedBadgeBoosts.put(stat, applyBadgeBoost(trueStatValue));
+    		//statsWithApplicableBadgeBoosts.put(stat, applyBadgeBoostIfPossible(stat, trueStatValue));
+    		//statsWithForcedBadgeBoosts.put(stat, applyBadgeBoost(trueStatValue));
     	}
     		
 		/*
@@ -272,6 +273,7 @@ public class Pokemon implements Battleable {
     }
 	*/
     
+    
     private int evCalc(int ev) {
         return ev / 4;
     }
@@ -307,13 +309,14 @@ public class Pokemon implements Battleable {
     }
     // TODO: EV setter
     
-    /**
+    /*
      * Returns the stat value with forced badge boost if available. Used in display only, in Gen 3.
-     */
+     *
     public int getStatValueWithForcedBadgeBoost(Stat stat) {
     	return statsWithForcedBadgeBoosts.get(stat);
     }
     // No need for a setter.
+    */
 
     /**
      * Returns the speed value with current evs, and custom iv and nature. Primarily used for calculating speed thresholds.
@@ -335,26 +338,29 @@ public class Pokemon implements Battleable {
     /**
      * Returns the stat value without badge boost, whether there is one available or not. Battle Tower compliant.
      */
-	public int getBattleTowerStatValue(Stat stat) {
+	public int getStatValue(Stat stat) {
 		return this.statsWithoutAnyBadgeBoosts.get(stat);
 	}
 	// No need for a setter
 	
-    /**
+    /*
      * Returns the stat value with applicable badge boost. Overworld battle compliant.
-     */
+     *
 	public int getBattleStatValue(Stat stat) {
 		return this.statsWithApplicableBadgeBoosts.get(stat);
 	}
 	// No need for a setter
+	*/
 	
-    /**
+	
+    /*
      * Returns the stat value with forced badge boost.
-     */
+     *
 	public int getBoostedStatValue(Stat stat) {
 		return this.statsWithApplicableBadgeBoosts.get(stat);
 	}
 	// No need for a setter
+	*/
 	
 	/*
 	// not affected by badge boosts
@@ -435,7 +441,8 @@ public class Pokemon implements Battleable {
     }
 
     public String toString() { // TODO ?
-        return getDetailledStatsStr(true);
+        //return getDetailledStatsStr(true);
+    	return getDetailledStatsStr();
     }
 
 
@@ -444,14 +451,16 @@ public class Pokemon implements Battleable {
      * If allowBoosts is true, displays stats with applicable badge boosts.
      * If allow Boosts is false, displays stats as they would appear in the in-game Pokémon menu.
      */
-    public String getDetailledStatsStr(boolean allowBoosts) {
+    public String getDetailledStatsStr() {
     	String endl = Constants.endl;
         StringBuilder sb = new StringBuilder();
-        StatsContainer stats = allowBoosts ? statsWithApplicableBadgeBoosts : statsWithoutAnyBadgeBoosts;
+        //StatsContainer stats = allowBoosts ? statsWithApplicableBadgeBoosts : statsWithoutAnyBadgeBoosts;
+        StatsContainer stats = statsWithoutAnyBadgeBoosts;
 
         sb.append(String.format("%s %s.%s", levelNameNatureAbilityItemStr(), experienceNeededToLevelUpStr(), endl));
         sb.append(String.format("Stats%s:%s",
-        		!Settings.game.isGen4() ? String.format(" %s badge boosts", allowBoosts ? "with applicable": "without") : "", 
+        		//!Settings.game.isGen4() ? String.format(" %s badge boosts", allowBoosts ? "with applicable": "without") : "", 
+        		"",
         		endl));
         sb.append(String.format("%s%s", statsWithoutAnyBadgeBoosts.getStatsHeaderStr(badges, nature), endl));
         sb.append(String.format("%s%s", stats.getStatsValuesStr(), endl));
@@ -761,7 +770,7 @@ public class Pokemon implements Battleable {
      * If allowBoosts is true, displays stats with applicable badge boosts.
      * If allowBoosts is false, displays stats as they would appear in the in-game Pokémon menu.
      */
-    public String statRanges(boolean allowBoosts) {
+    public String statRanges() {
     	final String HEADER_FORMAT = "|%-6s"; // anchored left, length 6
     	final String STAT_FORMAT = "|%4s"; // anchored right, length 4 | TODO : move somewhere else ?
         final int IV_RANGE = ContainerType.IV.getMaxPerStat() - ContainerType.IV.getMinPerStat() + 1;
@@ -800,11 +809,13 @@ public class Pokemon implements Battleable {
         		increased[i] = Nature.increaseStat(neutralStatValue);
         		decreased[i] = Nature.decreaseStat(neutralStatValue);
         		
+        		/*
         		if(allowBoosts) {
         			increased[i] = applyBadgeBoostIfPossible(stat, increased[i]);
         			neutral[i] = applyBadgeBoostIfPossible(stat, neutral[i]);
         			decreased[i] = applyBadgeBoostIfPossible(stat, decreased[i]);
         		}
+        		*/
         	}
         	increasedMap.put(stat, increased);
         	decreasedMap.put(stat, decreased);
@@ -815,7 +826,8 @@ public class Pokemon implements Battleable {
         StringBuilder sb = new StringBuilder();
         sb.append(String.format("%s%s", levelNameNatureAbilityItemStr(), endl));
         sb.append(String.format("Stat ranges%s:%s", 
-        		Settings.game.isGen3() ? String.format(" %s badge boosts", allowBoosts ? "with applicable" : "without") : "", 
+        		//Settings.game.isGen3() ? String.format(" %s badge boosts", allowBoosts ? "with applicable" : "without") : "", 
+        		"",
         		endl));
         
 

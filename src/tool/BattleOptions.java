@@ -63,6 +63,9 @@ public class BattleOptions {
     
     private ArrayList<ArrayList<Pokemon>> newPartySeparatedInBatches;
     
+    private final HashSet<Object> playerResiduals = new HashSet<>();
+    private final HashSet<Object> enemyResiduals = new HashSet<>();
+    
     //private boolean isPostponedExp = false;
     
     /**
@@ -1123,5 +1126,13 @@ public class BattleOptions {
 	
 	public void resetSingleTimeAbility(Side side) {
 		setHasUsedSingleTimeAbility(side, false);
+	}
+
+	public HashSet<Object> getPlayerResiduals() {
+		return playerResiduals;
+	}
+
+	public HashSet<Object> getEnemyResiduals() {
+		return enemyResiduals;
 	}
 }

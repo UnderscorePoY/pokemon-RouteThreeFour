@@ -1,6 +1,8 @@
 package tool;
 import java.util.ArrayList;
 import java.util.EnumSet;
+import java.util.HashMap;
+import java.util.HashSet;
 
 /**
  * The in-battle stat modifiers applied to a Pokémon (caused by e.g. X Attack).
@@ -12,6 +14,8 @@ public class StatModifier {
     private EnumSet<Status> statuses2_3;
     private Weather weather;
     private boolean isIVvariation;
+    
+    private HashSet<Object> immuneTo = new HashSet<>();
 
     public StatModifier() {
     	this.stages = new StatsContainer(StatsContainer.ContainerType.STAT_INCREMENTS);
@@ -367,5 +371,9 @@ public class StatModifier {
 
 	public void setIVvariation(boolean isIVvariation) {
 		this.isIVvariation = isIVvariation;
+	}
+
+	public boolean isImmuneTo(Object o) {
+		return immuneTo.contains(o);
 	}
 }

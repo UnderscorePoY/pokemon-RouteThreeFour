@@ -12,6 +12,15 @@ It is derived from a custom RouteThree, itself derived from Dabomstew & entrpntr
 ○ Usual update.  
 **!!** Bug fixes.  
 
+**`[2023/08/01]` - v0.4.4**  
+**!!** [*Gen 3*] Fixed wrong Attack stat calculation when the player has `Roxanne` badge and either `Pure Power` or `Huge Power`.  
+○ Added command `setHappiness`.
+○ In commands `stats` and `lvRanges`, the option `-b` isn't affecting the output anymore.  
+○ Improved output formatting.  
+○ Improved residual effects (weather damage, status ailments, etc.).  
+○ [*Gen 3*] Added `Forecast` and `Weather Ball` in damage calculation.  
+
+
 **`[2023/07/30]` - v0.4.3**  
 **!!** Fixed automatic `Intimidate` which could be triggered several times by the same Pokémon.  
 **!!** Fixed trainers like `Tate & Liza` who where not considered as double battle by default (damage mode and experience).  
