@@ -14,7 +14,7 @@ It is derived from a custom RouteThree, itself derived from Dabomstew & entrpntr
 
 **`[2023/08/03]` - v0.4.5**  
 **!!** Fixed an issue in option `-IVvariation`. When the enemy had a guaranteed OHKO for a certain defensive IV value, the output was saying that the OHKO was guaranteed for all subsequent IV values, which is inaccurate is most cases.  
-**!!** Fixed `Intimidate` automatic Attack drop who was triggered on the second Pokémon if the first Pokémon was negating it with its Ability.  
+**!!** Fixed `Intimidate` automatic Attack drop which was triggered on the second Pokémon if the first Pokémon was negating it with its Ability.  
 ○ [*Gen 3*] Implemented `Facade` boost when burned, asleep, poisoned or toxic'd.  
 ○ [*Gen 3*] Implemented `Low Kick`.  
 
