@@ -1042,16 +1042,19 @@ public class BattleOptions {
 	            	System.out.println("BattleOptions.prepareStatModifiers");
 	            
 	            // Intimidate
-	            if(defender.getAbility() == Ability.INTIMIDATE 
-	            		&& attacker.getAbility() != Ability.HYPER_CUTTER && attacker.getAbility() != Ability.CLEAR_BODY && attacker.getAbility() != Ability.WHITE_SMOKE
+	            if(defender.getAbility() == Ability.INTIMIDATE)
+	            {
+	            	if(attacker.getAbility() != Ability.HYPER_CUTTER 
+	            			&& attacker.getAbility() != Ability.CLEAR_BODY 
+	            			&& attacker.getAbility() != Ability.WHITE_SMOKE
 	            		&& !isForcedStat(attackerSide, Stat.ATK)
 	            		&& !hasUsedSingleTimeAbility(defenderSide)) {
-	            	if(attackerSide == Side.PLAYER)
-	            		decrementStatUntilBattleEnds(attackerSide, Stat.ATK);
-	            	else if (attackerSide == Side.ENEMY)
-	            		decrementEnemyStatForCurrentIndex(Stat.ATK);
-	            		
-	    			setHasUsedSingleTimeAbility(defenderSide, true);
+		            	if(attackerSide == Side.PLAYER)
+		            		decrementStatUntilBattleEnds(attackerSide, Stat.ATK);
+		            	else if (attackerSide == Side.ENEMY)
+		            		decrementEnemyStatForCurrentIndex(Stat.ATK);
+	            	}
+	            	setHasUsedSingleTimeAbility(defenderSide, true);
 	            }
 			}
             

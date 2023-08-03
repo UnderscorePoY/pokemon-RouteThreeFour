@@ -133,4 +133,12 @@ public enum Status {
 	public ArrayList<String> getTokens() {
 		return tokens;
 	}
+	
+	public boolean matchesAny(Status...statuses) {
+		for(Status s : statuses) {
+			if(this == s)
+				return true;
+		}
+		return false;
+	}
 }

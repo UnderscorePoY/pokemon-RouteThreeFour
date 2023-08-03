@@ -91,6 +91,11 @@ public class DamageCalculator {
 				critHitsGreaterOrEqualThanEnemyHP += mult;
 		}
 		
+		@Override
+		public String toString() {
+			return normalDamageRolls.toString() + (hasCrit() ? Constants.endl + critDamageRolls.toString() : "");
+		}
+		
 		private void calculate() throws UnsupportedOperationException, ToolInternalException {
 			Move modifiedMove = null; // used to store a copy of the move, which is modified by the damage functions as side-effects
 			DamagesInfo info = null;
@@ -647,7 +652,8 @@ public class DamageCalculator {
 						
 						appendRecoilDamagesIfApplicable(sb, critDamageRolls);
 						
-						printDamageWithIVvariationIfApplicable(sb, m, p1, p2, atkMod, defMod, 1, isBattleTower, isDoubleBattle, true);
+						if(verboseLevel == VerboseLevel.MOST || verboseLevel == VerboseLevel.EVERYTHING)
+							printDamageWithIVvariationIfApplicable(sb, m, p1, p2, atkMod, defMod, 1, isBattleTower, isDoubleBattle, true);
 					}
 					appendPostKODamageIfApplicable(sb);
 					
@@ -1081,11 +1087,8 @@ public class DamageCalculator {
         // *********** //
         
         // Overwrite multiplier if Surfing an underwater pokemon
-        // TODO : maybe put this somewhere else, idk
-        if(modifiedAttackMove.matchesAny("SURF") && defMod.hasStatus2_3(Status.UNDERWATER)) {
-        	modifiedAttackMove.setName(String.format("%s +%s",modifiedAttackMove.getName(), Status.UNDERWATER));
-        	extra_multiplier = 2;
-        }
+        // moved below
+
         
         // *************** //
         // [End EffectHit] //
@@ -1112,10 +1115,19 @@ public class DamageCalculator {
         	damage *= 2;
         
         // Damage multiplier (TODO: What is this exactly ? Seems to be sDMG_MULTIPLIER)
-        if(modifiedAttackMove.matchesAny("Pursuit") && defMod.hasStatus2_3(Status.SWITCHING_OUT)) {
+        if(modifiedAttackMove.matchesAny("SURF", "WHIRLPOOL") && defMod.hasStatus2_3(Status.UNDERWATER)) {
+        	modifiedAttackMove.setName(String.format("%s +%s",modifiedAttackMove.getName(), Status.UNDERWATER));
+        	extra_multiplier = 2;
+        } 
+        else if(modifiedAttackMove.matchesAny("Pursuit") && defMod.hasStatus2_3(Status.SWITCHING_OUT)) {
         	extra_multiplier = 2; // TODO : hardcoded
         	modifiedAttackMove.setName(String.format("%s +%s",modifiedAttackMove.getName(), Status.SWITCHING_OUT));
-        }
+        } 
+        else if(modifiedAttackMove.matchesAny("Facade") && atkMod.getStatus1().matchesAny(Status.POISON, Status.BURN, Status.PARALYSIS, Status.TOXIC)) {
+        	extra_multiplier = 2; // TODO : hardcoded
+        	modifiedAttackMove.setName(String.format("%s +%s",modifiedAttackMove.getName(), atkMod.getStatus1()));
+        } 
+        // TODO : Twister/Gust on Air, Earthquake/Magnitude with Underground, Stomp on Minimized, SmellingSalt on Paralyzed
         
         damage *= extra_multiplier;
         
@@ -1250,6 +1262,30 @@ public class DamageCalculator {
             modifiedAttackMove.setName(String.format("%s %s %d",
             		modifiedAttackMove.getName(), modifiedAttackMove.getType(), modifiedAttackMove.getPower()));
             break;
+            
+    	case RETURN:
+    	{
+    		int bp = Happiness.getReturnBP(attacker.getHappiness());
+    		modifiedAttackMove.setPower(bp);
+    		modifiedAttackMove.setName(modifiedAttackMove.getBoostedName(bp));
+    		break;
+    	}
+			
+    	case FRUSTRATION:
+    	{
+    		int bp = Happiness.getFrustrationBP(attacker.getHappiness());
+    		modifiedAttackMove.setPower(bp);
+    		modifiedAttackMove.setName(modifiedAttackMove.getBoostedName(bp));
+    		break;
+    	}
+    	
+    	case LOW_KICK: // Gen 3 Low Kick
+        	int w = defender.getSpecies().getWeight();
+        	int bp = w >= 2000 ? 120 : w >= 1000 ? 100 : w >= 500 ? 80 : w >= 250 ? 60 : w >= 100 ? 40 : 20;
+        	modifiedAttackMove.setPower(bp);
+        	modifiedAttackMove.setName(modifiedAttackMove.getBoostedName(bp)); // TODO: find better way
+    		break;
+            
     		
     	default:
     		break;
@@ -1965,6 +2001,29 @@ public class DamageCalculator {
             movePower = attacker.getIVs().getHiddenPowerPower();
         	move.setName(String.format("%s %s %s",move.getName(), moveType, movePower)); // TODO: find better way
             break;
+            
+    	case RETURN:
+    	{
+    		int bp = Happiness.getReturnBP(attacker.getHappiness());
+    		movePower = bp;
+    		move.setName(move.getBoostedName(bp));
+			break;
+    	}
+			
+    	case FRUSTRATION:
+    	{
+    		int bp = Happiness.getFrustrationBP(attacker.getHappiness());
+    		movePower = bp;
+    		move.setName(move.getBoostedName(bp));
+    		break;
+    	}
+    	
+    	case STRONGER_HEAVIER: // Gen 4 Low Kick, Grass Knot
+        	int w = defender.getSpecies().getWeight();
+        	int bp = w >= 2000 ? 120 : w >= 1000 ? 100 : w >= 500 ? 80 : w >= 250 ? 60 : w >= 100 ? 40 : 20;
+        	movePower = bp;
+        	move.setName(move.getBoostedName(bp)); // TODO: find better way
+    		break;
         	
         default:
         	break;
@@ -2083,13 +2142,7 @@ public class DamageCalculator {
     		info.setDamage(0);
     		return info;
     		// break;	
-    		
-    	case STRONGER_HEAVIER: // Grass Knot, Low Kick
-        	int w = defender.getSpecies().getWeight();
-        	movePower = w >= 2000 ? 120 : w >= 1000 ? 100 : w >= 500 ? 80 : w >= 250 ? 60 : w >= 100 ? 40 : 20;
-    		move.setName(String.format("%s %s",move.getName(), movePower)); // TODO: find better way
-        	break;	
-        	
+    		      	
     	case GYRO_BALL:
     		movePower = (int)Math.min(150, Math.floor((25 * defenderSpeed) / attackerSpeed));
     		move.setName(String.format("%s %s",move.getName(), movePower)); // TODO: find better way
@@ -2174,11 +2227,11 @@ public class DamageCalculator {
         if(attacker.getAbility() == Ability.RIVALRY) {
         	if(attacker.getGender() == defender.getGender() && attacker.getGender() != Gender.GENDERLESS) {
             	movePower = movePower * (100 + 25) / 100;
-            	move.setName(String.format("%s +%s",move.getName(), attackerItem));
+            	move.setName(String.format("%s +%s",move.getName(), attacker.getAbility() ));
         	} else if (attacker.getGender() != defender.getGender() && attacker.getGender() != Gender.GENDERLESS
         		&& defender.getGender() != Gender.GENDERLESS) {
         		movePower = movePower * (100 - 25) / 100;
-            	move.setName(String.format("%s -%s",move.getName(), attackerItem));
+            	move.setName(String.format("%s -%s",move.getName(), attacker.getAbility() ));
         	}
         }
         
@@ -3154,6 +3207,7 @@ public class DamageCalculator {
         		mod1.setCurrHP(oldHP);
                 break;
                 
+        
         	case PRESENT:
             	for(int power : new Integer[]{40, 80, 120}) { //TODO: hardcoded
         			moveCopy.setName(move.getBoostedName(power));
@@ -3170,31 +3224,13 @@ public class DamageCalculator {
         		info = calculateDamageAndPrintBasedOnVerboseLevel(sb, moveCopy, p1, p2, mod1, mod2, 1, isBattleTower, isDoubleBattle, verboseLevel);
     			
     			mod2.addStatus2_3(Status.SWITCHING_OUT);
-    			//moveCopy.setName(moveCopy.getName() + " SWITCH");
+    			moveCopy.setName(initialName);
     			info = calculateDamageAndPrintBasedOnVerboseLevel(sb, moveCopy, p1, p2, mod1, mod2, 1, isBattleTower, isDoubleBattle, verboseLevel);
     			
     			if(!oldHasSwitch) 
     				mod2.removeStatus2_3(Status.SWITCHING_OUT);
                 break;
-                
-        	case RETURN:
-        	{
-        		int bp = Happiness.getReturnBP(p1.getHappiness());
-        		moveCopy.setPower(bp);
-        		moveCopy.setName(moveCopy.getBoostedName(bp));
-        		info = calculateDamageAndPrintBasedOnVerboseLevel(sb, moveCopy, p1, p2, mod1, mod2, 1, isBattleTower, isDoubleBattle, verboseLevel);
-    			break;
-        	}
-    			
-        	case FRUSTRATION:
-        	{
-        		int bp = Happiness.getFrustrationBP(p1.getHappiness());
-        		moveCopy.setPower(bp);
-        		moveCopy.setName(moveCopy.getBoostedName(bp));
-        		info = calculateDamageAndPrintBasedOnVerboseLevel(sb, moveCopy, p1, p2, mod1, mod2, 1, isBattleTower, isDoubleBattle, verboseLevel);
-    			break;
-        	}
-                               
+            	
         	default:
 	        	// Default print
         		info = calculateDamageAndPrintBasedOnVerboseLevel(sb, moveCopy, p1, p2, mod1, mod2, 1, isBattleTower, isDoubleBattle, verboseLevel);
@@ -3265,7 +3301,8 @@ public class DamageCalculator {
         
         // Then, append residuals
         	// Checking weather abilities and field
-		p1Residuals.add(info.getWeather());
+        if(info.getWeather() != Weather.NONE)
+        	p1Residuals.add(info.getWeather());
 		
     	if(p1.getAbility() == Ability.SNOW_WARNING || p1.getAbility() == Ability.SNOW_WARNING)
     		p1Residuals.add(Weather.HAIL);
@@ -3292,6 +3329,9 @@ public class DamageCalculator {
         	if(move.getEffect() == MoveEffect.RAMPAGE)
         		p1Residuals.add(Status.CONFUSED);
         }
+        
+        //if(p1.getSpecies().matchesAny("Bidoof"))
+        //	System.out.println("Bidoof");
                 
         	// Checking opponent moves
         for (Move move : p2.getMoveset()) {
@@ -3403,8 +3443,8 @@ public class DamageCalculator {
     	if(p1Residuals.contains(Status.BURN)
     			&& info.getAttackerType1() != Type.FIRE && info.getAttackerType2() != Type.FIRE
     			&& p1.getAbility() != Ability.WATER_VEIL
-    			&& p1.getAbility() == Ability.LEAF_GUARD && info.getWeather() != Weather.SUN
     			&& p1.getAbility() != Ability.MAGIC_GUARD
+    			&& (p1.getAbility() != Ability.LEAF_GUARD || info.getWeather() != Weather.SUN)
     			) {
 			sb.append(moveIndent);
 			sb.append(String.format("(Burned: %d)", p1.getStatValue(Stat.HP) / 8 / (p1.getAbility() == Ability.HEATPROOF ? 2 : 1))); //TODO : hardcoded
@@ -3544,7 +3584,7 @@ public class DamageCalculator {
     	
     	String[] names = new String[] {"-", "", "+"}; // TODO : hardcoded
 
-    	//if(move.matchesAny("Strength") && p2.getSpecies() == Species.getSpeciesByName("FLAREON"))
+    	//if(move.matchesAny("Thunderbolt") && p2.getSpecies().matchesAny("Gyarados"))
     	//	System.out.println("printDamageWithIVvariationIfApplicable");
     	
     	sb.append(moveInfoIndent);
@@ -3597,7 +3637,8 @@ public class DamageCalculator {
 	    		if(isLastIV)
 	    			break;
 	    		
-	    		boolean isGuaranteedKO = damages.lowestDamage() >= p2.getStatValue(Stat.HP) || isCrit && damages.lowestCritDamage() >= p2.getStatValue(Stat.HP);
+	    		boolean isGuaranteedKO = isAttackerVariation &&
+	    				(damages.lowestDamage() >= p2.getStatValue(Stat.HP) || isCrit && damages.lowestCritDamage() >= p2.getStatValue(Stat.HP));
 	    		if(isGuaranteedKO)
 	    			iv = ContainerType.IV.getMaxPerStat();
     		}

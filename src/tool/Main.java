@@ -1,8 +1,12 @@
 package tool;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.io.PrintStream;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -91,7 +95,8 @@ public class Main {
             if(configIni.get("files").containsKey("outputFile"))
             	outputFilename = configIni.get("files", "outputFile");
             File outputFile = new File(outputFilename);
-            outputWriter = new BufferedWriter(new FileWriter(outputFilename));
+            //outputWriter = new BufferedWriter(new FileWriter(outputFilename));
+            outputWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(outputFilename), StandardCharsets.UTF_8));
             
             /* At this point :
              * - The master ini is properly loaded

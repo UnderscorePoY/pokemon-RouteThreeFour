@@ -192,7 +192,7 @@ public class Move {
     }
 
     public String getBoostedName(int i) {
-        return name + " " + i;
+        return unmodifiedName + " " + i;
     }
 
     public MoveEffect getEffect() {
