@@ -173,19 +173,22 @@ public enum Type {
     /**
      * Retrieves first defender type to apply type effectiveness to.
      */
-    public static Type getType1ByPrecedence(Type type1, Type type2) {
-    	if (typeEffectivenessPrecedenceRules.get(type1) > typeEffectivenessPrecedenceRules.get(type2))
+    public static Type getType1ByPrecedence(Type attacking, Type type1, Type type2) {
+    	// If attacking is Ice, Fire is always applied last
+    	if(attacking == Type.ICE && type1 == Type.FIRE)
     		return type2;
-    	return type1;
+    	if(attacking == Type.ICE && type2 == Type.FIRE)
+    		return type1;
+    	
+    	return typeEffectivenessPrecedenceRules.get(type1) < typeEffectivenessPrecedenceRules.get(type2) ? type1: type2;
     }
     
     /**
      * Retrieves second defender type to apply type effectiveness to.
      */
-    public static Type getType2ByPrecedence(Type type1, Type type2) {
-    	if (typeEffectivenessPrecedenceRules.get(type1) <= typeEffectivenessPrecedenceRules.get(type2))
-    		return type2;
-    	return type1;
+    public static Type getType2ByPrecedence(Type attacking, Type type1, Type type2) {
+    	// Return the other one
+    	return type1 == getType1ByPrecedence(attacking, type1, type2) ? type2 : type1;
     }
 
 }

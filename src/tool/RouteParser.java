@@ -362,7 +362,7 @@ public class RouteParser {
         		
         		switch(cmd) {
         		case BUY_ITEM: return new AddMoney(-totalValue);
-        		case SELL_ITEM: return new AddMoney(totalValue);
+        		case SELL_ITEM: return new AddMoney(totalValue/2);
         		default:
 		        	throw new ToolInternalException(RouteParser.class.getEnclosingMethod(), cmd, "Buy/Sell-item.");
         		}

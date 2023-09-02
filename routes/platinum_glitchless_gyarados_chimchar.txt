@@ -1,0 +1,114 @@
+## Route 201
+RIVAL_Barry_ROUTE_201_PIPLUP -ydefUse -2 -xatkUse 0 -scenario 0_GROWL -backtrack
+RIVAL_Barry_ROUTE_201_PIPLUP -ydefUse -2 -xatkUse -1 -scenario 1_GROWL -backtrack
+RIVAL_Barry_ROUTE_201_PIPLUP -ydefUse -2 -xatkUse -2 -scenario 2_GROWL -backtrack
+RIVAL_Barry_ROUTE_201_PIPLUP -ydefUse -2 -xatkUse -3 -scenario 3_GROWL -backtrack
+RIVAL_Barry_ROUTE_201_PIPLUP -ydefUse -2 -xatkUse -4 -scenario 4_GROWL -backtrack
+RIVAL_Barry_ROUTE_201_PIPLUP -ydefUse -2 -xatkUse -5 -scenario 5_GROWL -backtrack
+RIVAL_Barry_ROUTE_201_PIPLUP -ydefUse -2 -xatkUse -6 -scenario 6_GROWL
+
+## Route 202
+YOUNGSTER_Tristan_1 -xatkUse 0 -scenario 0_GROWL -backtrack
+YOUNGSTER_Tristan_1 -xatkUse -1 -scenario 1_GROWL -backtrack
+YOUNGSTER_Tristan_1 -xatkUse -2 -scenario 2_GROWL -backtrack
+YOUNGSTER_Tristan_1 -xatkUse -3 -scenario 3_GROWL -backtrack
+YOUNGSTER_Tristan_1 -xatkUse -4 -scenario 4_GROWL -backtrack
+YOUNGSTER_Tristan_1 -xatkUse -5 -scenario 5_GROWL -backtrack
+YOUNGSTER_Tristan_1 -xatkUse -6 -scenario 6_GROWL
+//setPokerus
+lm EMBER
+LASS_Natalie
+YOUNGSTER_Logan
+
+## Route 204
+LASS_Sarah -v 2
+
+## Route 203
+RIVAL_Barry_ROUTE_203_PIPLUP -xatkSet 0 -scenario 0_GROWL -backtrack
+//RIVAL_Barry_ROUTE_203_PIPLUP -ystatus BURN -scenario BURN_ENEMIES -backtrack
+RIVAL_Barry_ROUTE_203_PIPLUP -xatkSet -1 -scenario 1_GROWL -backtrack
+RIVAL_Barry_ROUTE_203_PIPLUP -xatkSet -2 -scenario 2_GROWL -backtrack
+RIVAL_Barry_ROUTE_203_PIPLUP -xatkSet -3 -scenario 3_GROWL -backtrack
+RIVAL_Barry_ROUTE_203_PIPLUP -xatkSet -4 -scenario 4_GROWL -backtrack
+RIVAL_Barry_ROUTE_203_PIPLUP -xatkSet -5 -scenario 5_GROWL -backtrack
+RIVAL_Barry_ROUTE_203_PIPLUP -xatkSet -6 -scenario 6_GROWL
+LASS_Kaitlin -order 1/3/2/4
+L4 STARLY MODEST KEENEYE FEMALE 31 22 0 25 25 4 -v 1 -backtrack
+
+## Oreburgh Gate
+CAMPER_Curtis // Blaze
+lm ROCKSMASH
+
+## Oreburgh Mine
+//WORKER_Colin -ydefsSet 0/0 -scenario 0_DEFENSECURL -backtrack
+//WORKER_Colin -ydefsSet 1/0 -scenario 1_DEFENSECURL -backtrack
+//WORKER_Colin -ydefsSet 2/0 -scenario 2_DEFENSECURL -backtrack
+//WORKER_Colin -ystatuses1 0/BURN -scenario GUTS_ACTIVATED
+
+## Oreburgh Gym
+//YOUNGSTER_Jonathon -ydefSet 0 -scenario NO_DEF_MODIF -backtrack // No Blaze
+//YOUNGSTER_Jonathon -ydefSet 1 -scenario 1_DEF_BOOST -backtrack // No Blaze
+//YOUNGSTER_Jonathon -ydefSet 2 -scenario 2_DEF_BOOST -backtrack // No Blaze
+//YOUNGSTER_Jonathon -ydefSet 3 -scenario 3_DEF_BOOST -backtrack // No Blaze
+//YOUNGSTER_Jonathon -ydefSet -1 -scenario 1_DEF_DROP -backtrack // No Blaze
+YOUNGSTER_Jonathon -ydefSet -2 -scenario 2_DEF_DROP  // No Blaze
+
+YOUNGSTER_Darius -ydefSet 0 -scenario NO_DEF_MODIF -backtrack
+YOUNGSTER_Darius -ydefSet 1 -scenario 1_BOOST_ENEMIES -backtrack
+YOUNGSTER_Darius -ydefSet 2 -scenario 2_BOOST_ENEMIES -backtrack
+YOUNGSTER_Darius -ydefSet -1 -scenario 1_DROP_ENEMIES -backtrack
+YOUNGSTER_Darius -ydefSet -2 -scenario 2_DROP_ENEMIES
+evolve MONFERNO
+lm MACHPUNCH
+um SCRATCH
+LEADER_Roark_1 -xdefsUse 0/0/0 -ydefsSet 0/0/0 -scenario NO_DEF_MODIF -backtrack
+LEADER_Roark_1 -xdefUse -1 -ydefSet -1 -scenario 1_DROP_ALL -backtrack
+LEADER_Roark_1 -xdefUse -2 -ydefSet -2 -scenario 2_DROP_ALL -backtrack
+LEADER_Roark_1 -xdefUse -3 -ydefSet -3 -scenario 3_DROP_ALL
+
+## Jubilife City
+DP_PLAYER_MALE_Lucas_1 -scenario PARTNER -backtrack // Just to have stats of the partner
+GALACTIC_GRUNT_MALE__10 -ypartner GALACTIC_GRUNT_MALE__9 -xpartner DP_PLAYER_MALE_Lucas_1
+
+## Route 204
+AROMA_LADY_Taylor -scenario SPINNER -backtrack // spinner
+
+## Floaroma Meadow
+GALACTIC_GRUNT_MALE__1
+GALACTIC_GRUNT_MALE__2
+
+## Valley Windworks
+GALACTIC_GRUNT_MALE__35
+
+GALACTIC_GRUNT_MALE__3 -scenario SPINNER -backtrack // spinner
+COMMANDER_MARS_Mars_1 -ydefsUse 0/0 -scenario NO_DEF_MODIF -backtrack
+COMMANDER_MARS_Mars_1 -ydefsUse 0/-1 -scenario 1_DROP_PURUGLY
+
+## Route 205
+HIKER_Daniel -scenario SPINNER -backtrack // spinner
+
+## Eterna Forest
+lm FLAMEWHEEL // only after Pachirisu
+um LEER
+TRAINER_CHERYL_Cheryl_1 -scenario PARTNER -backtrack // Just to have stats of the partner
+LASS_Briana -ypartner BUG_CATCHER_Jack -xpartner TRAINER_CHERYL_Cheryl_1 -order 1/2/4/3 -ydefsSet -1/0/0/0 -xatkSet -2 -xspeSet -1
+PSYCHIC_FEMALE_Lindsey -ypartner PSYCHIC_MALE_Elijah -xpartner TRAINER_CHERYL_Cheryl_1
+
+## Eterna City
+LASS_Caroline -sxps 1/2
+AROMA_LADY_Jenna
+AROMA_LADY_Angela -sxp 2
+LEADER_Gardenia_1 -ystatus2 REFLECT -ydefsSet 0/-1/0 -sxps 1/2/2
+
+lm CUT
+COMMANDER_JUPITER_Jupiter_1 -sxps 2/2 -ydefsSet 0/0 -xdefsSet 0/0 -ystatuses 0/BURN -scenario NO_DEF_MODIF -backtrack
+COMMANDER_JUPITER_Jupiter_1 -sxps 2/2 -ydefsSet 0/-1 -xdefsSet 0/0 -scenario 1_DROP_SKUNTANK -backtrack
+COMMANDER_JUPITER_Jupiter_1 -sxps 2/2 -ydefsSet 0/-2 -xdefsSet 0/0 -scenario 2_DROP_SKUNTANK -backtrack
+COMMANDER_JUPITER_Jupiter_1 -sxps 2/2 -ydefsSet 0/-3 -xdefsSet 0/0 -scenario 3_DROP_SKUNTANK -backtrack
+COMMANDER_JUPITER_Jupiter_1 -sxps 2/2 -ydefsSet 0/0 -xdefsSet 0/-2 -ystatuses 0/BURN -scenario 2_DROP_MONFERNO -backtrack
+COMMANDER_JUPITER_Jupiter_1 -sxps 2/2 -ydefsSet 0/0 -xdefsSet 0/-4 -ystatuses 0/BURN -scenario 4_DROP_MONFERNO
+
+## Route 207
+HIKER_Kevin -scenario SPINNER -backtrack // spinner
+stats
+RIVAL_Barry_ROUTE_209_PRINPLUP -xatkSet 0 -order 1/3/4/2

@@ -115,9 +115,14 @@ public class DamageCalculator {
 				case FUTURE_SIGHT:
 				case HIT_LATER:
 					this.setCrit(false);
-					modifiedMove = new Move(attackMove);
-					info = calculateBaseDamageGen3(modifiedMove, attacker, defender, atkMod, defMod, false, extra_multiplier, isBattleTower, isDoubleBattle);
-					this.addNormalDamage(info.getDamage());
+					for (int roll = MIN_ROLL; roll <= MAX_ROLL; roll++) {
+						modifiedMove = new Move(attackMove);
+						info = damageGen3(modifiedMove, attacker, defender, atkMod, defMod, roll, false, extra_multiplier, isBattleTower, isDoubleBattle);
+						this.addNormalDamage(info.getDamage());
+					}
+					//modifiedMove = new Move(attackMove);
+					//info = calculateBaseDamageGen3(modifiedMove, attacker, defender, atkMod, defMod, false, extra_multiplier, isBattleTower, isDoubleBattle);
+					//this.addNormalDamage(info.getDamage());
 					break;
 					
 				case LEVEL_DAMAGE:
@@ -155,9 +160,14 @@ public class DamageCalculator {
 
 				case HIT_LATER: // Future Sight, Doom Desire
 					this.setCrit(false);
-					modifiedMove = new Move(attackMove);
-					info = damageGen4(modifiedMove, attacker, defender, atkMod, defMod, MAX_ROLL, false, extra_multiplier, isBattleTower, isDoubleBattle);
-					this.addNormalDamage(info.getDamage());
+					//modifiedMove = new Move(attackMove);
+					//info = damageGen4(modifiedMove, attacker, defender, atkMod, defMod, MAX_ROLL, false, extra_multiplier, isBattleTower, isDoubleBattle);
+					//this.addNormalDamage(info.getDamage());
+					for (int roll = MIN_ROLL; roll <= MAX_ROLL; roll++) {
+						modifiedMove = new Move(attackMove);
+						info = damageGen4(modifiedMove, attacker, defender, atkMod, defMod, roll, false, extra_multiplier, isBattleTower, isDoubleBattle);
+						this.addNormalDamage(info.getDamage());
+					}
 					break;
 					
 				case LEVEL_DAMAGE:
@@ -183,6 +193,8 @@ public class DamageCalculator {
 				} // end witch effect
 			} // end gen split
 			this.info = info;
+			//if(atkMod.getStatus1() == Status.BURN)
+			//	System.out.println("BURN");
 			attackMove.setName(modifiedMove.getName()); // Retrieves the modified move name only once | TODO: atrocious, innit ?
 		}
 		
@@ -1165,8 +1177,8 @@ public class DamageCalculator {
         	*/
         	
         	// Type effectiveness
-        	Type defenderType1ByPrecedence = Type.getType1ByPrecedence(info.getDefenderType1(), info.getDefenderType2());
-        	Type defenderType2ByPrecedence = Type.getType2ByPrecedence(info.getDefenderType1(), info.getDefenderType2());
+        	Type defenderType1ByPrecedence = Type.getType1ByPrecedence(modifiedAttackMove.getType(), info.getDefenderType1(), info.getDefenderType2());
+        	Type defenderType2ByPrecedence = Type.getType2ByPrecedence(modifiedAttackMove.getType(), info.getDefenderType1(), info.getDefenderType2());
         	damage = Type.applyTypeEffectiveness(damage, modifiedAttackMove.getType(), defenderType1ByPrecedence, ghostRevealed, false);
         	damage = Type.applyTypeEffectiveness(damage, modifiedAttackMove.getType(), defenderType2ByPrecedence, ghostRevealed, false);
         	
@@ -2040,7 +2052,6 @@ public class DamageCalculator {
         boolean isDefenderGrounded = defenderItem != null && defenderItem.getHoldEffect() == ItemHoldEffect.SPEED_DOWN_GROUNDED && defenderAbility != Ability.KLUTZ // Iron Ball 
         		          || defMod.hasStatus2_3(Status.GROUNDED); // Gravity
         
-        
         boolean isImmune = Type.isImmune(moveType, info.getDefenderType1(), info.getDefenderType2(), isGhostRevealed, isDefenderGrounded);
         
         if(isGhostRevealed) {
@@ -2067,6 +2078,10 @@ public class DamageCalculator {
         // Check moves that can't work with gravity on
         boolean isAttackerGrounded = attackerItem != null && attackerItem.getHoldEffect() == ItemHoldEffect.SPEED_DOWN_GROUNDED && attackerAbility != Ability.KLUTZ // Iron Ball 
 		          || atkMod.hasStatus2_3(Status.GROUNDED); // Gravity
+        
+        //if(isAttackerGrounded)
+        //	System.out.println("grounded");
+        
         if(isAttackerGrounded && move.requiresNotGrounded()) {
         	move.setName(String.format("%s -%s",move.getName(), Status.GROUNDED)); // TODO: find better way
         	info.setDamage(0);
@@ -2188,6 +2203,12 @@ public class DamageCalculator {
 
         default:
     		break;
+        }
+        
+        if(movePower <= 1) {
+    		move.setName(String.format("%s (not implemented)",move.getName())); // TODO: find better way
+    		info.setDamage(0);
+    		return info;
         }
         
 
@@ -2436,9 +2457,12 @@ public class DamageCalculator {
         int baseDamage = ((2 * attacker.getLevel()) / 5 + 2) * movePower * attack / 50 / defense;
         
         // Burn
+        //if (atkMod.getStatus1() == Status.BURN)
+        //	System.out.println("BURN TEST");
+        	
         if (atkMod.getStatus1() == Status.BURN && isPhysical && attackerAbility != Ability.GUTS) {
         	baseDamage /= 2;
-        	move.setName(String.format("%s -x%s",move.getName(), Status.BURN)); // TODO: find better way
+        	move.setName(String.format("%s -%s",move.getName(), Status.BURN)); // TODO: find better way
         }
 
         // Screens
@@ -2573,8 +2597,8 @@ public class DamageCalculator {
         
         int damage = baseDamage * roll / 100;
         damage = damage * stabMod / stabModDenom;
-        damage = Type.applyTypeEffectiveness(damage, moveType, Type.getType1ByPrecedence(info.getDefenderType1(), info.getDefenderType2()), isGhostRevealed, isDefenderGrounded);
-        damage = Type.applyTypeEffectiveness(damage, moveType, Type.getType2ByPrecedence(info.getDefenderType1(), info.getDefenderType2()), isGhostRevealed, isDefenderGrounded);
+        damage = Type.applyTypeEffectiveness(damage, moveType, Type.getType1ByPrecedence(moveType, info.getDefenderType1(), info.getDefenderType2()), isGhostRevealed, isDefenderGrounded);
+        damage = Type.applyTypeEffectiveness(damage, moveType, Type.getType2ByPrecedence(moveType, info.getDefenderType1(), info.getDefenderType2()), isGhostRevealed, isDefenderGrounded);
         damage = damage * filterMod / filterModDenominator;
         damage = damage * ebeltMod / ebeltModDenominator;
         damage = damage * tintedMod;
@@ -3419,8 +3443,8 @@ public class DamageCalculator {
         		&& info.getAttackerType1() != Type.POISON && info.getAttackerType2() != Type.POISON
         		&& info.getAttackerType1() != Type.STEEL  && info.getAttackerType2() != Type.STEEL
         		&& p1.getAbility() != Ability.IMMUNITY 
-    			&& p1.getAbility() == Ability.LEAF_GUARD && info.getWeather() != Weather.SUN
     			&& p1.getAbility() != Ability.MAGIC_GUARD
+    			&& (p1.getAbility() != Ability.LEAF_GUARD || info.getWeather() != Weather.SUN)
         		){
     		if (p1Residuals.contains(Status.POISON)) {
     			sb.append(moveIndent);

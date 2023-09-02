@@ -12,6 +12,15 @@ It is derived from a custom RouteThree, itself derived from Dabomstew & entrpntr
 ○ Usual update.  
 **!!** Bug fixes.  
 
+
+**`[2023/09/02]` - v0.4.6**
+**!!** Selling items now gives the player half the item cost.  
+**!!** Fixed an issue with wrong damage calculation when the attacking move is `Ice` type and one of the defending type is `Fire`.  
+**!!** `Future Sight` and `Doom Desire` now have damage variance (as expected). 
+○ Added documentation for command `pcUpdate`.  
+○ Deactivated `Speed Boost` automatic Speed changes.  
+
+
 **`[2023/08/03]` - v0.4.5**  
 **!!** Fixed an issue in option `-IVvariation`. When the enemy had a guaranteed OHKO for a certain defensive IV value, the output was saying that the OHKO was guaranteed for all subsequent IV values, which is inaccurate is most cases.  
 **!!** Fixed `Intimidate` automatic Attack drop which was triggered on the second Pokémon if the first Pokémon was negating it with its Ability.  
@@ -25,7 +34,6 @@ It is derived from a custom RouteThree, itself derived from Dabomstew & entrpntr
 ○ Improved output formatting.  
 ○ Improved residual effects (weather damage, status ailments, etc.).  
 ○ [*Gen 3*] Added `Forecast` and `Weather Ball` in damage calculation.  
-
 
 **`[2023/07/30]` - v0.4.3**  
 **!!** Fixed automatic `Intimidate` which could be triggered several times by the same Pokémon.  
@@ -284,8 +292,12 @@ The `resources` folder contains most of the data used by the tool. You can look 
 - `"setPokerus"` : Infects your Pokémon with Pokérus. Allows to double EV yields until maximum values are reached.
 - `"unsetPokerus"` : Deactivates Pokérus.  
 
-##### Happiness
+###### Happiness
 - `"setHappiness <VALUE>"` : Sets happiness to value `VALUE`. Must be an integer between `0` and `255`.  
+
+###### PC
+- `"pcUpdate"` : Updates current EVs (mimics depositing and withdrawing a Pokémon from the PC).  
+  *alias*: `"pc"`  
 
 ##### 5.3.2. Items
 - `"equipItem <ITEM>"` : Equips the item `ITEM`. If an item was already held, it is replaced by the specified one. `ITEM` only considers alphanumerical characters in a case-incensitive way.  

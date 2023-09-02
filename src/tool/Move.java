@@ -632,7 +632,7 @@ public class Move {
     }
     
 	public boolean requiresNotGrounded() {
-		return requiresNotGrounded.add(new IgnoreCaseString(this.unmodifiedName));
+		return requiresNotGrounded.contains(new IgnoreCaseString(this.unmodifiedName));
 	}
     
 }

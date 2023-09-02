@@ -1026,20 +1026,34 @@ public class BattleOptions {
 	            	int def = defenderMod.modStat(Stat.DEF, defender.getStatValue(Stat.DEF), defender.getAbility() == Ability.SIMPLE);
 	            	int spd = defenderMod.modStat(Stat.SPD, defender.getStatValue(Stat.SPD), defender.getAbility() == Ability.SIMPLE);
 	            	if(spd <= def) {
-	            		if(!isForcedStat(attackerSide, Stat.SPD))
-	            			incrementStatUntilBattleEnds(attackerSide, Stat.SPD);
+	            		if(!isForcedStat(attackerSide, Stat.SPD)) {
+	            			if(attackerSide == Side.PLAYER)
+	            				incrementStatUntilBattleEnds(attackerSide, Stat.SPD);
+	            			else if (attackerSide == Side.ENEMY)
+	            				incrementEnemyStatForCurrentIndex(Stat.SPD);
+	            		}
 	            	} else {
-	            		if(!isForcedStat(attackerSide, Stat.DEF))
-	            			incrementStatUntilBattleEnds(attackerSide, Stat.DEF);
+	            		if(!isForcedStat(attackerSide, Stat.DEF)){
+	            			if(attackerSide == Side.PLAYER)
+	            				incrementStatUntilBattleEnds(attackerSide, Stat.DEF);
+	            			else if (attackerSide == Side.ENEMY)
+	            				incrementEnemyStatForCurrentIndex(Stat.DEF);
+	            		}
 	            	}
 	            }
 	            
 	            // Speed Boost
-	            if(attacker.getAbility() == Ability.SPEED_BOOST && !isForcedStat(attackerSide, Stat.SPE))
-	    			incrementStatUntilBattleEnds(attackerSide, Stat.SPE);
+	            /*
+	            if(attacker.getAbility() == Ability.SPEED_BOOST && !isForcedStat(attackerSide, Stat.SPE)) {
+	            	if(attackerSide == Side.PLAYER)
+	            		incrementStatUntilBattleEnds(attackerSide, Stat.SPE);
+	            	else if (attackerSide == Side.ENEMY)
+	            		incrementEnemyStatForCurrentIndex(Stat.SPE);
+	            }
+	            */
 				
-	            if(defender.getSpecies().matchesAny("GYARADOS") && attacker.getSpecies().matchesAny("GEODUDE") && attacker.getLevel() == 8)
-	            	System.out.println("BattleOptions.prepareStatModifiers");
+	            //if(defender.getSpecies().matchesAny("GYARADOS") && attacker.getSpecies().matchesAny("GEODUDE") && attacker.getLevel() == 8)
+	            //	System.out.println("BattleOptions.prepareStatModifiers");
 	            
 	            // Intimidate
 	            if(defender.getAbility() == Ability.INTIMIDATE)
@@ -1071,6 +1085,12 @@ public class BattleOptions {
 			EnumSet<Status> statuses2_3 = getStatuses2_3List(attackerSide).get(currentOpponentIndex);
 			attackerMod.setStatuses2_3(statuses2_3);
 		} // end side loop
+	}
+	
+	public void incrementEnemyStatForCurrentIndex(Stat stat) {
+		int curr = yStages.get(stat).get(currentOpponentIndex);
+		int next = ContainerType.STAT_STAGES.boundStatOnly(curr + 1);
+		yStages.get(stat).set(currentOpponentIndex, next);
 	}
 	
 	public void decrementEnemyStatForCurrentIndex(Stat stat) {

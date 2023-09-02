@@ -261,12 +261,12 @@ public class Species {
         return type2;
     }
     
-    public Type getType1ByPrecedence() {
-        return Type.getType1ByPrecedence(type1, type2);
+    public Type getType1ByPrecedence(Type attacking) {
+        return Type.getType1ByPrecedence(attacking, type1, type2);
     }
     
-    public Type getType2ByPrecedence() {
-        return Type.getType2ByPrecedence(type1, type2);
+    public Type getType2ByPrecedence(Type attacking) {
+        return Type.getType2ByPrecedence(attacking, type1, type2);
     }
 
 

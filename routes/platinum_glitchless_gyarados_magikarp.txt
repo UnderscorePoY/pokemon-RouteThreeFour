@@ -1,0 +1,320 @@
+
+// All the early game trainers are only for money management, they should be -sxp 0
+
+## Route 201
+RIVAL_Barry_ROUTE_201_PIPLUP -sxp 0 -v 0
+
+money
+buy 7 POTION
+buy 3 ANTIDOTE
+money
+
+## Route 202
+YOUNGSTER_Tristan_1 -sxp 0 -v 1
+LASS_Natalie -sxp 0 -v 1
+YOUNGSTER_Logan -sxp 0 -v 1
+
+## Route 204
+LASS_Sarah -sxp 0 -v 1
+
+## Route 203
+RIVAL_Barry_ROUTE_203_PIPLUP -sxp 0 -v 1
+LASS_Kaitlin -sxp 0 -v 1
+
+## Oreburgh Gate
+CAMPER_Curtis -sxp 0 -v 1// Blaze
+
+## Oreburgh Mine
+WORKER_Colin -sxp 0 -v 1
+
+## Oreburgh Gym
+//YOUNGSTER_Jonathon -sxp 0 -v 0// No Blaze
+YOUNGSTER_Darius -sxp 0 -v 1
+LEADER_Roark_1 -sxp 0 -v 1
+
+## Jubilife City
+GALACTIC_GRUNT_MALE__10 -ypartner GALACTIC_GRUNT_MALE__9 -xpartner DP_PLAYER_MALE_Lucas_1 -sxp 0 -v 1
+
+## Route 204
+//AROMA_LADY_Taylor -scenario SPINNER -backtrack // spinner
+
+## Floaroma
+money
+buy 2 SUPERPOTION
+buy 2 PARLYZHEAL
+buy 1 ESCAPEROPE
+buy 8 REPEL // Eterna Forest x2, Route 206 x2, Mt Coronet, Route 208, Route 209-210, Route 215
+money
+
+GALACTIC_GRUNT_MALE__1 -sxp 0 -v 0
+GALACTIC_GRUNT_MALE__2 -sxp 0 -v 0
+
+## Valley Windworks
+GALACTIC_GRUNT_MALE__35 -sxp 0 -v 0
+
+//GALACTIC_GRUNT_MALE__3 -scenario SPINNER -backtrack // spinner
+COMMANDER_MARS_Mars_1 -sxp 0 -v 0
+
+## Route 205
+//HIKER_Daniel -scenario SPINNER -backtrack // spinner
+
+## Eterna Forest
+LASS_Briana -ypartner BUG_CATCHER_Jack -xpartner TRAINER_CHERYL_Cheryl_1 -sxp 0 -v 0
+PSYCHIC_FEMALE_Lindsey -ypartner PSYCHIC_MALE_Elijah -xpartner TRAINER_CHERYL_Cheryl_1 -sxp 0 -v 0
+
+
+
+
+// Magikarp split exp segment starts here
+stats
+
+## Eterna City
+LASS_Caroline -sxps 0/2
+setPokerus
+AROMA_LADY_Jenna -sxps 0/0/0
+AROMA_LADY_Angela -sxp 2
+LEADER_Gardenia_1 -sxps 0/2/2
+
+money
+buy 5 HEALPOWDER
+buy 5 ENERGYPOWDER
+buy 5 ENERGYROOT
+//buy 1 REVIVALHERB
+money
+
+COMMANDER_JUPITER_Jupiter_1 -sxps 2/2
+
+## Route 207
+rarecandy 3
+evolve GYARADOS
+lm BITE
+lm EARTHQUAKE
+HIKER_Kevin -xspesUse 0/0/-1/0 -scenario SPINNER -backtrack // spinner close to Rare Candy
+HIKER_Justin -scenario SPINNER -backtrack // spinner: L20 Geodude, L20 Nosepass
+
+## Route 208
+HIKER_Jonathan -scenario SPINNER -backtrack // spinner: L22 Onix
+HIKER_Robert
+
+## Hearthome City
+LASS_Molly -scenario SPINNER -backtrack // spinner: L23 Misdreavus
+LEADER_Fantina_1 -xatkUse 0 -xspeUse 1
+
+## Route 209
+RIVAL_Barry_ROUTE_209_PRINPLUP -xatkSet 0 -ydefsSet 0/0/0/0 -xspeUse -1 -order 1/3/4/2 -scenario NO_ATK_DROP -backtrack
+RIVAL_Barry_ROUTE_209_PRINPLUP -xatkSet -1 -ydefsSet 0/0/0/0 -scenario 1_ATK_DROP
+
+L17 Chansey Careful NaturalCure Female 1 7 22 19 6 15 -backtrack
+
+lm DRAGONRAGE
+um SPLASH
+//equip LUCKYEGG
+BREEDER_FEMALE_Jennifer_1 -scenario SPINNER -order 1/3/4/2 -backtrack // spinner: 4 babies
+
+## Route 215
+RUIN_MANIAC_Calvin -weather RAIN
+BLACK_BELT_Derek -weather RAIN -scenario SPINNER -backtrack // spinner: L26 Croagunk
+ACE_TRAINER_MALE_Dennis_1 -weather RAIN -xdefSet -2 -yspasSet 0/0/1 -order 1/2/3
+ACE_TRAINER_FEMALE_Maya_1 -weather RAIN -ydefsSet 0/0/0 -ystatus2 DEFENSECURL -order 1/3/2
+
+money
+// No Sea Incense
+//sell IRON // Route 215
+//sell TM65 // Shadow Claw
+//buy 25 XATTACK
+//buy 1 XSPECIAL
+//buy 7 XSPEED
+//buy 2 GUARDSPEC
+//buy 5 XACCURACY
+//buy 3 SUPERREPEL
+
+// With Sea Incense
+//sell IRON
+//sell CALCIUM
+//sell STARPIECE
+//buy 23 XATTACK
+//buy 8 XSPEED
+//buy 2 GUARDSPEC
+//buy 5 XACCURACY
+//buy 3 SUPERREPEL
+//buy 4 HYPERPOTION
+//money
+
+// With Sea Incense and Dragon Dance
+sell IRON
+buy 11 XATTACK
+buy 4 XSPEED
+buy 2 GUARDSPEC
+buy 5 XACCURACY
+buy 3 SUPERREPEL
+buy 3 HYPERPOTION
+money
+
+## Veilstone City
+BLACK_BELT_Rafael 
+BLACK_BELT_Jeffery -xdefSet -1 -scenario SPINNER -backtrack // spinner: L28 Heracross
+LEADER_Maylene_1 -xatkSet 1 -xspeSet -1 -order 1/2/3
+
+GALACTIC_GRUNT_MALE__38 -ypartner GALACTIC_GRUNT_MALE__37 -xpartner DP_PLAYER_MALE_Lucas_5 -ystatus2 GROUNDED -yatksSet -1/-1/0/0 -order 1/3/2+4
+
+## Route 214
+PSYCHIC_FEMALE_Abigail_1 -order 1/3/2 
+
+## Route 213
+BEAUTY_Cyndy_1 -scenario SPINNER -backtrack // spinner: L29 Glameow
+
+## Pastoria City
+RIVAL_Barry_PASTORIA_PRINPLUP -xatkSet 1 -order 1/3/2/4
+
+## Pastoria City Gym
+
+SAILOR_Damian
+TUBER_MALE_Jacky
+TUBER_FEMALE_Caitlyn 
+SAILOR_Samson -order 1/3/2
+LEADER_Wake_1 -xatkSet 3 -xdefsSet 0/0/-1 -xcurrhp 1 -order 1/2/3
+lm ICEFANG
+rarecandy
+
+## Route 213
+BEAUTY_Cyndy_1 -scenario SPINNER -backtrack // spinner: L29 Glameow
+
+## Valor Lakefront
+GALACTIC_GRUNT_MALE__36
+
+## Route 210 North
+//Ice Fang L32, Aqua Tail L35
+ACE_TRAINER_FEMALE_Alyssa -xatkUse 1 -order 1/3/2 -backtrack
+ACE_TRAINER_FEMALE_Alyssa -xatkUse 1 -yatksSet 0/1/0 -ydefsSet 0/1/0 -backtrack
+ACE_TRAINER_FEMALE_Alyssa -xatkUse 1 -yatksSet 0/2/0 -ydefsSet 0/2/0 -backtrack
+ACE_TRAINER_FEMALE_Alyssa -xatkUse 1 -yatksSet 0/3/0 -ydefsSet 0/3/0 -backtrack
+ACE_TRAINER_FEMALE_Alyssa -xatkUse 1 -yatksSet 0/4/0 -ydefsSet 0/4/0 -backtrack
+ACE_TRAINER_FEMALE_Alyssa -xatkUse 1 -yatksSet 0/5/0 -ydefsSet 0/5/0 -backtrack
+ACE_TRAINER_FEMALE_Alyssa -xatkUse 1 -yatksSet 0/6/0 -ydefsSet 0/6/0 
+ACE_TRAINER_MALE_Ernest -order 1/2/3 -scenario SPINNER -backtrack // spinner: L32 Scyther, L31 Probopass, L34 Luxio
+BLACK_BELT_Adam
+rarecandy
+lm AQUATAIL
+BIRD_KEEPER_Brianna_1
+VETERAN_Brian_1 -order 1/2/3 -scenario SPINNER -backtrack // spinner: L32 Tangela, Ponyta, Buizel
+
+## Celestic Town
+GALACTIC_GRUNT_MALE__11
+//rarecandy 1
+GALACTIC_BOSS_Cyrus_3 -xatkSet 1 -xdefSet -4 -order 1/2/3
+lm SURF
+equip SEAINCENSE
+
+## Route 218
+SAILOR_Skyler -scenario SPINNER -backtrack // spinner: L32 Mantyke, L34 Machoke
+
+## Canalave City
+money
+buy 11 MAXREPEL
+buy 11 HYPERPOTION
+buy 11 FULLHEAL
+money
+RIVAL_Barry_CANALAVE_EMPOLEON -xatkSet 1 -order 1/4/3/5/2
+
+BLACK_BELT_Ricky
+ACE_TRAINER_MALE_Cesar
+WORKER_Gerardo
+//rarecandy 1
+BLACK_BELT_David
+ACE_TRAINER_FEMALE_Breanna -order 1/2/3
+rarecandy
+LEADER_Byron_1 -xatksUse 0/1/0 -ydefsSet 0/2/0 -order 1/3/2
+
+## Route 213
+BEAUTY_Cyndy_1 -scenario SPINNER -backtrack // spinner: L29 Glameow
+
+## Lake Valor
+GALACTIC_GRUNT_MALE__12 -scenario SPINNER -backtrack // spinner: L37 Golbat
+COMMANDER_SATURN_Saturn_1 -xatkUse 1 -ydefsSet 0/2/0 -order 1/2/3
+
+## Lake Verity
+GALACTIC_GRUNT_MALE__14 -ypartner GALACTIC_GRUNT_FEMALE__6 -sxp 1 -order 1+2/3/4
+COMMANDER_MARS_Mars_2 -xatkUse 1 -ydefsSet 0/2/0 -order 1/2/3
+
+## Route 216
+ACE_TRAINER_SNOW_FEMALE_Laura -weather HAIL
+
+## Route 217
+rarecandy 4
+ACE_TRAINER_SNOW_MALE_Dalton_1 -weather HAIL
+ACE_TRAINER_SNOW_FEMALE_Olivia_1 -order 1/3/2 -weather HAIL
+
+## Snowpoint City
+LEADER_Candice_1 -xatkUse 1 -xspeUse 1 -order 1/2/4/3
+
+## Veilstone City
+GALACTIC_GRUNT_MALE__16 -scenario SPINNER -backtrack // spinner: L41 Golbat
+GALACTIC_GRUNT_MALE__17
+GALACTIC_GRUNT_FEMALE__8 -scenario SPINNER -backtrack // spinner: L41 Glameow
+
+GALACTIC_GRUNT_MALE__22
+GALACTIC_GRUNT_FEMALE__11 -order 1/2/3 // double with 23 ?
+GALACTIC_GRUNT_MALE__23 // double with 11 ?
+GALACTIC_BOSS_Cyrus_1 -xatkUse 1 -xspeUse 1 -xdefSet -4 -order 1/2/3
+COMMANDER_SATURN_Saturn_2 -xatkUse 0 -order 1/2/3
+
+## Route 207
+HIKER_Justin -scenario SPINNER -backtrack // spinner: L20 Geodude, L20 Nosepass
+
+## Mt. Coronet
+GALACTIC_GRUNT_FEMALE__12 -scenario SPINNER -backtrack // spinner: L43 Stunky
+GALACTIC_GRUNT_MALE__26 -scenario SPINNER -backtrack // spinner: L42 Stunky, L40 Golbat
+GALACTIC_GRUNT_FEMALE__14 // L40 Houndour, L42 Glameow
+GALACTIC_GRUNT_MALE__29 // L41 Glameow, L41 Golbat
+GALACTIC_GRUNT_FEMALE__15 -order 1/2/3 // L39 Golbat, L40 Croagunk, L41 Golbat
+
+GALACTIC_GRUNT_MALE__30 -ypartner GALACTIC_GRUNT_FEMALE__16 -order 1+3/2+4 -sxp 1
+//equip SEAINCENSE
+COMMANDER_MARS_Mars_3 -ypartner COMMANDER_JUPITER_Jupiter_2 -xpartner RIVAL_Barry_SPEAR_PILLAR_EMPOLEON -xatksUse 0/0/0/0/0/0 -ystatus2 LIGHTSCREEN -order 4/5/6/1/2/3
+GALACTIC_BOSS_Cyrus_2 -xatksUse 0/2/0/0/0 -xspesUse 0/1/0/0/0 -order 1/4/2/5/3
+
+## Route 213
+BEAUTY_Cyndy_1 -scenario SPINNER -backtrack // spinner: L29 Glameow
+
+## Route 222
+SAILOR_Luther -order 1/3/2
+
+## Sunyshore City
+SCHOOL_KID_FEMALE_Tiera
+SCHOOL_KID_MALE_Forrest
+GUITARIST_Jerry -order 1/2/3
+rarecandy
+POKE_KID_Meghan -scenario SPINNER -backtrack // spinner: L42 Pikachu x4
+ACE_TRAINER_FEMALE_Destiny
+GUITARIST_Preston
+ACE_TRAINER_MALE_Zachery
+GUITARIST_Lonnie -scenario SPINNER -backtrack // spinner: L47 Raichu
+LEADER_Volkner_1 -order 1/2/3/4
+
+## Route 223
+lm WATERFALL
+//equip SEAINCENSE
+SWIMMER_MALE_Oscar
+SWIMMER_FEMALE_Gabrielle -scenario SPINNER -backtrack // spinner: L45 Golduck
+
+## Victory Road
+ACE_TRAINER_FEMALE_Mariah -order 1/3/2
+ACE_TRAINER_MALE_Omar -order 1/3/2
+ACE_TRAINER_FEMALE_Sydney
+//equip SEAINCENSE
+BLACK_BELT_Miles
+PSYCHIC_FEMALE_Valencia -order 1/2/3
+DRAGON_TAMER_Ondrej
+VETERAN_Edgar -order 1/2/3
+lm STRUGGLE
+DRAGON_TAMER_Clinton -order 1/2/3
+um STRUGGLE
+
+## Pokemon League
+//equip SEAINCENSE
+RIVAL_Barry_LEAGUE_EMPOLEON -xatkUse 2 -order 1/3/4/5/2/6
+ELITE_FOUR_Aaron_1 -xatkUse 1 -order 1/3/4/2/5
+ELITE_FOUR_Bertha_1 -xatkUse 0 -weather SANDSTORM -order 1/4/5/2/3
+ELITE_FOUR_Flint_1 -order 1/4/5/3/2
+ELITE_FOUR_Lucian_1 -xatksUse 1/0/0/0/0 -xspesUse 0/0/0/1/0 -yspasSet 0/0/0/0/0 -order 1/5/2/3/4
+CHAMPION_Cynthia_1 -xatkUse 2 -xspdSet 0 -order 1/3/4/6/5/2

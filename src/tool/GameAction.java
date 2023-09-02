@@ -91,7 +91,8 @@ public abstract class GameAction {
         void performAction(Pokemon p) throws UnsupportedOperationException, ToolInternalException {
         	Main.appendln("Updating stats after PC withrawal.");
         	p.updateEVsAndCalculateStats();
-        	printAllStatsNoBoost.performAction(p);
+        	if(Settings.verboseLevel == VerboseLevel.EVERYTHING)
+        		printAllStatsNoBoost.performAction(p);
         }
     };
 
@@ -120,8 +121,9 @@ class EatConsumable extends GameAction {
 			
 			if(isConsumed) {
 				Main.appendln(""); 
-				Main.appendln(String.format("Using a %s.", consumable.getDisplayName())); 
-				printAllStatsNoBoost.performAction(p);
+				Main.appendln(String.format("Using a %s.", consumable.getDisplayName()));
+	        	if(Settings.verboseLevel == VerboseLevel.EVERYTHING)
+	        		printAllStatsNoBoost.performAction(p);
 			} else {
 				Main.appendln(String.format("WARNING : %s #%d had no effect.", consumable.getDisplayName(), i)); // TODO : better warning
 			}
