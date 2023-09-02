@@ -29,7 +29,7 @@ It is derived from a custom RouteThree, itself derived from Dabomstew & entrpntr
 
 **`[2023/08/01]` - v0.4.4**  
 **!!** [*Gen 3*] Fixed wrong Attack stat calculation when the player has `Roxanne` badge and either `Pure Power` or `Huge Power`.  
-○ Added command `setHappiness`.
+○ Added command `setHappiness`.  
 ○ In commands `stats` and `lvRanges`, the option `-b` isn't affecting the output anymore.  
 ○ Improved output formatting.  
 ○ Improved residual effects (weather damage, status ailments, etc.).  
