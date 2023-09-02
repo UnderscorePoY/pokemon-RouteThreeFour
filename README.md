@@ -13,7 +13,7 @@ It is derived from a custom RouteThree, itself derived from Dabomstew & entrpntr
 **!!** Bug fixes.  
 
 
-**`[2023/09/02]` - v0.4.6**
+**`[2023/09/02]` - v0.4.6**  
 **!!** Selling items now gives the player half the item cost.  
 **!!** Fixed an issue with wrong damage calculation when the attacking move is `Ice` type and one of the defending type is `Fire`.  
 **!!** `Future Sight` and `Doom Desire` now have damage variance (as expected). 
