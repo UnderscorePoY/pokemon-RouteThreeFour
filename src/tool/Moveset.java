@@ -28,7 +28,8 @@ public class Moveset implements Iterable<Move>{
      * Returns the 4 most recently learned moves for a given species at a certain level.
      */
     public static Moveset defaultMoveset(Species species, int level){
-    	return defaultMoveset(species.getHashName(), level);
+    	//return defaultMoveset(species.getHashName(), level);
+    	return defaultMoveset(species.getDisplayName(), level); // TODO: quick fix attempt
     }
     
     /**
