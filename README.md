@@ -26,11 +26,12 @@ It is derived from a custom RouteThree, itself derived from Dabomstew & entrpntr
 ○ Added/Improved output messages.  
 
 
+<details><summary> Show/hide previous updates </summary>  
+
+
 **`[2023/11/18]` - v0.4.7**  
 **!!** Fixed an issue where Nidorans' learnsets were not loaded properly.  
 
-
-<details><summary> Show/hide previous updates </summary>  
 
 **`[2023/09/02]` - v0.4.6**  
 **!!** Selling items now gives the player half the item cost.  
