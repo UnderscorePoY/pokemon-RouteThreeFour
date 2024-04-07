@@ -1,0 +1,30 @@
+RIVAL_BARRY_ROUTE_201_PIPLUP
+
+buy 6 POTION
+
+YOUNGSTER_Tristan_1
+
+LASS_Natalie
+
+YOUNGSTER_Logan
+
+// LASS_Sarah
+	// shinx
+
+RIVAL_Barry_ROUTE_203_PIPLUP
+
+// uncomment this trainer
+YOUNGSTER_MICHAEL
+	// kricketot, zubat
+
+YOUNGSTER_DALLAS_1
+	// shinx
+
+YOUNGSTER_Sebastian
+	// machop
+
+PICNICKER_Diana
+	// budew, psyduck
+
+YOUNGSTER_Darius
+	// geodude, onix

@@ -104,6 +104,17 @@ public class StatsContainer implements Iterable<Integer> {
     		this.container.put(stat, o.get(stat)); // bypass checks, as the other object has already been through these
     }
     
+    /** Creates custom IVs */
+    public StatsContainer(int hp, int atk, int def, int spa, int spd, int spe) {
+    	this(ContainerType.IV);
+    	this.put(Stat.HP , hp);
+    	this.put(Stat.ATK, atk);
+    	this.put(Stat.DEF, def);
+    	this.put(Stat.SPA, spa);
+    	this.put(Stat.SPD, spd);
+    	this.put(Stat.SPE, spe);
+    }
+    
     public void changeContainerType(ContainerType newType) throws IllegalArgumentException {
     	if(!this.containerType.isCompatibleWith(newType)) {
     		throw new IllegalArgumentException(String.format("Can't change container type '%s' to '%s'.", 
@@ -140,6 +151,12 @@ public class StatsContainer implements Iterable<Integer> {
     	int boundValue = this.bound(stat, value);
     	this.container.put(stat, boundValue);
     	return boundValue;
+    }
+    
+    /** Doesn't return, puts ivs with no checks */
+    public void putAssumingValidIVs(StatsContainer ivs) {
+    	for(Stat stat : Stat.pokemonMenuStats)
+    		this.container.put(stat , ivs.get(stat));
     }
     
     /**
@@ -274,5 +291,10 @@ public class StatsContainer implements Iterable<Integer> {
 	@Override
 	public Iterator<Integer> iterator() {
 		return container.values().iterator();
+	}
+	
+	@Override
+	public String toString() {
+		return container.toString();
 	}
 }

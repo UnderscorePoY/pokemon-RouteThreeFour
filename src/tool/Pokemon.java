@@ -34,6 +34,8 @@ public class Pokemon implements Battleable {
     private Set<Stat> badges = new HashSet<Stat>();
     private int happiness;
     private boolean isInLuxuryBall = false;
+
+	private boolean isInternationalTraded;
       
     /**
      * Creates a Pokemon. Constructor compatible with default trainers (no item, default moveset).
@@ -142,6 +144,8 @@ public class Pokemon implements Battleable {
         this.hasBoostedExp = p.hasBoostedExp;
         this.badges = new HashSet<Stat>(p.badges);
         this.happiness = p.getHappiness();
+        this.isInLuxuryBall = p.isInLuxuryBall();
+        this.isInternationalTraded = p.isInternartionalTraded();
     }
 
     /*TODO Battle Tower poke
@@ -536,6 +540,30 @@ public class Pokemon implements Battleable {
         		level, getDisplayName(), gender.getInitial(), nature, ability,
         		heldItem != null ? String.format(" <%s>", heldItem) : "");
     }
+    
+    public String allInfoStr() {
+    	String info = String.format("L%d %s(%s) [%s] #%s#%s (%s) {%d/%d/%d/%d/%d/%d}",
+    			level, getDisplayName(), gender.getInitial(), nature, ability,
+				heldItem != null ? String.format(" <%s>", heldItem) : "",
+				getInlineTrueStatsStr(),
+				getSpecies().getEvYield(Stat.HP),
+				getSpecies().getEvYield(Stat.ATK),
+				getSpecies().getEvYield(Stat.DEF),
+				getSpecies().getEvYield(Stat.SPA),
+				getSpecies().getEvYield(Stat.SPD),
+				getSpecies().getEvYield(Stat.SPE));
+    	/*
+        try {
+			info = String.format("%s \\%d\\", info, earnedExpFrom(this, 1));
+		} catch (ToolInternalException e) {
+			// empty
+		}
+		*/
+        
+        info = String.format("%s %s", info, getMoveset());
+        
+        return info;
+    }
 
     // only for hash
     public String pokeName() {
@@ -621,7 +649,9 @@ public class Pokemon implements Battleable {
     		
     		earnedExp /= nbOfParticipants;
     		
-    		if(hasBoostedExp)
+    		if(Settings.game.isDP() && isInternationalTraded)
+    			earnedExp = earnedExp * 170 / 100;
+    		else if(hasBoostedExp)
     			earnedExp = earnedExp * 150 / 100;
     		
     		if(heldItem != null && heldItem.isBoostingExperience())
@@ -924,7 +954,7 @@ public class Pokemon implements Battleable {
 		this.happiness = happiness;
 	}
 	
-	public void setHappinessBound(int happiness) throws ToolInternalException {
+	public void setHappinessBound(int happiness) {
 			this.happiness = Happiness.bound(happiness);
 	}
 	
@@ -935,5 +965,23 @@ public class Pokemon implements Battleable {
 	@Override
 	public int getNbOfBattlers() {
 		return 1;
+	}
+
+	/**
+	 * Returns how much happiness was added/subtracted.
+	 */
+	public int addHappinessBound(int happiness) {
+		int old = this.happiness;
+		this.setHappinessBound(old + happiness);
+		return this.happiness - old;
+	}
+
+	public boolean isInternartionalTraded() {
+		return this.hasBoostedExp && this.isInternationalTraded;
+	}
+	
+	public void setInternationalTraded(boolean isInternationalTraded) {
+		this.isInternationalTraded = isInternationalTraded;
+		this.hasBoostedExp |= isInternationalTraded; 
 	}
 }

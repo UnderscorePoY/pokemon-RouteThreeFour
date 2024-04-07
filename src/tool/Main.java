@@ -349,14 +349,20 @@ public class Main {
             
             	// Boosted EXP (optional)
             boolean hasBoostedExp = false; // TODO : hardcoded
+            boolean isInternationalTraded = false;
             if(configIni.get("poke").containsKey("boostedExp")) {
-            	String boostedExpStr = null;
-            	try{
-            		boostedExpStr = (String) configIni.get("poke", "boostedExp");
-            		hasBoostedExp = Boolean.parseBoolean(boostedExpStr);
-            	} catch (Exception e) {
-            		throw new ConfigWrongValueException(configFileStr, "poke", "boostedExp", boostedExpStr,
-            				String.format("must be either '%s' or '%s'.", true, false));
+            	String boostedExpStr = (String) configIni.get("poke", "boostedExp");
+            	
+            	if(boostedExpStr.equalsIgnoreCase("international")) { // TODO: hardcoded
+        			hasBoostedExp = true;
+        			isInternationalTraded = true;
+            	} else {
+	            	try{
+	            		hasBoostedExp = Boolean.parseBoolean(boostedExpStr);
+	            	} catch (Exception e) {
+	            		throw new ConfigWrongValueException(configFileStr, "poke", "boostedExp", boostedExpStr,
+	            				String.format("must be either '%s' or '%s'. In Diamond/Pearl, '%s' is available for international trades", true, false, "international"));
+            		}
             	}
             }
             
@@ -375,6 +381,7 @@ public class Main {
 
             // Main Pokémon instanciation
         	mainPoke = new Pokemon(species, gender, level, nature, ability, ivs, hasBoostedExp, hasPokerus);
+        	mainPoke.setInternationalTraded(isInternationalTraded);
         	mainPoke.setEV(Stat.HP, hpEV);
         	mainPoke.setEV(Stat.ATK, atkEV);
         	mainPoke.setEV(Stat.DEF, defEV);

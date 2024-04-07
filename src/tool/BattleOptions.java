@@ -33,6 +33,8 @@ public class BattleOptions {
     private CurrentHPid xCurrentHPid = CurrentHPid.FULL;
     private Trainer xPartner = null;
     private boolean xHasUsedSingleTimeAbility = false;
+    private int returnOffset = 0;
+    private int returnMaxAdded = 0;
 
     private EnumMap<Stat, ArrayList<Integer>> yStages = new EnumMap<Stat, ArrayList<Integer>>(Stat.class);
     private EnumSet<Stat> yStageIsConstant = EnumSet.noneOf(Stat.class);
@@ -115,6 +117,11 @@ public class BattleOptions {
     public void compileAndValidate(Battleable opponent) throws RouteParserException, ToolInternalException {
     	int nbOfBattlers = getTotalNbOfEnemyBattlers(opponent);
     	
+    	/* TODO: get rid
+		if(opponent instanceof Trainer && ((Trainer)opponent).getTrainerName().equals("Alyssa"))
+			System.out.println(((Trainer)opponent).getTrainerName());
+		*/
+		
     	// Preparing data that were waiting for total nb of battlers
 		this.updateStages(nbOfBattlers);
 		this.updateOrderAndPostponedExp(opponent);
@@ -125,8 +132,6 @@ public class BattleOptions {
 		//        - having a trainer party filled with the yPartner party in addition with a non-null yPartner
 		//       There's probably a better way to do all this.
 		
-		if(opponent instanceof Trainer && ((Trainer)opponent).getTrainerName().equals("TATE&LIZA"))
-			System.out.println("BattleOptions.compileAndValidate");
 		
 		this.updateSxps(opponent, nbOfBattlers);
 		this.updateStatus1List(nbOfBattlers);
@@ -1008,6 +1013,12 @@ public class BattleOptions {
 			if(attackerSide == Side.ENEMY)
 				defenderMod.setIVvariation(this.isIVvariation());
 			
+			// Return variation for player
+			if(attackerSide == Side.PLAYER) {
+				attackerMod.setReturnOffset(this.getReturnOffset());
+				attackerMod.setReturnMaxAdded(this.getReturnMaxAdded());
+			}
+			
 			// Overriding currentHP if necessary
 			switch(getCurrentHPid(attackerSide)) { // TODO: hardcoded constants
 			case FULL:  currentHP = attacker.getStatValue(Stat.HP);   break;
@@ -1157,5 +1168,26 @@ public class BattleOptions {
 
 	public HashSet<Object> getEnemyResiduals() {
 		return enemyResiduals;
+	}
+
+	public int getReturnOffset() {
+		return returnOffset;
+	}
+
+	public void setReturnOffset(int returnOffset) {
+		this.returnOffset = returnOffset;
+	}
+
+	public int getReturnMaxAdded() {
+		return returnMaxAdded;
+	}
+
+	public void setReturnMaxAdded(int returnMaxAdded) {
+		this.returnMaxAdded = returnMaxAdded;
+	}
+
+	public void addReturnAverage(int returnOffset, int returnMaxAdded) {
+		this.returnOffset = returnOffset;
+		this.returnMaxAdded = returnMaxAdded;
 	}
 }

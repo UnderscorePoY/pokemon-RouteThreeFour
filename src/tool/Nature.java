@@ -113,4 +113,8 @@ public enum Nature {
 		}
 		return natures;
 	}
+	
+	public enum Mod {
+		DECREASING, NEUTRAL, INCREASING;
+	}
 }

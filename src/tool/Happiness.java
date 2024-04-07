@@ -32,7 +32,7 @@ public class Happiness {
 
 		WINNING_CONTEST(Game.gen4GameSet, 3, 2, 1),
 		
-		//WALKING_128(Game.gen34GameSet, 1, 1, 1), // 50%
+		//WALKING_128(Game.gen34GameSet, 1, 1, 1), // 50% every 128 steps
 		
 		LEARN_TM_HM(Game.gen34GameSet, 1, 1, 0),
 		

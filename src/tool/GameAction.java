@@ -142,17 +142,6 @@ class EarnBadge extends GameAction {
 	void performAction(Pokemon p) { for (Stat badge : badges) p.setBadge(badge); }
 }
 
-/* TODO : make this work with new implementation
-class ChangeReturnPower extends GameAction {
-    private int power;
-    private int MIN_RETURN_POWER = 1;
-    private int MAX_RETURN_POWER = 102;
-    ChangeReturnPower(int newPower) { power = Math.min(MAX_RETURN_POWER, Math.max(MIN_RETURN_POWER, newPower)); }
-    @Override
-    void performAction(Pokemon p) { Move.RETURN.setPower(power); }
-}
-*/
-
 class LearnMove extends GameAction {
     private Move move;
     LearnMove(Move m) { move = m; }
@@ -200,6 +189,8 @@ class Equip extends GameAction {
 	@Override
 	void performAction(Pokemon p) {
 		p.setItem(item);
+		Main.appendln(""); 
+		Main.appendln(String.format("Equipping %s.", item.getDisplayName()));
 	}
 }
 
@@ -209,5 +200,18 @@ class SetHappiness extends GameAction {
 	@Override
 	void performAction(Pokemon p) throws ToolInternalException {
 		p.setHappiness(happiness);
+		Main.appendln(""); 
+		Main.appendln(String.format("Happiness set to %d.", p.getHappiness()));
+	}
+}
+
+class AddHappiness extends GameAction {
+	private int happiness;
+	AddHappiness(int h) { happiness = h; }
+	@Override
+	void performAction(Pokemon p) {
+		p.addHappinessBound(happiness);
+		Main.appendln(""); 
+		Main.appendln(String.format("Happiness set to %d (%+d).", p.getHappiness(), happiness));
 	}
 }

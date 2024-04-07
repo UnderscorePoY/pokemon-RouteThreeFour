@@ -1,0 +1,383 @@
+um WITHDRAW
+stats
+//ranges
+
+L2 STARLY RASH KEENEYE FEMALE 6 21 1 31 24 13 -xatkuse 0
+
+buy 9 POTION
+money
+
+## Route 202
+L2 STARLY DOCILE KEENEYE MALE 17 12 6 20 10 25 -sxp 0
+
+YOUNGSTER_Tristan_1
+LASS_Natalie
+YOUNGSTER_Logan -xdefset 0
+
+//L3 STARLY IMPISH KEENEYE MALE 24 12 13 14 22 14 -sxp 0
+//L3 STARLY CALM KEENEYE MALE 19 7 16 25 7 8 -sxp 0
+L2 BIDOOF RASH UNAWARE MALE 11 19 5 2 23 11 -sxp 0
+//L4 BIDOOF BASHFUL UNAWARE MALE 0 14 10 5 30 11 -sxp 0
+//L4 STARLY IMPISH KEENEYE MALE 24 12 13 14 22 14 -sxp 0
+//L3 BIDOOF TIMID UNAWARE MALE 2 7 5 27 20 14 -sxp 0
+//L3 STARLY NAIVE KEENEYE MALE 14 9 20 27 1 24 -sxp 0
+//L2 STARLY BOLD KEENEYE MALE 8 6 28 3 14 18 -sxp 0
+
+
+## Jubilife City
+SCHOOL_KID_F_Christine
+lm ABSORB
+SCHOOL_KID_M_Harrison
+lm HIDDENPOWER
+
+## Route 203
+RIVAL_BARRY_ROUTE_203_CHIMCHAR -xdefsuse 0/0 -IVvariation
+
+//L4 BIDOOF BASHFUL UNAWARE FEMALE 26 24 12 1 20 26 -sxp 0
+
+## Oreburgh Mine
+L8 GEODUDE DOCILE STURDY FEMALE 8 3 7 18 0 31
+//L8 GEODUDE GENTLE STURDY FEMALE 19 0 13 28 20 5
+//L9 GEODUDE CALM ROCKHEAD MALE 29 15 30 13 20 7 -sxp 0
+//L9 GEODUDE HASTY ROCKHEAD MALE 20 31 24 2 17 21 -sxp 0
+
+//L10 GEODUDE CALM ROCKHEAD MALE 29 15 30 13 20 7 -sxp 0
+//L8 GEODUDE HASTY ROCKHEAD MALE 18 15 0 22 24 29 -sxp 0
+//L10 GEODUDE HASTY ROCKHEAD MALE 20 31 24 2 17 21 -sxp 0
+//L8 GEODUDE MILD ROCKHEAD MALE 19 6 15 31 13 6 -sxp 0
+//L8 GEODUDE MODEST ROCKHEAD MALE 8 25 19 31 24 9 -sxp 0
+//L8 GEODUDE RASH ROCKHEAD MALE 23 9 11 7 26 21 -sxp 0
+
+//L8 ONIX NAIVE ROCKHEAD MALE 4 27 13 6 2 3 -sxp 0
+
+//L9 ONIX NAIVE ROCKHEAD MALE 4 27 13 6 2 3 -sxp 0
+//L8 GEODUDE LONELY ROCKHEAD MALE 27 3 26 0 23 1 -sxp 0
+//L8 GEODUDE IMPISH ROCKHEAD MALE 27 20 26 22 17 21 -sxp 0
+//L9 GEODUDE QUIET ROCKHEAD MALE 29 19 14 0 4 17 -sxp 0
+//L8 ZUBAT BOLD INNERFOCUS MALE 23 26 4 1 14 11
+
+## Oreburgh City
+//YOUNGSTER_Jonathon // without Geodude encounter
+//YOUNGSTER_Darius
+stats
+lm RAZORLEAF // L13
+LEADER_ROARK -xdefsset 0/0/-3
+um ABSORB
+
+// SHOP IF LOST MANIP
+//money
+//sell TM76
+//buy 3 SUPERPOTION
+//buy 2 ANTIDOTE
+//buy 2 PARLYZHEAL
+//buy 4 REPEL
+//money
+
+## Jubilife City
+GALACTIC_Grunt_10 -ypartner GALACTIC_Grunt_9 -xpartner PKMN_TRAINER_LUCAS_PIPLUP
+
+## Route 204
+//LASS_Sarah // spinner
+//AROMA_LADY_Taylor // spinner
+
+## Floaroma Meadow
+GALACTIC_Grunt_1 // L9 Zubat, L9 Silcoon
+GALACTIC_Grunt_2 // L11 Zubat
+
+// NORMAL SHOP
+money
+sell TM76
+buy 6 SUPERPOTION
+buy 3 ANTIDOTE
+buy 3 PARLYZHEAL
+buy 2 REPEL
+money
+
+## Valley Windworks
+lm ABSORB
+GALACTIC_Grunt_35 // L11 Glameow
+GALACTIC_Grunt_3 -backtrack // spinner - L11 Cascoon
+COMMANDER_MARS_1
+um ABSORB 
+
+## Route 205
+//HIKER_Daniel -order 1/3/2/4 // spinner
+
+## Eterna Forest
+PKMN_TRAINER_CHERYL_Cheryl -sxp 0 //to show stats
+BUG_CATCHER_Jack -ypartner LASS_Briana -xpartner PKMN_TRAINER_CHERYL_Cheryl -order 1/3/2/4 -singledmg -xatksset 0/0/0/-4
+evolve GROTLE
+PSYCHIC_F_Lindsey -ypartner PSYCHIC_M_Elijah -xpartner PKMN_TRAINER_CHERYL_Cheryl
+
+## Eterna City
+LASS_Caroline -xatkset 1 -xdefset 1 -xspeset -1 
+AROMA_LADY_Jenna
+AROMA_LADY_Angela
+BEAUTY_Lindsay
+lm BITE // L22
+LEADER_GARDENIA -order 1/3/2 -xatkset 5 -yspasset 5/0/0 -ydefsset 0/0/1 -ystatus2 REFLECT
+um TACKLE
+
+// SHOP IF LOST MANIP
+//money
+//buy 5 SUPERPOTION
+//buy 1 PARLYZHEAL
+//buy 1 ANTIDOTE
+//buy 2 AWAKENING
+//buy 1 BURNHEAL
+//buy 6 REPEL
+//buy 1 NETBALL
+//money
+
+// NORMAL SHOP
+money
+buy 3 SUPERPOTION
+buy 2 AWAKENING
+buy 1 BURNHEAL
+buy 5 REPEL
+buy 1 NETBALL
+money
+
+## Eterna City Galactic building
+GALACTIC_F_Grunt_1 -xatksset 0/-1 // L14 Zubat, L14 Glameow
+GALACTIC_Grunt_5 // L13 Wurmple, L13 Cascoon
+GALACTIC_F_Grunt_3 // L12 Wurmple, L12 Silcoon, L12 Zubat
+SCIENTIST_Travon
+COMMANDER_JUPITER_1 -xatkset 3 -xdefset 1 -xspeset -2
+
+## Route 207
+HIKER_Kevin -order 1/3/2/4 -backtrack // spinner
+HIKER_Justin -xatkset 1 -xdefset 1 -backtrack // spinner
+
+## Route 208
+HIKER_Robert -backtrack // spinner
+HIKER_Jonathan -backtrack // spinner
+
+## Hearthome City
+stats
+pcupdate
+RIVAL_BARRY_HEARTHOME_MONFERNO -order 1/4/3/2 -xatkset 0 -xdefset 0 -xspeset 0
+
+## Route 209
+ROUGHNECK_Kirby -backtrack // spinner
+//L16 STARAVIA
+//lm GRASSKNOT
+lm RETURN
+addhappiness 1 // TM Return
+equip LUCKYEGG
+stats
+addhappiness 20 // +20 : Route 201->Eterna Building
+//addhappiness 2 // 2 out of 6
+
+//YOUNGSTER_Oliver
+//PKMN_BREEDER_F_Amber // Cleffa, Clefairy, Happiny
+
+## Route 215
+RUIN_MANIAC_Calvin -weather RAIN -returnAverage 0/7 -xatkuse 1 -xdefuse 1 -xspeuse -1 -ydefsuse 0/0
+//JOGGER_CRAIG_1 -returnAverage 0/9
+BLACK_BELT_Derek -weather RAIN -backtrack // spinner
+//addhappiness 1 // 3 out of 9
+ACE_TRAINER_F_Maya_1 -weather RAIN -xatkuse 0 -returnAverage 0/9
+ACE_TRAINER_M_Dennis_1 -weather RAIN -returnAverage 0/9
+
+## Veilstone City
+sell PPUP
+sell ZINC
+buy 24 XATTACK
+buy 14 XSPEED
+buy 2 HYPERPOTION
+buy 2 FULLHEAL
+buy 3 SUPERREPEL
+money
+
+
+## Route 214
+addhappiness 1 // X Speed on Abigail
+PSYCHIC_F_Abigail_1 -returnAverage 0/10
+PI_Carlos_1 -returnAverage 0/10 // Goldeen x3
+
+## Veilstone City
+BLACK_BELT_Rafael -yatkset 1 -returnAverage 0/11
+stats
+rarecandy
+evolve TORTERRA
+lm EARTHQUAKE
+
+BLACK_BELT_Darren -backtrack -returnAverage 0/11 // spinner
+BLACK_BELT_Colby -backtrack -returnAverage 0/11 //spinner
+//addhappiness 2 // 5 out of 12
+LEADER_MAYLENE -xatkuse 2 -xdefset 0 -returnAverage 0/12
+
+GALACTIC_Grunt_37 -ypartner GALACTIC_Grunt_38 -xpartner PKMN_TRAINER_LUCAS_GROTLE -returnAverage 0/13
+
+## Route 213
+BEAUTY_Cyndy_1 -returnAverage 0/16 -backtrack// spinner
+
+## Pastoria City
+//stats
+lm WOODHAMMER
+//addhappiness 2 // 7 out of 17
+SAILOR_Damian -returnAverage 0/17
+TUBER_M_Jacky -returnAverage 0/18
+TUBER_F_Caitlyn -returnAverage 0/18
+SAILOR_Samson -returnAverage 0/18
+
+
+//addhappiness 1 // 8 out of 19
+stats
+LEADER_WAKE -order 1/3/2 -xatkuse 2 -xspeuse 1 -returnAverage 0/19
+
+RIVAL_BARRY_PASTORIA_MONFERNO -order 1/4/3/2 -returnAverage 0/20
+
+## Route 213
+//BEAUTY_Cyndy_1 // spinner
+
+## Valor Lakefront
+GALACTIC_Grunt_36 -returnAverage 0/21 // L25 Glameow
+
+## Route 210
+//addhappiness 1 // 9 out of 22
+ACE_TRAINER_F_Alyssa -xatkuse 0 -xdefuse 0 -yatkuse 0 -ydefuse 0 -returnAverage 0/23
+ACE_TRAINER_M_Ernest -backtrack -returnAverage 0/23 // spinner
+BLACK_BELT_Adam -returnAverage 0/23
+BIRD_KEEPER_Brianna_1 -returnAverage 0/23
+VETERAN_Brian_1 -backtrack -returnAverage 0/23 //spinner
+
+## Celestic Town
+GALACTIC_Grunt_11 -returnAverage 0/24 // L25 Beautifly, L27 Croagunk
+
+## Hearthome City
+LEADER_FANTINA -order 1/3/2 -xatkuse 1 -xspeuse 1 -yspasset 1/0/0 -ydefsset 1/0/0 -yspdsset 1/0/0 -returnAverage 0/25
+
+## Veilstone City
+buy 11 HYPERPOTION
+buy 5 FULLHEAL
+buy 2 REVIVE
+buy 1 ESCAPEROPE
+buy 11 MAXREPEL
+money
+
+rarecandy
+SAILOR_Skyler -backtrack -returnAverage 0/27 // spinner
+
+## Canalave City
+//addhappiness 2 // 11 out of 27
+RIVAL_BARRY_CANALAVE_MONFERNO -order 1/3/5/2/4 -xatkuse 0 -returnAverage 0/28
+
+BLACK_BELT_Ricky -returnAverage 0/28
+ACE_TRAINER_M_Cesar -returnAverage 0/28
+WORKER_Gerardo -returnAverage 0/29
+BLACK_BELT_David -returnAverage 0/29
+ACE_TRAINER_F_Breanna -returnAverage 0/29
+lm CRUNCH //L45
+LEADER_BYRON -xatkuse 1 -returnAverage 0/29
+
+lm WOODHAMMER
+## Route 213
+//BEAUTY_Cyndy_1 // spinner
+
+## Lake Valor
+//addhappiness 3 // 14 out of 32
+GALACTIC_Grunt_12 -backtrack -returnAverage 0/32 // spinner
+COMMANDER_SATURN_1 -ydefsset 0/0/0 -returnAverage 0/33
+
+## Lake Verity
+GALACTIC_Grunt_14 -ypartner GALACTIC_F_Grunt_6 -sxps 2/2/2/2 -returnAverage 0/33
+COMMANDER_MARS_2 -xatkuse 1 -returnAverage 0/34
+
+
+## Route 216
+ACE_TRAINER_SNOW_F_Maria -weather HAIL -backtrack // spinner
+
+## Route 217
+lm GRASSKNOT
+ACE_TRAINER_SNOW_M_Dalton_1 -weather HAIL -returnAverage 0/36
+um GRASSKNOT
+ACE_TRAINER_SNOW_F_Olivia_1 -weather HAIL -returnAverage 0/36
+rarecandy
+
+## Snowpoint City
+//addhappiness 1 // 15 out of 36
+//protein
+ACE_TRAINER_SNOW_F_Brenna -backtrack // spinner
+LEADER_CANDICE -order 1/2/4/3 -xatkuse 0 -xspeuse 1 -xdefset 0 -weather HAIL -returnAverage 0/38
+
+## Veilstone City
+GALACTIC_Grunt_16 -backtrack -returnAverage 0/39 // spinner - L37 Golbat
+//addhappiness 2 // 17 out of 39
+GALACTIC_Grunt_17 -returnAverage 0/40 // L35 Dustox, L35 Bronzor
+GALACTIC_F_Grunt_8 -backtrack -returnAverage 0/40 // spinner - L37 Glameow
+
+GALACTIC_Grunt_22 -returnAverage 0/42 // L36 Golbat x2
+//addhappiness 1 // 18 out of 42
+GALACTIC_F_Grunt_11 -returnAverage 0/43 // L35 Croagunk, L35 Stunky, L35 Glameow
+GALACTIC_Grunt_23 -returnAverage 0/43 // L36 Stunky, L36 Croagunk
+GALACTIC_BOSS_Cyrus_1 -order 1/3/2 -xatkuse 0 -xspeuse 1 -returnAverage 0/43
+//addhappiness 1 // 19 out of 43
+COMMANDER_SATURN_2 -returnAverage 0/44
+
+## Mt. Coronet
+HIKER_Justin -backtrack // spinner
+lm ROCKSLIDE
+
+GALACTIC_F_Grunt_12 -backtrack -returnAverage 0/47 // spinner - L40 Beautifly
+GALACTIC_Grunt_26 -backtrack -returnAverage 0/48 // spinner - L38 Stunky, L38 Golbat
+//addhappiness 2 // 21 out of 48
+GALACTIC_F_Grunt_14 -ydefsuse 0/0 -returnAverage 0/49 // L38 Bronzor, L38 Glameow
+GALACTIC_Grunt_29 -ydefsset 2/0 -returnAverage 0/49 // L37 Bronzor, L37 Golbat
+GALACTIC_F_Grunt_15 -order 1/3/2 -returnAverage 0/49 // L37 Golbat, L37 Glameow, L37 Bronzor
+
+GALACTIC_Grunt_30 -ypartner GALACTIC_F_Grunt_16 -sxp 1 -returnAverage 0/49 
+//addhappiness 1 // 21 out of 49
+
+RIVAL_BARRY_SPEAR_PILLAR_INFERNAPE -multidmg -sxp 0 -returnAverage 0/50 // just for dmg ranges
+COMMANDER_MARS_3 -ypartner COMMANDER_JUPITER_2 -xpartner RIVAL_BARRY_SPEAR_PILLAR_INFERNAPE -order 4/5/6/1/3/2 -xatkuse 2 -ystatus2 REFLECT -returnAverage 0/50
+
+GALACTIC_BOSS_Cyrus_2 -order 1/4/2/3 -xatksuse 1/0/0/0 -xspeuse 1 -ydefsset 1/0/0/0 -returnAverage 0/50
+
+stats
+L47 DIALGA -sxp 0
+
+## Route 222
+lm LEAFSTORM
+TUBER_F_Holly -backtrack -returnAverage 0/51 // spinner
+SAILOR_Luther -order 1/3/2 -returnAverage 0/52
+
+## Sunyshore City
+SCHOOL_KID_F_Tiera -returnAverage 0/54
+SCHOOL_KID_M_Forrest -returnAverage 0/54
+GUITARIST_Jerry -returnAverage 0/54
+POKE_KID_Meghan -backtrack -returnAverage 0/54 // spinner
+GUITARIST_Lonnie -backtrack -returnAverage 0/54 // spinner
+ACE_TRAINER_F_Destiny -returnAverage 0/55
+GUITARIST_Preston -returnAverage 0/55
+ACE_TRAINER_M_Zachery -returnAverage 0/55
+LEADER_VOLKNER -order 1/3/4/2 -xatkuse 2 -returnAverage 0/56
+
+## Route 223
+SWIMMER_M_Oscar -order 1/3/2 -returnAverage 0/58
+SWIMMER_F_Gabrielle -backtrack -returnAverage 0/58 // spinner
+
+## Victory Road
+ACE_TRAINER_F_Mariah -returnAverage 0/59
+
+ACE_TRAINER_M_Omar -returnAverage 0/60
+ACE_TRAINER_F_Sydney -returnAverage 0/60
+BLACK_BELT_Miles -returnAverage 0/61
+PSYCHIC_F_Valencia -returnAverage 0/61
+
+DRAGON_TAMER_Ondrej -returnAverage 0/61
+VETERAN_Edgar -order 1/3/2 -returnAverage 0/62
+DRAGON_TAMER_Clinton -order 1/3/2 -yatksuse 0/1/0 -returnAverage 0/62
+
+## Pokemon League
+//pcupdate
+stats
+RIVAL_BARRY_LEAGUE_INFERNAPE -order 1/3/6/2/5/4 -xatkuse 0 -xspeuse 0 -ydefsset 0/0/0/0/0/0 -returnAverage 0/63
+//unequip
+ELITE_FOUR_AARON -xatksuse 0/0/0/0/0 -ydefsset 0/0/1/0/0 -returnAverage 0/63
+lm GRASSKNOT
+ELITE_FOUR_BERTHA -order 1/4/2/5/3 -xatkuse 2 -ydefsset 0/0/0/0/0 -returnAverage 0/63
+ELITE_FOUR_FLINT -order 1/3/5/4/2 -xspeuse 1 -xatkuse 0 -returnAverage 0/63
+ELITE_FOUR_LUCIAN -order 1/3/4/2/5 -xatkuse 3 -xspeuse 1 -xspdsset -1/0/0/0/0 -yspasset 0/0/0/0/0 -ydefsuse 0/0/0/0/0 -ystatus2 REFLECT -returnAverage 0/63
+CHAMPION_Cynthia -order 1/5/3/2/4/6 -xatkuse 2 -xspeuse 1 -xspdset -2 -yspesset 0/0/0/0/0/0 -yspasset 0/0/0/0/0/0 -ydefsset 0/0/0/0/0/0 -returnAverage 0/63

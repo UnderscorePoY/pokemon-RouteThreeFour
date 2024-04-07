@@ -14,6 +14,8 @@ public class StatModifier {
     private EnumSet<Status> statuses2_3;
     private Weather weather;
     private boolean isIVvariation;
+    private int returnOffset;
+    private int returnMaxAdded;
     
     private HashSet<Object> immuneTo = new HashSet<>();
 
@@ -24,6 +26,8 @@ public class StatModifier {
     	this.statuses2_3 = Status.noStatus2_3();
     	this.weather = Weather.NONE;
     	this.isIVvariation = false;
+    	this.returnOffset = 0;
+    	this.returnMaxAdded = 0;
     }
 
     public StatModifier(int atk, int def, int spa, int spd, int spe) {
@@ -375,5 +379,21 @@ public class StatModifier {
 
 	public boolean isImmuneTo(Object o) {
 		return immuneTo.contains(o);
+	}
+
+	public int getReturnOffset() {
+		return returnOffset;
+	}
+
+	public void setReturnOffset(int returnOffset) {
+		this.returnOffset = returnOffset;
+	}
+
+	public int getReturnMaxAdded() {
+		return returnMaxAdded;
+	}
+
+	public void setReturnMaxAdded(int returnMaxAdded) {
+		this.returnMaxAdded = returnMaxAdded;
 	}
 }

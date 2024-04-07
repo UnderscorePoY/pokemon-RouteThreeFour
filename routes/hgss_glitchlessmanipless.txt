@@ -1,0 +1,142 @@
+//Test routing gyarados
+stats
+ranges
+
+rarecandy // at L50
+evolve gyarados
+
+rarecandy // at L51
+
+
+lm strength
+lm surf
+um splash
+
+## Rocket Hideot
+TEAM_ROCKET_Grunt_20 -v 1
+TEAM_ROCKET_Grunt_21 -v 1
+TEAM_ROCKET_Grunt_16 -v 1
+TEAM_ROCKET_F_Grunt_5 -v 1
+TEAM_ROCKET_Grunt_19 -v 1
+TEAM_ROCKET_Grunt_17 -v 1
+EXECUTIVE_PETREL_2 -v 1 
+EXECUTIVE_ARIANA_2 -ypartner TEAM_ROCKET_Grunt_25 -xpartner PKMN_TRAINER_LANCE -v 1
+
+L23 ELECTRODE HARDY Static MALE 31 31 31 31 31 31 -v 1 // Nature and stats are most certainly wrong
+L23 ELECTRODE HARDY Static MALE 31 31 31 31 31 31 -v 1 // Nature and stats are most certainly wrong
+L23 ELECTRODE HARDY Static MALE 31 31 31 31 31 31 -v 1 // Nature and stats are most certainly wrong
+
+## Pryce's Gym
+SKIER_Diana -v 1
+SKIER_Jill -v 1
+LEADER_Pryce_1 -v 1
+
+## Light
+GENTLEMAN_Alfred_1 -v 1
+SAILOR_Huey_1 -v 1
+SAILOR_Terrell -v 1
+
+## Chuck's Gym
+BLACK_BELT_Nob -v 1
+LEADER_Chuck_1 -v 1
+
+
+
+## Jasmine's Gym
+LEADER_Jasmine_1 -v 1
+
+rarecandy // at L54
+equip mysticwater
+
+## Radio Tower
+TEAM_ROCKET_Grunt_3 -v 1
+TEAM_ROCKET_F_Grunt_2 -v 1
+EXECUTIVE_PETREL_1 -v 1
+RIVAL_Silver_GOLDENROD_TUNNEL_FERALIGATR -v 1
+TEAM_ROCKET_Grunt_11 -v 1
+TEAM_ROCKET_F_Grunt_3 -v 1
+TEAM_ROCKET_Grunt_22 -v 1
+TEAM_ROCKET_Grunt_8 -v 1 
+TEAM_ROCKET_Grunt_9 -v 1
+EXECUTIVE_PROTON_2 -v 1
+EXECUTIVE_ARIANA_1 -v 1
+EXECUTIVE_ARCHER -v 1
+
+## Clair's Gym
+ACE_TRAINER_F_Lola -v 1
+ACE_TRAINER_M_Mike -v 1
+LEADER_Clair_1 -v 1
+
+lm waterfall
+um tackle
+
+## Ecruteak's Theater
+ACE_TRAINER_M_Kobe -v 1
+
+KIMONO_GIRL_Zuki -v 1
+KIMONO_GIRL_Naoko -v 1 
+stats
+KIMONO_GIRL_Miki -v 2 -ivvariation
+KIMONO_GIRL_Sayo -v 1
+KIMONO_GIRL_Kuni -v 1
+ 
+## Victory Road
+ACE_TRAINER_M_Gaven_1 -v 1
+ACE_TRAINER_M_Jake -v 1
+ACE_TRAINER_F_Jamie_1 -v 1
+RIVAL_Silver_VICTORY_ROAD_FERALIGATR -v 1
+
+rarecandy // at L60
+rarecandy // at L61
+
+## Elite 4
+ELITE_FOUR_Will_1 -v 1
+ELITE_FOUR_Koga_1 -v 1
+ELITE_FOUR_Bruno_1 -v 1
+ELITE_FOUR_Karen_1 -v 1
+CHAMPION_Lance_1 -v 1
+
+## Sabrina's Gym
+SAILOR_Stanly -v 1
+LEADER_Sabrina_1 -v 1
+
+## Nugget bridge
+CAMPER_Dean -v 1
+TEAM_ROCKET_Grunt_24 -v 1
+SCHOOL_KID_M_Dudley -v 1
+LASS_Ellen -v 1
+SCHOOL_KID_M_Joe -v 1
+CAMPER_Lloyd -v 1
+LASS_Laura -ypartner LASS_Shannon -v 2 -ivvariation
+SUPER_NERD_Pat -v 1
+
+## Misty's Gym
+LEADER_Misty_1 -v 1
+
+
+## Surge's Gym
+LEADER_Lt_Surge_1 -v 1
+
+## Brock's Gym
+LEADER_Brock_1 -v 1
+
+## Blaine's Gym
+SWIMMER_F_Leona -v 1
+SCIENTIST_GS_Lowell -v 1
+SUPER_NERD_Cary -v 1
+SUPER_NERD_Merle -v 1
+LEADER_Blaine_1 -v 1
+
+## Erika's Gym
+LEADER_Erika_1 -v 1
+
+## Jeanine's Gym
+LEADER_Janine_1 -v 1
+
+## Blue's Gym
+LEADER_Blue_1 -v 1
+
+## Red
+PKMN_TRAINER_RED -v 1
+
+

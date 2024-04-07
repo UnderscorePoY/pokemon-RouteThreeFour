@@ -1,4 +1,5 @@
 package tool;
+import java.util.ArrayList;
 import java.util.EnumMap;
 
 import tool.exception.ToolInternalException;
@@ -6,6 +7,53 @@ import tool.exception.ToolInternalException;
 public enum Type {
 	//TODO : handle effectiveness and Type.MYSTERY properly
     NORMAL, FIGHTING, FLYING, POISON, GROUND, ROCK, BUG, GHOST, FIRE, WATER, GRASS, ELECTRIC, PSYCHIC, ICE, DRAGON, STEEL, DARK, MYSTERY, NONE;
+	
+	public static final ArrayList<Pair<Type,Boolean>> hiddenPowerTypeAbilityIterations = new ArrayList<>();
+	static {
+		if(Settings.game.isGen3()) { // atk/spa split and alphabetical order for each
+			hiddenPowerTypeAbilityIterations.add(new Pair<>(BUG, false));
+			hiddenPowerTypeAbilityIterations.add(new Pair<>(BUG, true));
+			hiddenPowerTypeAbilityIterations.add(new Pair<>(FIGHTING, false));
+			hiddenPowerTypeAbilityIterations.add(new Pair<>(FLYING, false));
+			hiddenPowerTypeAbilityIterations.add(new Pair<>(GHOST, false));
+			hiddenPowerTypeAbilityIterations.add(new Pair<>(GROUND, false));
+			hiddenPowerTypeAbilityIterations.add(new Pair<>(POISON, false));
+			hiddenPowerTypeAbilityIterations.add(new Pair<>(ROCK, false));
+			hiddenPowerTypeAbilityIterations.add(new Pair<>(STEEL, false));
+			hiddenPowerTypeAbilityIterations.add(new Pair<>(DARK, false));
+			hiddenPowerTypeAbilityIterations.add(new Pair<>(DRAGON, false));
+			hiddenPowerTypeAbilityIterations.add(new Pair<>(ELECTRIC, false));
+			hiddenPowerTypeAbilityIterations.add(new Pair<>(FIRE, false));
+			hiddenPowerTypeAbilityIterations.add(new Pair<>(FIRE, true));
+			hiddenPowerTypeAbilityIterations.add(new Pair<>(GRASS, false));
+			hiddenPowerTypeAbilityIterations.add(new Pair<>(GRASS, true));
+			hiddenPowerTypeAbilityIterations.add(new Pair<>(ICE, false));
+			hiddenPowerTypeAbilityIterations.add(new Pair<>(PSYCHIC, false));
+			hiddenPowerTypeAbilityIterations.add(new Pair<>(WATER, false));
+			hiddenPowerTypeAbilityIterations.add(new Pair<>(WATER, true));
+		} else { // alphabetical order
+			hiddenPowerTypeAbilityIterations.add(new Pair<>(BUG, false));
+			hiddenPowerTypeAbilityIterations.add(new Pair<>(BUG, true));
+			hiddenPowerTypeAbilityIterations.add(new Pair<>(DARK, false));
+			hiddenPowerTypeAbilityIterations.add(new Pair<>(DRAGON, false));
+			hiddenPowerTypeAbilityIterations.add(new Pair<>(ELECTRIC, false));
+			hiddenPowerTypeAbilityIterations.add(new Pair<>(FIGHTING, false));
+			hiddenPowerTypeAbilityIterations.add(new Pair<>(FIRE, false));
+			hiddenPowerTypeAbilityIterations.add(new Pair<>(FIRE, true));
+			hiddenPowerTypeAbilityIterations.add(new Pair<>(FLYING, false));
+			hiddenPowerTypeAbilityIterations.add(new Pair<>(GHOST, false));
+			hiddenPowerTypeAbilityIterations.add(new Pair<>(GRASS, false));
+			hiddenPowerTypeAbilityIterations.add(new Pair<>(GRASS, true));
+			hiddenPowerTypeAbilityIterations.add(new Pair<>(GROUND, false));
+			hiddenPowerTypeAbilityIterations.add(new Pair<>(ICE, false));
+			hiddenPowerTypeAbilityIterations.add(new Pair<>(POISON, false));
+			hiddenPowerTypeAbilityIterations.add(new Pair<>(PSYCHIC, false));
+			hiddenPowerTypeAbilityIterations.add(new Pair<>(ROCK, false));
+			hiddenPowerTypeAbilityIterations.add(new Pair<>(STEEL, false));
+			hiddenPowerTypeAbilityIterations.add(new Pair<>(WATER, false));
+			hiddenPowerTypeAbilityIterations.add(new Pair<>(WATER, true));
+		}
+	}
 	
 	public static final int SUPER_EFFECTIVE_MULT = 20;
     public static final int NEUTRAL_MULT = 10, NEUTRAL_TWO_TYPES_MULT = NEUTRAL_MULT * NEUTRAL_MULT;

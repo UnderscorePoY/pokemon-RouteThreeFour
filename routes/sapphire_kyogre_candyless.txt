@@ -1,0 +1,43 @@
+// ***** GHeinz 2020 Candyless Kyogre route ***** //
+//      Link : https://pastebin.com/idfy11mW      //
+
+// Kyogre cluster (for config file)
+// 809 | Calm  14/27/19/31/ 7/27
+// 810 | Hasty 27/31/ 7/25/18/26
+// 811 | Mild  26/25/18/26/ 8/23
+// 812 | Hardy 23/26/ 8/26/ 8/25
+
+stats
+
+stonebadge
+dynamobadge
+balancebadge
+mindbadge
+
+lm SHOCKWAVE
+um CALMMIND
+
+lm SURF // If Mild (811)
+//um HYDROPUMP // If Mild (811)
+lm WATERFALL
+um BODYSLAM
+equip PERSIMBERRY
+
+WALLACE -xspas 0/1/1/1/1 -yspds 0/2/0/0/0 -weather RAIN -v 2 -lvstats // -xspe 1 if not Hasty
+
+equip MYSTICWATER
+
+HOPE -weather RAIN -v 2 -lvstats
+SHANNON -weather RAIN -v 2 -lvstats
+JULIE -weather RAIN -v 2 -lvstats
+EDGAR -weather RAIN -v 2 -lvstats
+WALLY_1 -order 1/4/3/2/5 -weather RAIN -v 2 -lvstats
+
+SIDNEY -order 1/3/4/5/2 -weather RAIN -v 2 -lvstats
+PHOEBE -weather RAIN -v 2 -lvstats
+GLACIA -xspas 0/2/2/3/3 -weather RAIN -v 2 -lvstats
+DRAKE -xspes 0/1/1/1/1 -weather RAIN -v 2 -lvstats // Hasty (810) skips X Speed
+STEVEN -order 1/3/4/2/6/5 -xspa 1 -weather RAIN -v 2 -lvstats
+
+// (end of route) //
+// ############## //

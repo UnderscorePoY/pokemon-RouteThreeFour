@@ -12,9 +12,25 @@ It is derived from a custom RouteThree, itself derived from Dabomstew & entrpntr
 ○ Usual update.  
 **!!** Bug fixes.  
 
+**`[2024/04/07]` - v0.4.8**  
+**!!** Fixed an issue involving fighting the same trainer multiple times after providing a `-yPartner` option.  
+**!!** Fixed an issue involving `-order` when providing a `-yPartner` option.  
+**!!** Option `-IVvariation` now behaves properly with `Hidden Power`.  
+**!!** Fixed a calculation issue with divisions involving big numbers.  
+**!!** Fixed an issue involving happiness of Pokémon in `Luxury Ball`.  
+**!!** Fixed an issue involving lines with a single empty comment.  
+**!!** Fixed some incompatible battle options.  
+○ Added option `-returnAverage` allowing to calculate average Return damage based on the number of 128-step cycles (see details in documentation).  
+○ Added option `-addHappiness` (see details in documentation).  
+○ In config files, added new `boostedExp` option `INTERNATIONAL`.  
+○ Added/Improved output messages.  
+
+
 **`[2023/11/18]` - v0.4.7**  
 **!!** Fixed an issue where Nidorans' learnsets were not loaded properly.  
 
+
+<details><summary> Show/hide previous updates </summary>  
 
 **`[2023/09/02]` - v0.4.6**  
 **!!** Selling items now gives the player half the item cost.  
@@ -77,7 +93,6 @@ It is derived from a custom RouteThree, itself derived from Dabomstew & entrpntr
 ► Changed syntax for a variety of trainer aliases.  
 	**Users of former versions are advised to install this update in another folder if they don't want to modify their old route files.**
 
-<details><summary> Show/hide previous updates </summary>  
 
 **`[2022/01/17]` - v0.3.1**  
 ○ Added `-noDoubleBattle`/`-nodouble` command to force single battles.  
@@ -178,7 +193,7 @@ A configuration file (generally with the `.ini` extension) gathers the primary i
   `"spaIV"`   | An integer between `0` and `31`.| The Special Attack IV of the main Pokémon.
   `"spdIV"`   | An integer between `0` and `31`.| The Special Defense IV of the main Pokémon.
   `"speIV"`   | An integer between `0` and `31`.| The Speed IV of the main Pokémon.
-  `"boostedExp"`   | `true` or `false`. | Whether the main Pokémon benefits from the trading experience boost or not. <br/>*(Defaults to `false` if missing.)*
+  `"boostedExp"`   | `international`, `true` or `false`. | Whether the main Pokémon benefits from the trading experience boost or not. <br/>`international` applies to non-european trades in european games. <br/>*(Defaults to `false` if missing.)*
   `"pokerus"`   | `true` or `false`. | Whether the main Pokémon benefits from the Pokérus Effort Value (EV) boost or not. <br/>*(Defaults to `false` if missing.)*
   `"hpEV"`    | An integer between `0` and `252`.| The HP EV (Effort Value) of the main Pokémon. <br/>*(Defaults to `0` if missing.)*
   `"atkEV"`   | An integer between `0` and `252`.| The Attack EV of the main Pokémon. <br/>*(Defaults to `0` if missing.)*
@@ -297,6 +312,7 @@ The `resources` folder contains most of the data used by the tool. You can look 
 
 ###### Happiness
 - `"setHappiness <VALUE>"` : Sets happiness to value `VALUE`. Must be an integer between `0` and `255`.  
+- `"addHappiness <VALUE>"` : Adds `VALUE` to current happiness. Must be an integer between `-255` and `255`.  
 
 ###### PC
 - `"pcUpdate"` : Updates current EVs (mimics depositing and withdrawing a Pokémon from the PC).  
@@ -448,7 +464,15 @@ This is useful when you route Pokémon you don't acquire/catch straight away.
 - `"-scenarioName <NAME>"` : Gives name `NAME` to the current fight. Useful when performing the same battle multiple times with different battle options.  
 *aliases* : `"-scenario"`, `"-name"`
 
-- `"-IVvariation"` : Displays damage ranges for all possible IV values and natures. (Also displays crit damage ranges with verbose levels `MOST` or `EVERYTHING`).
+- `"-IVvariation"` : Displays damage ranges for all possible IV values and natures. (Also displays crit damage ranges with verbose levels `MOST` or `EVERYTHING`). **BEWARE**: This option is slow when dealing with `Hidden Power`, as it will compute all nature+type+type-ability+power combinations. It is advised to use it one fight at a time.  
+
+- `"returnAverage <offset>/<range>"` : Displays an average of all possible `Return` damage based on current happiness, `offset` and `range`.  
+-- `offset` must be an integer between `-255` and `255`. It represents how much happiness you want to add to current happiness before the fight. Pre-battle happiness is restored after the fight.  
+-- `range` must be an integer between `0` and `255`. It represents the number of time the player might have received a happiness boost from the 128-step counter.  
+> Example : 
+> ```
+> PSYCHIC_F_Abigail_1 -returnAverage 0/10 // Takes current happiness, offsets it by 0, then calculates the Return damage average assuming 10 possible 128-step counter boosts
+> ```  
 
 ###### 5.4.3.2. Stat boosts
 In all options where the notation `<stat>` appears, it denotes `atk`, `def`, `spa` (Special Attack), `spd` (Special Defense) or `spe` (Speed).

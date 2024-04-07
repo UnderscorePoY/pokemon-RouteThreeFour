@@ -180,6 +180,10 @@ public enum Game {
 		return this == FIRERED || this == LEAFGREEN;
 	}
 	
+	boolean isDP() {
+		return this == DIAMOND || this == PEARL;
+	}
+	
 	public boolean isDPPt() {
 		return this == DIAMOND || this == PEARL || this == PLATINUM;
 	}

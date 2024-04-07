@@ -1,6 +1,8 @@
 package tool;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.SortedMap;
 import java.util.TreeMap;
@@ -25,12 +27,14 @@ import tool.exception.ToolInternalException;
  *    ==>> DamageCalculator.damage()
  */
 public class DamageCalculator {
-    private static final String inlineSpace         = "    ";
-    private static final String battleIntroIndent   = "█ ";
-    private static final String pokemonIndent       = "  ▓ ";
-    private static final String moveIndent          = "    ▒ ";
-    private static final String moveInfoIndent      = "        ";
-    private static final String moveInfoExtraIndent = "        ░ ";
+    private static final String inlineSpace           = "    ";
+    private static final String battleIntroIndent     = "█ ";
+    private static final String pokemonIndent         = "  ▓ ";
+    private static final String moveIndent            = "    ▒ ";
+    private static final String moveInfoIndent        = "        ";
+    private static final String moveInfoExtraIndent   = "        ░ ";
+    private static final String hiddenPowerIndent     = "          ";
+    private static final String hiddenPowerSuperIndent= "                   ";
 	
     private static int MIN_ROLL = 85;
     private static int MAX_ROLL = 100;
@@ -48,7 +52,7 @@ public class DamageCalculator {
 		private TreeMap<Integer, Long> normalDamageRolls;
 		private TreeMap<Integer, Long> critDamageRolls;
 		private boolean hasCrit = true;
-		private int numRolls = 0;
+		private long numRolls = 0;
 		
 		private Move attackMove;
 		private Pokemon attacker;
@@ -85,12 +89,19 @@ public class DamageCalculator {
 			
 			
 			this.calculate();
+			this.updateHitsGreaterOrEqualThanEnemyHP();
+		}
+		
+		private void updateHitsGreaterOrEqualThanEnemyHP() {
+			this.normalHitsGreaterOrEqualThanEnemyHP = 0;
+			this.critHitsGreaterOrEqualThanEnemyHP = 0;
+			
 			for(long mult : normalDamageRolls.tailMap(defender.getStatValue(Stat.HP)).values())
 				normalHitsGreaterOrEqualThanEnemyHP += mult;
 			for(long mult : critDamageRolls.tailMap(defender.getStatValue(Stat.HP)).values())
 				critHitsGreaterOrEqualThanEnemyHP += mult;
 		}
-		
+
 		@Override
 		public String toString() {
 			return normalDamageRolls.toString() + (hasCrit() ? Constants.endl + critDamageRolls.toString() : "");
@@ -246,22 +257,34 @@ public class DamageCalculator {
 		}
 		
 		
-		private void increment(TreeMap<Integer, Long> map, int dmg) {
+		private void increment(TreeMap<Integer, Long> map, int dmg, long roll) {
 			if (!map.containsKey(dmg))
-				map.put(dmg, (long) 1);
+				map.put(dmg, (long) roll);
 			else
-				map.put(dmg, 1 + map.get(dmg));
+				map.put(dmg, roll + map.get(dmg));
 			
 			if(map == normalDamageRolls)
-				numRolls++;
+				numRolls += roll;
+		}
+		
+		private void increment(TreeMap<Integer, Long> map, int dmg) {
+			increment(map, dmg, (long) 1);
 		}
 		
 		public void addNormalDamage(int dmg) {
 			increment(normalDamageRolls, dmg);
 		}
 		
+		public void addNormalDamage(int dmg, long roll) {
+			increment(normalDamageRolls, dmg, roll);
+		}
+		
 		public void addCritDamage(int dmg) {
 			increment(critDamageRolls, dmg);
+		}
+		
+		public void addCritDamage(int dmg, long roll) {
+			increment(critDamageRolls, dmg, roll);
 		}
 		
 		public boolean hasCrit() {
@@ -272,7 +295,7 @@ public class DamageCalculator {
 			this.hasCrit = hasCrit;
 		}
 		
-		public int getNumRolls() {
+		public long getNumRolls() {
 			return numRolls;
 		}
 		
@@ -293,6 +316,27 @@ public class DamageCalculator {
 	    		critDamageRolls = capMapWithHP(critDamageRolls, hp);
 	    }
 	    
+	    
+	    /**
+	     * Adds other damage rolls to this
+	     */
+	    public void addDamages(Damages other, long mult) {
+	    	for(Map.Entry<Integer, Long> entry : other.normalDamageRolls.entrySet()) {
+	    		int dmg = entry.getKey();
+	    		Long roll = entry.getValue();
+	    		
+    			this.addNormalDamage(dmg, roll*mult);
+	    	}
+	    	
+	    	for(Map.Entry<Integer, Long> entry : other.critDamageRolls.entrySet()) {
+	    		int dmg = entry.getKey();
+	    		Long roll = entry.getValue();
+	    		
+    			this.addCritDamage(dmg, roll*mult);
+	    	}
+	    	
+	    	this.updateHitsGreaterOrEqualThanEnemyHP();
+	    }
 	    
 	    
 	    
@@ -726,6 +770,10 @@ public class DamageCalculator {
 			return 100. * num / div;
 		}
 		
+		
+		static final int MAX_SIZE = 100;
+		static final long[][] chooseArr = new long[MAX_SIZE][MAX_SIZE];
+		
 	    private static long choose(long total, long choose) {
 	        if (total < choose)
 	            return 0;
@@ -733,7 +781,24 @@ public class DamageCalculator {
 	            return 1;
 	        if (choose == 1 || choose == total - 1)
 	            return total;
-	        return choose(total - 1, choose - 1) + choose(total - 1, choose);
+	        
+	        long left = 0, right = 0;
+	        if(total <= MAX_SIZE) {
+	        	left = chooseArr[(int) (total-1)][(int) (choose-1)];
+	        	if(left == 0) {
+	        		left = choose(total-1, choose-1);
+	        		chooseArr[(int) (total-1)][(int) (choose-1)] = left;
+	        	}
+	        	
+	        	right = chooseArr[(int) (total-1)][(int) choose];
+	        	if(right == 0) {
+	        		right = choose(total-1, choose);
+	        		chooseArr[(int) (total-1)][(int) choose] = right;
+	        	}
+	        }
+	        
+	        return left + right;
+	        //return choose(total - 1, choose - 1) + choose(total - 1, choose);
 	    }
 
 	    
@@ -851,7 +916,12 @@ public class DamageCalculator {
 
 		public void setInfo(DamagesInfo info) {
 			this.info = info;
-		}	    
+		}
+		
+		@Override
+		public int hashCode() {
+			return this.highestDamage()*10000+this.lowestDamage();
+		}
 	} // end Damages class
 	
 	
@@ -2684,10 +2754,11 @@ public class DamageCalculator {
         
     	boolean isItemBoosted = p1.getHeldItem() != null && p1.getHeldItem().isBoostingExperience();
     	boolean isTradeBoosted = p1.hasBoostedExp();
+    	boolean isInternational = p1.isInternartionalTraded();
     	String sep = isItemBoosted && isTradeBoosted ? "+" : "";
     	String startBracket = isItemBoosted || isTradeBoosted ? " (" : "";
     	String endBracket = isItemBoosted || isTradeBoosted ? ")" : "";
-    	String itemStr = String.format("%s%s%s%s%s", startBracket, isItemBoosted ? p1.getHeldItem().getDisplayName() : "",sep, isTradeBoosted ? "TRADE" : "", endBracket);
+    	String itemStr = String.format("%s%s%s%s%s", startBracket, isItemBoosted ? p1.getHeldItem().getDisplayName() : "",sep, isInternational ? "INTERNATIONAL" : isTradeBoosted ? "TRADE" : "", endBracket);
     	//int expGiven = options.getNumberOfParticipants() == 0 ? 0 : p2.expGivenWithoutEXPBoost(options.getNumberOfParticipants());
     	//expGiven = (expGiven * 3) / (isTradeBoosted ? 2 : 3); // TODO : duplicate code from the Pokemon.gainExp method
     	//expGiven = (expGiven * 3) / (isItemBoosted ? 2 : 3);
@@ -3254,7 +3325,15 @@ public class DamageCalculator {
     			if(!oldHasSwitch) 
     				mod2.removeStatus2_3(Status.SWITCHING_OUT);
                 break;
-            	
+            
+                
+        	case RETURN:
+            	if(mod1.getReturnMaxAdded() > 0)
+            		info = calculateReturnAverageDamageAndPrintBasedOnVerboseLevel(sb, moveCopy, p1, p2, mod1, mod2, 1, isBattleTower, isDoubleBattle, verboseLevel);
+            	else 
+            		info = calculateDamageAndPrintBasedOnVerboseLevel(sb, moveCopy, p1, p2, mod1, mod2, 1, isBattleTower, isDoubleBattle, verboseLevel);
+            	break;
+        		
         	default:
 	        	// Default print
         		info = calculateDamageAndPrintBasedOnVerboseLevel(sb, moveCopy, p1, p2, mod1, mod2, 1, isBattleTower, isDoubleBattle, verboseLevel);
@@ -3574,8 +3653,9 @@ public class DamageCalculator {
 	    	}
         }
     }
-    
-    public static void printDamageWithIVvariationIfApplicable(StringBuilder sb, Move move, Pokemon p1, Pokemon p2, StatModifier mod1, StatModifier mod2, int extra_modifier, boolean isBattleTower, boolean isDoubleBattle, boolean isCrit) throws UnsupportedOperationException, ToolInternalException {
+
+
+	public static void printDamageWithIVvariationIfApplicable(StringBuilder sb, Move move, Pokemon p1, Pokemon p2, StatModifier mod1, StatModifier mod2, int extra_modifier, boolean isBattleTower, boolean isDoubleBattle, boolean isCrit) throws UnsupportedOperationException, ToolInternalException {
     	Pokemon p1_in_use, p2_in_use, modifiedPoke;
     	boolean isAttackerVariation;
     	// Check who has IV variation (i.e. where the player is)
@@ -3614,109 +3694,212 @@ public class DamageCalculator {
     	sb.append(moveInfoIndent);
 		sb.append(String.format("%s variation: ", isCrit ? "Crit": "Normal"));
 		sb.append(Constants.endl);
-    	for(int k = 0; k < natures.length; k++) {
+
+		for(int k = 0; k < natures.length; k++)
+    	{
     		ArrayList<Nature> listOfNaturesProducingTheSameBoost = (k == 0) ? Nature.getNaturesDecreasing(stat) : 
     															   (k == 2) ? Nature.getNaturesIncreasing(stat) : null;
-    		sb.append(moveInfoExtraIndent);
-    		sb.append(String.format("%s%1s %s", stat, names[k], listOfNaturesProducingTheSameBoost == null ? "[all the other natures]" : String.format("%s", listOfNaturesProducingTheSameBoost)));
-    		sb.append(Constants.endl);
+    		// Can group per nature
+    		if(Settings.game.isGen4() || move.getEffect() != MoveEffect.HIDDEN_POWER) {
+	    		sb.append(moveInfoExtraIndent);
+	    		sb.append(String.format("%s%1s %s", stat, names[k], listOfNaturesProducingTheSameBoost == null ? "[all the other natures]" : String.format("%s", listOfNaturesProducingTheSameBoost)));
+	    		sb.append(Constants.endl);
+	    	}
     		
     		Nature nature = natures[k];
     		
     		int last_low_iv = 0;
     		// boolean isDifferentDamages = false;
-    		Damages previousDamages = null;
-    		int iv = 0;
+    		Damages previousDamages;
     		int hp = p2.getStatValue(Stat.HP);
-    		for(iv = ContainerType.IV.getMinPerStat(); iv <= ContainerType.IV.getMaxPerStat() + 1; iv++) {
-	    		boolean isFirstIV = iv == ContainerType.IV.getMinPerStat();
-	    		boolean isLastIV = iv > ContainerType.IV.getMaxPerStat();
+    		
+    		if(move.getEffect() == MoveEffect.HIDDEN_POWER) {
+    			//(min,max)->Damage
+    			LinkedHashMap<Pair<Integer, Integer>, Damages> previousPowerRanges;
+    			LinkedHashMap<Pair<Integer, Integer>, Damages> powerRanges;
+    			int lowIv;
+    			int lowPower;
+    			boolean hasDamage;
+    			boolean encounteredAnyMatchDuringIv;
+    			boolean lastIVsWasNull; 
+    			boolean isDifferentFromPreviousPowerRanges;
+    			Damages damages = previousDamages = null;
+    			//System.out.println("in");
     			
-	    		Damages damages = previousDamages;
-	    		if(!isLastIV) {
-	    			modifiedPoke.getIVs().put(stat, iv);
-	    			modifiedPoke.setNature(nature);
-	    			damages = new Damages(move, p1_in_use, p2_in_use, mod1, mod2, extra_modifier, isBattleTower, isDoubleBattle);
-	    			damages.capDamagesWithHP(hp);
-	    		}
-
-	    		boolean isDifferentDamages = !damages.equals(previousDamages) || isLastIV;
-	    		
-	    		// Print previous IV range
-	    		if(!isFirstIV && isDifferentDamages) {
-	    			boolean isSingleIV = last_low_iv == iv - 1;
-	    			String rangeStr = isSingleIV ? String.format("%5d", last_low_iv) : String.format("%2d-%2d", last_low_iv, iv - 1);
-	    			sb.append(moveInfoExtraIndent);
-	    			sb.append(String.format("%s : ", rangeStr));
-	    			if(isCrit)
-	    				previousDamages.appendCritDamages(sb);
-	    			else
-	    				previousDamages.appendNormalDamages(sb);
+	    		for(Pair<Type, Boolean> pair : Type.hiddenPowerTypeAbilityIterations)
+	    		{
+	    			Type type = pair.getLeft();
+	    			boolean activateTypeBoostAbility = pair.getRight();
+	    			Ability ab = null;
+	    			if(activateTypeBoostAbility) {
+	    				if(modifiedPoke.getAbility() == Ability.SWARM && type == Type.BUG) {
+	    					mod1.setCurrHP(1);
+	    					ab = Ability.SWARM;
+	    				} else if (modifiedPoke.getAbility() == Ability.BLAZE && type == Type.FIRE) {
+	    					mod1.setCurrHP(1);
+	    					ab = Ability.BLAZE;
+	    				} else if (modifiedPoke.getAbility() == Ability.TORRENT && type == Type.WATER) {
+	    					mod1.setCurrHP(1);
+	    					ab = Ability.TORRENT;
+	    				} else if (modifiedPoke.getAbility() == Ability.OVERGROW && type == Type.GRASS) {
+	    					mod1.setCurrHP(1);
+	    					ab = Ability.OVERGROW;
+	    				} else {
+	    					mod1.setCurrHP(modifiedPoke.getStatValue(Stat.HP));
+	    				}
+	    			}
+	    			previousPowerRanges = null;
+	    			powerRanges = null;
+	    			lowIv = 0;
+	    			hasDamage = true;
+	    			isDifferentFromPreviousPowerRanges = false;
+	    			if(type == Type.NORMAL || type == Type.MYSTERY || type == Type.NONE)
+	    				continue;
+	    			sb.append(hiddenPowerIndent);
+	    			sb.append(String.format("%s%s ", type, (ab != null)? String.format(" +%s",ab):""));
 	    			
-	    			last_low_iv = iv;
+	    			for(int iv=0; iv<=32; iv++)
+	    			{
+		    	    	lowPower=30;
+	    				lastIVsWasNull = true; // Tricking some loop below because 1 out of 2 ivs is skipped due to Hidden Power maths shenanigans
+	        			encounteredAnyMatchDuringIv = false;
+	    				if(iv == 32) {
+	    					isDifferentFromPreviousPowerRanges = true;
+	    				} else {
+	    					powerRanges = new LinkedHashMap<>();
+	    					
+		    				for(int power=30; power<=71; power++) {
+		    					StatsContainer ivs = HiddenPowerData.getCompatibleIVs(type, iv, power);
+		    					if(ivs == null) {
+		    						if (!lastIVsWasNull){
+					    				lastIVsWasNull = true;
+					    				Pair<Integer, Integer> minMaxPower = new Pair<>(lowPower, power-1);
+		    							powerRanges.put(minMaxPower, previousDamages);
+					    				if(previousPowerRanges != null && (previousPowerRanges.get(minMaxPower) == null || !previousPowerRanges.get(minMaxPower).equals(powerRanges.get(minMaxPower)))) {
+					    					isDifferentFromPreviousPowerRanges = true;
+					    				}
+		    						}
+		    						previousDamages = null;
+				    				continue;
+		    					}
+		    					encounteredAnyMatchDuringIv = true;
+		    					if(lastIVsWasNull)
+				    				lowPower = power;
+			    				lastIVsWasNull = false;
+		    					
+		    					modifiedPoke.getIVs().putAssumingValidIVs(ivs);
+				    			modifiedPoke.setNature(nature);
+				    			damages = new Damages(move, p1_in_use, p2_in_use, mod1, mod2, extra_modifier, isBattleTower, isDoubleBattle);
+				    			damages.capDamagesWithHP(hp);
+				    			
+		    					if(!damages.hasDamage()) {
+		    						hasDamage = false;
+		    						break;
+		    					}
+				    			if(Settings.game.isGen3() && (power == 30 || power == 40)) { // TODO: bad coding
+				    				// Re-update to get proper nature
+				    				stat = move.isPhysical() ? Stat.ATK : Stat.SPA;
+				    	    		natures =  move.isPhysical() ? new Nature[] {Nature.MODEST, Nature.DOCILE, Nature.ADAMANT}  // Atk : minus, neutral, bonus
+				    				                             : new Nature[] {Nature.ADAMANT, Nature.DOCILE, Nature.MODEST}; // Spa : minus, neutral, bonus
+				    	    		listOfNaturesProducingTheSameBoost = (k == 0) ? Nature.getNaturesDecreasing(stat) : 
+										   (k == 2) ? Nature.getNaturesIncreasing(stat) : null;
+				    	    		sb.append(String.format("%s%1s %s", stat, names[k], listOfNaturesProducingTheSameBoost == null ? "[all the other natures]" : String.format("%s", listOfNaturesProducingTheSameBoost)));
+				    			}
+				    			
+				    			if(previousDamages != null && !damages.equals(previousDamages)) {
+				    				powerRanges.put(new Pair<Integer, Integer>(lowPower, power-1), previousDamages);
+				    				lowPower = power;
+				    			}
+				    			previousDamages = damages;
+		    				} // checked all powers for a given iv
+	    				}
+	    				if(encounteredAnyMatchDuringIv && !hasDamage) {
+	    					sb.append(Constants.endl);
+	    					break;
+	    				}
+	    				
+	    				if(isDifferentFromPreviousPowerRanges) {
+	    					boolean isFirstEntry = true;
+	    					if(lowIv <= 1)
+	    						sb.append(Constants.endl);
+	    					String statStr = String.format("%s%1s", (Settings.game.isGen3() && type.isGen3PhysicalType())? Stat.ATK: Stat.SPA, names[k]);
+	    	    			sb.append(hiddenPowerIndent);
+	    					sb.append(String.format("%2d %s: ", lowIv, statStr));
+	    					for(Map.Entry<Pair<Integer, Integer>,Damages> entry : previousPowerRanges.entrySet()) {
+	    						int min = entry.getKey().getLeft();
+	    						int max = entry.getKey().getRight();
+	    						Damages dmg = entry.getValue();
+	    						String minMaxStr = (min==max)?String.format("%5d", min):String.format("%2d-%2d",min,max);
+	    						if(!isFirstEntry)
+	    							sb.append(hiddenPowerSuperIndent);
+	    						sb.append(String.format("%s: ", minMaxStr));
+	    						if(isCrit)
+	    							dmg.appendCritDamages(sb);
+	    		    			else
+	    		    				dmg.appendNormalDamages(sb);
+	    						
+	    						isFirstEntry = false;
+	    						isDifferentFromPreviousPowerRanges = false;
+	    					}
+	    					
+	    					lowIv=iv;
+	    				}
+	    				
+	    				if(encounteredAnyMatchDuringIv)
+	    					previousPowerRanges = powerRanges;
+	    				if(iv == 0 && !encounteredAnyMatchDuringIv)
+	    					lowIv++;
+	    			}
+	    			//System.out.println("");
 	    		}
 	    		
-	    		previousDamages = damages;
+    		} else { // not Hidden Power
+    			previousDamages = null;
+    			for(int iv = ContainerType.IV.getMinPerStat(); iv <= ContainerType.IV.getMaxPerStat() + 1; iv++) {
+    				boolean isFirstIV = iv == ContainerType.IV.getMinPerStat();
+    				boolean isLastIV = iv > ContainerType.IV.getMaxPerStat();
+    			
+    				Damages damages = previousDamages;
 	    		
-	    		if(isLastIV)
-	    			break;
 	    		
-	    		boolean isGuaranteedKO = isAttackerVariation &&
-	    				(damages.lowestDamage() >= p2.getStatValue(Stat.HP) || isCrit && damages.lowestCritDamage() >= p2.getStatValue(Stat.HP));
-	    		if(isGuaranteedKO)
-	    			iv = ContainerType.IV.getMaxPerStat();
+		    		if(!isLastIV) {
+		    			modifiedPoke.getIVs().put(stat, iv);
+		    			modifiedPoke.setNature(nature);
+		    			damages = new Damages(move, p1_in_use, p2_in_use, mod1, mod2, extra_modifier, isBattleTower, isDoubleBattle);
+		    			damages.capDamagesWithHP(hp);
+		    		}
+	
+		    		boolean isDifferentDamages = !damages.equals(previousDamages) || isLastIV;
+		    		
+		    		// Print previous IV range
+		    		if(!isFirstIV && isDifferentDamages) {
+		    			boolean isSingleIV = last_low_iv == iv - 1;
+		    			String rangeStr = isSingleIV ? String.format("%5d", last_low_iv) : String.format("%2d-%2d", last_low_iv, iv - 1);
+		    			sb.append(moveInfoExtraIndent);
+		    			sb.append(String.format("%s : ", rangeStr));
+		    			if(isCrit)
+		    				previousDamages.appendCritDamages(sb);
+		    			else
+		    				previousDamages.appendNormalDamages(sb);
+		    			
+		    			last_low_iv = iv;
+		    		}
+		    		
+		    		previousDamages = damages;
+		    		
+		    		if(isLastIV)
+		    			break;
+		    		
+		    		boolean isGuaranteedKO = isAttackerVariation &&
+		    				(damages.lowestDamage() >= p2.getStatValue(Stat.HP) || isCrit && damages.lowestCritDamage() >= p2.getStatValue(Stat.HP));
+		    		if(isGuaranteedKO)
+		    			iv = ContainerType.IV.getMaxPerStat();
+	    		}
     		}
     		sb.append(Constants.endl);
-    		
-    		
-    		/*
-    		int last_low_iv = 0;
-    		Damages previousDamages = null;
-    		int iv;
-	    	for(iv = ContainerType.IV.getMinPerStat(); iv <= ContainerType.IV.getMaxPerStat(); iv++) {
-	    		modifiedPoke.getIVs().put(stat, iv);
-	    		modifiedPoke.setNature(nature);
-	    		Damages damages = new Damages(move, p1_in_use, p2_in_use, mod1, mod2, extra_modifier, isBattleTower, isDoubleBattle);
-	    		
-	    		boolean isLastIV = iv == ContainerType.IV.getMaxPerStat();
-	    		boolean isDifferentDamages = !damages.equals(previousDamages);
-	    		
-	    		// Short-circuiting guaranteed KOs
-	    		if(damages.lowestDamage() >= p2.getStatValue(Stat.HP) || isCrit && damages.lowestCritDamage() >= p2.getStatValue(Stat.HP)) {
-	    			iv = ContainerType.IV.getMaxPerStat();
-	    			isLastIV = true;
-	    			previousDamages = damages;
-	    			isDifferentDamages = false;
-	    		}
-	    			
-	    		
-	    		if(previousDamages != null && isDifferentDamages || isLastIV) {
-	    			String ivStr;
-	    			if(!isLastIV && last_low_iv == iv-1) // There's a single IV with this damage spread
-	    				ivStr =  String.format("%5d", last_low_iv);
-	    			else
-	    				ivStr = String.format("%2d-%2d", last_low_iv, isLastIV ? iv : iv - 1);
-	    				
-	    			sb.append(String.format("\t%s : ", ivStr));
-	    			if(isCrit)
-	    				previousDamages.appendCritDamages(sb);
-	    			else
-	    				previousDamages.appendNormalDamages(sb);
-	    			last_low_iv = iv;
-	    		}
-	    		
-	    		// Handle solo last IV
-	    		if(isLastIV && isDifferentDamages) {
-	    			sb.append(String.format("\t%5d : ", iv));
-	    			damages.appendNormalDamages(sb);
-	    		}
-	    		
-	    		previousDamages = damages;
-	    	}
-    		sb.append(Constants.endl);
-    		*/
     	}
     }
+	
     
     /**
      * Prints speed information : current speed comparison with the opponent, and with full IV+nature variation.
@@ -3877,4 +4060,34 @@ public class DamageCalculator {
 		
 		return damages.getInfo();
     }
+    
+    
+    
+    private static DamagesInfo calculateReturnAverageDamageAndPrintBasedOnVerboseLevel(StringBuilder sb, Move move,
+			Pokemon p1, Pokemon p2, StatModifier mod1, StatModifier mod2, int _extra_multiplier, boolean isBattleTower,
+			boolean isDoubleBattle, VerboseLevel verboseLevel) throws UnsupportedOperationException, ToolInternalException {
+    	int oldHappiness = p1.getHappiness();
+    	p1.addHappinessBound(mod1.getReturnOffset());
+    	int offsettedHappiness = p1.getHappiness();
+    	int minReturnBP = Happiness.getReturnBP(offsettedHappiness);
+    	int actualMaxAdded = p1.addHappinessBound(mod1.getReturnMaxAdded());
+    	int maxReturnBP = Happiness.getReturnBP(p1.getHappiness());
+    	p1.setHappiness(offsettedHappiness);
+    	
+    	Damages damages = new Damages(move, p1, p2, mod1, mod2, _extra_multiplier, isBattleTower, isDoubleBattle);	
+    	if(damages.hasDamage()) {
+	    	for(int i = 1; i <= actualMaxAdded; i++) {
+				p1.addHappinessBound(1);
+				Damages newDamages = new Damages(move, p1, p2, mod1, mod2, _extra_multiplier, isBattleTower, isDoubleBattle);
+				damages.addDamages(newDamages, Damages.choose(actualMaxAdded, i));
+	    	}
+    	}
+    	
+    	p1.setHappiness(oldHappiness);
+		if(damages.attackMove.getPower() < maxReturnBP)
+			damages.attackMove.appendName(String.format("(BP:%d-%d)", minReturnBP, maxReturnBP));
+    	damages.appendMoveInfo(sb, VerboseLevel.EVERYTHING);
+    	
+    	return damages.getInfo();
+	}
 }

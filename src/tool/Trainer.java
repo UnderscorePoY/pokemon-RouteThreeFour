@@ -20,6 +20,10 @@ public class Trainer implements Battleable, Iterable<Pokemon> {
 	private static HashMap<IgnoreCaseString, Trainer> trainersByName;
 	private static final int MALE = 0, FEMALE = 1, DOUBLE = 2;
 	
+	public static HashMap<IgnoreCaseString, Trainer> getTrainers(){
+		return trainersByName;
+	}
+	
 	/**
 	 * Returns the trainer associated with the string, or null if there's no correspondence.
 	 */
@@ -757,6 +761,25 @@ public class Trainer implements Battleable, Iterable<Pokemon> {
     	this.lastLevelMonBeforeReordering = party.get(party.size() - 1).getLevel();
     }
     
+    public Trainer(Trainer other) {
+    	this.trainerAlias = other.trainerAlias;
+    	this.partyFlags = other.partyFlags;
+    	this.trainerClass = other.trainerClass;
+    	this.baseMoney = other.baseMoney;
+    	this.encounterMusicGender = other.encounterMusicGender;
+    	this.trainerPic = other.trainerPic;
+    	this.trainerName = other.trainerName;
+    	this.items = other.items;
+    	this.isDoubleBattle = other.isDoubleBattle;
+    	this.aiFlags = other.aiFlags;
+    	this.badgeBoosts = other.badgeBoosts;
+    	this.partyType = other.partyType;
+    	this.party = new ArrayList<Pokemon>();
+    		for(Pokemon p : other.getParty())
+    			this.party.add(p);
+    	this.lastLevelMonBeforeReordering = other.lastLevelMonBeforeReordering;
+    }
+    
     public String getTrainerAlias() {
 		return trainerAlias;
 	}
@@ -889,7 +912,8 @@ public class Trainer implements Battleable, Iterable<Pokemon> {
         StringBuilder sb = new StringBuilder();
         for (Pokemon p : party) {
         	sb.append("  - ");
-            sb.append(p.levelNameNatureAbilityItemStr());
+            //sb.append(p.levelNameNatureAbilityItemStr());
+        	sb.append(p.allInfoStr());
             sb.append(Constants.endl);
         }
         return sb.toString(); // TODO: hardcoded based on the length of string ", "

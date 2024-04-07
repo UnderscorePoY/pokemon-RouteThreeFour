@@ -44,6 +44,7 @@ public class RouteParser {
                 lineNum++;
                 String wholeLine = in.readLine();
                 String[] lines = wholeLine.split(COMMENT_STARTER_REGEX); // remove comments
+                if(lines.length == 0) continue;
                 lines = lines[0].split(COMMENT_STARTER2_REGEX); // remove more comments
                 String line = lines[0];
                 
@@ -118,7 +119,7 @@ public class RouteParser {
     	
     	// TODO : implement
     	SET_HAPPINESS("setHappiness"),
-    	//GAIN_HAPPINESS("addHappiness"),
+    	GAIN_HAPPINESS("addHappiness"),
     	//LOSE_HAPPINESS("loseHappiness"),
     	
     	SET_BATTLE_TOWER(),
@@ -505,19 +506,36 @@ public class RouteParser {
         	return GameAction.updateEVs;
         	
         case SET_HAPPINESS:
-        	if (nbNonOptionalParams < 2)
-        		throw new RouteParserException(String.format("happiness value is missing."));
-        	
-        	Integer happiness = null;
-        	try {
-        		happiness = Integer.parseInt(tokens[1]);
-        		if(!Happiness.isInBound(happiness))
-        			throw new Exception();
-        	} catch (Exception e) {
-        		throw new RouteParserException(String.format("invalid happiness '%s'. Must be an integer between '%d' and '%d'.", Happiness.MIN, Happiness.MAX));
+        	{
+	        	if (nbNonOptionalParams < 2)
+	        		throw new RouteParserException(String.format("happiness value is missing."));
+	        	
+	        	Integer happiness = null;
+	        	try {
+	        		happiness = Integer.parseInt(tokens[1]);
+	        		if(!Happiness.isInBound(happiness))
+	        			throw new Exception();
+	        	} catch (Exception e) {
+	        		throw new RouteParserException(String.format("invalid happiness '%s'. Must be an integer between '%d' and '%d'.", tokens[1], Happiness.MIN, Happiness.MAX));
+	        	}
+	        	
+	        	return new SetHappiness(happiness);
         	}
         	
-        	return new SetHappiness(happiness);
+        case GAIN_HAPPINESS:
+        	{
+	        	if (nbNonOptionalParams < 2)
+	        		throw new RouteParserException(String.format("happiness increment is missing."));
+	        	
+	        	Integer happiness = null;
+	        	try {
+	        		happiness = Integer.parseInt(tokens[1]);
+	        	} catch (Exception e) {
+	        		throw new RouteParserException(String.format("invalid happiness '%s'. Must be an integer.", tokens[1]));
+	        	}
+	        	
+	        	return new AddHappiness(happiness);
+        	}
         	
         default : // trainer
         	if(cmdToken.trim().isEmpty())
@@ -673,6 +691,8 @@ public class RouteParser {
         Y_PARTNER("yPartner"),
         
         IV_VARIATION("ivVariation"),
+        
+        RETURN_AVERAGE("returnAverage")
         ;
     	
     	public static final String parameterSeparator = "/";
@@ -718,10 +738,20 @@ public class RouteParser {
     	L(2, BattleFlag.INCREMENT_X_SPE, BattleFlag.FORCE_X_SPE, BattleFlag.INCREMENT_X_SPES, BattleFlag.FORCE_X_SPES),
     	M(2, BattleFlag.INCREMENT_X_ACC, BattleFlag.FORCE_X_ACC, BattleFlag.INCREMENT_X_ACCS, BattleFlag.FORCE_X_ACCS),
     	
+    	H_(2, BattleFlag.INCREMENT_Y_ATK, BattleFlag.FORCE_Y_ATK, BattleFlag.INCREMENT_Y_ATKS, BattleFlag.FORCE_Y_ATKS),
+    	I_(2, BattleFlag.INCREMENT_Y_DEF, BattleFlag.FORCE_Y_DEF, BattleFlag.INCREMENT_Y_DEFS, BattleFlag.FORCE_Y_DEFS),
+    	J_(2, BattleFlag.INCREMENT_Y_SPA, BattleFlag.FORCE_Y_SPA, BattleFlag.INCREMENT_Y_SPAS, BattleFlag.FORCE_Y_SPAS),
+    	K_(2, BattleFlag.INCREMENT_Y_SPD, BattleFlag.FORCE_Y_SPD, BattleFlag.INCREMENT_Y_SPDS, BattleFlag.FORCE_Y_SPDS),
+    	L_(2, BattleFlag.INCREMENT_Y_SPE, BattleFlag.FORCE_Y_SPE, BattleFlag.INCREMENT_Y_SPES, BattleFlag.FORCE_Y_SPES),
+    	M_(2, BattleFlag.INCREMENT_Y_ACC, BattleFlag.FORCE_Y_ACC, BattleFlag.INCREMENT_Y_ACCS, BattleFlag.FORCE_Y_ACCS),
+    	
     	N(2, BattleFlag.SHARE_EXP, BattleFlag.SHARE_EXPS),
     	
     	O(2, BattleFlag.X_STATUS1, BattleFlag.X_STATUSES1),
-    	P(2, BattleFlag.Y_STATUS1, BattleFlag.Y_STATUSES1),
+    	O_(2, BattleFlag.Y_STATUS1, BattleFlag.Y_STATUSES1),
+    	
+    	P(2, BattleFlag.X_STATUS2, BattleFlag.X_STATUSES2),
+    	P_(2, BattleFlag.Y_STATUS2, BattleFlag.Y_STATUSES2),
     	
     	Q(2, BattleFlag.WEATHER, BattleFlag.WEATHERS),
     	;
@@ -1450,6 +1480,25 @@ public class RouteParser {
         		
 	        	continue toNextFlag;
 			}
+        	
+        	case RETURN_AVERAGE:
+        	{
+        		String[] returnStrArr = parameterToken.split(BattleFlag.parameterSeparatorRegex);
+				//String returnStrBackup = null;
+				
+            	try {
+            		int returnOffset = Integer.parseInt(returnStrArr[0]);
+            		int returnMaxAdded = Integer.parseInt(returnStrArr[1]);
+            		
+            		options.addReturnAverage(returnOffset, returnMaxAdded);
+            	} catch (Exception e) {
+	            	throw new BattleFlagParamException(flagToken, parameterToken, 
+            				String.format("Expected format : <offset>%s<max_added>", BattleFlag.parameterSeparator)
+            				);
+            	}
+            	
+            	continue toNextFlag;
+        	}
 
 			default:
     			throw new RouteParserInternalException(flagToken, flagTokensQ);

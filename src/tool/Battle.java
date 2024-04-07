@@ -77,6 +77,10 @@ public class Battle extends GameAction {
         	
         int lastLvl = p.getLevel();
 
+        // Perform happiness offset
+        //int previousHappiness = p.getHappiness();
+        //p.addHappinessBound(options.getReturnOffset());
+
         if (opponent instanceof Pokemon) {
         	options.prepareStatModifiers(p, (Pokemon)opponent, false);
         	
@@ -99,7 +103,8 @@ public class Battle extends GameAction {
                 Main.appendln(p.levelAndExperienceNeededToLevelUpStr());
            
         } else { // is a Trainer
-            Trainer t = (Trainer) opponent;
+        	//Trainer t = (Trainer) opponent;
+            Trainer t = new Trainer((Trainer) opponent);
             
         	// Adding money only if not backtracking
             if(!isBacktrackingAfterBattle){
@@ -124,7 +129,7 @@ public class Battle extends GameAction {
             if(getVerbose() != VerboseLevel.NONE) {
                 Main.appendln(Constants.endl + t.toString(p, options));
             }
-
+                       
             for(ArrayList<Pokemon> batchPokes : trainerPokesByBatch) {            	
 	            for (Pokemon opps : batchPokes) {
 	            	// Postpone EXP if we're not at the last Pokémon of the batch
@@ -184,6 +189,10 @@ public class Battle extends GameAction {
 	        }
         	Main.appendln("");
         }
+        
+
+        // Restore previous happiness
+        //Main.mainPoke.setHappiness(previousHappiness);
     }
     
 
