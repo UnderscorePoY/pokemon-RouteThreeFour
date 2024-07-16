@@ -12,10 +12,14 @@ It is derived from a custom RouteThree, itself derived from Dabomstew & entrpntr
 ○ Usual update.  
 **!!** Bug fixes.  
 
+**`[2024/07/16]` - v0.4.9**  
+**!!** `Macho Brace` now properly doubles EV yield in Gen 4 games.  
+
+
 **`[2024/04/07]` - v0.4.8**  
 **!!** Fixed an issue involving fighting the same trainer multiple times after providing a `-yPartner` option.  
 **!!** Fixed an issue involving `-order` when providing a `-yPartner` option.  
-**!!** Option `-IVvariation` now behaves properly with `Hidden Power`.  
+**!!** Option `-IVvariation` now behaves properly with `Hidden Power`. BEWARE: this options takes a decent amount of time per enemy. Use it sparsely.  
 **!!** Fixed a calculation issue with divisions involving big numbers.  
 **!!** Fixed an issue involving happiness of Pokémon in `Luxury Ball`.  
 **!!** Fixed an issue involving lines with a single empty comment.  

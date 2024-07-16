@@ -15535,42 +15535,42 @@
     },
     {
       "name": "FAST BALL",
-      "price": 300,
+      "price": 300
     },
     {
       "name": "LEVEL BALL",
-      "price": 300,
+      "price": 300
     },
     {
       "name": "LURE BALL",
-      "price": 300,
+      "price": 300
     },
     {
       "name": "HEAVY BALL",
-      "price": 300,
+      "price": 300
     },
     {
       "name": "LOVE BALL",
-      "price": 300,
+      "price": 300
     },
     {
       "name": "FRIEND BALL",
-      "price": 300,
+      "price": 300
     },
     {
       "name": "MOON BALL",
-      "price": 300,
+      "price": 300
     },
     {
       "name": "SPORT BALL",
-      "price": 300,
+      "price": 300
     },
     {
       "name": "PARK BALL",
-      "price": 0,
+      "price": 0
     },
     {
       "name": "RAGECANDYBAR",
-      "price": 300,
-    },
+      "price": 300
+    }
 ]

@@ -217,8 +217,12 @@ public class Item {
 		return getHoldEffect().isMoneyBoosting();
 	}
 	
-	public boolean isBoostingAllEVs(Stat stat) {
-		return this.getHoldEffect() == ItemHoldEffect.MACHO_BRACE;
+	public boolean isBoostingAllEVs() {
+		switch(this.getHoldEffect()) {
+		case MACHO_BRACE:
+		case EXP_UP_SPEED_DOWN: return true;
+		default: return false;
+		}
 	}
 	
 	public boolean isBoostingSpecificEv(Stat stat) {

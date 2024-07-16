@@ -704,7 +704,7 @@ public class Pokemon implements Battleable {
     	int pokerusMultiplier = hasPokerus ? POKERUS_MULTIPLIER : DEFAULT_MULTIPLIER;
     	
     	for(Stat stat : evs.getContainerType()) {
-    		int heldItemMultiplier = heldItem != null && heldItem.isBoostingAllEVs(stat) ? EV_BOOSTING_ITEM_MULTIPLIER : DEFAULT_MULTIPLIER;
+    		int heldItemMultiplier = heldItem != null && heldItem.isBoostingAllEVs() ? EV_BOOSTING_ITEM_MULTIPLIER : DEFAULT_MULTIPLIER;
     		int yield = s.getEvYield(stat);
     		if(heldItem != null && heldItem.isBoostingSpecificEv(stat))
     			yield += SPECIFIC_EV_BOOST;
