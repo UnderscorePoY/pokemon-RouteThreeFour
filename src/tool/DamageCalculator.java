@@ -2101,8 +2101,11 @@ public class DamageCalculator {
     	}
     	
     	case STRONGER_HEAVIER: // Gen 4 Low Kick, Grass Knot
+    		// See https://github.com/pret/pokeplatinum/blob/main/src/battle/trainer_ai/trainer_ai.c#L3162
+    		// In Gen 4, these Pokémon will take less damage : (10kg) Kakuna, Magikarp, Silcoon | (25kg) Seadra, Flareon, Croconaw | (100kg) Venusaur, Tropius
+    		// Notably : Bulbapedia, Showdowncalc and Smogon are wrong (as of July 23rd, 2024)
         	int w = defender.getSpecies().getWeight();
-        	int bp = w >= 2000 ? 120 : w >= 1000 ? 100 : w >= 500 ? 80 : w >= 250 ? 60 : w >= 100 ? 40 : 20;
+        	int bp = w > 2000 ? 120 : w > 1000 ? 100 : w > 500 ? 80 : w > 250 ? 60 : w > 100 ? 40 : 20;
         	movePower = bp;
         	move.setName(move.getBoostedName(bp)); // TODO: find better way
     		break;
