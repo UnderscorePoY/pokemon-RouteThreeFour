@@ -12,7 +12,7 @@ It is derived from a custom RouteThree, itself derived from Dabomstew & entrpntr
 ○ Usual update.  
 **!!** Bug fixes.  
 
-**`[2024/07/23]` -v0.4.10
+**`[2024/07/23]` -v0.4.10**  
 **!!** Fixed an issue in Gen 4 with `Low Kick` and `Grass Knot` not having the correct Base Power against Pokémon at the weight limits.  
 
 
