@@ -12,6 +12,11 @@ It is derived from a custom RouteThree, itself derived from Dabomstew & entrpntr
 ○ Usual update.  
 **!!** Bug fixes.  
 
+**`[2024/08/12]` -v0.4.11**  
+**!!** When an enemy attacks with `Hidden Power`, the option `-ivVariation` doesn't go through all types and powers anymore.
+○ 14% to 19% calculation time improvement when using option `-ivVariation` if the player knows `Hidden Power`.  
+
+
 **`[2024/07/23]` -v0.4.10**  
 **!!** Fixed an issue in Gen 4 with `Low Kick` and `Grass Knot` not having the correct Base Power against Pokémon at the weight limits.  
 

@@ -3716,7 +3716,7 @@ public class DamageCalculator {
     		Damages previousDamages;
     		int hp = p2.getStatValue(Stat.HP);
     		
-    		if(move.getEffect() == MoveEffect.HIDDEN_POWER) {
+    		if(move.getEffect() == MoveEffect.HIDDEN_POWER && p1 == Main.mainPoke) {
     			//(min,max)->Damage
     			LinkedHashMap<Pair<Integer, Integer>, Damages> previousPowerRanges;
     			LinkedHashMap<Pair<Integer, Integer>, Damages> powerRanges;
@@ -3748,9 +3748,12 @@ public class DamageCalculator {
 	    					mod1.setCurrHP(1);
 	    					ab = Ability.OVERGROW;
 	    				} else {
+	    					// If attacker ability doesn't boost type, skip
 	    					mod1.setCurrHP(modifiedPoke.getStatValue(Stat.HP));
+	    					continue;
 	    				}
 	    			}
+	    			
 	    			previousPowerRanges = null;
 	    			powerRanges = null;
 	    			lowIv = 0;
