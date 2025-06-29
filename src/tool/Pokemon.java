@@ -11,6 +11,7 @@ import tool.StatsContainer.ContainerType;
 import tool.exception.ToolInternalException;
 
 public class Pokemon implements Battleable {
+	public static final int MIN_LEVEL = 1;
 	public static final int MAX_LEVEL = 100;
 	
     private Species species;
@@ -444,8 +445,7 @@ public class Pokemon implements Battleable {
     	this.heldItem = newItem;
     }
 
-    public String toString() { // TODO ?
-        //return getDetailledStatsStr(true);
+    public String toString() {
     	return getDetailledStatsStr();
     }
 
@@ -542,8 +542,10 @@ public class Pokemon implements Battleable {
     }
     
     public String allInfoStr() {
-    	String info = String.format("L%d %s(%s) [%s] #%s#%s (%s) {%d/%d/%d/%d/%d/%d}",
-    			level, getDisplayName(), gender.getInitial(), nature, ability,
+    	String info = String.format("L%d %s%s(%s) [%s] #%s#%s (%s) {%d/%d/%d/%d/%d/%d} %s",
+    			level, getDisplayName(), 
+    			getDisplayName().equals(getHashName()) ? "" : String.format(" \"%s\"", getHashName()),
+    			gender.getInitial(), nature, ability,
 				heldItem != null ? String.format(" <%s>", heldItem) : "",
 				getInlineTrueStatsStr(),
 				getSpecies().getEvYield(Stat.HP),
@@ -551,22 +553,22 @@ public class Pokemon implements Battleable {
 				getSpecies().getEvYield(Stat.DEF),
 				getSpecies().getEvYield(Stat.SPA),
 				getSpecies().getEvYield(Stat.SPD),
-				getSpecies().getEvYield(Stat.SPE));
+				getSpecies().getEvYield(Stat.SPE),
+				getMoveset());
     	/*
         try {
 			info = String.format("%s \\%d\\", info, earnedExpFrom(this, 1));
 		} catch (ToolInternalException e) {
 			// empty
 		}
-		*/
-        
         info = String.format("%s %s", info, getMoveset());
+		*/
         
         return info;
     }
 
     // only for hash
-    public String pokeName() {
+    public String getHashName() {
         return getSpecies().getHashName();
     }
     
@@ -574,11 +576,6 @@ public class Pokemon implements Battleable {
     	return getSpecies().getDisplayName();
     }
     
-    /*
-    public String pokeNameFixed() {
-    	return getSpecies().getName().replace("\\u2642", " M").replace("\\u2640", " F"); // TODO : hacky
-    }
-	*/
     
     /*
     private static final String INLINE_STATS_SEPARATOR = "/";
@@ -656,8 +653,9 @@ public class Pokemon implements Battleable {
     		
     		if(heldItem != null && heldItem.isBoostingExperience())
     			earnedExp = earnedExp * 150 / 100;
-    	} else {
-    		throw new ToolInternalException(null, "earnedExpFrom", "Gen not implemented");
+    	} else { // TODO : clean
+    		// throw new ToolInternalException(null, "earnedExpFrom", "Gen not implemented");
+    		throw new ToolInternalException("earnedExpFrom", "Gen not implemented");
     	}
     	
     	return earnedExp;
@@ -733,7 +731,7 @@ public class Pokemon implements Battleable {
      * Eats a Rare Candy, i.e. triggers a flat level up. Returns true if the Candy is effectively consumed.
      */
     public boolean eatRareCandy() throws ToolInternalException {
-        if (level < 100) { // TODO : hardcoded
+        if (level < MAX_LEVEL) {
             level++;
             this.setHappiness(HappinessEvent.LEVEL_UP.getFinalHappiness(this.getHappiness(), heldItem != null && heldItem.isBoostingHappiness(), this.isInLuxuryBall(), false));
             setExpForLevel();
@@ -744,8 +742,8 @@ public class Pokemon implements Battleable {
         return false;
     }
 
-    private static final int EV_BOOST_FROM_VITAMIN = 10; // TODO
-    private static final int EV_LIMIT_FROM_VITAMIN = 100; // TODO
+    private static final int EV_BOOST_FROM_VITAMIN = 10; // TODO : move somewhere else ?
+    private static final int EV_LIMIT_FROM_VITAMIN = 100; // TODO : move somewhere else ?
     
     /**
      * Applies an EV boost in the desired stat, returning the effectively gained value.
@@ -765,7 +763,6 @@ public class Pokemon implements Battleable {
         return species;
     }
     
-    // TODO: proper evolution
     public void evolve(Species newSpecies) {
     	// Transfer ability
         if(ability == species.getAbility1())
@@ -949,8 +946,10 @@ public class Pokemon implements Battleable {
 	}
 
 	public void setHappiness(int happiness) throws ToolInternalException {
-		if(!Happiness.isInBound(happiness))
-			throw new ToolInternalException(Pokemon.class.getEnclosingMethod(), Integer.valueOf(happiness), "");
+		if(!Happiness.isInBound(happiness)) { // TODO: Clean
+			// throw new ToolInternalException(Pokemon.class.getEnclosingMethod(), Integer.valueOf(happiness), "");
+			throw new ToolInternalException(Integer.valueOf(happiness), "");
+		}
 		this.happiness = happiness;
 	}
 	

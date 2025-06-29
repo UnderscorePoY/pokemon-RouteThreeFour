@@ -1,5 +1,7 @@
 package tool;
 
+import tool.exception.ToolInternalException;
+
 public enum MoveTarget {
 	//GEN 3
 	SELECTED_POKEMON(0),
@@ -29,7 +31,7 @@ public enum MoveTarget {
 		return flagValue;
 	}
 	
-	public static MoveTarget getGen3MoveTargetFromInt(int i) {
+	public static MoveTarget getGen3MoveTargetFromInt(int i) throws ToolInternalException {
 		switch(i) {
 		case 0:    return SELECTED_POKEMON;
 		case 1<<0: return SPECIAL;
@@ -38,11 +40,11 @@ public enum MoveTarget {
 		case 1<<4: return USER;
 		case 1<<5: return ALL_EXCEPT_USER;
 		case 1<<6: return ENEMY_SIDE;
-		default:   return SELECTED_POKEMON; // should never happen
+		default:   throw new ToolInternalException(i, null);
 		}
 	}
 	
-	public static MoveTarget getGen4MoveTargetFromInt(int i) {
+	public static MoveTarget getGen4MoveTargetFromInt(int i) throws ToolInternalException {
 		switch(i) {
 		case 0:    return SELECTED_POKEMON;
 		case 1:    return SPECIAL;
@@ -56,7 +58,7 @@ public enum MoveTarget {
 		case 256:  return HELPING_HAND;
 		case 512:  return ACUPRESSURE;
 		case 1024: return ME_FIRST;
-		default:   return SELECTED_POKEMON; // should never happen
+		default:   throw new ToolInternalException(i, null);
 		}
 	}
 }

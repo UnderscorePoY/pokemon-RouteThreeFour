@@ -1,7 +1,6 @@
 package tool;
 import java.util.ArrayList;
 import java.util.EnumSet;
-import java.util.HashMap;
 import java.util.HashSet;
 
 /**
@@ -18,6 +17,9 @@ public class StatModifier {
     private int returnMaxAdded;
     
     private HashSet<Object> immuneTo = new HashSet<>();
+    
+    private int SIMPLE_STAT_STAGE_MULT = 2;
+    private int DEFAULT_STAT_STAGE_MULT = 1;
 
     public StatModifier() {
     	this.stages = new StatsContainer(StatsContainer.ContainerType.STAT_INCREMENTS);
@@ -169,16 +171,6 @@ public class StatModifier {
     		}
     		
     		return String.format("[%s|%s]", sbPrimary.substring(0, sbPrimary.length() - 1), sbSecondary.substring(0, sbSecondary.length() - 1));
-    		
-    		/*
-    		sb.append(String.format("+[%s%d/%s%d/%s%d/%s%d/%s%d|%d] ", 
-    				p.hasAtkBadge() ? "*": "", getStage(Stat.ATK), // TODO: hardcoded
-    				p.hasDefBadge() ? "*": "", getStage(Stat.DEF), 
-    				p.hasSpaBadge() ? "*": "", getStage(Stat.SPA),
-    				p.hasSpdBadge() ? "*": "", getStage(Stat.SPD), 
-    				p.hasSpeBadge() ? "*": "", getStage(Stat.SPE), 
-    				getStage(Stat.SPE)));
-    				*/
     	}
     	
     	if(getStage(Stat.SPE) != 0 || p.hasBadge(Stat.SPE)) { // TODO: not sure tbh
@@ -229,7 +221,7 @@ public class StatModifier {
      * Applies stat stage to value. Accounts for Simple. Doesn't apply any badge boost.
      */
     public int modStat(Stat stat, int valueToMod, boolean isSimple) {
-    	int mult = isSimple ? 2 : 1; // TODO: hardcoded constant
+    	int mult = isSimple ? SIMPLE_STAT_STAGE_MULT : DEFAULT_STAT_STAGE_MULT;
     	
     	return applyStatStage(stat, valueToMod, getStage(stat) * mult);
     }
@@ -262,7 +254,8 @@ public class StatModifier {
     	// https://github.com/smogon/damage-calc/blob/master/calc/src/mechanics/util.ts#L92
     	
     	// Badge boost, nature & stat stages
-    	int _speed = modStat(Stat.SPE, p.getStatValue(Stat.SPE), p.getAbility() == Ability.SIMPLE);
+    	//int _speed = modStat(Stat.SPE, p.getStatValue(Stat.SPE), p.getAbility() == Ability.SIMPLE);
+    	int _speed = modStat(Stat.SPE, p.getSpeedValueWithIVandNature(p.getIVs().get(Stat.SPE), p.getNature()), p.getAbility() == Ability.SIMPLE);
         
     	ArrayList<Integer> speedMods = new ArrayList<>();
 

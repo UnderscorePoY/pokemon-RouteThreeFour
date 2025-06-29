@@ -27,7 +27,8 @@ public class Species {
     }
 	
 	
-	public static void initSpecies(Game game) throws FileNotFoundException, ToolInternalException, IOException, ParseException {
+	public static void initSpecies(Game game, Language lang) 
+			throws FileNotFoundException, ToolInternalException, IOException, ParseException {
 		speciesByName = new LinkedHashMap<IgnoreCaseString, Species>();
 
         BufferedReader in;
@@ -36,30 +37,44 @@ public class Species {
         		speciesResourcePathName).openStream())); // TODO : handle custom files ?
         
     	if(game.isGen3())
-    		initSpeciesGen3(in);
+    		initSpeciesGen3(lang, in);
     	else if (game.isGen4())
     		initSpeciesGen4(in);
-    	else
-    		throw new ToolInternalException(Species.class.getEnclosingMethod(), game, "");
+    	else { // TODO : clean
+    		// throw new ToolInternalException(Species.class.getEnclosingMethod(), game, "");
+    		// throw new ToolInternalException(Species.class.getMethods()[0].getName(), game, "");
+    		throw new ToolInternalException(game, "");
+    	}
 
         System.out.println(String.format("INFO: Species loaded from '%s'", speciesResourcePathName));
     }
 	
-	private static void initSpeciesGen3(BufferedReader in) throws IOException, ParseException {
+
+	// Only used for debugging purposes. The default cases are handled in Initialization.
+	private static void initSpecies(Game game) 
+			throws FileNotFoundException, ToolInternalException, IOException, ParseException {
+		initSpecies(game,  Language.default_);
+    }
+	
+	private static void initSpeciesGen3(Language lang, BufferedReader in) 
+			throws IOException, ParseException {
 		JSONParser jsonParser = new JSONParser();
         Species species = null;
         JSONArray array = (JSONArray) jsonParser.parse(in);
         for(Object speciesObj : array) {
         	JSONObject speciesDic = (JSONObject) speciesObj;
         	String name = (String) speciesDic.get("name");
-        	String hashName;
-        	if (speciesDic.containsKey("hashName")) {
-        		hashName = (String) speciesDic.get("hashName");
-        	} else {
-        		hashName = name;
-        	}
         	String displayName = (String) speciesDic.get("displayName");
-        	// System.out.println(name + " " + displayName); // TODO : delete
+        	
+        	// hashName (used to compute trainer pokemon's natures)
+        	// Priority order : language hashName -> default language hashName -> (english) name
+        	String hashNameKey = "hashName" + lang.getLangExtensionString();
+        	if (!speciesDic.containsKey(hashNameKey))
+        		hashNameKey = "hashName" + Language.default_.getLangExtensionString();
+        	if (!speciesDic.containsKey(hashNameKey))
+        		hashNameKey = "name";
+        	String hashName = (String) speciesDic.get(hashNameKey);  	
+
         	int dexNum = ((Long) speciesDic.get("dexNum")).intValue();
         	
         	JSONArray baseStatsArray = (JSONArray) speciesDic.get("baseStats");
@@ -337,7 +352,7 @@ public class Species {
     	return this.matchesAny("DEOXYS", "DEOXYSATK", "DEOXYSDEF", "DEOXYSSPE");
     }
     
-    // TODO : only testing purposes
+    // Testing
     public static void main(String[] args) {
     	try {
 	    	initSpecies(Game.RUBY);

@@ -1,6 +1,8 @@
 package tool;
 public class Settings {
     public static Game game = Game.RUBY;
+    public static Language lang = Language.ENGLISH;
+    
     public static VerboseLevel verboseLevel = VerboseLevel.NONE;
     public static boolean showStatsOnLevelUp = false;
     public static boolean showStatRangesOnLevelUp = false;

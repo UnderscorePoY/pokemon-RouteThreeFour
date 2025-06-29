@@ -31,7 +31,7 @@ public enum Status {
 	TRACED    ("TRACED",        "TRACED", "TRACE"),
 	
 	UNBURDEN     ("UNBURDEN",        "UNBURDEN"), 
-	GROUNDED     ("GROUNDED",        "GROUNDED"), // TODO: gravity impacts accuracy and forbids some move to be used : https://bulbapedia.bulbagarden.net/wiki/Gravity_(move). This is not the case for the iron Ball, so might need to separate both status
+	GROUNDED     ("GROUNDED",        "GROUNDED"), // TODO: gravity impacts accuracy and forbids some move to be used : https://bulbapedia.bulbagarden.net/wiki/Gravity_(move). This is not the case for the Iron Ball, so might need to separate both status
 	FLOWER_GIFT  ("FLOWER GIFT",     "FLOWERGIFT"), 
 	SWITCHING_OUT("SWITCHING OUT",   "SWITCHINGOUT", "SWITCHOUT", "SWITCH"), 
 	FLASH_FIRE   ("FLASH FIRE",      "FLASHFIRE"),

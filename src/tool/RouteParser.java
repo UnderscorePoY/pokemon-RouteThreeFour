@@ -117,7 +117,6 @@ public class RouteParser {
     	PC_WITHDRAWAL("pc", "pcUpdate", "pcWithdrawal"),
     	
     	
-    	// TODO : implement
     	SET_HAPPINESS("setHappiness"),
     	GAIN_HAPPINESS("addHappiness"),
     	//LOSE_HAPPINESS("loseHappiness"),
@@ -200,7 +199,7 @@ public class RouteParser {
                 	lvl = Integer.parseInt(lvlStr);
                 	flagIdx++;
                 } catch(Exception exc) {
-                	throw new RouteParserException(String.format("invalid wild encounter level '%s'.", lvlStr)); // TODO: unreachable code as is ?
+                	throw new RouteParserException(String.format("invalid wild encounter level '%s'.", lvlStr));
                 }
                 
                 // Species
@@ -301,9 +300,10 @@ public class RouteParser {
 		        switch(cmd) {
 		        case LEARN_MOVE: return new LearnMove(move);
 		        case UNLEARN_MOVE: return new UnlearnMove(move);
-		        default:
-		        	throw new ToolInternalException(RouteParser.class.getEnclosingMethod(), cmd, "(Un)Learnmove.");
-		        }
+		        default: // TODO : clean
+		        	//throw new ToolInternalException(RouteParser.class.getEnclosingMethod(), cmd, "(Un)Learnmove.");
+		        	throw new ToolInternalException(cmd, "(Un)Learnmove.");
+			    }
 			} // end scope hack
 			
         case ADD_MONEY:
@@ -326,8 +326,9 @@ public class RouteParser {
 		        switch(cmd) {
 		        case ADD_MONEY: return new AddMoney(money);
 		        case SPEND_MONEY: return new AddMoney(-money);
-		        default:
-		        	throw new ToolInternalException(RouteParser.class.getEnclosingMethod(), cmd, "Add/Spend-money.");
+		        default: // TODO : Clean
+		        	// throw new ToolInternalException(RouteParser.class.getEnclosingMethod(), cmd, "Add/Spend-money.");
+		        	throw new ToolInternalException(cmd, "Add/Spend-money.");
 		        }
 			} // end scope hack
 			
@@ -364,8 +365,9 @@ public class RouteParser {
         		switch(cmd) {
         		case BUY_ITEM: return new AddMoney(-totalValue);
         		case SELL_ITEM: return new AddMoney(totalValue/2);
-        		default:
-		        	throw new ToolInternalException(RouteParser.class.getEnclosingMethod(), cmd, "Buy/Sell-item.");
+        		default: // TODO : Clean
+		        	// throw new ToolInternalException(RouteParser.class.getEnclosingMethod(), cmd, "Buy/Sell-item.");
+        			throw new ToolInternalException(cmd, "Buy/Sell-item.");
         		}
 			} // end scope hack
 			
@@ -397,8 +399,9 @@ public class RouteParser {
 		        case CALCIUM:    return new EatConsumable(Consumable.CALCIUM, quantity);
 		        case ZINC:       return new EatConsumable(Consumable.ZINC, quantity);
 		        case CARBOS:     return new EatConsumable(Consumable.CARBOS, quantity);
-	        	default:
-		        	throw new ToolInternalException(RouteParser.class.getEnclosingMethod(), cmd, "Consumables.");
+	        	default: // TODO : Clean
+		        	// throw new ToolInternalException(RouteParser.class.getEnclosingMethod(), cmd, "Consumables.");
+		        	throw new ToolInternalException(cmd, "Consumables.");
 				}
 			} // end scope hack		
 			
@@ -415,8 +418,9 @@ public class RouteParser {
 		        case DYNAMO_BADGE:  return new EarnBadge(Stat.SPE);
 		        case BALANCE_BADGE: return new EarnBadge(Stat.DEF);
 		        case MIND_BADGE:    return new EarnBadge(Stat.SPA, Stat.SPD);
-	        	default:
-		        	throw new ToolInternalException(RouteParser.class.getEnclosingMethod(), cmd, "RSE badges.");
+	        	default: // TODO : Clean
+		        	//throw new ToolInternalException(RouteParser.class.getEnclosingMethod(), cmd, "RSE badges.");
+		        	throw new ToolInternalException(cmd, "RSE badges.");
 				}
 			} // end scope hack
 			
@@ -433,8 +437,9 @@ public class RouteParser {
 		        case THUNDER_BADGE: return new EarnBadge(Stat.SPE);
 		        case SOUL_BADGE:    return new EarnBadge(Stat.DEF);
 		        case VOLCANO_BADGE: return new EarnBadge(Stat.SPA, Stat.SPD);
-	        	default:
-		        	throw new ToolInternalException(RouteParser.class.getEnclosingMethod(), cmd, "FRLG badges.");
+	        	default: // TODO : Clean
+		        	// throw new ToolInternalException(RouteParser.class.getEnclosingMethod(), cmd, "FRLG badges.");
+		        	throw new ToolInternalException(cmd, "FRLG badges.");
 				}
 			} // end scope hack
 			
@@ -488,7 +493,7 @@ public class RouteParser {
                 return GameAction.printAllStats;
         	} else
         		return GameAction.printAllStatsNoBoost;
-        		*/
+    		*/
         	
         case PRINT_STATS_RANGES:
     		return GameAction.printStatRangesNoBoost;
@@ -500,7 +505,7 @@ public class RouteParser {
                 return GameAction.printStatRanges;
         	} else
         		return GameAction.printStatRangesNoBoost;
-        		*/
+    		*/
         	
         case PC_WITHDRAWAL:
         	return GameAction.updateEVs;
@@ -549,23 +554,6 @@ public class RouteParser {
         } // end command parsing
     }
 
-        /*
-        // TODO : implement happiness and returnpower
-        else if(firstToken.equalsIgnoreCase("returnpower")) {
-            int newPower = Integer.parseInt(tokens[1]);
-            return new ChangeReturnPower(newPower);
-        }
-        */
-        
-        /*
-        // TODO : maybe keep to allow multiple effects
-        else if(firstToken.equalsIgnoreCase("setAmuletCoin")) {
-        	return GameAction.setAmuletCoin;
-        }        
-        else if(firstToken.equalsIgnoreCase("unsetAmuletCoin")) {
-        	return GameAction.unsetAmuletCoin;
-        }
-        */
       
     private static enum BattleFlag {
     	/* ********** */

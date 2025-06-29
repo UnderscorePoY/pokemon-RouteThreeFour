@@ -46,7 +46,7 @@ public class Battle extends GameAction {
         
         Trainer t = (Trainer) opponent;
         
-        /* TODO before or after ?
+        /* TODO : implement ? before or after ?
         // Happiness boost from leaders, E4 and Champ
         if(t.isBoostingHappiness()) {
         	p.setHappiness(HappinessEvent.GYM_LEADER_E4_CHAMPION.getFinalHappiness(p.getHappiness(), p.getHeldItem() != null && p.getHeldItem().isBoostingHappiness(), p.isInLuxuryBall(), false));

@@ -1,14 +1,9 @@
 package test.pokemon_matcher;
 
 import java.util.ArrayList;
-import java.util.Map;
 
 import tool.Game;
-import tool.IgnoreCaseString;
 import tool.Initialization;
-import tool.Learnset;
-import tool.Move;
-import tool.Species;
 
 public class Main {
 	
@@ -41,7 +36,7 @@ public class Main {
 					));
 			// E4 Barry
 			list.add(new PokemonMatch(
-					"RIVAL_Barry_EMPOLEON_3", 5, 
+					"RIVAL_Barry_LEAGUE_EMPOLEON", 5, 
 					new PokemonTarget("Empoleon", "M", 51, "Quiet", "Torrent", 
 							158, 104, 107, 143, 120, 70, 
 							24, 

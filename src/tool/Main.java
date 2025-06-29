@@ -2,8 +2,6 @@ package tool;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.FileWriter;
-import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.PrintStream;
 import java.nio.charset.StandardCharsets;
@@ -13,13 +11,19 @@ import java.util.ArrayList;
 import org.ini4j.Wini;
 
 import tool.StatsContainer.ContainerType;
+import tool.exception.config.ConfigInaccessibleException;
 import tool.exception.config.ConfigMissingKeyException;
 import tool.exception.config.ConfigWrongValueException;
+import tool.exception.master.MasterInaccessibleException;
+import tool.exception.master.MasterMissingKeyException;
 
 public class Main {
-	public static Pokemon mainPoke = null; // TODO : Really bad, but it works for scenario handling for now
+	protected static Pokemon mainPoke = null; // TODO : Really bad, but it works for scenario handling for now
     private static StringBuilder output = new StringBuilder();
-    public static List<Exception> parsingExceptions = new ArrayList<>();
+    protected static List<Exception> parsingExceptions = new ArrayList<>();
+    
+    private static String defaultMasterFilename = "master.ini";
+    private static String defaultDebugFilename = "debug.txt";
     
     public static void append(String s) {
         output.append(s);
@@ -30,8 +34,8 @@ public class Main {
     
     public static void main(String[] args) {
     	int exitCode = 0;
-        String masterFileName = (args.length > 0) ? args[0] : "master.ini";
-        String backupDebugFileName = (args.length > 1) ? args[1] : "debug.txt";
+        String masterFileName = (args.length > 0) ? args[0] : defaultMasterFilename;
+        String backupDebugFileName = (args.length > 1) ? args[1] : defaultDebugFilename;
         
         Wini masterIni = null; // Only read
         PrintStream debugStream = null; // Only write
@@ -40,15 +44,17 @@ public class Main {
         BufferedWriter outputWriter = null; // Only write
         
         try {
-            /* ************** */
-            /* INITIALIZATION */
-            /* ************** */
+        	
+            /* *********** */
+            /* MASTER FILE */
+            /* *********** */
         	
         	// Master file
         	try {
         		masterIni = new Wini(new File(masterFileName));
-        	} catch(Exception e) {
-        		throw new Exception(String.format("Inaccessible master file '%s'.", masterFileName));
+        	} catch(Exception e) { // TODO : clean
+        		// throw new MasterException(String.format("inaccessible master file '%s'.", masterFileName));
+        		throw new MasterInaccessibleException("master", masterFileName, null, null);
         	}
         	
         	// Custom debug file (optional - default name if missing)
@@ -61,42 +67,59 @@ public class Main {
     		
     		try {
     			debugStream = new PrintStream(debugFile);
-    		} catch (Exception e) {
-    			throw new Exception(String.format("Inaccessible debug file '%s' provided in '%s'. It is probably a typo.", customDebugFileStr, masterFileName));
+    		} catch (Exception e) { // TODO : clean
+    			// throw new MasterException(String.format("inaccessible debug file '%s' provided in '%s'. It is probably a typo.", customDebugFileStr, masterFileName));
+    			throw new MasterInaccessibleException("debug", customDebugFileStr, masterFileName, "It is probably a typo.");
     		}
         	
         	// Config file (mandatory)
         	String configFileStr = null;
-    		if(!masterIni.get("master").containsKey("configFile"))
-    			throw new Exception(String.format("Missing mandatory config file in '%s', in [%s] section. Is the line commented out ?", masterFileName, "master")); // TODO: hardcoded
-
+    		if(!masterIni.get("master").containsKey("configFile")) { // TODO : clean
+    			// throw new MasterException(String.format("missing mandatory config file in '%s', in [%s] section. Is the line commented out ?", masterFileName, "master")); // TODO: hardcoded
+    			throw new MasterMissingKeyException(masterFileName, "master", "configFile", "Is the line commented out ?"); 
+    		}
+    		
+            /* *********** */
+            /* CONFIG FILE */
+            /* *********** */
+    		
     		configFileStr = masterIni.get("master","configFile");
     		try {
     			configIni = new Wini(new File(configFileStr));
-    		} catch(Exception e) {
-    			throw new Exception(String.format("Inaccessible config file '%s' provided in '%s'. It is probably a typo.", configFileStr, masterFileName));
+    		} catch(Exception e) { // TODO : clean
+    			// throw new MasterException(String.format("inaccessible config file '%s' provided in '%s'. It is probably a typo.", configFileStr, masterFileName));
+    			throw new MasterInaccessibleException("config", configFileStr, masterFileName, "It is probably a typo.");
     		}
     		
     		// Route file (mandatory)
     		String routeFileStr = null;
-			if(!configIni.get("files").containsKey("routeFile"))
-    			throw new Exception(String.format("Missing mandatory route file in '%s', in [%s]. Is the line commented out ?", configFileStr, "files")); // TODO: hardcoded
+			if(!configIni.get("files").containsKey("routeFile")) { // TODO : clean
+    			// throw new ConfigException(String.format("missing mandatory route file in '%s', in [%s]. Is the line commented out ?", configFileStr, "files")); // TODO: hardcoded
+    			throw new ConfigMissingKeyException(configFileStr, "files", "routeFile", null);
+			}
 			
 			routeFileStr = configIni.get("files","routeFile");
 			routeFile = new File(routeFileStr);
 			
-			if(!routeFile.exists())
-    			throw new Exception(String.format("Route file '%s' doesn't exist.", routeFileStr));
-			if(!routeFile.canRead())
-    			throw new Exception(String.format("Inaccessible route file '%s'.", routeFileStr));
+			if(!routeFile.exists()) { // TODO : clean
+    			// throw new ConfigException(String.format("route file '%s' doesn't exist.", routeFileStr));
+				throw new ConfigInaccessibleException("route", routeFileStr, configFileStr, "Doesn't exist.");
+			}
+			if(!routeFile.canRead()) { // TODO : clean
+    			// throw new ConfigException(String.format("inaccessible route file '%s'.", routeFileStr));
+				throw new ConfigInaccessibleException("route", routeFileStr, configFileStr, "Can't read.");
+			}
             
     		// Output file (optional - default name if missing)
 			String outputFilename = "outputs/out_"+routeFile.getName();
             if(configIni.get("files").containsKey("outputFile"))
             	outputFilename = configIni.get("files", "outputFile");
             File outputFile = new File(outputFilename);
-            //outputWriter = new BufferedWriter(new FileWriter(outputFilename));
+            if(!outputFile.canWrite()) {
+    			throw new ConfigInaccessibleException("output", outputFilename, configFileStr, "Can't write.");
+			}
             outputWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(outputFilename), StandardCharsets.UTF_8));
+            
             
             /* At this point :
              * - The master ini is properly loaded
@@ -106,64 +129,110 @@ public class Main {
              * - A writer is opened to the output file
              */
             
-            // Set game and initialize
-            if(!configIni.get("game").containsKey("game"))
-    			throw new Exception(String.format("Missing mandatory game in '%s', in [%s] section.", configFileStr, "game")); // TODO: hardcoded
-            	
+            // Set game & language, and initialize
+            if(!configIni.get("game").containsKey("game")) { // TODO : clean
+    			// throw new ConfigException(String.format("missing mandatory game in '%s', in [%s] section.", configFileStr, "game")); // TODO: hardcoded
+    			throw new ConfigMissingKeyException(configFileStr, "game", "game", null);
+            }
             String gameName = configIni.get("game", "game");
             Game game = Game.getGameFromStr(gameName);
-            if(game == null)
-    			throw new Exception(String.format("Invalid game name '%s' in '%s'.%sThe list of supported games is : %s.", gameName, configFileStr, 
-    					Constants.endl, Game.supportedGameNames()));
+            if(game == null) { // TODO : clean
+    			// throw new ConfigException(String.format("invalid game name '%s' in '%s'.%sThe list of supported games is : %s.", gameName, configFileStr, 
+    			//		Constants.endl, Game.supportedGameNamesWithLanguages()));
+    			throw new ConfigWrongValueException(configFileStr, "game", "game", gameName, String.format("The list of supported games/languages is : %s.", Game.supportedGameNamesWithLanguages()));
+            }
             
-        	Initialization.init(game); // TODO: handle each Exception separately ?
+            String langName = configIni.get("game", "language");
+            Language lang;
+            if(langName == null)
+            	lang = Language.default_;
+            else
+            	lang = Language.getLanguageFromStr(langName);
+            
+            if(lang == null) {
+            	throw new ConfigWrongValueException(configFileStr, "game", "language", langName, String.format("The list of supported games/languages is : %s.", Game.supportedGameNamesWithLanguages()));
+        	}
+            
+        	Initialization.init(game, lang); // TODO: handle each Exception separately ?
 
             // TODO : handle custom files ?
         	
             // Set pokemon | TODO : handle trainer party ?
         		// Species (mandatory)
-        	if(!configIni.get("poke").containsKey("species"))
-    			throw new Exception(String.format("Missing mandatory species in '%s', in [%s] section.", configFileStr, "poke")); // TODO: hardcoded
+        	if(!configIni.get("poke").containsKey("species")) { // TODO : clean
+    			// throw new ConfigException(String.format("missing mandatory species in '%s', in [%s] section.", configFileStr, "poke")); // TODO: hardcoded
+    			throw new ConfigMissingKeyException(configFileStr, "poke", "species", null);
+        	}
         	
             String speciesStr = configIni.get("poke", "species");
             Species species = Species.getSpeciesByName(speciesStr);
-            if(species == null)
-    			throw new Exception(String.format("Invalid species '%s' in '%s'.", speciesStr, configFileStr));
+            if(species == null) { // TODO : clean
+    			// throw new ConfigException(String.format("invalid species '%s' in '%s'.", speciesStr, configFileStr));
+            	throw new ConfigWrongValueException(configFileStr, "poke", "species", speciesStr, null);
+            }
             
             	// Level (mandatory)
-            if(!configIni.get("poke").containsKey("level"))
-    			throw new Exception(String.format("Missing mandatory level in '%s', in [%s] section.", configFileStr, "poke")); // TODO: hardcoded
-            int level = configIni.get("poke", "level", int.class); // TODO : check level validity here ?
+            if(!configIni.get("poke").containsKey("level")) { // TODO : clean
+    			// throw new ConfigException(String.format("missing mandatory level in '%s', in [%s] section.", configFileStr, "poke")); // TODO: hardcoded
+            	throw new ConfigMissingKeyException(configFileStr, "poke", "level", null);
+            }
+            int level;
+            try {
+            	level = configIni.get("poke", "level", int.class);
+            	if(level < Pokemon.MIN_LEVEL || level > Pokemon.MAX_LEVEL) {
+            		throw new Exception();
+            	}
+            } catch(Exception e) {
+            	throw new ConfigWrongValueException(configFileStr, "poke", "level", configIni.get("poke", "level"), String.format("must be an integer between '%d' and '%d' inclusive.", Pokemon.MIN_LEVEL, Pokemon.MAX_LEVEL));
+            }
             
             	// Gender (mandatory)
-            if(!configIni.get("poke").containsKey("gender"))
-    			throw new Exception(String.format("Missing mandatory gender in '%s', in [%s] section.", configFileStr, "poke")); // TODO: hardcoded
+            if(!configIni.get("poke").containsKey("gender")) { // TODO : clean
+    			//throw new ConfigException(String.format("missing mandatory gender in '%s', in [%s] section.", configFileStr, "poke")); // TODO: hardcoded
+    			throw new ConfigMissingKeyException(configFileStr, "poke", "gender", null);
+            }
             
             String genderStr = configIni.get("poke", "gender");
             Gender gender = Gender.getGenderFromStr(genderStr);
-            if(gender == null)
-    			throw new Exception(String.format("Invalid gender '%s' in '%s'.", genderStr, configFileStr));
+            if(gender == null) { // TODO : clean
+    			// throw new ConfigException(String.format("invalid gender '%s' in '%s'.", genderStr, configFileStr));
+            	throw new ConfigWrongValueException(configFileStr, "poke", "gender", genderStr, null);
+            }
             
             	// Nature (mandatory)
-            if(!configIni.get("poke").containsKey("nature"))
-    			throw new Exception(String.format("Missing mandatory nature in '%s', in [%s] section.", configFileStr, "poke")); // TODO: hardcoded
-            
+            if(!configIni.get("poke").containsKey("nature")) { // TODO : clean
+    			//throw new ConfigException(String.format("missing mandatory nature in '%s', in [%s] section.", configFileStr, "poke")); // TODO: hardcoded
+    			throw new ConfigMissingKeyException(configFileStr, "poke", "nature", null);
+            }
             String natureStr = configIni.get("poke", "nature");
             Nature nature = Nature.getNatureFromString(natureStr);
-            if(nature == null)
-    			throw new Exception(String.format("Invalid nature '%s' in '%s'.", natureStr, configFileStr));
+            if(nature == null) { // TODO : clean
+    			// throw new ConfigException(String.format("invalid nature '%s' in '%s'.", natureStr, configFileStr));
+            	throw new ConfigWrongValueException(configFileStr, "poke", "nature", natureStr, null);
+            }
             
             	// Ability (mandatory)
-            if(!configIni.get("poke").containsKey("ability"))
-    			throw new Exception(String.format("Missing mandatory ability in '%s', in [%s] section.", configFileStr, "poke")); // TODO: hardcoded
+            if(!configIni.get("poke").containsKey("ability")) { // TODO : clean
+    			throw new ConfigMissingKeyException(configFileStr, "poke", "ability", null);
+				//throw new ConfigException(String.format("missing mandatory ability in '%s', in [%s] section.", configFileStr, "poke")); // TODO: hardcoded
+            }
             
             String abilityStr = configIni.get("poke", "ability");
             Ability ability = Ability.getAbilityFromString(abilityStr);
-            if(ability == null)
-    			throw new Exception(String.format("Invalid ability '%s' in '%s'.", abilityStr, configFileStr));
-            if(ability != species.getAbility1() && ability != species.getAbility2())
-    			throw new Exception(String.format("%s ability can only be %s%s.", species, species.getAbility1(),
-    					species.getAbility2() == Ability.NONE ? "" : String.format(" or %s", species.getAbility2())));
+            if(ability == null) { // TODO : clean
+    			// throw new ConfigException(String.format("invalid ability '%s' in '%s'.", abilityStr, configFileStr));
+            	throw new ConfigWrongValueException(configFileStr, "poke", "ability", abilityStr, null);
+            }
+            if(ability != species.getAbility1() && ability != species.getAbility2()) { // TODO : clean
+    			// throw new ConfigException(String.format("%s ability can only be %s%s.", species, species.getAbility1(),
+    			// 		species.getAbility2() == Ability.NONE ? "" : String.format(" or %s", species.getAbility2())));
+            	throw new ConfigWrongValueException(configFileStr, "poke", "ability", abilityStr, 
+            			String.format("%s ability can only be %s%s.", 
+            					species, species.getAbility1(),
+            			 		species.getAbility2() == Ability.NONE ? "" : String.format(" or %s", species.getAbility2())
+		 				)
+            	);
+            }
             	
 
             	// IVs (mandatory)
@@ -354,14 +423,19 @@ public class Main {
             	String boostedExpStr = (String) configIni.get("poke", "boostedExp");
             	
             	if(boostedExpStr.equalsIgnoreCase("international")) { // TODO: hardcoded
+            		if(!game.isDP()) {
+            			throw new ConfigWrongValueException(configFileStr, "poke", "boostedExp", boostedExpStr,
+                				String.format("'%s' is not available in '%s'.", "international", game.getName())
+        				);
+            		}
         			hasBoostedExp = true;
         			isInternationalTraded = true;
             	} else {
-	            	try{
-	            		hasBoostedExp = Boolean.parseBoolean(boostedExpStr);
-	            	} catch (Exception e) {
-	            		throw new ConfigWrongValueException(configFileStr, "poke", "boostedExp", boostedExpStr,
-	            				String.format("must be either '%s' or '%s'. In Diamond/Pearl, '%s' is available for international trades", true, false, "international"));
+            		// Boolean.parseBoolean is too inclusive when it comes to non-true values ...
+            		if(null == Utils.parseBoolean(boostedExpStr.toLowerCase())) {
+            			throw new ConfigWrongValueException(configFileStr, "poke", "boostedExp", boostedExpStr,
+        				String.format("must be either '%s' or '%s'.%s", true, false, !game.isDP() ? "" : String.format("In Diamond/Pearl, '%s' is available for international trades", "international"))
+        				);
             		}
             	}
             }
@@ -369,15 +443,13 @@ public class Main {
         		// Pokerus (optional)
             boolean hasPokerus = false; // TODO : hardcoded
             if(configIni.get("poke").containsKey("pokerus")) {
-            	String pokerusStr = null;
-            	try{
-            		pokerusStr = (String) configIni.get("poke", "pokerus");
-            		hasPokerus = Boolean.parseBoolean(pokerusStr);
-            	} catch (Exception e) {
-            		throw new ConfigWrongValueException(configFileStr, "poke", "pokerus", pokerusStr,
-            				String.format("must be either '%s' or '%s'.", true, false));
-            	}
-            }
+            	String pokerusStr = (String) configIni.get("poke", "pokerus");
+            	if(null == Utils.parseBoolean(pokerusStr.toLowerCase())) {
+        			throw new ConfigWrongValueException(configFileStr, "poke", "pokerus", pokerusStr,
+    				String.format("must be either '%s' or '%s'.", true, false)
+    				);
+        		}
+        	}
 
             // Main Pokémon instanciation
         	mainPoke = new Pokemon(species, gender, level, nature, ability, ivs, hasBoostedExp, hasPokerus);
@@ -393,68 +465,65 @@ public class Main {
             // Other non-mandatory options
             if(configIni.get("util").containsKey("defaultOutputDetails")) {
             	String verboseLevelStr = null;
+            	VerboseLevel verboseLevel;
             	try{
             		verboseLevelStr = (String) configIni.get("util", "defaultOutputDetails");
             		int verboseLevelInt = Integer.parseInt(verboseLevelStr);
-            		Settings.verboseLevel = VerboseLevel.values()[verboseLevelInt];
+            		verboseLevel = VerboseLevel.values()[verboseLevelInt];
             	} catch (Exception e) {
             		throw new ConfigWrongValueException(configFileStr, "util", "defaultOutputDetails", verboseLevelStr,
             				String.format("must be an integer between '%s' and '%s'.", VerboseLevel.NONE.ordinal(), VerboseLevel.EVERYTHING.ordinal()));
             	}
+        		Settings.verboseLevel = verboseLevel;
             }
             
             if(configIni.get("util").containsKey("defaultShowStatsOnLevelUp")) {
-            	String defaultShowStatsOnLevelUpStr = null;
-            	try {
-            		defaultShowStatsOnLevelUpStr = (String) configIni.get("util", "defaultShowStatsOnLevelUp");
-            		Settings.showStatsOnLevelUp = Boolean.parseBoolean(defaultShowStatsOnLevelUpStr);
-            	} catch(Exception e) {
-            		throw new ConfigWrongValueException(configFileStr, "util", "defaultShowStatsOnLevelUp", defaultShowStatsOnLevelUpStr, 
-            				String.format("must be either '%s' or '%s'.", true, false));
-            	}
+            	String defaultShowStatsOnLevelUpStr = (String) configIni.get("util", "defaultShowStatsOnLevelUp");
+        		Boolean showStatsOnLevelUp = Utils.parseBoolean(defaultShowStatsOnLevelUpStr);
+        		if(null == showStatsOnLevelUp) {
+        			throw new ConfigWrongValueException(configFileStr, "util", "defaultShowStatsOnLevelUp", defaultShowStatsOnLevelUpStr, 
+        				String.format("must be either '%s' or '%s'.", true, false));
+        		}
+        		Settings.showStatsOnLevelUp = showStatsOnLevelUp;
             }
             
             if(configIni.get("util").containsKey("defaultShowStatRangesOnLevelUp")) {
-            	String defaultShowStatRangesOnLevelUpStr = null;
-            	try {
-            		defaultShowStatRangesOnLevelUpStr = (String) configIni.get("util", "defaultShowStatRangesOnLevelUp");
-            		Settings.showStatsOnLevelUp = Boolean.parseBoolean(defaultShowStatRangesOnLevelUpStr);
-            	} catch(Exception e) {
+            	String defaultShowStatRangesOnLevelUpStr = (String) configIni.get("util", "defaultShowStatRangesOnLevelUp");
+            	Boolean defaultShowStatRangesOnLevelUp = Utils.parseBoolean(defaultShowStatRangesOnLevelUpStr);
+            	if(null == defaultShowStatRangesOnLevelUp) {
             		throw new ConfigWrongValueException(configFileStr, "util", "defaultShowStatRangesOnLevelUp", defaultShowStatRangesOnLevelUpStr, 
             				String.format("must be either '%s' or '%s'.", true, false));
             	}
+            	Settings.showStatRangesOnLevelUp = defaultShowStatRangesOnLevelUp;
             }
             
             if(configIni.get("util").containsKey("defaultIvVariation")) {
-            	String defaultIvVariationStr = null;
-            	try {
-            		defaultIvVariationStr = (String) configIni.get("util", "defaultIvVariation");
-            		Settings.defaultIvVariation = Boolean.parseBoolean(defaultIvVariationStr);
-            	} catch(Exception e) {
+            	String defaultIvVariationStr = (String) configIni.get("util", "defaultIvVariation");
+            	Boolean defaultIvVariation = Utils.parseBoolean(defaultIvVariationStr);
+            	if(null == defaultIvVariation) {
             		throw new ConfigWrongValueException(configFileStr, "util", "defaultIvVariation", defaultIvVariationStr, 
             				String.format("must be either '%s' or '%s'.", true, false));
             	}
+            	Settings.defaultIvVariation = defaultIvVariation;
             }
             
             if(configIni.get("util").containsKey("overallChanceKO")) {
-            	String overallChanceKOStr = null;
-            	try {
-            		overallChanceKOStr = (String) configIni.get("util", "overallChanceKO");
-            		Settings.overallChanceKO = Boolean.parseBoolean(overallChanceKOStr);
-            	} catch(Exception e) {
+            	String overallChanceKOStr = (String) configIni.get("util", "overallChanceKO");
+            	Boolean overallChanceKO = Utils.parseBoolean(overallChanceKOStr);
+            	if(null == overallChanceKO) {
             		throw new ConfigWrongValueException(configFileStr, "util", "overallChanceKO", overallChanceKOStr, 
             				String.format("must be either '%s' or '%s'.", true, false));
             	}
+            	Settings.overallChanceKO = overallChanceKO;
             }
             if(configIni.get("util").containsKey("showGuarantees")){
-            	String showGuaranteesStr = null;
-            	try {
-            		showGuaranteesStr = (String) configIni.get("util", "showGuarantees");
-            		Settings.showGuarantees = Boolean.parseBoolean(showGuaranteesStr);
-            	} catch(Exception e) {
+            	String showGuaranteesStr = (String) configIni.get("util", "showGuarantees");
+            	Boolean showGuarantees = Utils.parseBoolean(showGuaranteesStr);
+            	if(null == showGuarantees) {
             		throw new ConfigWrongValueException(configFileStr, "util", "showGuarantees", showGuaranteesStr, 
             				String.format("must be either '%s' or '%s'.", true, false));
             	}
+        		Settings.showGuarantees = showGuarantees;
             }
             
 
@@ -487,6 +556,7 @@ public class Main {
             outputWriter.write(output.toString());
             
         } catch (Exception exc) {
+        	// Don't forget any non-route parsing exceptions
         	if(parsingExceptions.isEmpty())
         		parsingExceptions.add(exc);
 
@@ -593,5 +663,4 @@ public class Main {
             }
         }
         */
-
 }

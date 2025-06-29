@@ -41,8 +41,11 @@ public class Learnset {
         	initLearnsetsGen3(in);
         else if (game.isGen4())
         	initLearnsetsGen4(in);
-        else
-        	throw new ToolInternalException(Learnset.class.getEnclosingMethod(), game, "");
+        else { // TODO : clean
+        	// throw new ToolInternalException(Learnset.class.getEnclosingMethod(), game, "");
+        	// throw new ToolInternalException(Learnset.class.getMethods()[0].getName(), game, "");
+        	throw new ToolInternalException(game, "");
+        }
 
         System.out.println(String.format("INFO: Learnsets loaded from '%s'", learnsetsResourcePathName));
     }
@@ -63,7 +66,6 @@ public class Learnset {
         		int level = ((Long) levelMoveArray.get(LEVEL_INDEX)).intValue();
         		String moveName = (String) levelMoveArray.get(MOVENAME_INDEX);
         		Move move = Move.getMoveByName(moveName);
-        		//System.out.println(moveName+" "+move); // TODO
         		LevelMove levelMove = new LevelMove(level, move);
         		learnset.add(levelMove);
         	}

@@ -2,17 +2,19 @@ package tool;
 import java.util.ArrayList;
 
 public enum CurrentHPid {
-	FULL        ("FULL",    "MAX", "FULL"),
-	HALF        ("HALF",    "HALF"),
-	THIRD       ("THIRD",   "THIRD"),
-	CUSTOM_VALUE(""); // No tokens to be compared to
+	FULL        ("FULL",  1,   "MAX", "FULL"),
+	HALF        ("HALF",  2,   "HALF"),
+	THIRD       ("THIRD", 3,   "THIRD"),
+	CUSTOM_VALUE(""     , 0); // No tokens to be compared to
 	;
 	
 	private String displayName;
+	private int denominator;
 	private ArrayList<String> tokens;
 	
-	private CurrentHPid(String displayName, String... tokens) {
+	private CurrentHPid(String displayName, int denominator, String... tokens) {
 		this.displayName = displayName;
+		this.denominator = denominator;
 		this.tokens = new ArrayList<String>();
 		for(String token : tokens)
 			this.tokens.add(token);
@@ -20,6 +22,10 @@ public enum CurrentHPid {
 	
 	public String getDisplayName() {
 		return displayName;
+	}
+	
+	public int getDenominator() {
+		return denominator;
 	}
 	
 	@Override

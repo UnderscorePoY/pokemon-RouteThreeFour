@@ -2,7 +2,6 @@ package test.initialization;
 
 import java.util.Map;
 
-import tool.BattleOptions;
 import tool.Game;
 import tool.IgnoreCaseString;
 import tool.Pokemon;

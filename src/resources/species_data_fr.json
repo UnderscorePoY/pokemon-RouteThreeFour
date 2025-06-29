@@ -2,6 +2,7 @@
     {
         "name": "BULBASAUR",
         "displayName": "BULBASAUR",
+        "hashName_FR": "BULBIZARRE",
         "dexNum": 1,
         "baseStats": [
             45,
@@ -35,6 +36,7 @@
     {
         "name": "IVYSAUR",
         "displayName": "IVYSAUR",
+        "hashName_FR": "HERBIZARRE",
         "dexNum": 2,
         "baseStats": [
             60,
@@ -68,6 +70,7 @@
     {
         "name": "VENUSAUR",
         "displayName": "VENUSAUR",
+        "hashName_FR": "FLORIZARRE",
         "dexNum": 3,
         "baseStats": [
             80,
@@ -101,6 +104,7 @@
     {
         "name": "CHARMANDER",
         "displayName": "CHARMANDER",
+        "hashName_FR": "SALAMECHE",
         "dexNum": 4,
         "baseStats": [
             39,
@@ -133,6 +137,7 @@
     {
         "name": "CHARMELEON",
         "displayName": "CHARMELEON",
+        "hashName_FR": "REPTINCEL",
         "dexNum": 5,
         "baseStats": [
             58,
@@ -165,6 +170,7 @@
     {
         "name": "CHARIZARD",
         "displayName": "CHARIZARD",
+        "hashName_FR": "DRACAUFEU",
         "dexNum": 6,
         "baseStats": [
             78,
@@ -198,6 +204,7 @@
     {
         "name": "SQUIRTLE",
         "displayName": "SQUIRTLE",
+        "hashName_FR": "CARAPUCE",
         "dexNum": 7,
         "baseStats": [
             44,
@@ -230,6 +237,7 @@
     {
         "name": "WARTORTLE",
         "displayName": "WARTORTLE",
+        "hashName_FR": "CARABAFFE",
         "dexNum": 8,
         "baseStats": [
             59,
@@ -262,6 +270,7 @@
     {
         "name": "BLASTOISE",
         "displayName": "BLASTOISE",
+        "hashName_FR": "TORTANK",
         "dexNum": 9,
         "baseStats": [
             79,
@@ -294,6 +303,7 @@
     {
         "name": "CATERPIE",
         "displayName": "CATERPIE",
+        "hashName_FR": "CHENIPAN",
         "dexNum": 10,
         "baseStats": [
             45,
@@ -326,6 +336,7 @@
     {
         "name": "METAPOD",
         "displayName": "METAPOD",
+        "hashName_FR": "CHRYSACIER",
         "dexNum": 11,
         "baseStats": [
             50,
@@ -358,6 +369,7 @@
     {
         "name": "BUTTERFREE",
         "displayName": "BUTTERFREE",
+        "hashName_FR": "PAPILUSION",
         "dexNum": 12,
         "baseStats": [
             60,
@@ -391,6 +403,7 @@
     {
         "name": "WEEDLE",
         "displayName": "WEEDLE",
+        "hashName_FR": "ASPICOT",
         "dexNum": 13,
         "baseStats": [
             40,
@@ -424,6 +437,7 @@
     {
         "name": "KAKUNA",
         "displayName": "KAKUNA",
+        "hashName_FR": "COCONFORT",
         "dexNum": 14,
         "baseStats": [
             45,
@@ -457,6 +471,7 @@
     {
         "name": "BEEDRILL",
         "displayName": "BEEDRILL",
+        "hashName_FR": "DARDARGNAN",
         "dexNum": 15,
         "baseStats": [
             65,
@@ -490,6 +505,7 @@
     {
         "name": "PIDGEY",
         "displayName": "PIDGEY",
+        "hashName_FR": "ROUCOOL",
         "dexNum": 16,
         "baseStats": [
             40,
@@ -523,6 +539,7 @@
     {
         "name": "PIDGEOTTO",
         "displayName": "PIDGEOTTO",
+        "hashName_FR": "ROUCOUPS",
         "dexNum": 17,
         "baseStats": [
             63,
@@ -556,6 +573,7 @@
     {
         "name": "PIDGEOT",
         "displayName": "PIDGEOT",
+        "hashName_FR": "ROUCARNAGE",
         "dexNum": 18,
         "baseStats": [
             83,
@@ -622,6 +640,7 @@
     {
         "name": "RATICATE",
         "displayName": "RATICATE",
+        "hashName_FR": "RATTATAC",
         "dexNum": 20,
         "baseStats": [
             55,
@@ -655,6 +674,7 @@
     {
         "name": "SPEAROW",
         "displayName": "SPEAROW",
+        "hashName_FR": "PIAFABEC",
         "dexNum": 21,
         "baseStats": [
             40,
@@ -688,6 +708,7 @@
     {
         "name": "FEAROW",
         "displayName": "FEAROW",
+        "hashName_FR": "RAPASDEPIC",
         "dexNum": 22,
         "baseStats": [
             65,
@@ -721,6 +742,7 @@
     {
         "name": "EKANS",
         "displayName": "EKANS",
+        "hashName_FR": "ABO",
         "dexNum": 23,
         "baseStats": [
             35,
@@ -851,6 +873,7 @@
     {
         "name": "SANDSHREW",
         "displayName": "SANDSHREW",
+        "hashName_FR": "SABELETTE",
         "dexNum": 27,
         "baseStats": [
             50,
@@ -883,6 +906,7 @@
     {
         "name": "SANDSLASH",
         "displayName": "SANDSLASH",
+        "hashName_FR": "SABLAIREAU",
         "dexNum": 28,
         "baseStats": [
             75,
@@ -913,9 +937,10 @@
         "weight": 295
     },
     {
-		"name": "NIDORANF",
-        "hashName": "NIDORAN\u2640",
+        "name": "NIDORANF",
         "displayName": "NIDORAN F",
+        "hashName": "NIDORAN\u2640",
+        "hashName_FR": "NIDORAN\u2640",
         "dexNum": 29,
         "baseStats": [
             55,
@@ -1012,8 +1037,9 @@
     },
     {
         "name": "NIDORANM",
-        "hashName": "NIDORAN\u2642",
         "displayName": "NIDORAN M",
+        "hashName": "NIDORAN\u2642",
+        "hashName_FR": "NIDORAN\u2642",
         "dexNum": 32,
         "baseStats": [
             46,
@@ -1111,6 +1137,7 @@
     {
         "name": "CLEFAIRY",
         "displayName": "CLEFAIRY",
+        "hashName_FR": "MELOFEE",
         "dexNum": 35,
         "baseStats": [
             70,
@@ -1143,6 +1170,7 @@
     {
         "name": "CLEFABLE",
         "displayName": "CLEFABLE",
+        "hashName_FR": "MELODELFE",
         "dexNum": 36,
         "baseStats": [
             95,
@@ -1175,6 +1203,7 @@
     {
         "name": "VULPIX",
         "displayName": "VULPIX",
+        "hashName_FR": "GOUPIX",
         "dexNum": 37,
         "baseStats": [
             38,
@@ -1207,6 +1236,7 @@
     {
         "name": "NINETALES",
         "displayName": "NINETALES",
+        "hashName_FR": "FEUNARD",
         "dexNum": 38,
         "baseStats": [
             73,
@@ -1239,6 +1269,7 @@
     {
         "name": "JIGGLYPUFF",
         "displayName": "JIGGLYPUFF",
+        "hashName_FR": "RONDOUDOU",
         "dexNum": 39,
         "baseStats": [
             115,
@@ -1271,6 +1302,7 @@
     {
         "name": "WIGGLYTUFF",
         "displayName": "WIGGLYTUFF",
+        "hashName_FR": "GRODOUDOU",
         "dexNum": 40,
         "baseStats": [
             140,
@@ -1303,6 +1335,7 @@
     {
         "name": "ZUBAT",
         "displayName": "ZUBAT",
+        "hashName_FR": "NOSFERAPTI",
         "dexNum": 41,
         "baseStats": [
             40,
@@ -1336,6 +1369,7 @@
     {
         "name": "GOLBAT",
         "displayName": "GOLBAT",
+        "hashName_FR": "NOSFERALTO",
         "dexNum": 42,
         "baseStats": [
             75,
@@ -1369,6 +1403,7 @@
     {
         "name": "ODDISH",
         "displayName": "ODDISH",
+        "hashName_FR": "MYSTHERBE",
         "dexNum": 43,
         "baseStats": [
             45,
@@ -1402,6 +1437,7 @@
     {
         "name": "GLOOM",
         "displayName": "GLOOM",
+        "hashName_FR": "ORTIDE",
         "dexNum": 44,
         "baseStats": [
             60,
@@ -1435,6 +1471,7 @@
     {
         "name": "VILEPLUME",
         "displayName": "VILEPLUME",
+        "hashName_FR": "RAFFLESIA",
         "dexNum": 45,
         "baseStats": [
             75,
@@ -1534,6 +1571,7 @@
     {
         "name": "VENONAT",
         "displayName": "VENONAT",
+        "hashName_FR": "MIMITOSS",
         "dexNum": 48,
         "baseStats": [
             60,
@@ -1567,6 +1605,7 @@
     {
         "name": "VENOMOTH",
         "displayName": "VENOMOTH",
+        "hashName_FR": "AEROMITE",
         "dexNum": 49,
         "baseStats": [
             70,
@@ -1600,6 +1639,7 @@
     {
         "name": "DIGLETT",
         "displayName": "DIGLETT",
+        "hashName_FR": "TAUPIQUEUR",
         "dexNum": 50,
         "baseStats": [
             10,
@@ -1633,6 +1673,7 @@
     {
         "name": "DUGTRIO",
         "displayName": "DUGTRIO",
+        "hashName_FR": "TRIOPIKEUR",
         "dexNum": 51,
         "baseStats": [
             35,
@@ -1666,6 +1707,7 @@
     {
         "name": "MEOWTH",
         "displayName": "MEOWTH",
+        "hashName_FR": "MIAOUSS",
         "dexNum": 52,
         "baseStats": [
             40,
@@ -1730,6 +1772,7 @@
     {
         "name": "PSYDUCK",
         "displayName": "PSYDUCK",
+        "hashName_FR": "PSYKOKWAK",
         "dexNum": 54,
         "baseStats": [
             50,
@@ -1763,6 +1806,7 @@
     {
         "name": "GOLDUCK",
         "displayName": "GOLDUCK",
+        "hashName_FR": "AKWAKWAK",
         "dexNum": 55,
         "baseStats": [
             80,
@@ -1796,6 +1840,7 @@
     {
         "name": "MANKEY",
         "displayName": "MANKEY",
+        "hashName_FR": "FEROSINGE",
         "dexNum": 56,
         "baseStats": [
             40,
@@ -1828,6 +1873,7 @@
     {
         "name": "PRIMEAPE",
         "displayName": "PRIMEAPE",
+        "hashName_FR": "COLOSSINGE",
         "dexNum": 57,
         "baseStats": [
             65,
@@ -1860,6 +1906,7 @@
     {
         "name": "GROWLITHE",
         "displayName": "GROWLITHE",
+        "hashName_FR": "CANINOS",
         "dexNum": 58,
         "baseStats": [
             55,
@@ -1893,6 +1940,7 @@
     {
         "name": "ARCANINE",
         "displayName": "ARCANINE",
+        "hashName_FR": "ARCANIN",
         "dexNum": 59,
         "baseStats": [
             90,
@@ -1926,6 +1974,7 @@
     {
         "name": "POLIWAG",
         "displayName": "POLIWAG",
+        "hashName_FR": "PTITARD",
         "dexNum": 60,
         "baseStats": [
             40,
@@ -1959,6 +2008,7 @@
     {
         "name": "POLIWHIRL",
         "displayName": "POLIWHIRL",
+        "hashName_FR": "TETARTE",
         "dexNum": 61,
         "baseStats": [
             65,
@@ -1992,6 +2042,7 @@
     {
         "name": "POLIWRATH",
         "displayName": "POLIWRATH",
+        "hashName_FR": "TARTARD",
         "dexNum": 62,
         "baseStats": [
             90,
@@ -2125,6 +2176,7 @@
     {
         "name": "MACHOP",
         "displayName": "MACHOP",
+        "hashName_FR": "MACHOC",
         "dexNum": 66,
         "baseStats": [
             70,
@@ -2157,6 +2209,7 @@
     {
         "name": "MACHOKE",
         "displayName": "MACHOKE",
+        "hashName_FR": "MACHOPEUR",
         "dexNum": 67,
         "baseStats": [
             80,
@@ -2189,6 +2242,7 @@
     {
         "name": "MACHAMP",
         "displayName": "MACHAMP",
+        "hashName_FR": "MACKOGNEUR",
         "dexNum": 68,
         "baseStats": [
             90,
@@ -2221,6 +2275,7 @@
     {
         "name": "BELLSPROUT",
         "displayName": "BELLSPROUT",
+        "hashName_FR": "CHETIFLOR",
         "dexNum": 69,
         "baseStats": [
             50,
@@ -2254,6 +2309,7 @@
     {
         "name": "WEEPINBELL",
         "displayName": "WEEPINBELL",
+        "hashName_FR": "BOUSTIFLOR",
         "dexNum": 70,
         "baseStats": [
             65,
@@ -2287,6 +2343,7 @@
     {
         "name": "VICTREEBEL",
         "displayName": "VICTREEBEL",
+        "hashName_FR": "EMPIFLOR",
         "dexNum": 71,
         "baseStats": [
             80,
@@ -2388,6 +2445,7 @@
     {
         "name": "GEODUDE",
         "displayName": "GEODUDE",
+        "hashName_FR": "RACAILLOU",
         "dexNum": 74,
         "baseStats": [
             40,
@@ -2422,6 +2480,7 @@
     {
         "name": "GRAVELER",
         "displayName": "GRAVELER",
+        "hashName_FR": "GRAVALANCH",
         "dexNum": 75,
         "baseStats": [
             55,
@@ -2456,6 +2515,7 @@
     {
         "name": "GOLEM",
         "displayName": "GOLEM",
+        "hashName_FR": "GROLEM",
         "dexNum": 76,
         "baseStats": [
             80,
@@ -2523,6 +2583,7 @@
     {
         "name": "RAPIDASH",
         "displayName": "RAPIDASH",
+        "hashName_FR": "GALOPA",
         "dexNum": 78,
         "baseStats": [
             65,
@@ -2556,6 +2617,7 @@
     {
         "name": "SLOWPOKE",
         "displayName": "SLOWPOKE",
+        "hashName_FR": "RAMOLOSS",
         "dexNum": 79,
         "baseStats": [
             90,
@@ -2590,6 +2652,7 @@
     {
         "name": "SLOWBRO",
         "displayName": "SLOWBRO",
+        "hashName_FR": "FLAGADOSS",
         "dexNum": 80,
         "baseStats": [
             95,
@@ -2624,6 +2687,7 @@
     {
         "name": "MAGNEMITE",
         "displayName": "MAGNEMITE",
+        "hashName_FR": "MAGNETI",
         "dexNum": 81,
         "baseStats": [
             25,
@@ -2658,6 +2722,7 @@
     {
         "name": "MAGNETON",
         "displayName": "MAGNETON",
+        "hashName_FR": "MAGNETON",
         "dexNum": 82,
         "baseStats": [
             50,
@@ -2692,6 +2757,7 @@
     {
         "name": "FARFETCHD",
         "displayName": "FARFETCH'D",
+        "hashName_FR": "CANARTICHO",
         "dexNum": 83,
         "baseStats": [
             52,
@@ -2794,6 +2860,7 @@
     {
         "name": "SEEL",
         "displayName": "SEEL",
+        "hashName_FR": "OTARIA",
         "dexNum": 86,
         "baseStats": [
             65,
@@ -2826,6 +2893,7 @@
     {
         "name": "DEWGONG",
         "displayName": "DEWGONG",
+        "hashName_FR": "LAMANTINE",
         "dexNum": 87,
         "baseStats": [
             90,
@@ -2859,6 +2927,7 @@
     {
         "name": "GRIMER",
         "displayName": "GRIMER",
+        "hashName_FR": "TADMORV",
         "dexNum": 88,
         "baseStats": [
             80,
@@ -2892,6 +2961,7 @@
     {
         "name": "MUK",
         "displayName": "MUK",
+        "hashName_FR": "GROTADMORV",
         "dexNum": 89,
         "baseStats": [
             105,
@@ -2925,6 +2995,7 @@
     {
         "name": "SHELLDER",
         "displayName": "SHELLDER",
+        "hashName_FR": "KOKIYAS",
         "dexNum": 90,
         "baseStats": [
             30,
@@ -2957,6 +3028,7 @@
     {
         "name": "CLOYSTER",
         "displayName": "CLOYSTER",
+        "hashName_FR": "CRUSTABRI",
         "dexNum": 91,
         "baseStats": [
             50,
@@ -2990,6 +3062,7 @@
     {
         "name": "GASTLY",
         "displayName": "GASTLY",
+        "hashName_FR": "FANTOMINUS",
         "dexNum": 92,
         "baseStats": [
             30,
@@ -3023,6 +3096,7 @@
     {
         "name": "HAUNTER",
         "displayName": "HAUNTER",
+        "hashName_FR": "SPECTRUM",
         "dexNum": 93,
         "baseStats": [
             45,
@@ -3056,6 +3130,7 @@
     {
         "name": "GENGAR",
         "displayName": "GENGAR",
+        "hashName_FR": "ECTOPLASMA",
         "dexNum": 94,
         "baseStats": [
             60,
@@ -3123,6 +3198,7 @@
     {
         "name": "DROWZEE",
         "displayName": "DROWZEE",
+        "hashName_FR": "SOPORIFIK",
         "dexNum": 96,
         "baseStats": [
             60,
@@ -3155,6 +3231,7 @@
     {
         "name": "HYPNO",
         "displayName": "HYPNO",
+        "hashName_FR": "HYPNOMADE",
         "dexNum": 97,
         "baseStats": [
             85,
@@ -3220,6 +3297,7 @@
     {
         "name": "KINGLER",
         "displayName": "KINGLER",
+        "hashName_FR": "KRABBOSS",
         "dexNum": 99,
         "baseStats": [
             55,
@@ -3253,6 +3331,7 @@
     {
         "name": "VOLTORB",
         "displayName": "VOLTORB",
+        "hashName_FR": "VOLTORBE",
         "dexNum": 100,
         "baseStats": [
             40,
@@ -3286,6 +3365,7 @@
     {
         "name": "ELECTRODE",
         "displayName": "ELECTRODE",
+        "hashName_FR": "ELECTRODE",
         "dexNum": 101,
         "baseStats": [
             60,
@@ -3319,6 +3399,7 @@
     {
         "name": "EXEGGCUTE",
         "displayName": "EXEGGCUTE",
+        "hashName_FR": "NOEUNOEUF",
         "dexNum": 102,
         "baseStats": [
             60,
@@ -3352,6 +3433,7 @@
     {
         "name": "EXEGGUTOR",
         "displayName": "EXEGGUTOR",
+        "hashName_FR": "NOADKOKO",
         "dexNum": 103,
         "baseStats": [
             95,
@@ -3385,6 +3467,7 @@
     {
         "name": "CUBONE",
         "displayName": "CUBONE",
+        "hashName_FR": "OSSELAIT",
         "dexNum": 104,
         "baseStats": [
             50,
@@ -3418,6 +3501,7 @@
     {
         "name": "MAROWAK",
         "displayName": "MAROWAK",
+        "hashName_FR": "OSSATUEUR",
         "dexNum": 105,
         "baseStats": [
             60,
@@ -3451,6 +3535,7 @@
     {
         "name": "HITMONLEE",
         "displayName": "HITMONLEE",
+        "hashName_FR": "KICKLEE",
         "dexNum": 106,
         "baseStats": [
             50,
@@ -3483,6 +3568,7 @@
     {
         "name": "HITMONCHAN",
         "displayName": "HITMONCHAN",
+        "hashName_FR": "TYGNON",
         "dexNum": 107,
         "baseStats": [
             50,
@@ -3515,6 +3601,7 @@
     {
         "name": "LICKITUNG",
         "displayName": "LICKITUNG",
+        "hashName_FR": "EXCELANGUE",
         "dexNum": 108,
         "baseStats": [
             90,
@@ -3548,6 +3635,7 @@
     {
         "name": "KOFFING",
         "displayName": "KOFFING",
+        "hashName_FR": "SMOGO",
         "dexNum": 109,
         "baseStats": [
             40,
@@ -3580,6 +3668,7 @@
     {
         "name": "WEEZING",
         "displayName": "WEEZING",
+        "hashName_FR": "SMOGOGO",
         "dexNum": 110,
         "baseStats": [
             65,
@@ -3612,6 +3701,7 @@
     {
         "name": "RHYHORN",
         "displayName": "RHYHORN",
+        "hashName_FR": "RHINOCORNE",
         "dexNum": 111,
         "baseStats": [
             80,
@@ -3646,6 +3736,7 @@
     {
         "name": "RHYDON",
         "displayName": "RHYDON",
+        "hashName_FR": "RHINOFEROS",
         "dexNum": 112,
         "baseStats": [
             105,
@@ -3680,6 +3771,7 @@
     {
         "name": "CHANSEY",
         "displayName": "CHANSEY",
+        "hashName_FR": "LEVEINARD",
         "dexNum": 113,
         "baseStats": [
             250,
@@ -3713,6 +3805,7 @@
     {
         "name": "TANGELA",
         "displayName": "TANGELA",
+        "hashName_FR": "SAQUEDENEU",
         "dexNum": 114,
         "baseStats": [
             65,
@@ -3745,6 +3838,7 @@
     {
         "name": "KANGASKHAN",
         "displayName": "KANGASKHAN",
+        "hashName_FR": "KANGOUREX",
         "dexNum": 115,
         "baseStats": [
             105,
@@ -3777,6 +3871,7 @@
     {
         "name": "HORSEA",
         "displayName": "HORSEA",
+        "hashName_FR": "HYPOTREMPE",
         "dexNum": 116,
         "baseStats": [
             30,
@@ -3809,6 +3904,7 @@
     {
         "name": "SEADRA",
         "displayName": "SEADRA",
+        "hashName_FR": "HYPOCEAN",
         "dexNum": 117,
         "baseStats": [
             55,
@@ -3841,6 +3937,7 @@
     {
         "name": "GOLDEEN",
         "displayName": "GOLDEEN",
+        "hashName_FR": "POISSIRENE",
         "dexNum": 118,
         "baseStats": [
             45,
@@ -3874,6 +3971,7 @@
     {
         "name": "SEAKING",
         "displayName": "SEAKING",
+        "hashName_FR": "POISSOROY",
         "dexNum": 119,
         "baseStats": [
             80,
@@ -3907,6 +4005,7 @@
     {
         "name": "STARYU",
         "displayName": "STARYU",
+        "hashName_FR": "STARI",
         "dexNum": 120,
         "baseStats": [
             30,
@@ -3940,6 +4039,7 @@
     {
         "name": "STARMIE",
         "displayName": "STARMIE",
+        "hashName_FR": "STAROSS",
         "dexNum": 121,
         "baseStats": [
             60,
@@ -3973,8 +4073,9 @@
     },
     {
         "name": "MRMIME",
-		"hashName": "MR. MIME",
         "displayName": "MR. MIME",
+        "hashName": "MR. MIME",
+        "hashName_FR": "M. MIME",
         "dexNum": 122,
         "baseStats": [
             40,
@@ -4007,6 +4108,7 @@
     {
         "name": "SCYTHER",
         "displayName": "SCYTHER",
+        "hashName_FR": "INSECATEUR",
         "dexNum": 123,
         "baseStats": [
             70,
@@ -4040,6 +4142,7 @@
     {
         "name": "JYNX",
         "displayName": "JYNX",
+        "hashName_FR": "LIPPOUTOU",
         "dexNum": 124,
         "baseStats": [
             65,
@@ -4073,6 +4176,7 @@
     {
         "name": "ELECTABUZZ",
         "displayName": "ELECTABUZZ",
+        "hashName_FR": "ELEKTEK",
         "dexNum": 125,
         "baseStats": [
             65,
@@ -4137,6 +4241,7 @@
     {
         "name": "PINSIR",
         "displayName": "PINSIR",
+        "hashName_FR": "SCARABRUTE",
         "dexNum": 127,
         "baseStats": [
             65,
@@ -4201,6 +4306,7 @@
     {
         "name": "MAGIKARP",
         "displayName": "MAGIKARP",
+        "hashName_FR": "MAGICARPE",
         "dexNum": 129,
         "baseStats": [
             20,
@@ -4233,6 +4339,7 @@
     {
         "name": "GYARADOS",
         "displayName": "GYARADOS",
+        "hashName_FR": "LEVIATOR",
         "dexNum": 130,
         "baseStats": [
             95,
@@ -4266,6 +4373,7 @@
     {
         "name": "LAPRAS",
         "displayName": "LAPRAS",
+        "hashName_FR": "LOKHLASS",
         "dexNum": 131,
         "baseStats": [
             130,
@@ -4300,6 +4408,7 @@
     {
         "name": "DITTO",
         "displayName": "DITTO",
+        "hashName_FR": "METAMORPH",
         "dexNum": 132,
         "baseStats": [
             48,
@@ -4332,6 +4441,7 @@
     {
         "name": "EEVEE",
         "displayName": "EEVEE",
+        "hashName_FR": "EVOLI",
         "dexNum": 133,
         "baseStats": [
             55,
@@ -4364,6 +4474,7 @@
     {
         "name": "VAPOREON",
         "displayName": "VAPOREON",
+        "hashName_FR": "AQUALI",
         "dexNum": 134,
         "baseStats": [
             130,
@@ -4396,6 +4507,7 @@
     {
         "name": "JOLTEON",
         "displayName": "JOLTEON",
+        "hashName_FR": "VOLTALI",
         "dexNum": 135,
         "baseStats": [
             65,
@@ -4428,6 +4540,7 @@
     {
         "name": "FLAREON",
         "displayName": "FLAREON",
+        "hashName_FR": "PYROLI",
         "dexNum": 136,
         "baseStats": [
             65,
@@ -4492,6 +4605,7 @@
     {
         "name": "OMANYTE",
         "displayName": "OMANYTE",
+        "hashName_FR": "AMONITA",
         "dexNum": 138,
         "baseStats": [
             35,
@@ -4526,6 +4640,7 @@
     {
         "name": "OMASTAR",
         "displayName": "OMASTAR",
+        "hashName_FR": "AMONISTAR",
         "dexNum": 139,
         "baseStats": [
             70,
@@ -4628,6 +4743,7 @@
     {
         "name": "AERODACTYL",
         "displayName": "AERODACTYL",
+        "hashName_FR": "PTERA",
         "dexNum": 142,
         "baseStats": [
             80,
@@ -4662,6 +4778,7 @@
     {
         "name": "SNORLAX",
         "displayName": "SNORLAX",
+        "hashName_FR": "RONFLEX",
         "dexNum": 143,
         "baseStats": [
             160,
@@ -4695,6 +4812,7 @@
     {
         "name": "ARTICUNO",
         "displayName": "ARTICUNO",
+        "hashName_FR": "ARTIKODIN",
         "dexNum": 144,
         "baseStats": [
             90,
@@ -4728,6 +4846,7 @@
     {
         "name": "ZAPDOS",
         "displayName": "ZAPDOS",
+        "hashName_FR": "ELECTHOR",
         "dexNum": 145,
         "baseStats": [
             90,
@@ -4761,6 +4880,7 @@
     {
         "name": "MOLTRES",
         "displayName": "MOLTRES",
+        "hashName_FR": "SULFURA",
         "dexNum": 146,
         "baseStats": [
             90,
@@ -4794,6 +4914,7 @@
     {
         "name": "DRATINI",
         "displayName": "DRATINI",
+        "hashName_FR": "MINIDRACO",
         "dexNum": 147,
         "baseStats": [
             41,
@@ -4826,6 +4947,7 @@
     {
         "name": "DRAGONAIR",
         "displayName": "DRAGONAIR",
+        "hashName_FR": "DRACO",
         "dexNum": 148,
         "baseStats": [
             61,
@@ -4858,6 +4980,7 @@
     {
         "name": "DRAGONITE",
         "displayName": "DRAGONITE",
+        "hashName_FR": "DRACOLOSSE",
         "dexNum": 149,
         "baseStats": [
             91,
@@ -4955,6 +5078,7 @@
     {
         "name": "CHIKORITA",
         "displayName": "CHIKORITA",
+        "hashName_FR": "GERMIGNON",
         "dexNum": 152,
         "baseStats": [
             45,
@@ -4987,6 +5111,7 @@
     {
         "name": "BAYLEEF",
         "displayName": "BAYLEEF",
+        "hashName_FR": "MACRONIUM",
         "dexNum": 153,
         "baseStats": [
             60,
@@ -5051,6 +5176,7 @@
     {
         "name": "CYNDAQUIL",
         "displayName": "CYNDAQUIL",
+        "hashName_FR": "HERICENDRE",
         "dexNum": 155,
         "baseStats": [
             39,
@@ -5083,6 +5209,7 @@
     {
         "name": "QUILAVA",
         "displayName": "QUILAVA",
+        "hashName_FR": "FEURISSON",
         "dexNum": 156,
         "baseStats": [
             58,
@@ -5147,6 +5274,7 @@
     {
         "name": "TOTODILE",
         "displayName": "TOTODILE",
+        "hashName_FR": "KAIMINUS",
         "dexNum": 158,
         "baseStats": [
             50,
@@ -5179,6 +5307,7 @@
     {
         "name": "CROCONAW",
         "displayName": "CROCONAW",
+        "hashName_FR": "CROCRODIL",
         "dexNum": 159,
         "baseStats": [
             65,
@@ -5211,6 +5340,7 @@
     {
         "name": "FERALIGATR",
         "displayName": "FERALIGATR",
+        "hashName_FR": "ALIGATUEUR",
         "dexNum": 160,
         "baseStats": [
             85,
@@ -5243,6 +5373,7 @@
     {
         "name": "SENTRET",
         "displayName": "SENTRET",
+        "hashName_FR": "FOUINETTE",
         "dexNum": 161,
         "baseStats": [
             35,
@@ -5276,6 +5407,7 @@
     {
         "name": "FURRET",
         "displayName": "FURRET",
+        "hashName_FR": "FOUINAR",
         "dexNum": 162,
         "baseStats": [
             85,
@@ -5343,6 +5475,7 @@
     {
         "name": "NOCTOWL",
         "displayName": "NOCTOWL",
+        "hashName_FR": "NOARFANG",
         "dexNum": 164,
         "baseStats": [
             100,
@@ -5377,6 +5510,7 @@
     {
         "name": "LEDYBA",
         "displayName": "LEDYBA",
+        "hashName_FR": "COXY",
         "dexNum": 165,
         "baseStats": [
             40,
@@ -5411,6 +5545,7 @@
     {
         "name": "LEDIAN",
         "displayName": "LEDIAN",
+        "hashName_FR": "COXYCLAQUE",
         "dexNum": 166,
         "baseStats": [
             55,
@@ -5445,6 +5580,7 @@
     {
         "name": "SPINARAK",
         "displayName": "SPINARAK",
+        "hashName_FR": "MIMIGAL",
         "dexNum": 167,
         "baseStats": [
             40,
@@ -5479,6 +5615,7 @@
     {
         "name": "ARIADOS",
         "displayName": "ARIADOS",
+        "hashName_FR": "MIGALOS",
         "dexNum": 168,
         "baseStats": [
             70,
@@ -5513,6 +5650,7 @@
     {
         "name": "CROBAT",
         "displayName": "CROBAT",
+        "hashName_FR": "NOSTENFER",
         "dexNum": 169,
         "baseStats": [
             85,
@@ -5546,6 +5684,7 @@
     {
         "name": "CHINCHOU",
         "displayName": "CHINCHOU",
+        "hashName_FR": "LOUPIO",
         "dexNum": 170,
         "baseStats": [
             75,
@@ -5646,6 +5785,7 @@
     {
         "name": "CLEFFA",
         "displayName": "CLEFFA",
+        "hashName_FR": "MELO",
         "dexNum": 173,
         "baseStats": [
             50,
@@ -5678,6 +5818,7 @@
     {
         "name": "IGGLYBUFF",
         "displayName": "IGGLYBUFF",
+        "hashName_FR": "TOUDOUDOU",
         "dexNum": 174,
         "baseStats": [
             90,
@@ -5845,6 +5986,7 @@
     {
         "name": "MAREEP",
         "displayName": "MAREEP",
+        "hashName_FR": "WATTOUAT",
         "dexNum": 179,
         "baseStats": [
             55,
@@ -5877,6 +6019,7 @@
     {
         "name": "FLAAFFY",
         "displayName": "FLAAFFY",
+        "hashName_FR": "LAINERGIE",
         "dexNum": 180,
         "baseStats": [
             70,
@@ -5909,6 +6052,7 @@
     {
         "name": "AMPHAROS",
         "displayName": "AMPHAROS",
+        "hashName_FR": "PHARAMP",
         "dexNum": 181,
         "baseStats": [
             90,
@@ -5941,6 +6085,7 @@
     {
         "name": "BELLOSSOM",
         "displayName": "BELLOSSOM",
+        "hashName_FR": "JOLIFLOR",
         "dexNum": 182,
         "baseStats": [
             75,
@@ -6039,6 +6184,7 @@
     {
         "name": "SUDOWOODO",
         "displayName": "SUDOWOODO",
+        "hashName_FR": "SIMULARBRE",
         "dexNum": 185,
         "baseStats": [
             70,
@@ -6072,6 +6218,7 @@
     {
         "name": "POLITOED",
         "displayName": "POLITOED",
+        "hashName_FR": "TARPAUD",
         "dexNum": 186,
         "baseStats": [
             90,
@@ -6105,6 +6252,7 @@
     {
         "name": "HOPPIP",
         "displayName": "HOPPIP",
+        "hashName_FR": "GRANIVOL",
         "dexNum": 187,
         "baseStats": [
             35,
@@ -6138,6 +6286,7 @@
     {
         "name": "SKIPLOOM",
         "displayName": "SKIPLOOM",
+        "hashName_FR": "FLORAVOL",
         "dexNum": 188,
         "baseStats": [
             55,
@@ -6171,6 +6320,7 @@
     {
         "name": "JUMPLUFF",
         "displayName": "JUMPLUFF",
+        "hashName_FR": "COTOVOL",
         "dexNum": 189,
         "baseStats": [
             75,
@@ -6204,6 +6354,7 @@
     {
         "name": "AIPOM",
         "displayName": "AIPOM",
+        "hashName_FR": "CAPUMAIN",
         "dexNum": 190,
         "baseStats": [
             55,
@@ -6237,6 +6388,7 @@
     {
         "name": "SUNKERN",
         "displayName": "SUNKERN",
+        "hashName_FR": "TOURNEGRIN",
         "dexNum": 191,
         "baseStats": [
             30,
@@ -6269,6 +6421,7 @@
     {
         "name": "SUNFLORA",
         "displayName": "SUNFLORA",
+        "hashName_FR": "HELIATRONC",
         "dexNum": 192,
         "baseStats": [
             75,
@@ -6335,6 +6488,7 @@
     {
         "name": "WOOPER",
         "displayName": "WOOPER",
+        "hashName_FR": "AXOLOTO",
         "dexNum": 194,
         "baseStats": [
             55,
@@ -6369,6 +6523,7 @@
     {
         "name": "QUAGSIRE",
         "displayName": "QUAGSIRE",
+        "hashName_FR": "MARAISTE",
         "dexNum": 195,
         "baseStats": [
             95,
@@ -6403,6 +6558,7 @@
     {
         "name": "ESPEON",
         "displayName": "ESPEON",
+        "hashName_FR": "MENTALI",
         "dexNum": 196,
         "baseStats": [
             65,
@@ -6435,6 +6591,7 @@
     {
         "name": "UMBREON",
         "displayName": "UMBREON",
+        "hashName_FR": "NOCTALI",
         "dexNum": 197,
         "baseStats": [
             95,
@@ -6467,6 +6624,7 @@
     {
         "name": "MURKROW",
         "displayName": "MURKROW",
+        "hashName_FR": "CORNEBRE",
         "dexNum": 198,
         "baseStats": [
             60,
@@ -6500,6 +6658,7 @@
     {
         "name": "SLOWKING",
         "displayName": "SLOWKING",
+        "hashName_FR": "ROIGADA",
         "dexNum": 199,
         "baseStats": [
             95,
@@ -6534,6 +6693,7 @@
     {
         "name": "MISDREAVUS",
         "displayName": "MISDREAVUS",
+        "hashName_FR": "FEUFOREVE",
         "dexNum": 200,
         "baseStats": [
             60,
@@ -6566,6 +6726,7 @@
     {
         "name": "UNOWN",
         "displayName": "UNOWN",
+        "hashName_FR": "ZARBI",
         "dexNum": 201,
         "baseStats": [
             48,
@@ -6598,6 +6759,7 @@
     {
         "name": "WOBBUFFET",
         "displayName": "WOBBUFFET",
+        "hashName_FR": "QULBUTOKE",
         "dexNum": 202,
         "baseStats": [
             190,
@@ -6664,6 +6826,7 @@
     {
         "name": "PINECO",
         "displayName": "PINECO",
+        "hashName_FR": "POMDEPIK",
         "dexNum": 204,
         "baseStats": [
             50,
@@ -6696,6 +6859,7 @@
     {
         "name": "FORRETRESS",
         "displayName": "FORRETRESS",
+        "hashName_FR": "FORETRESS",
         "dexNum": 205,
         "baseStats": [
             75,
@@ -6729,6 +6893,7 @@
     {
         "name": "DUNSPARCE",
         "displayName": "DUNSPARCE",
+        "hashName_FR": "INSOLOURDO",
         "dexNum": 206,
         "baseStats": [
             100,
@@ -6762,6 +6927,7 @@
     {
         "name": "GLIGAR",
         "displayName": "GLIGAR",
+        "hashName_FR": "SCORPLANE",
         "dexNum": 207,
         "baseStats": [
             65,
@@ -6930,6 +7096,7 @@
     {
         "name": "SCIZOR",
         "displayName": "SCIZOR",
+        "hashName_FR": "CIZAYOX",
         "dexNum": 212,
         "baseStats": [
             70,
@@ -6963,6 +7130,7 @@
     {
         "name": "SHUCKLE",
         "displayName": "SHUCKLE",
+        "hashName_FR": "CARATROC",
         "dexNum": 213,
         "baseStats": [
             20,
@@ -6996,6 +7164,7 @@
     {
         "name": "HERACROSS",
         "displayName": "HERACROSS",
+        "hashName_FR": "SCARHINO",
         "dexNum": 214,
         "baseStats": [
             80,
@@ -7030,6 +7199,7 @@
     {
         "name": "SNEASEL",
         "displayName": "SNEASEL",
+        "hashName_FR": "FARFURET",
         "dexNum": 215,
         "baseStats": [
             55,
@@ -7128,6 +7298,7 @@
     {
         "name": "SLUGMA",
         "displayName": "SLUGMA",
+        "hashName_FR": "LIMAGMA",
         "dexNum": 218,
         "baseStats": [
             40,
@@ -7161,6 +7332,7 @@
     {
         "name": "MAGCARGO",
         "displayName": "MAGCARGO",
+        "hashName_FR": "VOLCAROPOD",
         "dexNum": 219,
         "baseStats": [
             50,
@@ -7195,6 +7367,7 @@
     {
         "name": "SWINUB",
         "displayName": "SWINUB",
+        "hashName_FR": "MARCACRIN",
         "dexNum": 220,
         "baseStats": [
             50,
@@ -7228,6 +7401,7 @@
     {
         "name": "PILOSWINE",
         "displayName": "PILOSWINE",
+        "hashName_FR": "COCHIGNON",
         "dexNum": 221,
         "baseStats": [
             100,
@@ -7261,6 +7435,7 @@
     {
         "name": "CORSOLA",
         "displayName": "CORSOLA",
+        "hashName_FR": "CORAYON",
         "dexNum": 222,
         "baseStats": [
             55,
@@ -7359,6 +7534,7 @@
     {
         "name": "DELIBIRD",
         "displayName": "DELIBIRD",
+        "hashName_FR": "CADOIZO",
         "dexNum": 225,
         "baseStats": [
             45,
@@ -7393,6 +7569,7 @@
     {
         "name": "MANTINE",
         "displayName": "MANTINE",
+        "hashName_FR": "DEMANTA",
         "dexNum": 226,
         "baseStats": [
             65,
@@ -7427,6 +7604,7 @@
     {
         "name": "SKARMORY",
         "displayName": "SKARMORY",
+        "hashName_FR": "AIRMURE",
         "dexNum": 227,
         "baseStats": [
             65,
@@ -7461,6 +7639,7 @@
     {
         "name": "HOUNDOUR",
         "displayName": "HOUNDOUR",
+        "hashName_FR": "MALOSSE",
         "dexNum": 228,
         "baseStats": [
             45,
@@ -7495,6 +7674,7 @@
     {
         "name": "HOUNDOOM",
         "displayName": "HOUNDOOM",
+        "hashName_FR": "DEMOLOSSE",
         "dexNum": 229,
         "baseStats": [
             75,
@@ -7529,6 +7709,7 @@
     {
         "name": "KINGDRA",
         "displayName": "KINGDRA",
+        "hashName_FR": "HYPOROI",
         "dexNum": 230,
         "baseStats": [
             75,
@@ -7658,6 +7839,7 @@
     {
         "name": "STANTLER",
         "displayName": "STANTLER",
+        "hashName_FR": "CERFROUSSE",
         "dexNum": 234,
         "baseStats": [
             73,
@@ -7690,6 +7872,7 @@
     {
         "name": "SMEARGLE",
         "displayName": "SMEARGLE",
+        "hashName_FR": "QUEULORIOR",
         "dexNum": 235,
         "baseStats": [
             55,
@@ -7722,6 +7905,7 @@
     {
         "name": "TYROGUE",
         "displayName": "TYROGUE",
+        "hashName_FR": "DEBUGANT",
         "dexNum": 236,
         "baseStats": [
             35,
@@ -7754,6 +7938,7 @@
     {
         "name": "HITMONTOP",
         "displayName": "HITMONTOP",
+        "hashName_FR": "KAPOERA",
         "dexNum": 237,
         "baseStats": [
             50,
@@ -7786,6 +7971,7 @@
     {
         "name": "SMOOCHUM",
         "displayName": "SMOOCHUM",
+        "hashName_FR": "LIPPOUTI",
         "dexNum": 238,
         "baseStats": [
             45,
@@ -7883,6 +8069,7 @@
     {
         "name": "MILTANK",
         "displayName": "MILTANK",
+        "hashName_FR": "ECREMEUH",
         "dexNum": 241,
         "baseStats": [
             95,
@@ -7915,6 +8102,7 @@
     {
         "name": "BLISSEY",
         "displayName": "BLISSEY",
+        "hashName_FR": "LEUPHORIE",
         "dexNum": 242,
         "baseStats": [
             255,
@@ -8044,6 +8232,7 @@
     {
         "name": "LARVITAR",
         "displayName": "LARVITAR",
+        "hashName_FR": "EMBRYLEX",
         "dexNum": 246,
         "baseStats": [
             50,
@@ -8077,6 +8266,7 @@
     {
         "name": "PUPITAR",
         "displayName": "PUPITAR",
+        "hashName_FR": "YMPHECT",
         "dexNum": 247,
         "baseStats": [
             70,
@@ -8110,6 +8300,7 @@
     {
         "name": "TYRANITAR",
         "displayName": "TYRANITAR",
+        "hashName_FR": "TYRANOCIF",
         "dexNum": 248,
         "baseStats": [
             100,
@@ -8176,6 +8367,7 @@
     {
         "name": "HOOH",
         "displayName": "HO-OH",
+        "hashName_FR": "HO-OH",
         "dexNum": 250,
         "baseStats": [
             106,
@@ -8242,6 +8434,7 @@
     {
         "name": "TREECKO",
         "displayName": "TREECKO",
+        "hashName_FR": "ARCKO",
         "dexNum": 252,
         "baseStats": [
             40,
@@ -8274,6 +8467,7 @@
     {
         "name": "GROVYLE",
         "displayName": "GROVYLE",
+        "hashName_FR": "MASSKO",
         "dexNum": 253,
         "baseStats": [
             50,
@@ -8306,6 +8500,7 @@
     {
         "name": "SCEPTILE",
         "displayName": "SCEPTILE",
+        "hashName_FR": "JUNGKO",
         "dexNum": 254,
         "baseStats": [
             70,
@@ -8338,6 +8533,7 @@
     {
         "name": "TORCHIC",
         "displayName": "TORCHIC",
+        "hashName_FR": "POUSSIFEU",
         "dexNum": 255,
         "baseStats": [
             45,
@@ -8370,6 +8566,7 @@
     {
         "name": "COMBUSKEN",
         "displayName": "COMBUSKEN",
+        "hashName_FR": "GALIFEU",
         "dexNum": 256,
         "baseStats": [
             60,
@@ -8403,6 +8600,7 @@
     {
         "name": "BLAZIKEN",
         "displayName": "BLAZIKEN",
+        "hashName_FR": "BRASEGALI",
         "dexNum": 257,
         "baseStats": [
             80,
@@ -8436,6 +8634,7 @@
     {
         "name": "MUDKIP",
         "displayName": "MUDKIP",
+        "hashName_FR": "GOBOU",
         "dexNum": 258,
         "baseStats": [
             50,
@@ -8468,6 +8667,7 @@
     {
         "name": "MARSHTOMP",
         "displayName": "MARSHTOMP",
+        "hashName_FR": "FLOBIO",
         "dexNum": 259,
         "baseStats": [
             70,
@@ -8501,6 +8701,7 @@
     {
         "name": "SWAMPERT",
         "displayName": "SWAMPERT",
+        "hashName_FR": "LAGGRON",
         "dexNum": 260,
         "baseStats": [
             100,
@@ -8534,6 +8735,7 @@
     {
         "name": "POOCHYENA",
         "displayName": "POOCHYENA",
+        "hashName_FR": "MEDHYENA",
         "dexNum": 261,
         "baseStats": [
             35,
@@ -8566,6 +8768,7 @@
     {
         "name": "MIGHTYENA",
         "displayName": "MIGHTYENA",
+        "hashName_FR": "GRAHYENA",
         "dexNum": 262,
         "baseStats": [
             70,
@@ -8598,6 +8801,7 @@
     {
         "name": "ZIGZAGOON",
         "displayName": "ZIGZAGOON",
+        "hashName_FR": "ZIGZATON",
         "dexNum": 263,
         "baseStats": [
             38,
@@ -8630,6 +8834,7 @@
     {
         "name": "LINOONE",
         "displayName": "LINOONE",
+        "hashName_FR": "LINEON",
         "dexNum": 264,
         "baseStats": [
             78,
@@ -8662,6 +8867,7 @@
     {
         "name": "WURMPLE",
         "displayName": "WURMPLE",
+        "hashName_FR": "CHENIPOTTE",
         "dexNum": 265,
         "baseStats": [
             45,
@@ -8694,6 +8900,7 @@
     {
         "name": "SILCOON",
         "displayName": "SILCOON",
+        "hashName_FR": "ARMULYS",
         "dexNum": 266,
         "baseStats": [
             50,
@@ -8726,6 +8933,7 @@
     {
         "name": "BEAUTIFLY",
         "displayName": "BEAUTIFLY",
+        "hashName_FR": "CHARMILLON",
         "dexNum": 267,
         "baseStats": [
             60,
@@ -8759,6 +8967,7 @@
     {
         "name": "CASCOON",
         "displayName": "CASCOON",
+        "hashName_FR": "BLINDALYS",
         "dexNum": 268,
         "baseStats": [
             50,
@@ -8791,6 +9000,7 @@
     {
         "name": "DUSTOX",
         "displayName": "DUSTOX",
+        "hashName_FR": "PAPINOX",
         "dexNum": 269,
         "baseStats": [
             60,
@@ -8824,6 +9034,7 @@
     {
         "name": "LOTAD",
         "displayName": "LOTAD",
+        "hashName_FR": "NENUPIOT",
         "dexNum": 270,
         "baseStats": [
             40,
@@ -8926,6 +9137,7 @@
     {
         "name": "SEEDOT",
         "displayName": "SEEDOT",
+        "hashName_FR": "GRAINIPIOT",
         "dexNum": 273,
         "baseStats": [
             40,
@@ -8959,6 +9171,7 @@
     {
         "name": "NUZLEAF",
         "displayName": "NUZLEAF",
+        "hashName_FR": "PIFEUIL",
         "dexNum": 274,
         "baseStats": [
             70,
@@ -8993,6 +9206,7 @@
     {
         "name": "SHIFTRY",
         "displayName": "SHIFTRY",
+        "hashName_FR": "TENGALICE",
         "dexNum": 275,
         "baseStats": [
             90,
@@ -9027,6 +9241,7 @@
     {
         "name": "TAILLOW",
         "displayName": "TAILLOW",
+        "hashName_FR": "NIRONDELLE",
         "dexNum": 276,
         "baseStats": [
             40,
@@ -9060,6 +9275,7 @@
     {
         "name": "SWELLOW",
         "displayName": "SWELLOW",
+        "hashName_FR": "HELEDELLE",
         "dexNum": 277,
         "baseStats": [
             60,
@@ -9093,6 +9309,7 @@
     {
         "name": "WINGULL",
         "displayName": "WINGULL",
+        "hashName_FR": "GOELISE",
         "dexNum": 278,
         "baseStats": [
             40,
@@ -9126,6 +9343,7 @@
     {
         "name": "PELIPPER",
         "displayName": "PELIPPER",
+        "hashName_FR": "BEKIPAN",
         "dexNum": 279,
         "baseStats": [
             60,
@@ -9159,6 +9377,7 @@
     {
         "name": "RALTS",
         "displayName": "RALTS",
+        "hashName_FR": "TARSAL",
         "dexNum": 280,
         "baseStats": [
             28,
@@ -9258,6 +9477,7 @@
     {
         "name": "SURSKIT",
         "displayName": "SURSKIT",
+        "hashName_FR": "ARAKDO",
         "dexNum": 283,
         "baseStats": [
             40,
@@ -9291,6 +9511,7 @@
     {
         "name": "MASQUERAIN",
         "displayName": "MASQUERAIN",
+        "hashName_FR": "MASKADRA",
         "dexNum": 284,
         "baseStats": [
             70,
@@ -9324,6 +9545,7 @@
     {
         "name": "SHROOMISH",
         "displayName": "SHROOMISH",
+        "hashName_FR": "BALIGNON",
         "dexNum": 285,
         "baseStats": [
             60,
@@ -9356,6 +9578,7 @@
     {
         "name": "BRELOOM",
         "displayName": "BRELOOM",
+        "hashName_FR": "CHAPIGNON",
         "dexNum": 286,
         "baseStats": [
             60,
@@ -9389,6 +9612,7 @@
     {
         "name": "SLAKOTH",
         "displayName": "SLAKOTH",
+        "hashName_FR": "PARECOOL",
         "dexNum": 287,
         "baseStats": [
             60,
@@ -9453,6 +9677,7 @@
     {
         "name": "SLAKING",
         "displayName": "SLAKING",
+        "hashName_FR": "MONAFLEMIT",
         "dexNum": 289,
         "baseStats": [
             150,
@@ -9485,6 +9710,7 @@
     {
         "name": "NINCADA",
         "displayName": "NINCADA",
+        "hashName_FR": "NINGALE",
         "dexNum": 290,
         "baseStats": [
             31,
@@ -9551,6 +9777,7 @@
     {
         "name": "SHEDINJA",
         "displayName": "SHEDINJA",
+        "hashName_FR": "MUNJA",
         "dexNum": 292,
         "baseStats": [
             1,
@@ -9584,6 +9811,7 @@
     {
         "name": "WHISMUR",
         "displayName": "WHISMUR",
+        "hashName_FR": "CHUCHMUR",
         "dexNum": 293,
         "baseStats": [
             64,
@@ -9616,6 +9844,7 @@
     {
         "name": "LOUDRED",
         "displayName": "LOUDRED",
+        "hashName_FR": "RAMBOUM",
         "dexNum": 294,
         "baseStats": [
             84,
@@ -9648,6 +9877,7 @@
     {
         "name": "EXPLOUD",
         "displayName": "EXPLOUD",
+        "hashName_FR": "BROUHABAM",
         "dexNum": 295,
         "baseStats": [
             104,
@@ -9779,6 +10009,7 @@
     {
         "name": "NOSEPASS",
         "displayName": "NOSEPASS",
+        "hashName_FR": "TARINOR",
         "dexNum": 299,
         "baseStats": [
             30,
@@ -9876,6 +10107,7 @@
     {
         "name": "SABLEYE",
         "displayName": "SABLEYE",
+        "hashName_FR": "TENEFIX",
         "dexNum": 302,
         "baseStats": [
             50,
@@ -9909,6 +10141,7 @@
     {
         "name": "MAWILE",
         "displayName": "MAWILE",
+        "hashName_FR": "MYSDIBULE",
         "dexNum": 303,
         "baseStats": [
             50,
@@ -9942,6 +10175,7 @@
     {
         "name": "ARON",
         "displayName": "ARON",
+        "hashName_FR": "GALEKID",
         "dexNum": 304,
         "baseStats": [
             50,
@@ -9976,6 +10210,7 @@
     {
         "name": "LAIRON",
         "displayName": "LAIRON",
+        "hashName_FR": "GALEGON",
         "dexNum": 305,
         "baseStats": [
             60,
@@ -10010,6 +10245,7 @@
     {
         "name": "AGGRON",
         "displayName": "AGGRON",
+        "hashName_FR": "GALEKING",
         "dexNum": 306,
         "baseStats": [
             70,
@@ -10044,6 +10280,7 @@
     {
         "name": "MEDITITE",
         "displayName": "MEDITITE",
+        "hashName_FR": "MEDITIKKA",
         "dexNum": 307,
         "baseStats": [
             30,
@@ -10077,6 +10314,7 @@
     {
         "name": "MEDICHAM",
         "displayName": "MEDICHAM",
+        "hashName_FR": "CHARMINA",
         "dexNum": 308,
         "baseStats": [
             60,
@@ -10110,6 +10348,7 @@
     {
         "name": "ELECTRIKE",
         "displayName": "ELECTRIKE",
+        "hashName_FR": "DYNAVOLT",
         "dexNum": 309,
         "baseStats": [
             40,
@@ -10143,6 +10382,7 @@
     {
         "name": "MANECTRIC",
         "displayName": "MANECTRIC",
+        "hashName_FR": "ELECSPRINT",
         "dexNum": 310,
         "baseStats": [
             70,
@@ -10176,6 +10416,7 @@
     {
         "name": "PLUSLE",
         "displayName": "PLUSLE",
+        "hashName_FR": "POSIPI",
         "dexNum": 311,
         "baseStats": [
             60,
@@ -10208,6 +10449,7 @@
     {
         "name": "MINUN",
         "displayName": "MINUN",
+        "hashName_FR": "NEGAPI",
         "dexNum": 312,
         "baseStats": [
             60,
@@ -10240,6 +10482,7 @@
     {
         "name": "VOLBEAT",
         "displayName": "VOLBEAT",
+        "hashName_FR": "MUCIOLE",
         "dexNum": 313,
         "baseStats": [
             65,
@@ -10273,6 +10516,7 @@
     {
         "name": "ILLUMISE",
         "displayName": "ILLUMISE",
+        "hashName_FR": "LUMIVOLE",
         "dexNum": 314,
         "baseStats": [
             65,
@@ -10339,6 +10583,7 @@
     {
         "name": "GULPIN",
         "displayName": "GULPIN",
+        "hashName_FR": "GLOUPTI",
         "dexNum": 316,
         "baseStats": [
             70,
@@ -10372,6 +10617,7 @@
     {
         "name": "SWALOT",
         "displayName": "SWALOT",
+        "hashName_FR": "AVALTOUT",
         "dexNum": 317,
         "baseStats": [
             100,
@@ -10537,6 +10783,7 @@
     {
         "name": "NUMEL",
         "displayName": "NUMEL",
+        "hashName_FR": "CHAMALLOT",
         "dexNum": 322,
         "baseStats": [
             60,
@@ -10603,6 +10850,7 @@
     {
         "name": "TORKOAL",
         "displayName": "TORKOAL",
+        "hashName_FR": "CHARTOR",
         "dexNum": 324,
         "baseStats": [
             70,
@@ -10668,6 +10916,7 @@
     {
         "name": "GRUMPIG",
         "displayName": "GRUMPIG",
+        "hashName_FR": "GRORET",
         "dexNum": 326,
         "baseStats": [
             80,
@@ -10733,6 +10982,7 @@
     {
         "name": "TRAPINCH",
         "displayName": "TRAPINCH",
+        "hashName_FR": "KRAKNOIX",
         "dexNum": 328,
         "baseStats": [
             45,
@@ -10766,6 +11016,7 @@
     {
         "name": "VIBRAVA",
         "displayName": "VIBRAVA",
+        "hashName_FR": "VIBRANINF",
         "dexNum": 329,
         "baseStats": [
             50,
@@ -10800,6 +11051,7 @@
     {
         "name": "FLYGON",
         "displayName": "FLYGON",
+        "hashName_FR": "LIBEGON",
         "dexNum": 330,
         "baseStats": [
             80,
@@ -10899,6 +11151,7 @@
     {
         "name": "SWABLU",
         "displayName": "SWABLU",
+        "hashName_FR": "TYLTON",
         "dexNum": 333,
         "baseStats": [
             45,
@@ -10965,6 +11218,7 @@
     {
         "name": "ZANGOOSE",
         "displayName": "ZANGOOSE",
+        "hashName_FR": "MANGRIFF",
         "dexNum": 335,
         "baseStats": [
             73,
@@ -11029,6 +11283,7 @@
     {
         "name": "LUNATONE",
         "displayName": "LUNATONE",
+        "hashName_FR": "SELEROC",
         "dexNum": 337,
         "baseStats": [
             70,
@@ -11062,6 +11317,7 @@
     {
         "name": "SOLROCK",
         "displayName": "SOLROCK",
+        "hashName_FR": "SOLAROC",
         "dexNum": 338,
         "baseStats": [
             70,
@@ -11095,6 +11351,7 @@
     {
         "name": "BARBOACH",
         "displayName": "BARBOACH",
+        "hashName_FR": "BARLOCHE",
         "dexNum": 339,
         "baseStats": [
             50,
@@ -11128,6 +11385,7 @@
     {
         "name": "WHISCASH",
         "displayName": "WHISCASH",
+        "hashName_FR": "BARBICHA",
         "dexNum": 340,
         "baseStats": [
             110,
@@ -11161,6 +11419,7 @@
     {
         "name": "CORPHISH",
         "displayName": "CORPHISH",
+        "hashName_FR": "ECRAPINCE",
         "dexNum": 341,
         "baseStats": [
             43,
@@ -11194,6 +11453,7 @@
     {
         "name": "CRAWDAUNT",
         "displayName": "CRAWDAUNT",
+        "hashName_FR": "COLHOMARD",
         "dexNum": 342,
         "baseStats": [
             63,
@@ -11228,6 +11488,7 @@
     {
         "name": "BALTOY",
         "displayName": "BALTOY",
+        "hashName_FR": "BALBUTO",
         "dexNum": 343,
         "baseStats": [
             40,
@@ -11261,6 +11522,7 @@
     {
         "name": "CLAYDOL",
         "displayName": "CLAYDOL",
+        "hashName_FR": "KAORINE",
         "dexNum": 344,
         "baseStats": [
             60,
@@ -11294,6 +11556,7 @@
     {
         "name": "LILEEP",
         "displayName": "LILEEP",
+        "hashName_FR": "LILIA",
         "dexNum": 345,
         "baseStats": [
             66,
@@ -11327,6 +11590,7 @@
     {
         "name": "CRADILY",
         "displayName": "CRADILY",
+        "hashName_FR": "VACILYS",
         "dexNum": 346,
         "baseStats": [
             86,
@@ -11426,6 +11690,7 @@
     {
         "name": "FEEBAS",
         "displayName": "FEEBAS",
+        "hashName_FR": "BARPAU",
         "dexNum": 349,
         "baseStats": [
             20,
@@ -11458,6 +11723,7 @@
     {
         "name": "MILOTIC",
         "displayName": "MILOTIC",
+        "hashName_FR": "MILOBELLUS",
         "dexNum": 350,
         "baseStats": [
             95,
@@ -11490,6 +11756,7 @@
     {
         "name": "CASTFORM",
         "displayName": "CASTFORM",
+        "hashName_FR": "MORPHEO",
         "dexNum": 351,
         "baseStats": [
             70,
@@ -11554,6 +11821,7 @@
     {
         "name": "SHUPPET",
         "displayName": "SHUPPET",
+        "hashName_FR": "POLICHOMBR",
         "dexNum": 353,
         "baseStats": [
             44,
@@ -11586,6 +11854,7 @@
     {
         "name": "BANETTE",
         "displayName": "BANETTE",
+        "hashName_FR": "BRANETTE",
         "dexNum": 354,
         "baseStats": [
             64,
@@ -11618,6 +11887,7 @@
     {
         "name": "DUSKULL",
         "displayName": "DUSKULL",
+        "hashName_FR": "SKELENOX",
         "dexNum": 355,
         "baseStats": [
             20,
@@ -11650,6 +11920,7 @@
     {
         "name": "DUSCLOPS",
         "displayName": "DUSCLOPS",
+        "hashName_FR": "TERACLOPE",
         "dexNum": 356,
         "baseStats": [
             40,
@@ -11715,6 +11986,7 @@
     {
         "name": "CHIMECHO",
         "displayName": "CHIMECHO",
+        "hashName_FR": "EOKO",
         "dexNum": 358,
         "baseStats": [
             65,
@@ -11779,6 +12051,7 @@
     {
         "name": "WYNAUT",
         "displayName": "WYNAUT",
+        "hashName_FR": "OKEOKE",
         "dexNum": 360,
         "baseStats": [
             95,
@@ -11811,6 +12084,7 @@
     {
         "name": "SNORUNT",
         "displayName": "SNORUNT",
+        "hashName_FR": "STALGAMIN",
         "dexNum": 361,
         "baseStats": [
             50,
@@ -11843,6 +12117,7 @@
     {
         "name": "GLALIE",
         "displayName": "GLALIE",
+        "hashName_FR": "ONIGLALI",
         "dexNum": 362,
         "baseStats": [
             80,
@@ -11875,6 +12150,7 @@
     {
         "name": "SPHEAL",
         "displayName": "SPHEAL",
+        "hashName_FR": "OBALI",
         "dexNum": 363,
         "baseStats": [
             70,
@@ -11908,6 +12184,7 @@
     {
         "name": "SEALEO",
         "displayName": "SEALEO",
+        "hashName_FR": "PHOGLEUR",
         "dexNum": 364,
         "baseStats": [
             90,
@@ -11941,6 +12218,7 @@
     {
         "name": "WALREIN",
         "displayName": "WALREIN",
+        "hashName_FR": "KAIMORSE",
         "dexNum": 365,
         "baseStats": [
             110,
@@ -11974,6 +12252,7 @@
     {
         "name": "CLAMPERL",
         "displayName": "CLAMPERL",
+        "hashName_FR": "COQUIPERL",
         "dexNum": 366,
         "baseStats": [
             35,
@@ -12006,6 +12285,7 @@
     {
         "name": "HUNTAIL",
         "displayName": "HUNTAIL",
+        "hashName_FR": "SERPANG",
         "dexNum": 367,
         "baseStats": [
             55,
@@ -12038,6 +12318,7 @@
     {
         "name": "GOREBYSS",
         "displayName": "GOREBYSS",
+        "hashName_FR": "ROSABYSS",
         "dexNum": 368,
         "baseStats": [
             55,
@@ -12104,6 +12385,7 @@
     {
         "name": "LUVDISC",
         "displayName": "LUVDISC",
+        "hashName_FR": "LOVDISC",
         "dexNum": 370,
         "baseStats": [
             43,
@@ -12136,6 +12418,7 @@
     {
         "name": "BAGON",
         "displayName": "BAGON",
+        "hashName_FR": "DRABY",
         "dexNum": 371,
         "baseStats": [
             45,
@@ -12168,6 +12451,7 @@
     {
         "name": "SHELGON",
         "displayName": "SHELGON",
+        "hashName_FR": "DRACKHAUS",
         "dexNum": 372,
         "baseStats": [
             65,
@@ -12200,6 +12484,7 @@
     {
         "name": "SALAMENCE",
         "displayName": "SALAMENCE",
+        "hashName_FR": "DRATTAK",
         "dexNum": 373,
         "baseStats": [
             95,
@@ -12233,6 +12518,7 @@
     {
         "name": "BELDUM",
         "displayName": "BELDUM",
+        "hashName_FR": "TERHAL",
         "dexNum": 374,
         "baseStats": [
             40,
@@ -12299,6 +12585,7 @@
     {
         "name": "METAGROSS",
         "displayName": "METAGROSS",
+        "hashName_FR": "METALOSS",
         "dexNum": 376,
         "baseStats": [
             80,
@@ -12624,6 +12911,8 @@
     {
         "name": "DEOXYSATK",
         "displayName": "DEOXYS ATK",
+        "hashName_EN": "DEOXYS",
+        "hashName_FR": "DEOXYS",
         "dexNum": 386,
         "baseStats": [
             50,

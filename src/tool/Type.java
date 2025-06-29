@@ -8,6 +8,7 @@ public enum Type {
 	//TODO : handle effectiveness and Type.MYSTERY properly
     NORMAL, FIGHTING, FLYING, POISON, GROUND, ROCK, BUG, GHOST, FIRE, WATER, GRASS, ELECTRIC, PSYCHIC, ICE, DRAGON, STEEL, DARK, MYSTERY, NONE;
 	
+	// The boolean indicates whether there exists a type-boosting ability for a given type.
 	public static final ArrayList<Pair<Type,Boolean>> hiddenPowerTypeAbilityIterations = new ArrayList<>();
 	static {
 		if(Settings.game.isGen3()) { // atk/spa split and alphabetical order for each
@@ -137,7 +138,7 @@ public enum Type {
         case DRAGON:   return 14;
         case STEEL:    return 15;
         case DARK:     return 16;
-        case MYSTERY:  return 7; //TODO
+        case MYSTERY:  return 7; // TODO : implement
         default:       return -1; // NONE
             
         }
@@ -161,9 +162,10 @@ public enum Type {
     	case 13: return ICE;
     	case 14: return DRAGON;
     	case 15: return DARK;
-    	default:
-    		throw new ToolInternalException(Type.class.getEnclosingMethod(), Integer.valueOf(i), "This index shouldn't be encountered.");
-    	}
+    	default: // TODO : clean
+    		// throw new ToolInternalException(Type.class.getEnclosingMethod(), Integer.valueOf(i), "This index shouldn't be encountered.");
+    		throw new ToolInternalException(Integer.valueOf(i), "This index shouldn't be encountered.");
+        }
     }
 
     private static final int __i = IMMUNE_MULT, nve = NOT_VERY_EFFECTIVE_MULT, __n = NEUTRAL_MULT, _se = SUPER_EFFECTIVE_MULT;

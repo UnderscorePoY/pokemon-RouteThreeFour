@@ -1,6 +1,10 @@
 package tool;
 
-public enum BattleHeldItem { // TODO: class has no use, delete ?
+/**
+ * @deprecated
+ * TODO: class has no use, delete ?
+ */
+public enum BattleHeldItem {
 	// type boosting items
 	BLACKBELT(Type.FIGHTING),
 	BLACKGLASSES(Type.DARK),

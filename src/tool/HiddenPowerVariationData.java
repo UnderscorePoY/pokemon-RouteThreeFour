@@ -74,7 +74,6 @@ public class HiddenPowerVariationData {
 		try {
 			this.calc();
 		} catch (UnsupportedOperationException | ToolInternalException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

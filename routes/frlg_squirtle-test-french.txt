@@ -1,0 +1,86 @@
+stats
+ranges
+
+// OAK'S LAB - ROUTE 1/2 //
+RIVAL_OAKS_LAB_BULBASAUR -v 2 -lvstats
+
+L2 RATTATA HARDY -v 1 -lvstats
+
+// VIRIDIAN FOREST //
+BUG_CATCHER_SAMMY -v 2 -lvstats
+lm BUBBLE
+
+// PEWTER CITY //
+CAMPER_LIAM -v 2 -lvstats
+LEADER_BROCK -v 2 -lvstats
+lm WATERGUN
+um TAILWHIP
+
+buy 8 POTION
+buy 3 ANTIDOTE
+buy 3 AWAKENING
+buy 3 REPEL
+money
+
+// ROUTE 3 //
+BUG_CATCHER_COLTON -v 2 -lvstats
+BUG_CATCHER_GREG -v 2 -lvstats
+BUG_CATCHER_JAMES -v 2 -lvstats
+
+// MT MOON //
+BUG_CATCHER_ROBBY -v 2 -lvstats // if Torrent for L16
+//YOUNGSTER_JOSH -v 2 -lvstats // if Torrent at L15 and want to keep torrent
+//TEAM_ROCKET_GRUNT_4 -v 2 -lvstats // if you can take a hit from Hyper Fang
+//HIKER_MARCOS -v 2 -lvstats // no Torrent and can not tank Hyper Fang
+
+evolve WARTORTLE
+TEAM_ROCKET_GRUNT -v 2 -lvstats
+SUPER_NERD_MIGUEL -v 2 -lvstats
+
+// ROUTE 4 //
+lm MEGAKICK
+
+// CERULEAN CITY //
+rarecandy
+rarecandy
+lm BITE
+um BUBBLE
+LEADER_MISTY -v 2 -lvstats
+lm WATERPULSE
+um TACKLE
+
+// NUGGET BRIDGE //
+RIVAL_CERULEAN_BULBASAUR -order 1/4/2/3 -v 2 -lvstats
+BUG_CATCHER_CALE -v 2 -lvstats
+LASS_ALI -v 2 -lvstats
+YOUNGSTER_TIMMY -v 2 -lvstats
+LASS_RELI -v 2 -lvstats
+CAMPER_ETHAN -v 2 -lvstats
+TEAM_ROCKET_GRUNT_6 -v 2 -lvstats
+
+// ROUTE 25 //
+HIKER_WAYNE -v 2 -lvstats
+PICNICKER_KELSEY -v 2 -lvstats
+CAMPER_FLINT -v 2 -lvstats // Flint or Nob
+//HIKER_NOB -v 2 -lvstats // if Torrent for L27 and 28+ SPE IV
+LASS_HALEY -v 2 -lvstats
+
+// CERULEAN CITY //
+TEAM_ROCKET_GRUNT_5 -v 2 -lvstats
+
+// ROUTE 6 //
+CAMPER_JEFF -v 2 -lvstats 
+
+// VERMILLION CITY //
+buy 5 SUPERPOTION
+buy 3 PARLYZHEAL
+buy 3 REPEL
+money
+
+// SS ANNE //
+rarecandy
+RIVAL_SS_ANNE_IVYSAUR -order 1/4/2/3 -v 2 -lvstats
+
+// VERMILLION CITY //
+GENTLEMAN_TUCKER -v 2 -lvstats 
+LEADER_LT_SURGE -v 2 -lvstats 

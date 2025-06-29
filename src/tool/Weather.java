@@ -12,6 +12,8 @@ public enum Weather {
 	private String displayName;
 	private ArrayList<String> tokens;
 	
+	public static Weather default_ = NONE;
+	
 	private Weather(String displayName, String... tokens) {
 		this.displayName = displayName;
 		this.tokens = new ArrayList<String>();

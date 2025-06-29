@@ -12,8 +12,14 @@ It is derived from a custom RouteThree, itself derived from Dabomstew & entrpntr
 ○ Usual update.  
 **!!** Bug fixes.  
 
+**`[2025/06/29]` -v0.4.12**  
+**!!** In Gen 3, speed badge boost is now properly handled in `SPEED INFO` sections.  
+○ Added an option in the config file to choose the game language ([see the `Configuration files` section for more details](#4-2-configuration-files)).  
+○ Improved debug messages.    
+○ Fixed the link in the [`Installation`](#2-installation) section.  
+
 **`[2024/08/12]` -v0.4.11**  
-**!!** When an enemy attacks with `Hidden Power`, the option `-ivVariation` doesn't go through all types and powers anymore.
+**!!** When an enemy attacks with `Hidden Power`, the option `-ivVariation` doesn't go through all types and powers anymore.  
 ○ 14% to 19% calculation time improvement when using option `-ivVariation` if the player knows `Hidden Power`.  
 
 
@@ -23,6 +29,9 @@ It is derived from a custom RouteThree, itself derived from Dabomstew & entrpntr
 
 **`[2024/07/16]` - v0.4.9**  
 **!!** `Macho Brace` now properly doubles EV yield in Gen 4 games.  
+
+
+<details><summary> Show/hide previous updates </summary>  
 
 
 **`[2024/04/07]` - v0.4.8**  
@@ -37,9 +46,6 @@ It is derived from a custom RouteThree, itself derived from Dabomstew & entrpntr
 ○ Added option `-addHappiness` (see details in documentation).  
 ○ In config files, added new `boostedExp` option `INTERNATIONAL`.  
 ○ Added/Improved output messages.  
-
-
-<details><summary> Show/hide previous updates </summary>  
 
 
 **`[2023/11/18]` - v0.4.7**  
@@ -138,7 +144,7 @@ The tool is primarily an executable `.jar` file. In that regard, no proper insta
 The tool as been tested and is proven to work with Java 1.7 .
 
 #### 2.1 From the latest release
-[Download the latest release from this page.](https://github.com/UnderscorePoY/RouteThree/releases)  
+[Download the latest release from this page.](https://github.com/UnderscorePoY/pokemon-RouteThreeFour/releases)  
 Run the .jar file.
 
 #### 2.2 From source files
@@ -193,6 +199,10 @@ A configuration file (generally with the `.ini` extension) gathers the primary i
    Tag | Expected value | Usage
   --------------- | -------------- | --------------
   `"game"`   | `ruby`, `sapphire`, `emerald`, `firered`, `leafgreen` <br> `diamond`, `pearl`, `platinum`, `heartgold`, `soulsilver`| The name of the game.
+   `"language"`   | `english`, `french` | The language of the game. <br/>*(Defaults to `english` if missing.)*
+
+**IMPORTANT** : The language is important for generating trainer Pokémon's natures in Gen 3.  
+As of `v0.4.12`, `French` is only available for the games `Fire Red` and `Leaf Green`.  
   
 ##### Section : `[poke]`
    Tag | Expected value | Usage

@@ -90,16 +90,18 @@ public class Happiness {
 		}
 		
 		private int getBaseBoost(int happiness) throws ToolInternalException {
-			if(!isInBound(happiness))
-				throw new ToolInternalException(Happiness.class.getEnclosingMethod(), Integer.valueOf(happiness), "");
-			
+			if(!isInBound(happiness)) { // TODO : Clean
+				// throw new ToolInternalException(Happiness.class.getEnclosingMethod(), Integer.valueOf(happiness), "");
+				throw new ToolInternalException(Integer.valueOf(happiness), "");
+			}
 			return (happiness < LOW_MID) ? low : (happiness < MID_HIGH) ? mid : high;
 		}
 		
 		public int getFinalHappiness(int happiness, boolean isItemBoosting, boolean isInLuxuryBall, boolean isMetLocation) throws ToolInternalException {
-			if(!isAuthorized())
-				throw new ToolInternalException(Happiness.class.getEnclosingMethod(), Settings.game, "Non-existing happiness event.");
-			
+			if(!isAuthorized()) { // TODO : Clean
+				// throw new ToolInternalException(Happiness.class.getEnclosingMethod(), Settings.game, "Non-existing happiness event.");
+				throw new ToolInternalException(Settings.game, "Non-existing happiness event.");
+			}
 			int boost = getBaseBoost(happiness);
 			
 			if(boost > 0) {

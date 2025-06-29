@@ -1,6 +1,5 @@
 package tool;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -498,9 +497,9 @@ public class DamageCalculator {
 	        	critStage++;
 	        if(attacker.getHeldItem() != null)
 	        	critStage += attacker.getHeldItem().getHoldEffect().getCritStage(attacker.getSpecies());  // TODO: Defender Ability blocking item ? 
-	        // TODO : handle Focus Energy/Dire Hit (+2 stage each)
-	        // TODO : multi-hits
-	        // TODO : Rage, Rollout etc.
+	        // TODO : implement Focus Energy/Dire Hit (+2 stage each)
+	        // TODO : implement multi-hits
+	        // TODO : implement Rage, Rollout etc.
 	        
             double critChance = 1. / (critStage == 0 ? 16 : critStage == 1 ? 8 : critStage == 2 ? 4 : critStage == 3 ? 3 : 2); //TODO : hardcoded
 
@@ -1220,7 +1219,7 @@ public class DamageCalculator {
         }
         
         // Helping hand
-        // TODO
+        // TODO : implement
         
         
     	// ********************** //
@@ -2762,19 +2761,8 @@ public class DamageCalculator {
     	String startBracket = isItemBoosted || isTradeBoosted ? " (" : "";
     	String endBracket = isItemBoosted || isTradeBoosted ? ")" : "";
     	String itemStr = String.format("%s%s%s%s%s", startBracket, isItemBoosted ? p1.getHeldItem().getDisplayName() : "",sep, isInternational ? "INTERNATIONAL" : isTradeBoosted ? "TRADE" : "", endBracket);
-    	//int expGiven = options.getNumberOfParticipants() == 0 ? 0 : p2.expGivenWithoutEXPBoost(options.getNumberOfParticipants());
-    	//expGiven = (expGiven * 3) / (isTradeBoosted ? 2 : 3); // TODO : duplicate code from the Pokemon.gainExp method
-    	//expGiven = (expGiven * 3) / (isItemBoosted ? 2 : 3);
-    	//int expGiven = options.getNumberOfParticipants() == 0 ? 0 : p1.earnedExpFrom(p2, options.getNumberOfParticipants());
-    	/*
-        sb.append(String.format("          >>> EXP GIVEN: %d%s%s", 
-        		expGiven, 
-        		options.getNumberOfParticipants() > 1 ? String.format(" (split in %d)", options.getNumberOfParticipants()) : "",
-        		expGiven == 0 ? "" : options.isPostponedExp() ? " (POSTPONED)" : itemStr));
-		*/
+
     	int expGiven = p1.earnedExpFrom(p2, options.getCurrentNumberOfParticipants());
-    	//if(options.isCurrentPostponedExp())
-    	//	expGiven = 0;
     	
     	sb.append(inlineSpace);
         sb.append(String.format(">>> EXP GIVEN: %d%s%s", 
@@ -3512,11 +3500,11 @@ public class DamageCalculator {
         		break;
         	}
         	/* Missing : 
-			METRONOME, //TODO
-			SPIKES, //TODO
+			METRONOME, //TODO : implement
+			SPIKES, //TODO : implement
 			
-			NATURE_POWER, //TODO
-			SECRET_POWER, //TODO
+			NATURE_POWER, //TODO : implement
+			SECRET_POWER, //TODO : implement
 			*/
         }
     	

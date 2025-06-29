@@ -18,6 +18,8 @@ import tool.exception.ToolInternalException;
  */
 public class Trainer implements Battleable, Iterable<Pokemon> {
 	private static HashMap<IgnoreCaseString, Trainer> trainersByName;
+	
+	@SuppressWarnings("unused")
 	private static final int MALE = 0, FEMALE = 1, DOUBLE = 2;
 	
 	public static HashMap<IgnoreCaseString, Trainer> getTrainers(){
@@ -31,7 +33,8 @@ public class Trainer implements Battleable, Iterable<Pokemon> {
         return trainersByName.get(new IgnoreCaseString(name));
     }
 	
-	public static void initTrainers(Game game) throws FileNotFoundException, IOException, ParseException, ToolInternalException {
+	public static void initTrainers(Game game, Language lang) 
+			throws FileNotFoundException, IOException, ParseException, ToolInternalException {
 		trainersByName = new LinkedHashMap<IgnoreCaseString, Trainer>();
 		
         BufferedReader in;
@@ -40,7 +43,7 @@ public class Trainer implements Battleable, Iterable<Pokemon> {
         		trainersResourcePathName).openStream())); // TODO : handle custom files ?
         
         if(game.isGen3())
-        	initTrainersGen3(game, in);	
+        	initTrainersGen3(game, lang, in);	
         
         else if(game == Game.DIAMOND || game == Game.PEARL)
         	initTrainersDP(game, in);
@@ -57,13 +60,15 @@ public class Trainer implements Battleable, Iterable<Pokemon> {
         System.out.println(String.format("INFO: Trainers loaded from '%s'", trainersResourcePathName));
     }
 	
+	
 	/**
 	 * Initializes trainers for Ruby, Sapphire, Emerald, FireRed and LeafGreen. <br/>
 	 * RS : TODO <br/>
 	 * E :  <a href="https://github.com/pret/pokeemerald/blob/56ec3b6461c23b93b23d28a1b6d4d148eb94511b/src/battle_main.c#L1961-L2016">CreateNPCTrainerParty</a>. <br/>
 	 * FRLG : TODO
 	 */
-	private static void initTrainersGen3(Game game, BufferedReader in) throws FileNotFoundException, IOException, ParseException, ToolInternalException {
+	private static void initTrainersGen3(Game game, Language lang, BufferedReader in) 
+			throws FileNotFoundException, IOException, ParseException, ToolInternalException {
 		JSONParser jsonParser = new JSONParser();
 		
 		Trainer.initCharValues(game); // Required in Gen 3 only, to generate parties properly
@@ -82,7 +87,18 @@ public class Trainer implements Battleable, Iterable<Pokemon> {
         	int baseMoney = ((Long) trainerDic.get("MONEY")).intValue();
         	int encounterMusicGender = ((Long) trainerDic.get("encounterMusic_gender")).intValue();
         	int trainerPic = ((Long) trainerDic.get("trainerPic")).intValue();
-        	String trainerName = (String) trainerDic.get("trainerName");
+
+        	String trainerName = (String) trainerDic.get("trainerName" + Language.default_.getLangExtensionString());
+        	
+        	// trainerHashName (used to compute trainer pokemon's natures)
+        	// Priority order : language hashName -> default language hashName -> (english) name
+        	String trainerHashNameKey = "trainerName" + lang.getLangExtensionString();
+        	if(!trainerDic.containsKey(trainerHashNameKey))
+        		trainerHashNameKey = "trainerName" + Language.default_.getLangExtensionString();
+        	if(!trainerDic.containsKey(trainerHashNameKey))
+        		trainerHashNameKey = "trainerName";
+        	String trainerHashName = (String) trainerDic.get(trainerHashNameKey);
+        	
         	
         	ArrayList<Item> items = new ArrayList<>();
         	JSONArray itemsArray = (JSONArray) trainerDic.get("items");
@@ -115,6 +131,9 @@ public class Trainer implements Battleable, Iterable<Pokemon> {
             int nameHash = 0;
             int personalityValue;
         	//
+            
+            //if (trainerName.equalsIgnoreCase("terry"))
+            //	System.out.println("in");
             
         	ArrayList<Pokemon> party = new ArrayList<Pokemon>();
         	for(Object pokemonObj : partyArray){
@@ -150,7 +169,7 @@ public class Trainer implements Battleable, Iterable<Pokemon> {
 	                if (doubleBattle != 0) personalityValue = 0x80;
 	                else if ((encounterMusicGender & 0x80) != 0) personalityValue = 0x78;
 	                else personalityValue = 0x88;
-	                
+	                	                
 	                for(int i = 0; i < trainerName.length(); i++)
 	                	nameHash = (nameHash + getCharValue(trainerName.charAt(i))) & 0xFFFFFFFF;
 	                
@@ -168,6 +187,7 @@ public class Trainer implements Battleable, Iterable<Pokemon> {
 	        		Pokemon pokemon = new Pokemon(species, gender, level, nature, ability, fixedIV, moveset, heldItem);
 	        		
 	        		party.add(pokemon);
+	        		
         		} else { // special trainers | TODO: implement the actual generation if going for Battle Tower data, maybe even put this data in a separate file
         			int fixedIV = difficulty * 31 / 255;
             		String natureStr = (String) pokemonDic.get("nature");
@@ -203,7 +223,7 @@ public class Trainer implements Battleable, Iterable<Pokemon> {
         		}
         	}
         	trainer = new Trainer(trainerAlias, partyFlags, trainerClass, baseMoney, encounterMusicGender, trainerPic, 
-        			trainerName, items, doubleBattle != 0, aiFlags, badgeBoosts, partyType, party); // TODO : hardcoded
+        			trainerName, trainerHashName, items, doubleBattle != 0, aiFlags, badgeBoosts, partyType, party); // TODO : hardcoded
         	
         	trainersByName.put(new IgnoreCaseString(trainerAlias), trainer);
         }
@@ -262,8 +282,10 @@ public class Trainer implements Battleable, Iterable<Pokemon> {
         		int level = ((Long) pokemonDic.get("level")).intValue();
         		String speciesString = (String) pokemonDic.get("species");
         		Species species = Species.getSpeciesByName(speciesString);
-        		if(species == null)
-        			throw new ToolInternalException(null, speciesString, "in initTrainersDP.");
+        		if(species == null) { // TODO : clean
+        			// throw new ToolInternalException(null, speciesString, "in initTrainersDP.");
+        			throw new ToolInternalException(speciesString, "in initTrainersDP.");
+        		}
         		
         		Item heldItem = null;
         		if (pokemonDic.containsKey("item"))
@@ -302,7 +324,7 @@ public class Trainer implements Battleable, Iterable<Pokemon> {
         		//
         	}
         	trainer = new Trainer(trainerAlias, 0, trainerClassStr, baseMoney, 0, 0,
-        			trainerName, items, genderOrCount == 2, aiFlags, badgeBoosts, partyType, party); // TODO : hardcoded
+        			trainerName, null, items, genderOrCount == 2, aiFlags, badgeBoosts, partyType, party); // TODO : hardcoded
         	
         	trainersByName.put(new IgnoreCaseString(trainerAlias), trainer);
         }
@@ -313,7 +335,6 @@ public class Trainer implements Battleable, Iterable<Pokemon> {
 	 *  Pt : Not decompiled, but based off HGSS comments in <a href="https://github.com/pret/pokeheartgold/blob/decd3cd653c535358a7f01a68cbc27a5823601a6/src/trainer_data.c#L281-L347">CreateNPCTrainerParty</a>.
 	 */
 	private static void initTrainersPt(Game game, BufferedReader in) throws FileNotFoundException, IOException, ParseException, ToolInternalException {
-		// TODO: not properly implemented yet
 		JSONParser jsonParser = new JSONParser();
 		
 		TrainerClass.initTrainerClasses(game); // Decided to split trainer data & trainer classes in Gen 4
@@ -423,7 +444,6 @@ public class Trainer implements Battleable, Iterable<Pokemon> {
         			ivs.put(Stat.SPA, spaIV);
         			ivs.put(Stat.SPD, spdIV);
         		}
-        		
 
         		Nature nature = Nature.getNatureFromPersonalityValue(personality);
         		Ability ability = Ability.getAbilityFromPersonalityValue(species, personality);
@@ -437,7 +457,7 @@ public class Trainer implements Battleable, Iterable<Pokemon> {
         		//
         	}
         	trainer = new Trainer(trainerAlias, 0, trainerClassStr, baseMoney, 0, 0,
-        			trainerName, items, isDoubleInt == 2, aiFlags, badgeBoosts, partyType, party); // TODO : hardcoded
+        			trainerName, null, items, isDoubleInt == 2, aiFlags, badgeBoosts, partyType, party); // TODO : hardcoded
         	
         	trainersByName.put(new IgnoreCaseString(trainerAlias), trainer);
         }
@@ -569,7 +589,7 @@ public class Trainer implements Battleable, Iterable<Pokemon> {
         		//
         	}
         	trainer = new Trainer(trainerAlias, 0, trainerClassStr, baseMoney, 0, 0,
-        			trainerName, items, isDoubleInt == 2, aiFlags, badgeBoosts, partyType, party); // TODO : hardcoded
+        			trainerName, null, items, isDoubleInt == 2, aiFlags, badgeBoosts, partyType, party); // TODO : hardcoded
         	
         	trainersByName.put(new IgnoreCaseString(trainerAlias), trainer);
         }
@@ -596,17 +616,20 @@ public class Trainer implements Battleable, Iterable<Pokemon> {
 			genderOverride = 2;
 		else if(genderOverrideStr.equals("GENDER_OVERRIDE_MALE")) // Never matches overworld trainers
 			genderOverride = 1;
-		else
-			throw new ToolInternalException(Trainer.class.getEnclosingMethod(), genderOverrideStr, "");
-		
+		else { // TODO : clean
+			// throw new ToolInternalException(Trainer.class.getEnclosingMethod(), genderOverrideStr, "");
+			throw new ToolInternalException(genderOverrideStr, "");
+		}
 		if(abilityOverrideStr.equals("ABILITY_OVERRIDE_OFF"))
 			abilityOverride = 0;
 		else if(abilityOverrideStr.equals("ABILITY_OVERRIDE_SECOND"))
 			abilityOverride = 2;
 		else if(abilityOverrideStr.equals("ABILITY_OVERRIDE_FIRST")) // Never matches overworld trainers
 			abilityOverride = 1;
-		else
-			throw new ToolInternalException(Trainer.class.getEnclosingMethod(), abilityOverrideStr, "");
+		else{ // TODO : clean
+			// throw new ToolInternalException(Trainer.class.getEnclosingMethod(), abilityOverrideStr, "");
+			throw new ToolInternalException(abilityOverrideStr, "");
+		}
 		
 		genderAbilityOverride = abilityOverride << 4 | genderOverride;
 		return genderAbilityOverride;
@@ -687,9 +710,11 @@ public class Trainer implements Battleable, Iterable<Pokemon> {
 	
 	public static int getCharValue(char c) throws ToolInternalException {
 		Object intValue = charValues.get(String.valueOf(c));
-		if (intValue == null)
-			throw new ToolInternalException(Trainer.class.getEnclosingMethod(), c, "Not in the char values table.");
-
+		if (intValue == null) { // TODO: clean
+			// throw new ToolInternalException(Trainer.class.getEnclosingMethod(), c, "Not in the char values table.");			// throw new ToolInternalException(Trainer.class.getEnclosingMethod(), c, "Not in the char values table.");
+			// throw new ToolInternalException(Trainer.class.getMethods()[0].getName(), c, "Not in the char values table.");
+			throw new ToolInternalException(c, "Not in the char values table.");
+		}
 		return (int)intValue;
 	}
 	
@@ -735,6 +760,7 @@ public class Trainer implements Battleable, Iterable<Pokemon> {
 	private int encounterMusicGender;
 	private int trainerPic;
 	private String trainerName;
+	private String hashName;
 	private List<Item> items;
 	private boolean isDoubleBattle;
 	private int aiFlags;
@@ -744,7 +770,8 @@ public class Trainer implements Battleable, Iterable<Pokemon> {
     private int lastLevelMonBeforeReordering;
 
     public Trainer(String trainerAlias, int partyFlags, String trainerClass, int baseMoney, int encounterMusicGender, int trainerPic, 
-    		String trainerName, List<Item> items, boolean doubleBattle, int aiFlags, List<Stat> badgeBoosts, String partyType, ArrayList<Pokemon> party) {
+    		String trainerName, String hashName, List<Item> items, boolean doubleBattle, int aiFlags, List<Stat> badgeBoosts, 
+    		String partyType, ArrayList<Pokemon> party) {
     	this.trainerAlias = trainerAlias;
     	this.partyFlags = partyFlags;
     	this.trainerClass = trainerClass;
@@ -752,6 +779,7 @@ public class Trainer implements Battleable, Iterable<Pokemon> {
     	this.encounterMusicGender = encounterMusicGender;
     	this.trainerPic = trainerPic;
     	this.trainerName = trainerName;
+    	this.hashName = hashName;
     	this.items = items;
     	this.isDoubleBattle = doubleBattle;
     	this.aiFlags = aiFlags;
@@ -769,6 +797,7 @@ public class Trainer implements Battleable, Iterable<Pokemon> {
     	this.encounterMusicGender = other.encounterMusicGender;
     	this.trainerPic = other.trainerPic;
     	this.trainerName = other.trainerName;
+    	this.hashName = other.hashName;
     	this.items = other.items;
     	this.isDoubleBattle = other.isDoubleBattle;
     	this.aiFlags = other.aiFlags;
@@ -808,6 +837,10 @@ public class Trainer implements Battleable, Iterable<Pokemon> {
 		return trainerName;
 	}
 
+	public String getHashName() {
+		return trainerName;
+	}
+	
 	public List<Item> getItems() {
 		return items;
 	}
@@ -828,14 +861,18 @@ public class Trainer implements Battleable, Iterable<Pokemon> {
 		return party;
 	}
 
+	
+	private static final int baseMoneyMult = 4;
+	private static final int moneyBoostingMult = 2;
+	private static final int defaultMoneyMult = 1;
 	public int getReward(Pokemon p) {
-		int moneyItemMult = 1;
+		int moneyItemMult = defaultMoneyMult;
 		if(p.getHeldItem() != null && p.getHeldItem().isMoneyBoosting()) {
-				moneyItemMult = 2; // TODO: hardcoded
+				moneyItemMult = moneyBoostingMult;
 		}
-		int moneyBattleTypeMult = isDoubleBattle() ? 2 : 1; // TODO: hardcoded
+		int moneyBattleTypeMult = isDoubleBattle() ? moneyBoostingMult : defaultMoneyMult;
 		
-		return 4 * lastLevelMonBeforeReordering * baseMoney * moneyItemMult * moneyBattleTypeMult;
+		return baseMoneyMult * baseMoney * lastLevelMonBeforeReordering * moneyItemMult * moneyBattleTypeMult;
 	}
 
 	public List<Stat> getBadgeBoosts() {
@@ -858,12 +895,14 @@ public class Trainer implements Battleable, Iterable<Pokemon> {
         return party.iterator();
     }
     
+    private static final String sep = ", ";
     public String toString(Pokemon p, BattleOptions options) {
     	StringBuffer sb = new StringBuffer();
     	boolean isMultiplyingRewardByTwo = options.isMultiplyingRewardByTwo();
-    	sb.append(String.format("%s %s%s%s | REWARD: %s", 
+    	sb.append(String.format("%s %s%s%s%s | REWARD: %s", 
     			trainerClass,
-    			trainerName, 
+    			trainerName,
+    			trainerName.equals(hashName) ? "" : String.format(" \"%s\"", hashName),
     			options.getPartner(Side.ENEMY) == null ? "" : String.format(" + %s %s", options.getPartner(Side.ENEMY).getTrainerClass(), options.getPartner(Side.ENEMY).getTrainerName()),
     			isMultiplyingRewardByTwo || options.getPartner(Side.ENEMY) != null ? " <DOUBLE>" : "",
     			options.isBacktrackingAfterBattle() ? "0 (backtrack)" : getReward(p) + (options.getPartner(Side.ENEMY) == null ? 0 : options.getPartner(Side.ENEMY).getReward(p))));
@@ -873,9 +912,9 @@ public class Trainer implements Battleable, Iterable<Pokemon> {
     		StringBuffer sbItems = new StringBuffer();
 	    	for (Item item : items) {
 	    		sbItems.append(item.getDisplayName());
-	    		sbItems.append(", ");
+	    		sbItems.append(sep);
 	    	}
-	    	sb.append(sbItems.delete(sbItems.length()-2, sbItems.length()).toString()); // TODO: hardcoded based on the length of string ", "
+	    	sb.append(sbItems.delete(sbItems.length()-sep.length(), sbItems.length()).toString());
 	    	sb.append("] ");
 	    	sb.append(Constants.endl);
     	}
@@ -903,9 +942,10 @@ public class Trainer implements Battleable, Iterable<Pokemon> {
     public String allPokesStr() {
         StringBuilder sb = new StringBuilder();
         for (Pokemon p : party) {
-            sb.append(p.levelNameNatureAbilityItemStr() + ", ");
+            sb.append(p.levelNameNatureAbilityItemStr());
+            sb.append(sep);
         }
-        return sb.delete(sb.length()-2, sb.length()).toString(); // TODO: hardcoded based on the length of string ", "
+        return sb.delete(sb.length()-sep.length(), sb.length()).toString();
     }
     
     public String allPokesStrMultiline() {
@@ -916,7 +956,7 @@ public class Trainer implements Battleable, Iterable<Pokemon> {
         	sb.append(p.allInfoStr());
             sb.append(Constants.endl);
         }
-        return sb.toString(); // TODO: hardcoded based on the length of string ", "
+        return sb.toString();
     }
 
     /*

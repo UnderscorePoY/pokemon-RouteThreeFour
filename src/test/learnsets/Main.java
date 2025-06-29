@@ -4,6 +4,7 @@ import java.util.Map;
 
 import tool.Game;
 import tool.IgnoreCaseString;
+import tool.Language;
 import tool.Learnset;
 import tool.Move;
 import tool.Species;
@@ -17,12 +18,13 @@ public class Main {
 	public static void testLearnsetAndSpeciesCrossReferences() {
 		try {
 			for(Game game : Game.values()) {
+				System.out.println(game);
 				// Skip games which don't have both files
 				if(game.getSpeciesFilename() == null || game.getLearnsetsFilename() == null)
 					continue;
 				
 				// Initialize what's needed
-				Species.initSpecies(game);
+				Species.initSpecies(game, Language.ENGLISH);
 				Move.initMoves(game);
 				Learnset.initLearnsets(game);
 				

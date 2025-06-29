@@ -13,6 +13,7 @@ public class BattleOptions {
 	public static final int MIN_NUMBER_OF_BATTLERS_PER_FIGHT = 1, MAX_NUMBER_OF_BATTLERS_PER_FIGHT = 12;
 	public static final int MIN_NUMBER_OF_EXP_SHARERS_PER_FIGHT = 0, MAX_NUMBER_OF_EXP_SHARERS_PER_FIGHT = 6; // 0 means no exp
 	public static final int DEFAULT_NB_OF_EXP_SHARERS = 1;
+	public static final int DEFAULT_NB_OF_EXP_SHARERS_IN_DOUBLE_BATTLE = 2;
 	public static final int MIN_BATCH_SIZE = 1, MAX_BATCH_SIZE = 2;
 
 	/**
@@ -46,7 +47,7 @@ public class BattleOptions {
     private int yCurrentHP = 0;
     private CurrentHPid yCurrentHPid = CurrentHPid.FULL;
     private Trainer yPartner = null;
-    private boolean yHasUsedSingleTimeAbility = false; // TODO: not needed ?
+    private boolean yHasUsedSingleTimeAbility = false;
     
     private ArrayList<ArrayList<Integer>> order = new ArrayList<ArrayList<Integer>>();
     private ArrayList<Weather> weathers = new ArrayList<Weather>();
@@ -109,18 +110,12 @@ public class BattleOptions {
     }
     
     
-
     /**
      * Performs another set of sanity checks, and updates options which were awaiting the final battle info.
      * Throws errors if a check doesn't pass.
      */
     public void compileAndValidate(Battleable opponent) throws RouteParserException, ToolInternalException {
     	int nbOfBattlers = getTotalNbOfEnemyBattlers(opponent);
-    	
-    	/* TODO: get rid
-		if(opponent instanceof Trainer && ((Trainer)opponent).getTrainerName().equals("Alyssa"))
-			System.out.println(((Trainer)opponent).getTrainerName());
-		*/
 		
     	// Preparing data that were waiting for total nb of battlers
 		this.updateStages(nbOfBattlers);
@@ -209,9 +204,10 @@ public class BattleOptions {
     		nbOfBattlers = t.getParty().size();
     		if(this.getPartner(Side.ENEMY) != null)
     			nbOfBattlers += this.getPartner(Side.ENEMY).getParty().size();
-    	} else
-    		throw new ToolInternalException(Battle.class.getEnclosingMethod(), opponent.getClass(), "Invalid opponent type.");
-    
+    	} else { // TODO : clean
+    		//throw new ToolInternalException(Battle.class.getEnclosingMethod(), opponent.getClass(), "Invalid opponent type.");
+    		throw new ToolInternalException(opponent.getClass(), "Invalid opponent type.");
+    	}
     	return nbOfBattlers;
     }
 
@@ -454,22 +450,22 @@ public class BattleOptions {
 		}
     	
     	// Default share exp
-		int defaultNbOfParticipants = isSingleTrainerForcedToBeFoughtAsDouble ? 2 : DEFAULT_NB_OF_EXP_SHARERS;
+		int defaultNbOfParticipants = isSingleTrainerForcedToBeFoughtAsDouble ? DEFAULT_NB_OF_EXP_SHARERS_IN_DOUBLE_BATTLE : DEFAULT_NB_OF_EXP_SHARERS;
 			
-			// "Weak" override : player+player vs. double is always split exp
+			// "Weaker" override : player+player vs. double is always split exp
 		if(yPartner != null && xPartner == null)
-			defaultNbOfParticipants = 2; // TODO: hardcoded constant
+			defaultNbOfParticipants = DEFAULT_NB_OF_EXP_SHARERS_IN_DOUBLE_BATTLE;
 		
 
 			// "Weak" override : in Gen 3, player+partner vs. double is also split exp
 		if(Settings.game.isGen3() && yPartner != null)
-			defaultNbOfParticipants = 2; // TODO: hardcoded constant
+			defaultNbOfParticipants = DEFAULT_NB_OF_EXP_SHARERS_IN_DOUBLE_BATTLE;
 		
 			// "Strong" override
 		if(isForcedDoubleBattle)
-			defaultNbOfParticipants = 2; // TODO: hardcoded constant
+			defaultNbOfParticipants = DEFAULT_NB_OF_EXP_SHARERS_IN_DOUBLE_BATTLE;
 		if(isForcedSingleBattle)
-			defaultNbOfParticipants = DEFAULT_NB_OF_EXP_SHARERS; // TODO: hardcoded constant
+			defaultNbOfParticipants = DEFAULT_NB_OF_EXP_SHARERS;
 		
 		sxps.add(defaultNbOfParticipants);
 		this.setSxpsFromIndex0(nbOfParticipants);
@@ -479,13 +475,16 @@ public class BattleOptions {
 	 * Sets stages to a specified side and stat. Stores whether these stages are forced or not for the whole fight.
 	 */
 	public void setStages(Side side, Stat stat, ArrayList<Integer> stages, boolean isForced) throws ToolInternalException { // KeyException, IllegalArgumentException {
-		if(stat == Stat.HP)
-        	throw new ToolInternalException(BattleOptions.class.getEnclosingMethod(), stat, "Can't set in stages.");
+		if(stat == Stat.HP) { // TODO : clean
+        	//throw new ToolInternalException(BattleOptions.class.getEnclosingMethod(), stat, "Can't set in stages.");
+        	throw new ToolInternalException(stat, "Can't set in stages.");
 			//throw new KeyException("BattleOptions.setXItemsPerStat received HP as stat. Not allowed.");
-		if(stages == null)
-        	throw new ToolInternalException(BattleOptions.class.getEnclosingMethod(), stages, "Can't set this as stages.");
+		}
+		if(stages == null) { // TODO : clean
+        	//throw new ToolInternalException(BattleOptions.class.getEnclosingMethod(), stages, "Can't set this as stages.");
+        	throw new ToolInternalException(stages, "Can't set this as stages.");
 			//throw new IllegalArgumentException(String.format("BattleOptions.setXItemsPerStat '%s' received null. Not allowed.", stat));
-		
+		}
 		EnumMap<Stat, ArrayList<Integer>> statsMap = null;
 		EnumSet<Stat> forcedSet = null;
 		switch(side) {
@@ -671,12 +670,6 @@ public class BattleOptions {
 		statuses2_3List.add(statuses2_3);
 	}
 	
-
-	/*
-	public void setOrder(ArrayList<ArrayList<Integer>> order) {
-		this.order = order; // TODO: is it really working without copying ?
-	}
-	*/
 	
 	public void addOrderBatch(ArrayList<Integer> batch) {
 		order.add(batch);
@@ -714,7 +707,7 @@ public class BattleOptions {
 		if(isWeatherConstant)
 			setWeatherFromIndex0(nbOfBattlers);
 		else if(getWeathers().size() == 0) {
-			getWeathers().add(Weather.NONE); // TODO: hardcoded
+			getWeathers().add(Weather.default_);
 			setWeatherFromIndex0(nbOfBattlers);
 		}
 		// else it's custom weather list
@@ -954,37 +947,7 @@ public class BattleOptions {
     	/* **************************** */
     	/* Non side-dependent variables */
     	/* **************************** */
-    	
-    	/* Done in updateSxps
-    	// Experience
-    	this.setPostponedExp(isPostponedExperience); // TODO: put postponed exp in StatMod ?
-    	
-    		// Split exp if player+player vs. double split
-    	int nbOfParticipants = 1; // TODO : hardcoded
-    	if(yPartner != null && xPartner == null) {
-    		nbOfParticipants = 2;  // TODO : hardcoded
-    	}
-    	
-    		// Overrides natural player+player vs. double split
-    	if(!sxps.isEmpty() && currentOpponentIndex < sxps.size()) {
-            nbOfParticipants = this.sxps.get(currentOpponentIndex);
-        }
-    	
-    	this.setNumberOfParticipants(nbOfParticipants);
-    	*/
-    	
-    	
-    	
-    	
-    	/* Done in updateWeathers
-    	// Weather | TODO: Find a way to get rid of duplicate weather
-		Weather weather;
-        if(!weathers.isEmpty())
-            weather = weathers.get(currentOpponentIndex);
-        else
-        	weather = Weather.NONE; // TODO: hardcoded default
-        */
-        
+    	        
     	// TODO: Find a way to get rid of duplicate weather
     	Weather weather = weathers.get(currentOpponentIndex);
     	getStatModifier(Side.PLAYER).setWeather(weather);
@@ -1020,11 +983,15 @@ public class BattleOptions {
 			}
 			
 			// Overriding currentHP if necessary
-			switch(getCurrentHPid(attackerSide)) { // TODO: hardcoded constants
-			case FULL:  currentHP = attacker.getStatValue(Stat.HP);   break;
-			case HALF:  currentHP = attacker.getStatValue(Stat.HP)/2; break;
-			case THIRD: currentHP = attacker.getStatValue(Stat.HP)/3; break;
-			case CUSTOM_VALUE: break;
+			int denominator = getCurrentHPid(attackerSide).getDenominator();
+			switch(getCurrentHPid(attackerSide)) {
+			case FULL:
+			case HALF:
+			case THIRD: 
+				currentHP = attacker.getStatValue(Stat.HP)/denominator; 
+				break;
+			case CUSTOM_VALUE: 
+				break;
 			}
 			attackerMod.setCurrHP(currentHP);
 			
