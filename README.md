@@ -747,7 +747,7 @@ Big aknowledgements to these people, who either initiated this tool or helped im
 
 #### 8.3. CONTRIBUTORS
 People who reported errors and/or provided feedback, who made the tool better in the end. Thanks to them !  
-[`BillBonzai`](https://www.twitch.tv/billbonzai), [`Gabraltar`](https://github.com/gabraltar), [`Gimmy`](https://www.twitch.tv/gimmytomas), [`Graizi`](https://www.twitch.tv/graizi), [`Grogir`](https://www.twitch.tv/grogir), [`Plot`](https://www.twitch.tv/plotwyx)
+[`BillBonzai`](https://www.twitch.tv/billbonzai), [`Gabraltar`](https://github.com/gabraltar), [`Gimmy`](https://www.twitch.tv/gimmytomas), [`Graizi`](https://www.twitch.tv/graizi), [`Grogir`](https://www.twitch.tv/grogir), [`Plot`](https://www.twitch.tv/plotwyx), [`Vadnika`](https://www.twitch.tv/Vadnika)
 
 -- -- 
 
