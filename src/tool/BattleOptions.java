@@ -998,26 +998,19 @@ public class BattleOptions {
 			
 			// Applying abilities stat modifications
 			if(!isSkipAbilityStatModifs) {
-	            // Download
+				// Download
 				// TODO: Doesn't properly work for Double Battles, as it seems to calculate average Def & Spd to choose which offensive stat to boost
 	            if(attacker.getAbility() == Ability.DOWNLOAD) {
 	            	int def = defenderMod.modStat(Stat.DEF, defender.getStatValue(Stat.DEF), defender.getAbility() == Ability.SIMPLE);
 	            	int spd = defenderMod.modStat(Stat.SPD, defender.getStatValue(Stat.SPD), defender.getAbility() == Ability.SIMPLE);
-	            	if(spd <= def) {
-	            		if(!isForcedStat(attackerSide, Stat.SPD)) {
-	            			if(attackerSide == Side.PLAYER)
-	            				incrementStatUntilBattleEnds(attackerSide, Stat.SPD);
-	            			else if (attackerSide == Side.ENEMY)
-	            				incrementEnemyStatForCurrentIndex(Stat.SPD);
-	            		}
-	            	} else {
-	            		if(!isForcedStat(attackerSide, Stat.DEF)){
-	            			if(attackerSide == Side.PLAYER)
-	            				incrementStatUntilBattleEnds(attackerSide, Stat.DEF);
-	            			else if (attackerSide == Side.ENEMY)
-	            				incrementEnemyStatForCurrentIndex(Stat.DEF);
-	            		}
-	            	}
+	            	Stat toRaise = (def >= spd) ? Stat.SPA : Stat.ATK;
+	            	
+            		if(!isForcedStat(attackerSide, toRaise)) {
+            			if(attackerSide == Side.PLAYER)
+            				incrementStatUntilBattleEnds(attackerSide, toRaise);
+            			else if (attackerSide == Side.ENEMY)
+            				incrementEnemyStatForCurrentIndex(toRaise);
+            		}
 	            }
 	            
 	            // Speed Boost
@@ -1029,10 +1022,7 @@ public class BattleOptions {
 	            		incrementEnemyStatForCurrentIndex(Stat.SPE);
 	            }
 	            */
-				
-	            //if(defender.getSpecies().matchesAny("GYARADOS") && attacker.getSpecies().matchesAny("GEODUDE") && attacker.getLevel() == 8)
-	            //	System.out.println("BattleOptions.prepareStatModifiers");
-	            
+			
 	            // Intimidate
 	            if(defender.getAbility() == Ability.INTIMIDATE)
 	            {

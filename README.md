@@ -12,11 +12,16 @@ It is derived from a custom RouteThree, itself derived from Dabomstew & entrpntr
 ○ Usual update.  
 **!!** Bug fixes.  
 
+**`[2025/07/16] -v0.4.13`**  
+**!!** Fixed a bug involving the ability `Download` to not work properly.  
+
+
 **`[2025/06/29]` -v0.4.12**  
 **!!** In Gen 3, speed badge boost is now properly handled in `SPEED INFO` sections.  
 ○ Added an option in the config file to choose the game language ([see the `Configuration files` section for more details](#4-2-configuration-files)).  
 ○ Improved debug messages.    
 ○ Fixed the link in the [`Installation`](#2-installation) section.  
+
 
 **`[2024/08/12]` -v0.4.11**  
 **!!** When an enemy attacks with `Hidden Power`, the option `-ivVariation` doesn't go through all types and powers anymore.  
