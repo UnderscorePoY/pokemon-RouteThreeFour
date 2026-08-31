@@ -12,6 +12,11 @@ It is derived from a custom RouteThree, itself derived from Dabomstew & entrpntr
 ○ Usual update.  
 **!!** Bug fixes.  
 
+**`[2026/08/31] -0.4.14`**  
+**!!** Fixed a bug involving earned experience by traded Pokémon.  
+○ Got rid of "null" being displayed after each Gen 4 trainer name.  
+
+
 **`[2025/07/16] -v0.4.13`**  
 **!!** Fixed a bug involving the ability `Download` to not work properly.  
 

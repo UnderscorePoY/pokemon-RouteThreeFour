@@ -902,7 +902,7 @@ public class Trainer implements Battleable, Iterable<Pokemon> {
     	sb.append(String.format("%s %s%s%s%s | REWARD: %s", 
     			trainerClass,
     			trainerName,
-    			trainerName.equals(hashName) ? "" : String.format(" \"%s\"", hashName),
+    			Settings.game.isGen3() && !trainerName.equals(hashName) ? String.format(" \"%s\"", hashName) : "",
     			options.getPartner(Side.ENEMY) == null ? "" : String.format(" + %s %s", options.getPartner(Side.ENEMY).getTrainerClass(), options.getPartner(Side.ENEMY).getTrainerName()),
     			isMultiplyingRewardByTwo || options.getPartner(Side.ENEMY) != null ? " <DOUBLE>" : "",
     			options.isBacktrackingAfterBattle() ? "0 (backtrack)" : getReward(p) + (options.getPartner(Side.ENEMY) == null ? 0 : options.getPartner(Side.ENEMY).getReward(p))));

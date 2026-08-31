@@ -432,11 +432,13 @@ public class Main {
         			isInternationalTraded = true;
             	} else {
             		// Boolean.parseBoolean is too inclusive when it comes to non-true values ...
-            		if(null == Utils.parseBoolean(boostedExpStr.toLowerCase())) {
+            		Boolean boosted = Utils.parseBoolean(boostedExpStr);
+            		if(boosted == null) {
             			throw new ConfigWrongValueException(configFileStr, "poke", "boostedExp", boostedExpStr,
         				String.format("must be either '%s' or '%s'.%s", true, false, !game.isDP() ? "" : String.format("In Diamond/Pearl, '%s' is available for international trades", "international"))
         				);
             		}
+            		hasBoostedExp = boosted.booleanValue();
             	}
             }
             
